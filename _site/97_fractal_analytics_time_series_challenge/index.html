@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
+  <title>97 Fractal Analytics - Time Series Challenge</title>
+  <meta name="description" content="97 - Fractal Analytics - Time Series Challenge">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/about/">
+  <link rel="canonical" href="http://localhost:4000/97_fractal_analytics_time_series_challenge/">
   <link rel="alternate" type="application/rss+xml" title="My Journey into (Data) Science" href="/feed.xml">
   
   
@@ -61,46 +61,81 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title">97 Fractal Analytics - Time Series Challenge</h1>
   </header>
 
   <div class="post-content">
-    <p>Hi, I am Sampath. I like writing but not as much as Music or my mom. Writing make me clam, I generally write my auto-biography events but that is not the purpose of this blog.</p>
+    <h2 id="97---fractal-analytics---time-series-challenge">97 - Fractal Analytics - Time Series Challenge</h2>
 
-<p>I also like Physic and Math, they are actually the definition of Science for me. Today a sensible application of these, I see in Data Science. Do you know that Data Science can not only reproduce all the Physics Laws but in fact can discover new trends and laws. It’s fascinating if you ask.</p>
+<p><a href="https://datahack.analyticsvidhya.com/contest/fractal-analytics-hiring-hackathon/lb">LeaderBoard Rank 129/211</a></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># Newtons second law
-Force = mass * acceleration
+<h4 id="goal"><em>Goal</em></h4>
 
-# Newtons third law
-Action = - Reaction
+<p>Goal is to find the severals items demands using their historical demands. For some items, they share some common category, sub-categorical info. Tricky part is not all items have similar historical data, some have 9 months data and while others have only few weeks of data and we have predict 60 days into future.</p>
 
-# Transportation - distance covered
-Distance(S) = (Initial Velocity(u) * time(t)) +  ((1/2) * acceleration * t * t)
+<h4 id="issues-i-had"><em>Issues I had</em></h4>
 
-# Electricity
-Voltage = Current(I) * Resistance(R)
+<ul>
+  <li>Lack of proper testing framework or model.</li>
+  <li>Lack of knowledge on Time-Series Models. Example ARIMA.</li>
+  <li>Lack of experience of time series modeling.</li>
+</ul>
 
-# Thermodynamics
-Pressure(P) * Volume(V) = Temperature(T) * constant
+<h4 id="learning-sources"><em>Learning Sources</em></h4>
 
-# Energy of a particle
-Energy(E) = Planks Constant(h) * Frequency(v)
+<p>Time Series Analysis</p>
 
-# Economics - Complex topics like
-Demand(D) - Supply(S)
-</code></pre>
-</div>
+<ul>
+  <li><a href="https://sites.google.com/site/econometricsacademy/econometrics-models/time-series-arima-models">Econometrics - Ani Katchova</a>: Ani, conveys the most part of theoretical Knowledge to understand and have a quick start in Time-Series Analysis. No Code - Just Theory.</li>
+  <li><a href="https://www.youtube.com/watch?v=Aw77aMLj9uM&amp;list=PLz1cztQeF4YlEOn8IGY7hT39wa2Tg-XcM&amp;index=3">Econometrics Academy</a>: A bit abstractly but conveys overall understanding of AR, MA, ARMA and ARIMA, a bit deeper understanding. No Py Code - Just Theory.</li>
+  <li><a href="https://www.youtube.com/watch?v=tJ-O3hk1vRw&amp;list=PLz1cztQeF4YlEOn8IGY7hT39wa2Tg-XcM&amp;index=4">PyData Conf - Jeffrey Yau</a>: Theory + Hands on Code. Lots of Python Notebooks also available in <a href="https://github.com/silicon-valley-data-science/pydata-sf-2016-arima-tutorial">Github</a>. He also shared some nice re-usable code for doing lots of analysis.</li>
+  <li><a href="https://www.youtube.com/watch?v=zmfe2RaX-14&amp;list=PLz1cztQeF4YlEOn8IGY7hT39wa2Tg-XcM&amp;index=5">PyCon 2017 - Aileen Nielsen</a>: Complete Set. Theory + Basics + little Math + Code + Nice Notebooks in <a href="https://github.com/AileenNielsen/TimeSeriesAnalysisWithPython">Github</a></li>
+</ul>
 
-<p>These equations took several years for discover and understanding. Today these are used in various components in every uses we use(in all transportation systems, cooking, walking, eating, jumping, .. everything.</p>
+<h4 id="python-pkgs"><em>Python Pkgs</em></h4>
 
-<p>(When I was a kid I had to sit and learn all those for years :( but on the bright side for my kids, I just need to give them a simple 3 layered neural network?</p>
+<ul>
+  <li><a href="http://www.pyflux.com/philosophy/">PyFlux</a> <a href="http://pyflux.readthedocs.io/en/latest/getting_started.html">Documentation</a>: Simple tools immediately start working with Time Series Analysis.</li>
+  <li><a href="http://www.statsmodels.org/stable/tsa.html">Stats Models TSA</a>: Complete Package I guess. It may have everything you could ask.</li>
+  <li><a href="https://github.com/rsvp/fecon235#dt_2015-08-01_094628">FECON235</a>: I have not explored this but it seems to have lots of econometric tools.</li>
+</ul>
 
-<p>Thanks to Neural Networks, a Simple Multi-Layer Neural Net can be universal function approximator as per <a href="https://en.wikipedia.org/wiki/Universal_approximation_theorem">Universal Approximation Theorem</a> :)</p>
+<h4 id="blog-posts"><em>Blog Posts</em></h4>
 
-<p>With Machine Learning(a branch of Artificial Intelligence), today we discover all these. We can answer the question before we know the questions. We can prevent diseases before they are discovered. We can predict storms, earthquake before they can.</p>
+<ul>
+  <li><a href="http://www.michaeljgrogan.com/arima-model-statsmodels-python/">arima-model-statsmodels-python</a>: Quick Start</li>
+  <li><a href="https://www.analyticsvidhya.com/blog/2015/12/complete-tutorial-time-series-modeling/">complete-tutorial-time-series-modeling</a></li>
+  <li><a href="https://www.analyticsvidhya.com/blog/2016/02/time-series-forecasting-codes-python/">time-series-forecasting-python</a>: Complete Flow is included.</li>
+  <li><a href="http://www.seanabu.com/2016/03/22/time-series-seasonal-ARIMA-model-in-python/">time-series-seasonal-ARIMA-model-in-python</a></li>
+</ul>
 
-<p>Said that, they are just some probabilities derived by Humans. Though not Perfect, I still think a probability is still better than an unexpected failures.</p>
+<h4 id="notebooks"><em>Notebooks</em></h4>
+
+<ul>
+  <li><a href="https://github.com/silicon-valley-data-science/pydata-sf-2016-arima-tutorial">https://github.com/silicon-valley-data-science/pydata-sf-2016-arima-tutorial</a></li>
+  <li><a href="https://github.com/AileenNielsen/TimeSeriesAnalysisWithPython">https://github.com/AileenNielsen/TimeSeriesAnalysisWithPython</a></li>
+</ul>
+
+<h4 id="others"><em>others</em></h4>
+
+<ul>
+  <li>
+    <p>Book <a href="http://people.duke.edu/~rnau/411home.htm">Statistical forecasting: notes on regression and time series analysis</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.quora.com/What-is-the-most-useful-Python-library-for-time-series-and-forecasting">https://www.quora.com/What-is-the-most-useful-Python-library-for-time-series-and-forecasting</a></p>
+  </li>
+</ul>
+
+<h3 id="advanced-concepts"><em>Advanced Concepts</em></h3>
+
+<ul>
+  <li>Vector Auto Regression Models</li>
+  <li>KALMAN Filters/ Bayesian Filters/ Signal Processing</li>
+  <li>Hidden Markov Models</li>
+  <li>Recursive Neural Networks</li>
+</ul>
+
 
   </div>
 
