@@ -1,5 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-07-06T16:12:34+05:30</updated><id>http://localhost:4000//</id><title type="html">My Journey into (Data) Science</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</subtitle><entry><title type="html">97 Fractal Analytics - Time Series Challenge</title><link href="http://localhost:4000/97_fractal_analytics_time_series_challenge/" rel="alternate" type="text/html" title="97 Fractal Analytics - Time Series Challenge" /><published>2017-07-06T00:00:00+05:30</published><updated>2017-07-06T00:00:00+05:30</updated><id>http://localhost:4000/97_fractal_analytics_time_series_challenge</id><content type="html" xml:base="http://localhost:4000/97_fractal_analytics_time_series_challenge/">&lt;h2 id=&quot;97---fractal-analytics---time-series-challenge&quot;&gt;97 - Fractal Analytics - Time Series Challenge&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-07-15T19:42:04+05:30</updated><id>http://localhost:4000//</id><title type="html">My Journey into (Data) Science</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</subtitle><entry><title type="html">95 Autompg Dataset</title><link href="http://localhost:4000/95_autompg_dataset" rel="alternate" type="text/html" title="95 Autompg Dataset" /><published>2017-07-15T00:00:00+05:30</published><updated>2017-07-15T00:00:00+05:30</updated><id>http://localhost:4000/95-autompg-dataset</id><content type="html" xml:base="http://localhost:4000/95_autompg_dataset">&lt;p&gt;Home Page: &lt;a href=&quot;https://www.kaggle.com/uciml/autompg-dataset&quot;&gt;https://www.kaggle.com/uciml/autompg-dataset&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;goal&quot;&gt;Goal:&lt;/h2&gt;
+
+&lt;p&gt;To practicing Exploratory Analysis skills.&lt;/p&gt;
+
+&lt;p&gt;Our Submission: &lt;a href=&quot;https://www.kaggle.com/uciml/autompg-dataset&quot;&gt;https://www.kaggle.com/uciml/autompg-dataset&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;context&quot;&gt;Context&lt;/h2&gt;
+
+&lt;p&gt;The data is technical spec of cars. The dataset is downloaded from UCI Machine Learning Repository&lt;/p&gt;
+
+&lt;p&gt;Sources: (a) Origin: This dataset was taken from the StatLib library which is maintained at Carnegie Mellon University. The dataset was used in the 1983 American Statistical Association Exposition. (c) Date: July 7, 1993
+Past Usage:&lt;/p&gt;
+
+&lt;p&gt;See 2b (above)
+Quinlan,R. (1993). Combining Instance-Based and Model-Based Learning. In Proceedings on the Tenth International Conference of Machine Learning, 236-243, University of Massachusetts, Amherst. Morgan Kaufmann.
+Relevant Information:&lt;/p&gt;
+
+&lt;p&gt;This dataset is a slightly modified version of the dataset provided in the StatLib library. In line with the use by Ross Quinlan (1993) in predicting the attribute “mpg”, 8 of the original instances were removed because they had unknown values for the “mpg” attribute. The original dataset is available in the file “auto-mpg.data-original”.&lt;/p&gt;
+
+&lt;p&gt;“The data concerns city-cycle fuel consumption in miles per gallon, to be predicted in terms of 3 multivalued discrete and 5 continuous attributes.” (Quinlan, 1993)
+Number of Instances: 398
+Number of Attributes: 9 including the class attribute
+Attribute Information:&lt;/p&gt;
+
+&lt;p&gt;mpg: continuous
+cylinders: multi-valued discrete
+displacement: continuous
+horsepower: continuous
+weight: continuous
+acceleration: continuous
+model year: multi-valued discrete
+origin: multi-valued discrete
+car name: string (unique for each instance)
+Missing Attribute Values: horsepower has 6 missing values&lt;/p&gt;
+
+&lt;h2 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h2&gt;
+
+&lt;p&gt;Dataset: UCI Machine Learning Repository Data link : https://archive.ics.uci.edu/ml/datasets/auto+mpg&lt;/p&gt;
+
+&lt;p&gt;Inspiration&lt;/p&gt;
+
+&lt;p&gt;I have used this dataset for practicing my exploratory analysis skills.&lt;/p&gt;</content><summary type="html">Home Page: https://www.kaggle.com/uciml/autompg-dataset</summary></entry><entry><title type="html">96 App Logos Impressions</title><link href="http://localhost:4000/96-app-logos-impression" rel="alternate" type="text/html" title="96 App Logos Impressions" /><published>2017-07-10T00:00:00+05:30</published><updated>2017-07-10T00:00:00+05:30</updated><id>http://localhost:4000/96-cnn-app-logos-impressions</id><content type="html" xml:base="http://localhost:4000/96-app-logos-impression">&lt;h3 id=&quot;goal&quot;&gt;GOAL&lt;/h3&gt;
+
+&lt;p&gt;Do logo’s hold first impression on people, to try.&lt;/p&gt;
+
+&lt;h3 id=&quot;descriptions&quot;&gt;Descriptions:&lt;/h3&gt;
+
+&lt;p&gt;First impression is generally best impression for two reasons (1) It’s gives first information one collects and remembers to it forever (2) For some reason it works all the time.&lt;/p&gt;
+
+&lt;p&gt;In today world, most everything we see/need is either a Android App or it is in Apple App Store. So, when we are looking at the Apps, for search we generally go for the Apps we have heard of its feedback from our fellow people or depending on the need.&lt;/p&gt;
+
+&lt;p&gt;So in the second scenario, based up on the looks we judge if an App is actually looks worth trying.&lt;/p&gt;
+
+&lt;p&gt;In this project, I want to build a neural network system to check if it can identify pattern that are used by most famous brands compared to not yet famous brands.&lt;/p&gt;
+
+&lt;p&gt;Why logo’s? Because they are the first impression of a company.&lt;/p&gt;
+
+&lt;h3 id=&quot;sources&quot;&gt;Sources&lt;/h3&gt;</content><summary type="html">GOAL</summary></entry><entry><title type="html">97 Fractal Analytics - Time Series Challenge</title><link href="http://localhost:4000/97-fractal-analytics-time-series-challenge" rel="alternate" type="text/html" title="97 Fractal Analytics - Time Series Challenge" /><published>2017-06-06T00:00:00+05:30</published><updated>2017-06-06T00:00:00+05:30</updated><id>http://localhost:4000/97-fractal-analytics-time-series-challenge</id><content type="html" xml:base="http://localhost:4000/97-fractal-analytics-time-series-challenge">&lt;h2 id=&quot;97---fractal-analytics---time-series-challenge&quot;&gt;97 - Fractal Analytics - Time Series Challenge&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://datahack.analyticsvidhya.com/contest/fractal-analytics-hiring-hackathon/lb&quot;&gt;LeaderBoard Rank 129/211&lt;/a&gt;&lt;/p&gt;
 

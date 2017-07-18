@@ -1,11 +1,11 @@
 ---
 layout: page
 title: 97 Fractal Analytics - Time Series Challenge
-permalink: /97_fractal_analytics_time_series_challenge/
+date:   2017-06-06
+permalink: 97-fractal-analytics-time-series-challenge
 ---
 
 ## 97 - Fractal Analytics - Time Series Challenge
-
 
 <a href="https://datahack.analyticsvidhya.com/contest/fractal-analytics-hiring-hackathon/lb">LeaderBoard Rank 129/211</a>
 

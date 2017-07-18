@@ -2,10 +2,11 @@ docs_list_title: Sample Posts
 docs:
 
 - title: "Welcome to Jekyll!"
-  url: welcome_to-jekyll
+  url: welcome-to-jekyll
 
 - title: 97 - Fractal Analytics - Time Series Analytics
   url: 97_fractal_analytics_time_series_challenge
 
-- title: Deployment
-  url: deployment.html
+- title: 96 - Convolution Neural Networks - App Logos
+  url: 97_fractal_analytics_time_series_challenge
+
