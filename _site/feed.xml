@@ -1,5 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-07-18T18:14:53+05:30</updated><id>http://localhost:4000//</id><title type="html">My Journey into (Data) Science</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</subtitle><entry><title type="html">95 Autompg Dataset</title><link href="http://localhost:4000/95_autompg_dataset" rel="alternate" type="text/html" title="95 Autompg Dataset" /><published>2017-07-15T00:00:00+05:30</published><updated>2017-07-15T00:00:00+05:30</updated><id>http://localhost:4000/95-autompg-dataset</id><content type="html" xml:base="http://localhost:4000/95_autompg_dataset">&lt;p&gt;Home Page: &lt;a href=&quot;https://www.kaggle.com/uciml/autompg-dataset&quot;&gt;https://www.kaggle.com/uciml/autompg-dataset&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-07-25T12:13:06+05:30</updated><id>http://localhost:4000//</id><title type="html">My Journey into (Data) Science</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</subtitle><entry><title type="html">94 Data Science Sessions</title><link href="http://localhost:4000/94_data_science_sessions" rel="alternate" type="text/html" title="94 Data Science Sessions" /><published>2017-07-24T00:00:00+05:30</published><updated>2017-07-24T00:00:00+05:30</updated><id>http://localhost:4000/94-data-science-sessions</id><content type="html" xml:base="http://localhost:4000/94_data_science_sessions">&lt;h1 id=&quot;data-science-sessions&quot;&gt;Data Science Sessions&lt;/h1&gt;
+
+&lt;h3 id=&quot;gist-of-session1&quot;&gt;Gist of Session1:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Data Science is everyday things. Same as the definition of science. But what changed is the amount of data we have today.&lt;/li&gt;
+  &lt;li&gt;General pattern for any Science discoveries
+    &lt;ul&gt;
+      &lt;li&gt;Observations, Recording/Logging&lt;/li&gt;
+      &lt;li&gt;Pattern Matching, Theory Formulation&lt;/li&gt;
+      &lt;li&gt;Testing Theory, Real Life Applications.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Stages we generally have in Data Science -
+    &lt;ul&gt;
+      &lt;li&gt;70% of work # Goal, Data Collection, Data Processing, Data Analysis - Patterns/observations, Human readable data –&amp;gt; Machine understandable data.&lt;/li&gt;
+      &lt;li&gt;20% of work # Data Modelling&lt;/li&gt;
+      &lt;li&gt;10 % of work # Validation.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Types of Goal - Supervised Learning, Unsupervised Learning, Semi-Supervised.&lt;/li&gt;
+  &lt;li&gt;ML, a subset of AI. ML focussed in self-learning Alogo’s to learn quickly from large amounts of data.&lt;/li&gt;
+  &lt;li&gt;Types of ML
+    &lt;ul&gt;
+      &lt;li&gt;Alog’s that uses Linear Regression &amp;amp; Polynomial equations to understand pattern &amp;amp; formulate a equation&lt;/li&gt;
+      &lt;li&gt;SVM that uses multiple Linear Regression &amp;amp; Polynomial equations&lt;/li&gt;
+      &lt;li&gt;RF that are forest of graphs like tree to understand data.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Long back, in the the first Data Science(2015 or 2016) session I attended in Pramati Technologies, which was given by Sachin &amp;amp; Apoorva, I learned this - Improve the data quality and rest improve gradually. I remember this very well because it was the time I wasted some few months* wondering how do I improve a models accuracy.&lt;/p&gt;
+
+&lt;p&gt;Till today I still feel good that I attending it. Just felt like sharing this. Thanks a lot Sachin.&lt;/p&gt;
+
+&lt;h3 id=&quot;gist-of-session2&quot;&gt;Gist of Session2:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Recap of all above - session1.&lt;/li&gt;
+  &lt;li&gt;Sklearn -
+    &lt;ul&gt;
+      &lt;li&gt;How to import sklearn - linear regression?&lt;/li&gt;
+      &lt;li&gt;How linear regression fails if it has to describe a consine curve?&lt;/li&gt;
+      &lt;li&gt;How polynomial curve can descrive consine curve but effects of Underfitting &amp;amp; Overfitting?(Razor’s Rule of selection simple model)&lt;/li&gt;
+      &lt;li&gt;How to import &amp;amp; apply following models for Regression (sklearn - boston dataset)
+        &lt;ul&gt;
+          &lt;li&gt;Dummy Regressor, Linear Regression, SVM  Linear, RF - Regressor.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Validation - we used skelearn.metrics.mean_squared_error&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In both the sessions, all the information that were shared is generic vocabulary in my team. No where in these sessions I went though Math or internal details - just basics as a child can understands.&lt;/p&gt;
+
+&lt;p&gt;Github Repo: &lt;a href=&quot;https://github.com/msampathkumar/data_science_sessions&quot;&gt;Slides, Python3 - Ipython, Notebooks&lt;/a&gt;&lt;/p&gt;</content><summary type="html">Data Science Sessions</summary></entry><entry><title type="html">95 Autompg Dataset</title><link href="http://localhost:4000/95_autompg_dataset" rel="alternate" type="text/html" title="95 Autompg Dataset" /><published>2017-07-15T00:00:00+05:30</published><updated>2017-07-15T00:00:00+05:30</updated><id>http://localhost:4000/95-autompg-dataset</id><content type="html" xml:base="http://localhost:4000/95_autompg_dataset">&lt;p&gt;Home Page: &lt;a href=&quot;https://www.kaggle.com/uciml/autompg-dataset&quot;&gt;https://www.kaggle.com/uciml/autompg-dataset&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;goal&quot;&gt;Goal:&lt;/h2&gt;
 
