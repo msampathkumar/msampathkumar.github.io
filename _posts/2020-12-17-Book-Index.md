@@ -1,7 +1,7 @@
 ---
 published: false
 ---
-# BOOK1
+# BOOK
 
 ## Index
 
@@ -32,38 +32,6 @@ Section4:
 6. OOPS - Design Patterns 2 (https://medium.com/educative/the-7-most-important-software-design-patterns-d60e546afb0e)
 
 
-# BOOK2
-
-
-## Index
-
-
-Topics
-- Bottles neck of programming/applications - Network, Compute, Memory
-- Monolitch vs Distributed
-- 3 Tier software architecture
-- Servers, VM, Containers
-- Distruted Server Components
-	- Load Balencers
-    - Distributed Cache
-    - CND, Conent Delivery Network
-    - REST API, SOAP
-	- 12 Factor APP
-    - Security
-- Micro Services Architecute
-	- Micro Services Architecute using Docker
-	- Micro Services Architecute using Docker
-- Distributed System & Scalable System
-	- 
-- Mutithreading, Async, Synchonisaiton
-
-- CI - CD, Automation
-
-- Understanding AWS Services
-
-
-
-
 
 
 
@@ -72,4 +40,3 @@ Topics
 
 
 Thank you for users who provided information at https://www.quora.com/What-is-the-best-online-data-structure-and-algorithm-MOOC-or-course-in-C-or-C++
-
