@@ -26,7 +26,7 @@ github_username:  msampathkumar
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-leap-day
 gems:
   - jekyll-feed
 exclude:
