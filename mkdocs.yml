@@ -1,0 +1,46 @@
+# General settings
+site_name: msampathkumar.github.io
+site_description: Personal blog of Sampath Kumar M
+site_author: Sampath Kumar
+
+# Repository
+repo_name: demo
+repo_url: https://github.com/msampathkumar/msampathkumar.github.io/
+
+# Copyright
+copyright: Copyright © Sampath Kumar 2025
+theme:
+  icon:
+    logo: fontawesome/solid/pen
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - navigation.indexes # for blog/index.md
+markdown_extensions:
+  - attr_list
+  # emojis
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - blog
+  - search
+
+nav:
+#  - blog/index.md
+  - Blog:
+    - blog/index.md
