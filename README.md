@@ -1,4 +1,4 @@
-# msampathkumar.github.io
+# GetStarted
 
 GitHub Pages Personal Site -  Website Repo
 

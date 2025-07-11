@@ -1,14 +1,14 @@
 # General settings
-site_name: msampathkumar.github.io
+site_name: Google Cloud - Gemini Cookbook # msampathkumar.github.io
 site_description: Personal blog of Sampath Kumar M
 site_author: Sampath Kumar
 
 # Repository
-repo_name: demo
+repo_name: Github
 repo_url: https://github.com/msampathkumar/msampathkumar.github.io/
 
 # Copyright
-copyright: Copyright © Sampath Kumar 2025
+copyright: Copyright 2025 © M Sampath Kumar
 theme:
   icon:
     logo: fontawesome/solid/pen
@@ -41,6 +41,8 @@ plugins:
   - search
 
 nav:
-#  - blog/index.md
+  - Gemini Cookbook:
+    - google-cloud-gemini-cookbook/index.md
+  - index.md
   - Blog:
     - blog/index.md
