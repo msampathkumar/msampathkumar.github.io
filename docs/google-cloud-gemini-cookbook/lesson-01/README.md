@@ -2,6 +2,8 @@
 
 In this lesson, you'll learn how to deploy a Streamlit web app to Google Cloud Run with ease.
 
+GitHub Source: [Link](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/)
+
 ## What you'll learn
 
 *   What Streamlit is and why you should use it.
