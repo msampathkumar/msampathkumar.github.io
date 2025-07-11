@@ -43,6 +43,8 @@ plugins:
 nav:
   - Gemini Cookbook:
     - google-cloud-gemini-cookbook/index.md
+    - Lesson-01: google-cloud-gemini-cookbook/lesson-01/README.md
+    - Lesson-02: google-cloud-gemini-cookbook/lesson-02/README.md
   - index.md
   - Blog:
     - blog/index.md
