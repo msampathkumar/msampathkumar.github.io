@@ -13,8 +13,6 @@
       
       
       
-        <link rel="prev" href="..">
-      
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Blog - Google Cloud - Gemini Cookbook</title>
+        <title>Getting Started: Gemini Cookbook Setup - Google Cloud - Gemini Cookbook</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#blog" class="md-skip">
+        <a href="#getting-started-gemini-cookbook-setup" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Blog
+              Getting Started: Gemini Cookbook Setup
             
           </span>
         </div>
@@ -330,8 +328,6 @@
       
   
   
-    
-  
   
   
     
@@ -347,15 +343,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../blog/" class="md-nav__link ">
               
   
   
@@ -368,13 +364,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -433,6 +429,116 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Environment Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clone-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clone the Repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-a-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Up a Virtual Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-google-cloud-configuration-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Google Cloud Configuration (CLI)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Google Cloud Configuration (CLI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-and-initialize-google-cloud-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install and Initialize Google Cloud SDK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticate-for-local-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authenticate for Local Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-required-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable Required APIs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -440,16 +546,89 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="blog">Blog</h1>
-      </header>
-      
-      
-    </div>
-  </div>
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
 
+
+  
+  
+
+
+<h1 id="getting-started-gemini-cookbook-setup">Getting Started: Gemini Cookbook Setup</h1>
+<p>This guide provides step-by-step instructions to set up your local environment and Google Cloud project to follow the recipes in the Gemini Cookbook.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you begin, ensure you have the following:</p>
+<ul>
+<li><strong>Python:</strong> Version 3.8 or higher.</li>
+<li><strong>Google Cloud Account:</strong> An active GCP account with billing enabled. If you're new, you can sign up for a <a href="https://cloud.google.com/free">free trial</a>.</li>
+<li><strong>Basic Knowledge:</strong> Familiarity with Python, the command line, and Git.</li>
+</ul>
+<h2 id="1-environment-setup">1. Environment Setup</h2>
+<p>First, let's set up the project on your local machine.</p>
+<h3 id="clone-the-repository">Clone the Repository</h3>
+<p>Open your terminal and clone the cookbook's GitHub repository:</p>
+<pre><code class="language-bash">git clone https://github.com/msampathkumar/msampathkumar.github.io.git
+cd msampathkumar.github.io
+</code></pre>
+<h3 id="set-up-a-virtual-environment">Set Up a Virtual Environment</h3>
+<p>It's a best practice to use a virtual environment to manage project dependencies.</p>
+<pre><code class="language-bash"># Create a virtual environment
+python3 -m venv .venv
+
+# Activate the virtual environment
+# On macOS and Linux:
+source .venv/bin/activate
+# On Windows:
+# .\.venv\Scripts\activate
+</code></pre>
+<h3 id="install-dependencies">Install Dependencies</h3>
+<p>Install the common Python packages needed for the cookbook examples:</p>
+<pre><code class="language-bash">pip install google-generativeai google-cloud-aiplatform streamlit python-dotenv
+</code></pre>
+<h2 id="2-google-cloud-configuration-cli">2. Google Cloud Configuration (CLI)</h2>
+<p>Next, configure the Google Cloud CLI (<code>gcloud</code>) to interact with your GCP project.</p>
+<h3 id="install-and-initialize-google-cloud-sdk">Install and Initialize Google Cloud SDK</h3>
+<p>If you don't have it, install the Google Cloud SDK. After installation, initialize it:</p>
+<pre><code class="language-bash">gcloud init
+</code></pre>
+<p>Follow the on-screen prompts to log in, select your GCP project, and set a default region.</p>
+<h3 id="authenticate-for-local-development">Authenticate for Local Development</h3>
+<p>For local development, authenticating with your user credentials is the easiest way to get started.</p>
+<pre><code class="language-bash">gcloud auth application-default login
+</code></pre>
+<h3 id="enable-required-apis">Enable Required APIs</h3>
+<p>You need to enable the Vertex AI API to use Gemini models.</p>
+<pre><code class="language-bash"># Set your project ID (if you didn't during gcloud init)
+export PROJECT_ID=&quot;your-gcp-project-id&quot;
+gcloud config set project $PROJECT_ID
+
+# Enable the Vertex AI API
+gcloud services enable aiplatform.googleapis.com --project $PROJECT_ID
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> Replace <code>your-gcp-project-id</code> with your actual Google Cloud Project ID.</p>
+</blockquote>
+<h2 id="next-steps">Next Steps</h2>
+<p>You are all set! Your environment is configured and you're ready to start building with Gemini.</p>
+<p>Head over to the <strong>Full Lesson Plan</strong> to see all the available recipes.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>

@@ -13,23 +13,21 @@
       
       
       
-        <link rel="prev" href="..">
       
       
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Blog - Google Cloud - Gemini Cookbook</title>
+        <title>Lesson 01: Deploying a Streamlit App to Google Cloud Run - Google Cloud - Gemini Cookbook</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#blog" class="md-skip">
+        <a href="#lesson-01-deploying-a-streamlit-app-to-google-cloud-run" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Google Cloud - Gemini Cookbook" class="md-header__button md-logo" aria-label="Google Cloud - Gemini Cookbook" data-md-component="logo">
+    <a href="../.." title="Google Cloud - Gemini Cookbook" class="md-header__button md-logo" aria-label="Google Cloud - Gemini Cookbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m362.7 19.3-48.4 48.4 130 130 48.4-48.4c25-25 25-65.5 0-90.5l-39.4-39.5c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2c-2.5 8.5-.2 17.6 6 23.8s15.3 8.5 23.7 6.1L151 475.7c14.1-4.2 27-11.8 37.4-22.2l233.3-233.2z"/></svg>
@@ -110,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Blog
+              Lesson 01: Deploying a Streamlit App to Google Cloud Run
             
           </span>
         </div>
@@ -226,7 +224,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Google Cloud - Gemini Cookbook" class="md-nav__button md-logo" aria-label="Google Cloud - Gemini Cookbook" data-md-component="logo">
+    <a href="../.." title="Google Cloud - Gemini Cookbook" class="md-nav__button md-logo" aria-label="Google Cloud - Gemini Cookbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m362.7 19.3-48.4 48.4 130 130 48.4-48.4c25-25 25-65.5 0-90.5l-39.4-39.5c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2c-2.5 8.5-.2 17.6 6 23.8s15.3 8.5 23.7 6.1L151 475.7c14.1-4.2 27-11.8 37.4-22.2l233.3-233.2z"/></svg>
@@ -274,7 +272,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../google-cloud-gemini-cookbook/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -311,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -330,8 +328,6 @@
       
   
   
-    
-  
   
   
     
@@ -347,15 +343,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../blog/" class="md-nav__link ">
               
   
   
@@ -368,13 +364,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -390,7 +386,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -433,6 +429,119 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What you'll learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-streamlit" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Streamlit?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-google-cloud-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Google Cloud Run?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-get-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Let's get started!
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Let&#39;s get started!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-set-up-your-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set up your environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-a-simple-streamlit-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Create a simple Streamlit app
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-the-app-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Run the app locally
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-deploy-to-cloud-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Deploy to Cloud Run
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleanup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -440,16 +549,119 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="blog">Blog</h1>
-      </header>
-      
-      
-    </div>
-  </div>
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
 
+
+  
+  
+
+
+<h1 id="lesson-01-deploying-a-streamlit-app-to-google-cloud-run">Lesson 01: Deploying a Streamlit App to Google Cloud Run</h1>
+<p>In this lesson, you'll learn how to deploy a Streamlit web app to Google Cloud Run with ease.</p>
+<h2 id="what-youll-learn">What you'll learn</h2>
+<ul>
+<li>What Streamlit is and why you should use it.</li>
+<li>How to build a simple Streamlit application.</li>
+<li>What Cloud Run is and why it's a great choice for deploying serverless applications.</li>
+<li>How to deploy a Streamlit application directly to Cloud Run from your source code.</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>A Google Cloud Project with billing enabled.</li>
+<li>The <code>gcloud</code> CLI installed and configured.</li>
+<li>Python 3.8 or later.</li>
+</ul>
+<p>For development, we recommend using the Google Cloud Shell, which comes pre-installed with the necessary tools.</p>
+<h2 id="what-is-streamlit">What is Streamlit?</h2>
+<p><a href="https://streamlit.io/">Streamlit</a> is an open-source Python framework that makes it easy to create and share beautiful, custom web apps for machine learning and data science. In just a few lines of code, you can build and deploy powerful data apps.</p>
+<p>While Streamlit is not as feature-rich as full-fledged web frameworks like Django or Flask, its strength lies in its simplicity and ability to create highly interactive applications quickly. This makes it an excellent choice for building demos and prototypes.</p>
+<h2 id="what-is-google-cloud-run">What is Google Cloud Run?</h2>
+<p><a href="https://cloud.google.com/run">Cloud Run</a> is a fully managed serverless platform that enables you to run stateless containers that are invocable via web requests or Pub/Sub events. You can deploy your code to Cloud Run, and it will automatically scale up or down based on traffic.</p>
+<p>Here are some of the benefits of using Cloud Run:</p>
+<ul>
+<li><strong>Easy to use:</strong> Deploy your application with a single command.</li>
+<li><strong>Serverless:</strong> No infrastructure to manage.</li>
+<li><strong>Scalable:</strong> Automatically scales to meet demand.</li>
+<li><strong>Cost-effective:</strong> Pay only for the resources you use.</li>
+</ul>
+<h2 id="lets-get-started">Let's get started!</h2>
+<h3 id="1-set-up-your-environment">1. Set up your environment</h3>
+<p>Create a virtual environment and install the required dependencies:</p>
+<pre><code class="language-bash">python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+</code></pre>
+<h3 id="2-create-a-simple-streamlit-app">2. Create a simple Streamlit app</h3>
+<p>Create a file named <code>streamlit_app.py</code> with the following content:</p>
+<pre><code class="language-python">import streamlit as st
+
+st.title(&quot;Sample AI App&quot;)
+
+st.text(&quot;This is a sample app.&quot;)
+</code></pre>
+<h3 id="3-run-the-app-locally">3. Run the app locally</h3>
+<p>To run the app locally, use the following command:</p>
+<pre><code class="language-bash">streamlit run streamlit_app.py --server.port 8080
+</code></pre>
+<p>You can now view your app by opening your browser and navigating to <code>http://localhost:8080</code>.</p>
+<h3 id="4-deploy-to-cloud-run">4. Deploy to Cloud Run</h3>
+<p>To deploy your app to Cloud Run, you'll need to create a <code>Procfile</code> and a <code>deploy.sh</code> script.</p>
+<p><strong>Procfile</strong></p>
+<p>Create a file named <code>Procfile</code> with the following content:</p>
+<pre><code>web: streamlit run streamlit_app.py --server.port=8080 --server.address=0.0.0.0 --server.enableCORS=false --browser.gatherUsageStats=false
+</code></pre>
+<p>This file tells Cloud Run how to start your application.</p>
+<p><strong>deploy.sh</strong></p>
+<p>Create a file named <code>deploy.sh</code> with the following content:</p>
+<pre><code class="language-bash">#!/bin/bash
+# Purpose: To deploy the App to Cloud Run.
+
+# Google Cloud Project ID
+PROJECT=&quot;your-gcp-project-id&quot;
+
+# Google Cloud Region
+LOCATION=&quot;us-central1&quot;
+
+# Deploy app from source code
+gcloud run deploy simple-app --source . --region=$LOCATION --project=$PROJECT --allow-unauthenticated
+</code></pre>
+<p><strong>Important:</strong> Replace <code>"your-gcp-project-id"</code> with your actual Google Cloud Project ID.</p>
+<p>Now, run the deployment script:</p>
+<pre><code class="language-bash">bash deploy.sh
+</code></pre>
+<p>This command will build a container image from your source code, push it to the container registry, and deploy it to Cloud Run. Once the deployment is complete, you'll see a service URL in the output.</p>
+<p>Congratulations 🎉! You have successfully deployed your Streamlit app to Cloud Run.</p>
+<h2 id="cleanup">Cleanup</h2>
+<p>To avoid incurring future charges, delete the resources you created:</p>
+<ul>
+<li>Go to the <a href="https://console.cloud.google.com/run">Cloud Run console</a> and delete your application.</li>
+<li>Go to the <a href="https://console.cloud.google.com/gcr">Container Registry</a> and delete the container image.</li>
+</ul>
+<h2 id="learn-more">Learn More</h2>
+<ul>
+<li><a href="https://cloud.google.com/run/docs">Cloud Run Documentation</a></li>
+<li><a href="https://docs.streamlit.io/">Streamlit Documentation</a></li>
+<li><a href="https://cloud.google.com/run/docs/authenticating/overview">Authenticating to Cloud Run</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
@@ -486,10 +698,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   </body>
