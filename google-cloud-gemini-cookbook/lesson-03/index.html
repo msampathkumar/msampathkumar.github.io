@@ -927,7 +927,8 @@ frequently-referenced content once. You then refer to this cached content using
 a simple, lightweight name in your subsequent API calls. This drastically saves
 tokens, reduces latency, and lowers costs, especially when dealing with large
 files.</p>
-<p><strong>Example Use Case</strong>: Let update our chatbot a chatbot to be expert on the
+<p><strong>Example Use Case</strong>: Efficient retrieval of information from large, static knowledge bases, optimizing token usage, and simplifying your requests to model. 📦</p>
+<p>Let update our chatbot a chatbot to be expert on the
 Gemini family of models, using two key research papers as its knowledge base.</p>
 <ul>
 <li>Paper 1: Gemini: A Family of Highly Capable Multimodal
@@ -952,27 +953,27 @@ Now look at these research papers, and answer the following questions.
 &quot;&quot;&quot;
 
 cache_objects = [
-   Part.from_uri(
-      file_uri=&quot;gs://cloud-samples-data/generative-ai/pdf/2312.11805v3.pdf&quot;,
-      mime_type=&quot;application/pdf&quot;,
-   ),
-   Part.from_uri(
-      file_uri=&quot;gs://cloud-samples-data/generative-ai/pdf/2403.05530.pdf&quot;,
-      mime_type=&quot;application/pdf&quot;,
-   )]
+    Part.from_uri(
+        file_uri=&quot;gs://cloud-samples-data/generative-ai/pdf/2312.11805v3.pdf&quot;,
+        mime_type=&quot;application/pdf&quot;,
+    ),
+    Part.from_uri(
+        file_uri=&quot;gs://cloud-samples-data/generative-ai/pdf/2403.05530.pdf&quot;,
+        mime_type=&quot;application/pdf&quot;,
+    ),
+]
 
 content_cache = client.caches.create(
-   model=&quot;gemini-2.5-flash&quot;,
-   config=CreateCachedContentConfig(
-      contents=[Content(role=&quot;user&quot;, parts=cache_objects)],
-      system_instruction=system_instruction,
-      display_name=&quot;example-cache&quot;,
-      ttl=&quot;86400s&quot;,
-   ),
+    model=&quot;gemini-2.5-flash&quot;,
+    config=CreateCachedContentConfig(
+        contents=[Content(role=&quot;user&quot;, parts=cache_objects)],
+        system_instruction=system_instruction,
+        display_name=&quot;example-cache&quot;,
+        ttl=&quot;86400s&quot;,
+    ),
 )
 </code></pre>
-<p><strong>Note</strong>: Cache is created with a TTL (time to live). After specific amount of
-time, the cache will be deleted.</p>
+<p><strong>Note</strong>: Cache is created with a TTL (time to live). After a specific amount of time, the cache will be deleted.</p>
 <p>Once the cache is created you will a cache name (e.g.,
 cachedContents/f1e2d3c4-a5b6-7890-a1b2-c3d4e5f6a7b8), which we will use with
 chatbot.</p>
@@ -980,17 +981,17 @@ chatbot.</p>
 <p>Once the cache is created, you can use it in your chatbot by passing its name
 in the <code>GenerateContentConfig</code> object. For example:</p>
 <pre><code class="language-python">system_instruction = &quot;...&quot;
-cache_name = &quot;projects/.../locations/us-central1/keyRings/.../cryptoKeys/...&quot;,
+cache_name = (&quot;projects/.../locations/us-central1/keyRings/.../cryptoKeys/...&quot;,)
 
 chat_session = client.chats.create(
-   config=GenerateContentConfig(
-      cached_content=cache_name,
-      system_instruction=None if cache_name else system_instruction,
-   )
+    config=GenerateContentConfig(
+        cached_content=cache_name,
+        system_instruction=None if cache_name else system_instruction,
+    )
 )
 </code></pre>
 <p>Since the Cache has a defined timelimit, it required a little attention to
-avoid any potential issues. So let create a CacheManager to manage the cache,
+avoid any potential issues. So I hae created a CacheManager to manage the cache,
 which will automatically clean up expired caches.</p>
 <p>Here is the content for <code>cache.py</code></p>
 <p>Examples:</p>
@@ -1003,7 +1004,7 @@ which will automatically clean up expired caches.</p>
 <li>Clone this repository and navigate to the directory</li>
 </ol>
 <pre><code class="language-bash">git clone https://github.com/msampathkumar/msampathkumar.github.io.git
-cd docs/google-cloud-gemini-cookbook/lesson-02
+cd docs/google-cloud-gemini-cookbook/lesson-03
 </code></pre>
 <ol>
 <li>Setup your virtual environment and install dependencies:</li>
@@ -1022,6 +1023,7 @@ pip install -r requirements.txt
 </ol>
 <pre><code class="language-bash">bash deploy.sh
 </code></pre>
+<p>Github: https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook</p>
 
 
 
