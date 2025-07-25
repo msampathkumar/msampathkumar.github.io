@@ -196,23 +196,24 @@ Now look at these research papers, and answer the following questions.
 """
 
 cache_objects = [
-   Part.from_uri(
-      file_uri="gs://cloud-samples-data/generative-ai/pdf/2312.11805v3.pdf",
-      mime_type="application/pdf",
-   ),
-   Part.from_uri(
-      file_uri="gs://cloud-samples-data/generative-ai/pdf/2403.05530.pdf",
-      mime_type="application/pdf",
-   )]
+    Part.from_uri(
+        file_uri="gs://cloud-samples-data/generative-ai/pdf/2312.11805v3.pdf",
+        mime_type="application/pdf",
+    ),
+    Part.from_uri(
+        file_uri="gs://cloud-samples-data/generative-ai/pdf/2403.05530.pdf",
+        mime_type="application/pdf",
+    ),
+]
 
 content_cache = client.caches.create(
-   model="gemini-2.5-flash",
-   config=CreateCachedContentConfig(
-      contents=[Content(role="user", parts=cache_objects)],
-      system_instruction=system_instruction,
-      display_name="example-cache",
-      ttl="86400s",
-   ),
+    model="gemini-2.5-flash",
+    config=CreateCachedContentConfig(
+        contents=[Content(role="user", parts=cache_objects)],
+        system_instruction=system_instruction,
+        display_name="example-cache",
+        ttl="86400s",
+    ),
 )
 ```
 
@@ -230,13 +231,13 @@ in the `GenerateContentConfig` object. For example:
 
 ```python
 system_instruction = "..."
-cache_name = "projects/.../locations/us-central1/keyRings/.../cryptoKeys/...",
+cache_name = ("projects/.../locations/us-central1/keyRings/.../cryptoKeys/...",)
 
 chat_session = client.chats.create(
-   config=GenerateContentConfig(
-      cached_content=cache_name,
-      system_instruction=None if cache_name else system_instruction,
-   )
+    config=GenerateContentConfig(
+        cached_content=cache_name,
+        system_instruction=None if cache_name else system_instruction,
+    )
 )
 ```
 
