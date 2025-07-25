@@ -13,6 +13,10 @@
       
       
       
+        <link rel="prev" href="../lesson-01/">
+      
+      
+        <link rel="next" href="../lesson-03/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Lesson 2: Your First Conversational AI with Streamlit and Gemini - Google Cloud - Gemini Cookbook</title>
+        <title>Lesson-02 - Google Cloud - Gemini Cookbook</title>
       
     
     
@@ -72,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lesson-2-your-first-conversational-ai-with-streamlit-and-gemini" class="md-skip">
+        <a href="#lesson-2-deploy-your-ai-chatbot-to-google-cloud-run-go-live" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lesson 2: Your First Conversational AI with Streamlit and Gemini
+              Lesson-02
             
           </span>
         </div>
@@ -251,6 +255,8 @@
       
   
   
+    
+  
   
   
     
@@ -260,15 +266,23 @@
           
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -284,15 +298,271 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Gemini Cookbook
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson-01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lesson-02
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson-02
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Create
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You'll Need
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What You&#39;ll Need">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mandatory-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mandatory steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-get-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      Let's Get Building!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-look-under-the-hood" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Look Under the Hood
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Look Under the Hood">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-chatbot-ui-streamlit_apppy" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Chatbot UI: streamlit_app.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-brains-of-the-operation-llmpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Brains of the Operation: llm.py
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Brains of the Operation: llm.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to-run-chatbot-in-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      To run chatbot in CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-run-streamlit-chatbot" class="md-nav__link">
+    <span class="md-ellipsis">
+      To run streamlit chatbot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy the application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#you-did-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      You Did It!
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson-03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson-04/README.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson-04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -571,10 +841,19 @@
   
 
 
-<h1 id="lesson-2-your-first-conversational-ai-with-streamlit-and-gemini">Lesson 2: Your First Conversational AI with Streamlit and Gemini</h1>
-<p>Welcome to the second lesson in our Gemini Cookbook series! This time, we're diving into the exciting world of conversational AI. You'll learn to build a smart, interactive chatbot using the power of Streamlit and Google's Gemini 1.5 Flash model. We'll be using the official Google Cloud Vertex AI SDK, which has powerful features like chat sessions that give your bot a memory.</p>
+<h1 id="lesson-2-deploy-your-ai-chatbot-to-google-cloud-run-go-live">Lesson 2: ☁️ Deploy Your AI Chatbot to Google Cloud Run: Go Live!</h1>
+<p>Welcome to the second lesson in our Gemini Cookbook series! This time, we're
+diving into the exciting world of conversational AI. You'll learn to build a
+smart, interactive chatbot using the power of Streamlit and Google's Gemini 2.5
+Flash model. We'll be using the official Google Cloud Vertex AI SDK, which has
+powerful features like chat sessions that give your bot a memory.</p>
+<p>GitHub Source:
+<a href="https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/">Link</a></p>
 <h2 id="what-youll-create">What You'll Create</h2>
-<p>Get ready to build a sleek, web-based chatbot. With Streamlit as our frontend, your chatbot will connect to the mighty Gemini 1.5 Flash model, enabling you to have dynamic and stateful conversations. It's like having your own personal AI assistant!</p>
+<p>Get ready to build a sleek, web-based chatbot. With Streamlit as our frontend,
+your chatbot will connect to the mighty Gemini 1.5 Flash model, enabling you to
+have dynamic and stateful conversations. It's like having your own personal AI
+assistant!</p>
 <p><img alt="Your Streamlit Chatbot in Action" src="https://storage.googleapis.com/github-repo/img/lesson-02-streamlit-chatbot.png" /></p>
 <h2 id="what-youll-need">What You'll Need</h2>
 <p>To get started, make sure you have the following essentials:</p>
@@ -584,41 +863,54 @@
 <li>The <code>pip</code> package manager for installing our dependencies.</li>
 </ul>
 <h3 id="mandatory-steps">Mandatory steps</h3>
-<p>This is a mandatory steps to access Gemini Models from your Google Cloud Project.</p>
-<p>I have installed the Gcloud tool and used <a href="https://cloud.google.com/docs/authentication/provide-credentials-adc">Application Default Credentials</a> to get the credentials.  If you want to run the code in Google Cloud project, then you need to update respective service-account with the required permissions. For details, check out this <a href="https://cloud.google.com/docs/authentication/set-up-adc-attached-service-account">user-managed service account</a> article.</p>
+<p>This is a mandatory steps to access Gemini Models from your Google Cloud
+Project.</p>
+<p>I have installed the Gcloud tool and used
+<a href="https://cloud.google.com/docs/authentication/provide-credentials-adc">Application Default Credentials</a>
+to get the credentials. If you want to run the code in Google Cloud project,
+then you need to update respective service-account with the required
+permissions. For details, check out this
+<a href="https://cloud.google.com/docs/authentication/set-up-adc-attached-service-account">user-managed service account</a>
+article.</p>
 <h2 id="lets-get-building">Let's Get Building!</h2>
 <ol>
-<li>
-<p><strong>Get the Code:</strong> First, clone the repository and hop into the right directory:</p>
+<li><strong>Get the Code:</strong> First, clone the repository and hop into the right
+   directory:</li>
+</ol>
 <p><code>bash
-git clone https://github.com/msampathkumar/msampathkumar.github.io.git
-cd msampathkumar.github.io/docs/google-cloud-gemini-cookbook/lesson-02</code></p>
-</li>
-<li>
-<p><strong>Set Up Your Workspace:</strong> Create a virtual environment to keep things tidy:</p>
+   git clone https://github.com/msampathkumar/msampathkumar.github.io.git
+   cd msampathkumar.github.io/docs/google-cloud-gemini-cookbook/lesson-02</code></p>
+<ol>
+<li><strong>Set Up Your Workspace:</strong> Create a virtual environment to keep things tidy:</li>
+</ol>
 <p><code>bash
-python3 -m venv .venv
-source .venv/bin/activate</code></p>
-</li>
-<li>
-<p><strong>Install the Magic:</strong> Time to install the necessary Python packages:</p>
+   python3 -m venv .venv
+   source .venv/bin/activate</code></p>
+<ol>
+<li><strong>Install the Magic:</strong> Time to install the necessary Python packages:</li>
+</ol>
 <p><code>bash
-pip install -r requirements.txt</code></p>
-</li>
-<li>
-<p><strong>Connect to Google Cloud:</strong> Authenticate your local environment to use Google Cloud services:</p>
-</li>
+   pip install -r requirements.txt</code></p>
+<ol>
+<li><strong>Connect to Google Cloud:</strong> Authenticate your local environment to use
+   Google Cloud services:</li>
 </ol>
 <pre><code class="language-bash">gcloud auth application-default login
 </code></pre>
 <h2 id="a-look-under-the-hood">A Look Under the Hood</h2>
 <p>Let's take a peek at the code that makes our chatbot tick.</p>
 <h3 id="the-chatbot-ui-streamlit_apppy">The Chatbot UI: <code>streamlit_app.py</code></h3>
-<p>This file is the heart of our Streamlit app. It's responsible for:
-*   Providing a chat interface for user input.
-*   Displaying the response from the model.
-*   Maintaining the conversation history.</p>
-<p>While you would typically use Streamlit's <code>session_state</code> to store the conversation history manually, the Vertex AI SDK simplifies this. We'll use a <code>ChatSession</code> object from the SDK, which automatically handles the history for us. We just need to store this one object in <code>st.session_state</code> to make our chat stateful.</p>
+<p>This file is the heart of our Streamlit app. It's responsible for:</p>
+<ul>
+<li>Providing a chat interface for user input.</li>
+<li>Displaying the response from the model.</li>
+<li>Maintaining the conversation history.</li>
+</ul>
+<p>While you would typically use Streamlit's <code>session_state</code> to store the
+conversation history manually, the Vertex AI SDK simplifies this. We'll use a
+<code>ChatSession</code> object from the SDK, which automatically handles the history for
+us. We just need to store this one object in <code>st.session_state</code> to make our
+chat stateful.</p>
 <p>You can see the core logic below:</p>
 <pre><code class="language-python">import streamlit as st
 import llm
@@ -634,7 +926,11 @@ for message in st.session_state.chat_session.history:
         st.markdown(message.parts[0].text)
 </code></pre>
 <h3 id="the-brains-of-the-operation-llmpy">The Brains of the Operation: <code>llm.py</code></h3>
-<p>This file handles all the communication with the Gemini 2.5 Flash model. As we are using GenAI SDK, we can use environment variables to set up the required details for authentication. Also, GenAI SDK provides us with <code>Client</code> class which we can use to create a chat session and send messages to the Gemini Model and receive.</p>
+<p>This file handles all the communication with the Gemini 2.5 Flash model. As we
+are using GenAI SDK, we can use environment variables to set up the required
+details for authentication. Also, GenAI SDK provides us with <code>Client</code> class
+which we can use to create a chat session and send messages to the Gemini Model
+and receive.</p>
 <pre><code class="language-python">from google import genai
 
 # Using environment variables to pass essential parameters to the client.
@@ -651,12 +947,16 @@ chat_session = client.chats.create(&quot;gemini-2.0-flash-lite-001&quot;)
 </code></pre>
 <h2 id="deploy-the-application">Deploy the application</h2>
 <p>You can deploy your chatbot to Google Cloud Run and share it with the world.</p>
-<p>Use the <code>deploy.sh</code> script to package your app into a Docker image and send it to the Google Artifact Registry.</p>
+<p>Use the <code>deploy.sh</code> script to package your app into a Docker image and send it
+to the Google Artifact Registry.</p>
 <pre><code class="language-bash">./deploy.sh
 </code></pre>
 <p>The script will then deploy your app to Cloud Run, making it live on the web.</p>
 <h2 id="you-did-it">You Did It!</h2>
-<p>High five! You've built and deployed a fully functional chatbot with Streamlit and Gemini Pro. You've seen how to use the new Generative AI SDK and its chat features to create a more natural and engaging conversational experience. Now, go ahead and have a chat with your new AI friend!</p>
+<p>High five! You've built and deployed a fully functional chatbot with Streamlit
+and Gemini Pro. You've seen how to use the new Generative AI SDK and its chat
+features to create a more natural and engaging conversational experience. Now,
+go ahead and have a chat with your new AI friend!</p>
 
 
 
