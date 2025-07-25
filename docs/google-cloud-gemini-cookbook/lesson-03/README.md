@@ -166,7 +166,9 @@ a simple, lightweight name in your subsequent API calls. This drastically saves
 tokens, reduces latency, and lowers costs, especially when dealing with large
 files.
 
-**Example Use Case**: Let update our chatbot a chatbot to be expert on the
+**Example Use Case**: Efficient retrieval of information from large, static knowledge bases, optimizing token usage, and simplifying your requests to model. 📦
+
+Let update our chatbot a chatbot to be expert on the
 Gemini family of models, using two key research papers as its knowledge base.
 
 - Paper 1: Gemini: A Family of Highly Capable Multimodal
@@ -217,8 +219,7 @@ content_cache = client.caches.create(
 )
 ```
 
-**Note**: Cache is created with a TTL (time to live). After specific amount of
-time, the cache will be deleted.
+**Note**: Cache is created with a TTL (time to live). After a specific amount of time, the cache will be deleted.
 
 Once the cache is created you will a cache name (e.g.,
 cachedContents/f1e2d3c4-a5b6-7890-a1b2-c3d4e5f6a7b8), which we will use with
@@ -266,7 +267,7 @@ git clone https://github.com/msampathkumar/msampathkumar.github.io.git
 cd docs/google-cloud-gemini-cookbook/lesson-02
 ```
 
-1. Setup your virtual environment and install dependencies:
+2. Setup your virtual environment and install dependencies:
 
 ```bash
 python3 -m venv .venv
@@ -274,13 +275,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-1. Run the application locally to make sure it works as expected.
+3. Run the application locally to make sure it works as expected.
 
 ```bash
 streamlit run streamlit_app.py
 ```
 
-1. To deploy to Google Cloud Run, you can use the `deploy.sh` script:
+4. To deploy to Google Cloud Run, you can use the `deploy.sh` script:
 
 ```bash
 bash deploy.sh
