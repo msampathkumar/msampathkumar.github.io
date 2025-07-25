@@ -5,10 +5,11 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "black>=25.1.0",
+    "google-genai>=1.27.0",
+    "mdformat>=0.7.22",
+    "mdformat-black>=0.1.1",
+    "mdformat-shfmt>=0.2.0",
     "mkdocs-material>=9.6.15",
-]
-
-[tool.uv.workspace]
-members = [
-    "docs",
+    "streamlit>=1.47.0",
 ]
