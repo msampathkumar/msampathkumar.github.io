@@ -289,3 +289,15 @@ bash deploy.sh
 
 Github: https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook
 
+### Congratulations 🎉 ( ◠‿◠ )
+
+Congratulations, You've Achieved a Milestone!
+
+You successfully deployed a content-aware chatbot application to Google Cloud Run.
+
+In the next lesson, we will delve into two more features that will further enhance your chatbot's context awareness:
+
+1. **RAG**: Retrieval Augmented Generation (RAG)
+2. **Grounding**: Using Google Search
+
+Let's continue learning and exploring these innovative tools together!
