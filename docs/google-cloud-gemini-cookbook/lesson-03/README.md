@@ -243,7 +243,7 @@ chat_session = client.chats.create(
 ```
 
 Since the Cache has a defined timelimit, it required a little attention to
-avoid any potential issues. So let create a CacheManager to manage the cache,
+avoid any potential issues. So I hae created a CacheManager to manage the cache,
 which will automatically clean up expired caches.
 
 Here is the content for `cache.py`
@@ -264,7 +264,7 @@ Examples:
 
 ```bash
 git clone https://github.com/msampathkumar/msampathkumar.github.io.git
-cd docs/google-cloud-gemini-cookbook/lesson-02
+cd docs/google-cloud-gemini-cookbook/lesson-03
 ```
 
 2. Setup your virtual environment and install dependencies:
@@ -286,3 +286,6 @@ streamlit run streamlit_app.py
 ```bash
 bash deploy.sh
 ```
+
+Github: https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook
+
