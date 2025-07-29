@@ -16,7 +16,7 @@
         <link rel="prev" href="../lesson-02/">
       
       
-        <link rel="next" href="../..">
+        <link rel="next" href="../lesson-04/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -512,6 +512,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="To Deploy This Application on Google Cloud Run:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#congratulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Congratulations 🎉 ( ◠‿◠ )
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -530,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lesson-04/README.md" class="md-nav__link">
+      <a href="../lesson-04/" class="md-nav__link">
         
   
   
@@ -565,97 +580,12 @@
   
   
   <span class="md-ellipsis">
-    Welcome to MkDocs
+    Welcome to My Digital Garden
     
   </span>
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../blog/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Blog
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Blog
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Archive
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -783,6 +713,21 @@
       To Deploy This Application on Google Cloud Run:
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="To Deploy This Application on Google Cloud Run:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#congratulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Congratulations 🎉 ( ◠‿◠ )
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -927,9 +872,11 @@ frequently-referenced content once. You then refer to this cached content using
 a simple, lightweight name in your subsequent API calls. This drastically saves
 tokens, reduces latency, and lowers costs, especially when dealing with large
 files.</p>
-<p><strong>Example Use Case</strong>: Efficient retrieval of information from large, static knowledge bases, optimizing token usage, and simplifying your requests to model. 📦</p>
-<p>Let update our chatbot a chatbot to be expert on the
-Gemini family of models, using two key research papers as its knowledge base.</p>
+<p><strong>Example Use Case</strong>: Efficient retrieval of information from large, static
+knowledge bases, optimizing token usage, and simplifying your requests to
+model. 📦</p>
+<p>Let update our chatbot a chatbot to be expert on the Gemini family of models,
+using two key research papers as its knowledge base.</p>
 <ul>
 <li>Paper 1: Gemini: A Family of Highly Capable Multimodal
   Models.(<a href="https://storage.cloud.google.com/cloud-samples-data/generative-ai/pdf/2312.11805v3.pdf">2312.11805v3.pdf</a>)</li>
@@ -973,7 +920,8 @@ content_cache = client.caches.create(
     ),
 )
 </code></pre>
-<p><strong>Note</strong>: Cache is created with a TTL (time to live). After a specific amount of time, the cache will be deleted.</p>
+<p><strong>Note</strong>: Cache is created with a TTL (time to live). After a specific amount
+of time, the cache will be deleted.</p>
 <p>Once the cache is created you will a cache name (e.g.,
 cachedContents/f1e2d3c4-a5b6-7890-a1b2-c3d4e5f6a7b8), which we will use with
 chatbot.</p>
@@ -991,8 +939,8 @@ chat_session = client.chats.create(
 )
 </code></pre>
 <p>Since the Cache has a defined timelimit, it required a little attention to
-avoid any potential issues. So I hae created a CacheManager to manage the cache,
-which will automatically clean up expired caches.</p>
+avoid any potential issues. So I hae created a CacheManager to manage the
+cache, which will automatically clean up expired caches.</p>
 <p>Here is the content for <code>cache.py</code></p>
 <p>Examples:</p>
 <p><strong>Here is the example of not using Context Cache:</strong></p>
@@ -1023,7 +971,19 @@ pip install -r requirements.txt
 </ol>
 <pre><code class="language-bash">bash deploy.sh
 </code></pre>
-<p>Github: https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook</p>
+<p>Github:
+https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook</p>
+<h3 id="congratulations">Congratulations 🎉 ( ◠‿◠ )</h3>
+<p>Congratulations, You've Achieved a Milestone!</p>
+<p>You successfully deployed a content-aware chatbot application to Google Cloud
+Run.</p>
+<p>In the next lesson, we will delve into two more features that will further
+enhance your chatbot's context awareness:</p>
+<ol>
+<li><strong>RAG</strong>: Retrieval Augmented Generation (RAG)</li>
+<li><strong>Grounding</strong>: Using Google Search</li>
+</ol>
+<p>Let's continue learning and exploring these innovative tools together!</p>
 
 
 
