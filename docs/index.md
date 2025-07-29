@@ -1,19 +1,11 @@
-# Welcome to MkDocs
+# Welcome to My Digital Garden
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This is a collection of my personal notes, and things I am learning.
 
-## Commands
+## Cookbooks
 
-- `mkdocs new [dir-name]` - Create a new project.
-- `mkdocs serve` - Start the live-reloading docs server.
-- `mkdocs build` - Build the documentation site.
-- `mkdocs -h` - Print help message and exit.
+I'm excited to introduce my new "Cookbook" series! This is where I'll be sharing step-by-step guides and practical examples for various technologies.
 
-## Project layout
+The first cookbook in the series is the [Google Cloud Gemini Cookbook](./google-cloud-gemini-cookbook/index.md).
 
-```
-mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-```
+I hope you find these resources helpful!

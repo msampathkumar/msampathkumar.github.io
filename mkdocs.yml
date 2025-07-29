@@ -50,5 +50,5 @@ nav:
     - Lesson-03: google-cloud-gemini-cookbook/lesson-03/README.md
     - Lesson-04: google-cloud-gemini-cookbook/lesson-04/README.md
   - index.md
-  - Blog:
-    - blog/index.md
+#  - Blog:
+#    - blog/index.md

@@ -166,10 +166,12 @@ a simple, lightweight name in your subsequent API calls. This drastically saves
 tokens, reduces latency, and lowers costs, especially when dealing with large
 files.
 
-**Example Use Case**: Efficient retrieval of information from large, static knowledge bases, optimizing token usage, and simplifying your requests to model. 📦
+**Example Use Case**: Efficient retrieval of information from large, static
+knowledge bases, optimizing token usage, and simplifying your requests to
+model. 📦
 
-Let update our chatbot a chatbot to be expert on the
-Gemini family of models, using two key research papers as its knowledge base.
+Let update our chatbot a chatbot to be expert on the Gemini family of models,
+using two key research papers as its knowledge base.
 
 - Paper 1: Gemini: A Family of Highly Capable Multimodal
   Models.([2312.11805v3.pdf](https://storage.cloud.google.com/cloud-samples-data/generative-ai/pdf/2312.11805v3.pdf))
@@ -219,7 +221,8 @@ content_cache = client.caches.create(
 )
 ```
 
-**Note**: Cache is created with a TTL (time to live). After a specific amount of time, the cache will be deleted.
+**Note**: Cache is created with a TTL (time to live). After a specific amount
+of time, the cache will be deleted.
 
 Once the cache is created you will a cache name (e.g.,
 cachedContents/f1e2d3c4-a5b6-7890-a1b2-c3d4e5f6a7b8), which we will use with
@@ -243,8 +246,8 @@ chat_session = client.chats.create(
 ```
 
 Since the Cache has a defined timelimit, it required a little attention to
-avoid any potential issues. So I hae created a CacheManager to manage the cache,
-which will automatically clean up expired caches.
+avoid any potential issues. So I hae created a CacheManager to manage the
+cache, which will automatically clean up expired caches.
 
 Here is the content for `cache.py`
 
@@ -287,17 +290,20 @@ streamlit run streamlit_app.py
 bash deploy.sh
 ```
 
-Github: https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook
+Github:
+https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook
 
 ### Congratulations 🎉 ( ◠‿◠ )
 
 Congratulations, You've Achieved a Milestone!
 
-You successfully deployed a content-aware chatbot application to Google Cloud Run.
+You successfully deployed a content-aware chatbot application to Google Cloud
+Run.
 
-In the next lesson, we will delve into two more features that will further enhance your chatbot's context awareness:
+In the next lesson, we will delve into two more features that will further
+enhance your chatbot's context awareness:
 
 1. **RAG**: Retrieval Augmented Generation (RAG)
-2. **Grounding**: Using Google Search
+1. **Grounding**: Using Google Search
 
 Let's continue learning and exploring these innovative tools together!
