@@ -3,16 +3,15 @@ import vertexai
 
 from vertexai import rag
 
-PROJECT_ID = os.environ.get("GOOGLE_CLOUD_PROJECT")
-LOCATION = os.environ.get("GOOGLE_CLOUD_REGION", "us-central1")
+import config
 
-vertexai.init(project=PROJECT_ID, location=LOCATION)
+vertexai.init(project=config.PROJECT_ID, location=config.LOCATION_RAG)
 
 
 class RagCorpusManager:
-    def __init__(self, rag_dataset_folder="rag_dataset"):
+    def __init__(self, rag_dataset_folder=config.RAG_DATASET_FOLDER):
         self.rag_dataset_folder = rag_dataset_folder
-        self.rag_corpus_name_file = ".rag"
+        self.rag_corpus_name_file = config.RAG_CORPUS_NAME_FILE
         self.rag_corpus = None
 
         rag_corpus_name = None
@@ -34,7 +33,7 @@ class RagCorpusManager:
 
     def _create_rag_corpus(self):
         print("Creating new RAG corpus...")
-        self.rag_corpus = rag.create_corpus(display_name="my-rag-corpus")
+        self.rag_corpus = rag.create_corpus(display_name=config.RAG_CORPUS_DISPLAY_NAME)
         with open(self.rag_corpus_name_file, "w") as f:
             f.write(self.rag_corpus.name)
         self._upload_files()
