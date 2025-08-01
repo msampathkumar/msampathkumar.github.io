@@ -2,3 +2,5 @@ site
 uv.lock
 __pycache__/
 .venv
+.rag
+.cache
