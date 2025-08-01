@@ -14,6 +14,7 @@ class RagCorpusManager:
         self.rag_corpus_name_file = config.RAG_CORPUS_NAME_FILE
         self.rag_corpus = None
 
+        # find and load existing RAG corpus.
         rag_corpus_name = None
         if os.path.exists(self.rag_corpus_name_file):
             with open(self.rag_corpus_name_file, "r") as f:
@@ -23,6 +24,7 @@ class RagCorpusManager:
             try:
                 print(f"Loading existing RAG corpus: {rag_corpus_name}")
                 self.rag_corpus = rag.get_corpus(name=rag_corpus_name)
+                print(f"Loading existing RAG corpus: {self.rag_corpus}")
             except Exception as e:
                 print(
                     f"Failed to load corpus {rag_corpus_name}: {e}. Creating a new one."
