@@ -104,9 +104,7 @@ class CacheManager:
 
     def list_caches(self, cleanup=False):
         for content_cache in self.client.caches.list():
-            print(
-                f"Cache `{content_cache.display_name}`"
-            )
+            print(f"Cache `{content_cache.display_name}`")
             print(f" - Model Name(Uniq)`{content_cache.model}`")
             print(f" - Cache Name(Uniq)`{content_cache.name}`")
             print(f" - Last updated at: {content_cache.update_time}")

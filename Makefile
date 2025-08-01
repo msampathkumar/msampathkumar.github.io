@@ -15,3 +15,5 @@ run:
 deploy:
 	@echo "Deploying to GitHub Pages"
 	mkdocs gh-deploy
+
+# Makefile
