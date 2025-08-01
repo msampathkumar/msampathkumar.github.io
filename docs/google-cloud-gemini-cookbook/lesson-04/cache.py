@@ -49,7 +49,7 @@ class CacheManager:
             config=CreateCachedContentConfig(
                 contents=[Content(role="user", parts=cache_parts)],
                 system_instruction="\n".join(config.SYSTEM_INSTRUCTION),
-                display_name="example-cache",
+                display_name=config.CACHE_NAME,
                 ttl=f"{config.CACHE_TTL_SECONDS}s",
             ),
         )
@@ -105,11 +105,12 @@ class CacheManager:
     def list_caches(self, cleanup=False):
         for content_cache in self.client.caches.list():
             print(
-                f"Cache `{content_cache.display_name}` for model `{content_cache.model}`"
+                f"Cache `{content_cache.display_name}`"
             )
-            print(f"Cache Name(Uniq)`{content_cache.name}`")
-            print(f"Last updated at: {content_cache.update_time}")
-            print(f"Expires at: {content_cache.expire_time}")
+            print(f" - Model Name(Uniq)`{content_cache.model}`")
+            print(f" - Cache Name(Uniq)`{content_cache.name}`")
+            print(f" - Last updated at: {content_cache.update_time}")
+            print(f" - Expires at: {content_cache.expire_time}")
 
             # cleanup
             if content_cache.display_name != config.CACHE_FILE:

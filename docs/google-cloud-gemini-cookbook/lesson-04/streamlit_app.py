@@ -26,13 +26,14 @@ st.markdown(config.DESCRIPTION)
 # Let the user choose between Context Cache and RAG
 option = st.radio(
     "Choose an option:",
-    ("Use System Instructions only", "Use Context Cache", "Use RAG as Tool"),
+    ("Default", "Use Context Cache", "Use RAG as Tool", "Use Grounding"),
     horizontal=True,
 )
 
 # Logic to handle the chosen option
 use_context_cache = option == "Use Context Cache"
 use_rag_corpus = option == "Use RAG as Tool"
+use_google_search = option == "Use Grounding"
 
 # Reset chat session if the option has changed
 if "last_option" not in st.session_state:
@@ -48,11 +49,13 @@ cache_name = None
 if use_context_cache:
     logging.info(f"use_context_cache={use_context_cache}")
     cache_name = CacheManager().main()
+    logging.info(f"cache_name={cache_name}")
 
 rag_corpus_name = None
 if use_rag_corpus:
     logging.info(f"use_rag_corpus={use_rag_corpus}")
     rag_corpus_name = RagCorpusManager().main()
+    logging.info(f"rag_corpus_name={rag_corpus_name}")
 
 
 # Initialize chat session in Streamlit's session state.
@@ -64,6 +67,7 @@ if "chat_session" not in st.session_state:
         rag_corpus_name=rag_corpus_name,
         use_context_cache=use_context_cache,
         use_rag_corpus=use_rag_corpus,
+        use_google_search=use_google_search,
     )
 
 # Display chat history from the session state

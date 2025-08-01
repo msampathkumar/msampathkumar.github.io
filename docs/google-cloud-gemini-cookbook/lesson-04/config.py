@@ -21,6 +21,7 @@ Use the settings below to customize the chatbot's behavior.
 """
 
 # LLM configuration
+_UNIQUE_SUFFIX = "-COOKBOOK-WITH-CLOUD-GEMINI-DEMO-APP"
 PROJECT_ID = os.environ.get("GOOGLE_CLOUD_PROJECT")
 MODEL_NAME = "gemini-2.5-flash-lite"
 LOCATION = "global"
@@ -33,6 +34,7 @@ SYSTEM_INSTRUCTION = [
 ]
 
 # Cache configuration
+CACHE_NAME = "EXAMPLE-CACHE" + _UNIQUE_SUFFIX
 CACHE_TTL_SECONDS = 30 * 60  # 30 minutes
 CACHE_FILE = ".cache"
 CACHE_OBJECTS_LIST = [
@@ -44,4 +46,4 @@ CACHE_OBJECTS_LIST = [
 LOCATION_RAG = "us-central1"
 RAG_DATASET_FOLDER = "rag_dataset"
 RAG_CORPUS_NAME_FILE = ".rag"
-RAG_CORPUS_DISPLAY_NAME = "my-rag-corpus"
+RAG_CORPUS_DISPLAY_NAME = "Example-RAG-Corpus" + _UNIQUE_SUFFIX
