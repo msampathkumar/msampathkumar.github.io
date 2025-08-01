@@ -41,4 +41,5 @@ breakdown:
 In essence, RAG bridges the gap between the vast knowledge of LLMs and the need
 for accurate, current, and contextually relevant information.
 
-Source: https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/rag-engine/intro_rag_engine.ipynb
+Source:
+https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/rag-engine/intro_rag_engine.ipynb
