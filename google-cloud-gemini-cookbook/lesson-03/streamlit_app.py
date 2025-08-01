@@ -27,6 +27,16 @@ cache_name = None
 use_context_cache = st.toggle(
     "Use Context Cache", value=True, key="toogle_use_context_cache_state_key"
 )
+
+# If the toggle has changed value, clear the chat history and rerun
+if ("chat_session_cache_state" in st.session_state) and (
+    st.session_state.chat_session_cache_state != use_context_cache
+):
+    del st.session_state.chat_session
+    if "chat_session_cache_state" in st.session_state:
+        del st.session_state.chat_session_cache_state
+    st.rerun()
+
 if use_context_cache:
     logging.info(f"use_context_cache={use_context_cache}")
     cache_name = CacheManager().main()
@@ -36,6 +46,7 @@ if use_context_cache:
 if "chat_session" not in st.session_state:
     logging.info("New chat session initialized.")
     st.session_state.chat_session = llm.get_chat_session(cache_name=cache_name)
+    st.session_state.chat_session_cache_state = use_context_cache
 
 # Display chat history from the session state
 for message in st.session_state.chat_session.get_history():

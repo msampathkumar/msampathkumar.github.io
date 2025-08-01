@@ -1,41 +1,74 @@
 import streamlit as st
-import llm
+
 import logging
 
+import config
+import llm
+
 from cache import CacheManager
+from rag import RagCorpusManager
+
+import os.path
+import sys
+
+# add local path to sys.path
+local_path = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(local_path)
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-st.title(
-    "🤖 Chatbot with "
-    "[⚡ Gemini-2.5](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash-lite)"
-    " & "
-    "[🜲 Streamlit](https://streamlit.io/)"
+st.title(config.HEADER)
+st.markdown(config.DESCRIPTION)
+
+# Let the user choose between Context Cache and RAG
+option = st.radio(
+    "Choose an option:",
+    ("Default", "Use Context Cache", "Use RAG as Tool", "Use Grounding"),
+    horizontal=True,
 )
 
-st.markdown(
-    "This is a Streamlit demo chatbot that uses Google's latest [Gemini-2.5 🔦](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash-lite). "
-    "Read more about it [here](https://deepmind.google/technologies/gemini/flash/)."
-)
+# Logic to handle the chosen option
+use_context_cache = option == "Use Context Cache"
+use_rag_corpus = option == "Use RAG as Tool"
+use_google_search = option == "Use Grounding"
 
-# Context Caching
+# Reset chat session if the option has changed
+if "last_option" not in st.session_state:
+    st.session_state.last_option = option
+
+if st.session_state.last_option != option:
+    st.info("Option changed. Resetting chat session.")
+    if "chat_session" in st.session_state:
+        del st.session_state.chat_session
+    st.session_state.last_option = option
+
 cache_name = None
-
-use_context_cache = st.toggle(
-    "Use Context Cache", value=True, key="toogle_use_context_cache_state_key"
-)
 if use_context_cache:
     logging.info(f"use_context_cache={use_context_cache}")
     cache_name = CacheManager().main()
+    logging.info(f"cache_name={cache_name}")
+
+rag_corpus_name = None
+if use_rag_corpus:
+    logging.info(f"use_rag_corpus={use_rag_corpus}")
+    rag_corpus_name = RagCorpusManager().main()
+    logging.info(f"rag_corpus_name={rag_corpus_name}")
+
 
 # Initialize chat session in Streamlit's session state.
 # This will be run only once, on the first run of the session.
 if "chat_session" not in st.session_state:
     logging.info("New chat session initialized.")
-    st.session_state.chat_session = llm.get_chat_session(cache_name=cache_name)
+    st.session_state.chat_session = llm.get_chat_session(
+        cache_name=cache_name,
+        rag_corpus_name=rag_corpus_name,
+        use_context_cache=use_context_cache,
+        use_rag_corpus=use_rag_corpus,
+        use_google_search=use_google_search,
+    )
 
 # Display chat history from the session state
 for message in st.session_state.chat_session.get_history():
@@ -50,8 +83,9 @@ if prompt := st.chat_input("What is up?"):
         st.markdown(prompt)
     logging.info(f"User: {prompt}")
 
-    # Get and display assistant response
+    # Display responses
     with st.chat_message("assistant"):
+        # Send message to LLM
         try:
             response = st.session_state.chat_session.send_message(prompt)
             st.markdown(response.text)
