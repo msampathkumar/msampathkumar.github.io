@@ -29,22 +29,19 @@ interactions. When asked about such information, they might:
 - **"Hallucinate":** Make up plausible-sounding but entirely false information.
   This is the most dangerous! 🚨
 
-**Example: A Chatbot Hallucinating on Proprietary Data**
+**Example: A Chatbot Hallucinating on Project Status**
 
-Let's revisit our chatbot. If you ask about specific, sensitive internal data:
-
-```
-User: What was our Q1 revenue for the 'Project Phoenix' initiative for the EMEA region?
-Chatbot (Gemini, no grounding): For Project Phoenix in 
-
-Q1, the EMEA region generated an estimated $12.5 million, driven by strong performance in software licensing. We anticipate continued growth...
+Let's revisit our chatbot. If you ask about specific, latest information:
 
 ```
+User: What is the status of our CRM project - Alpha?
 
-_(Imagine a screenshot here: A Streamlit UI with the user's highly specific
-financial query and a chatbot response that sounds confident but is entirely
-fabricated, as the data is proprietary and not in Gemini's training. A big red
-X emoji to emphasize the hallucination.)_ ❌
+Model: I'm sorry, but I don't have access to specific project details like the status of your CRM project Alpha. 😟 I can only provide general information.
+
+User: What is today's date ?
+
+Model: Today's date is June 16, 2024. 📅
+```
 
 This is a problem. In enterprise settings, accuracy is paramount. We need a way
 to connect Gemini to our actual, verifiable knowledge. This is called
@@ -103,6 +100,7 @@ It's vital to differentiate RAG from Context Caching (Lesson 03).
   each query. It's about expanding the LLM's factual knowledge with new,
   current, or private data. 🌐
 
+
 ______________________________________________________________________
 
 ### 3. Application Architecture
@@ -130,8 +128,6 @@ graph TD
     B -- "Optionally uses" --> C
     B -- "Optionally uses" --> D
 ```
-
-[//]: # (![Sequence Diagram]&#40;./sequence_flow_chart.png&#41;)
 
 **Core Application Logic:**
 
@@ -193,6 +189,7 @@ sequenceDiagram
 
 ![Demo](./cli-demo.gif)
 
+Youtube: https://youtu.be/JIx4Fr4V6Mw
 ______________________________________________________________________
 
 ## Conclusion
