@@ -8,26 +8,17 @@ from google.genai.types import (
 )
 import logging
 
+import config
 
-# Gemini AI model name
-MODEL_NAME = "gemini-2.5-flash"
 
 # Gemini AI client
 #  - Using environment variables to pass essential parameters to the client.
 #  - Read more at https://github.com/googleapis/python-genai/tree/main?tab=readme-ov-file#create-a-client
 client = genai.Client(
+    project=config.PROJECT_ID,
+    location=config.LOCATION,
     http_options=HttpOptions(api_version="v1"),
-    location='us-location1'
 )
-
-
-system_instruction = [
-    "You're a helpful Gemini AI Chatbot.",
-    "Answer user's questions and use simple and clear language."
-    "When possible, reply to user's question with a single sentence or a few sentences.",
-    "Free to use emojis."
-    "Be open and friendly. Don't be afraid to ask questions or clarify things.",
-]
 
 
 # Create chat session
@@ -51,20 +42,22 @@ def get_chat_session(
         tools = None
     # Context Cache
     if use_context_cache:
-        config = GenerateContentConfig(
+        session_config = GenerateContentConfig(
             cached_content=cache_name if use_context_cache else None,
-            system_instruction=None if use_context_cache else system_instruction,
+            system_instruction=None if use_context_cache else config.SYSTEM_INSTRUCTION,
             tools=tools,
         )
     else:
-        config = GenerateContentConfig(
-            system_instruction=system_instruction,
+        session_config = GenerateContentConfig(
+            system_instruction=config.SYSTEM_INSTRUCTION,
             tools=tools,
         )
     print("---" * 15)
     print(f"use_context_cache: {use_context_cache} \nuse_rag_corpus: {use_rag_corpus}")
     print("---" * 15)
-    new_chat_session = client.chats.create(model=MODEL_NAME, config=config)
+    new_chat_session = client.chats.create(
+        model=config.MODEL_NAME, config=session_config
+    )
     # Print chat session ID
     print(f"Chat session ID: {new_chat_session}")
     return new_chat_session
@@ -83,3 +76,5 @@ if __name__ == "__main__":
         # Send a message to LLM
         response = chat_session.send_message(user_input)
         print(f"Model: {response.text}")
+else:
+    __all__ = ["get_chat_session"]

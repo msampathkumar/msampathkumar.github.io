@@ -1,80 +1,55 @@
 import streamlit as st
 
-import llm
 import logging
+
+import config
+import llm
 
 from cache import CacheManager
 from rag import RagCorpusManager
+
+import os.path
+import sys
+
+# add local path to sys.path
+local_path = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(local_path)
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-st.title(
-    "🤖 Chatbot with "
-    "[⚡ Gemini-2.5](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash-lite)"
-    " & "
-    "[🜲 Streamlit](https://streamlit.io/)"
+st.title(config.HEADER)
+st.markdown(config.DESCRIPTION)
+
+# Let the user choose between Context Cache and RAG
+option = st.radio(
+    "Choose an option:",
+    ("Use System Instructions only", "Use Context Cache", "Use RAG as Tool"),
+    horizontal=True,
 )
 
-st.markdown(
-    "This is a Streamlit demo chatbot that uses Google's latest [Gemini-2.5 🔦](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash-lite). "
-    "Read more about it [here](https://deepmind.google/technologies/gemini/flash/)."
-)
+# Logic to handle the chosen option
+use_context_cache = option == "Use Context Cache"
+use_rag_corpus = option == "Use RAG as Tool"
 
-# Context Caching
-cache_name = None
+# Reset chat session if the option has changed
+if "last_option" not in st.session_state:
+    st.session_state.last_option = option
 
-columns = st.columns(2)
-
-with columns[0]:
-    # Context Cache
-    use_context_cache = st.toggle(
-        "Use Context Cache",
-        value=st.session_state.get("use_context_cache", False),
-        key="use_context_cache",
-    )
-    if "use_context_cache_changed" not in st.session_state:
-        st.session_state.use_context_cache_changed = False
-
-    if use_context_cache != st.session_state.get("use_context_cache_last_value", False):
-        st.session_state.use_context_cache_changed = True
-        st.session_state.use_context_cache_last_value = use_context_cache
-
-
-with columns[1]:
-    # RAG Corpus
-    rag_corpus_name = None
-    use_rag_corpus = st.toggle(
-        "Use RAG as Tool",
-        value=st.session_state.get("use_rag_corpus", False),
-        key="use_rag_corpus",
-    )
-    if "use_rag_corpus_changed" not in st.session_state:
-        st.session_state.use_rag_corpus_changed = False
-
-    if use_rag_corpus != st.session_state.get("use_rag_corpus_last_value", False):
-        st.session_state.use_rag_corpus_changed = True
-        st.session_state.use_rag_corpus_last_value = use_rag_corpus
-
-
-# Reset chat session if the toggle state has changed
-if (
-    st.session_state.use_context_cache_changed
-    or st.session_state.use_rag_corpus_changed
-):
-    st.info("Toggle state changed. Resetting chat session.")
+if st.session_state.last_option != option:
+    st.info("Option changed. Resetting chat session.")
     if "chat_session" in st.session_state:
         del st.session_state.chat_session
-    st.session_state.use_context_cache_changed = False
-    st.session_state.use_rag_corpus_changed = False
+    st.session_state.last_option = option
 
-
+cache_name = None
 if use_context_cache:
     logging.info(f"use_context_cache={use_context_cache}")
     cache_name = CacheManager().main()
 
+rag_corpus_name = None
 if use_rag_corpus:
     logging.info(f"use_rag_corpus={use_rag_corpus}")
     rag_corpus_name = RagCorpusManager().main()
