@@ -165,8 +165,6 @@ graph TD
 Here’s a more detailed look at how the RAG process works within our application
 when the "Use RAG as Tool" option is enabled:
 
-=== "Sequence Diagram"
-
 ```mermaid
 sequenceDiagram
     participant User
@@ -190,9 +188,6 @@ sequenceDiagram
     LLM Brain (llm.py)-->>Streamlit UI (streamlit_app.py): Returns grounded response
     Streamlit UI (streamlit_app.py)-->>User: Displays response
 ```
-=== "Sequence Diagram (Image)"
-
-    ![Flow Chart](./images/lesson-04-flow-chart.png)
 
 ### 5. Application Screenshots
 

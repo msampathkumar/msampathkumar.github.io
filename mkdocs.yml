@@ -41,14 +41,37 @@ markdown_extensions:
 plugins:
   - blog
   - search
+  - mermaid2
+
+# Additional configuration
+extra:
+  status:
+    new: Recently added
+    deprecated: Deprecated
+  analytics:
+    # https://analytics.google.com/analytics/web/
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY_GITHUB_IO_BLOG
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/msampathkumar
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/u/msampathkumar
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/user/sampath/
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/sampathm.bsky.social
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/msampathkumar/
+
 
 nav:
+  - index.md
   - Gemini Cookbook:
     - google-cloud-gemini-cookbook/index.md
     - Lesson-01: google-cloud-gemini-cookbook/lesson-01/README.md
     - Lesson-02: google-cloud-gemini-cookbook/lesson-02/README.md
     - Lesson-03: google-cloud-gemini-cookbook/lesson-03/README.md
     - Lesson-04: google-cloud-gemini-cookbook/lesson-04/README.md
-  - index.md
 #  - Blog:
 #    - blog/index.md
