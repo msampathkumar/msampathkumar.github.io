@@ -2,7 +2,11 @@
 
 ## Project Summary
 
-Project Alpha is a next-generation customer relationship management (CRM) platform designed to revolutionize how businesses interact with their customers. It leverages artificial intelligence and machine learning to provide predictive analytics, automate sales workflows, and offer personalized customer experiences.
+Project Alpha is a next-generation customer relationship management (CRM)
+platform designed to revolutionize how businesses interact with their
+customers. It leverages artificial intelligence and machine learning to provide
+predictive analytics, automate sales workflows, and offer personalized customer
+experiences.
 
 ## Goals
 
@@ -32,7 +36,9 @@ Project Alpha is a next-generation customer relationship management (CRM) platfo
 
 **Current Status**: In Progress
 
-We are currently in the middle of Phase 3. The backend team is focused on building out the core APIs for contact management and analytics. The frontend team is developing the main dashboard and reporting components.
+We are currently in the middle of Phase 3. The backend team is focused on
+building out the core APIs for contact management and analytics. The frontend
+team is developing the main dashboard and reporting components.
 
 ## Technologies
 
