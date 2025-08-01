@@ -191,7 +191,7 @@ sequenceDiagram
 
 ### 5. Application Screenshots
 
-_(Placeholder for screenshots of the Streamlit application in action)_
+![Demo](./cli-demo.gif)
 
 ______________________________________________________________________
 
