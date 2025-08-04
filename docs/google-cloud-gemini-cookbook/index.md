@@ -16,5 +16,4 @@ This cookbook is a collection of recipes for using the
 - [Lesson 1: Building a Hello World app with Streamlit & deploy to Google Cloud Run](./lesson-01/README.md)
 - [Lesson 2: Building a Chatbot(Web App) with Gemini 2.5](./lesson-02/README.md)
 - [Lesson 3: Adding Context Awareness - part 1](./lesson-03/README.md)
-- [Lesson 4: Adding Context Awareness - part 2](./lesson-03/README.md)
-- [Lesson 5: WIP](./lesson-05/README.md)
+- [Lesson 4: Adding Context Awareness - part 2](./lesson-04/README.md)
