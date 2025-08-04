@@ -16,4 +16,9 @@ deploy:
 	@echo "Deploying to GitHub Pages"
 	mkdocs gh-deploy
 
-# Makefile
+
+check-ga:
+	@echo "Checking Google Analytics ("${GOOGLE_ANALYTICS_KEY_GITHUB_IO_BLOG}") "
+	rm -rf site/
+	mkdocs build
+	grep __md_analytics site/*
