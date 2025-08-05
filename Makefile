@@ -22,3 +22,4 @@ check-ga:
 	rm -rf site/
 	mkdocs build
 	grep __md_analytics site/*
+
