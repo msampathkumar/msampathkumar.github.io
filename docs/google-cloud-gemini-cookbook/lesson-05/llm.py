@@ -25,13 +25,14 @@ client = genai.Client(
 
 # Create chat session
 def get_chat_session(
+    chat_settings,
     cache_name=None,
     rag_corpus_name=None,
     use_context_cache=False,
     use_rag_corpus=False,
     use_google_search=False,
 ):
-    system_instruction = settings.SYSTEM_INSTRUCTION
+    system_instruction = chat_settings.system_instruction
     cached_content = None
     tools = None
     # Grounding with Google Search
@@ -69,16 +70,20 @@ def get_chat_session(
     )
     print("---" * 15)
     new_chat_session = client.chats.create(
-        model=settings.MODEL_NAME, config=session_config
+        model=chat_settings.model_name, config=session_config
     )
+
     # Print chat session ID
     print(f"Chat session ID: {new_chat_session}")
     return new_chat_session
 
 
 if __name__ == "__main__":
+    # Chat settings
+    from chat_setting import ChatSettings
+
     # Initialize chat session
-    chat_session = get_chat_session()
+    chat_session = get_chat_session(ChatSettings())
 
     # CLI - Chat Session
     print("Enter your question (or 'exit' to quit")
