@@ -100,7 +100,6 @@ It's vital to differentiate RAG from Context Caching (Lesson 03).
   each query. It's about expanding the LLM's factual knowledge with new,
   current, or private data. 🌐
 
-
 ______________________________________________________________________
 
 ### 3. Application Architecture
@@ -190,6 +189,7 @@ sequenceDiagram
 ![Demo](./cli-demo.gif)
 
 Youtube: https://youtu.be/JIx4Fr4V6Mw
+
 ______________________________________________________________________
 
 ## Conclusion

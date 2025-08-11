@@ -1,23 +1,25 @@
+# Streamlit
+# https://docs.streamlit.io/develop/api-reference/configuration/config.toml
+
 [theme]
+layout="wide"
 
-# Primary accent for interactive elements
-primaryColor = '#7792E3'
+#font = "cool-font, fallback-cool-font, sans-serif"
+font = "theme/Roboto/Roboto-Black.ttf"
 
-# Background color for the main content area
-backgroundColor = '#273346'
+#headingFont = [
+#    "2.75rem", # h1 (1.5rem for sidebar)
+#    "2.25rem", # h2 (1.25rem for sidebar)
+#    "1.75rem", # h3 (1.125rem for sidebar)
+#    "1.5rem", # h4 (1rem for sidebar)
+#    "1.25rem", # h5 (0.875rem for sidebar)
+#    "1rem", # h6 (0.75rem for sidebar)
+#]
 
-# Background color for sidebar and most interactive widgets
-secondaryBackgroundColor = '#B9F1C0'
+[client]
+toolbarMode = "viewer"
 
-# Color used for almost all text
-textColor = '#FFFFFF'
-
-# Font family for all text in the app, except code blocks
-# Accepted values (serif | sans serif | monospace)
-# Default: "sans serif"
-font = "sans serif"
-
-[theme.sidebar]
-backgroundColor="aliceBlue"
-secondaryBackgroundColor="skyBlue"
-baseRadius="none"
+[ui]
+hideTopBar = true
+hideSidebarHeader = true
+hideFooter = true
