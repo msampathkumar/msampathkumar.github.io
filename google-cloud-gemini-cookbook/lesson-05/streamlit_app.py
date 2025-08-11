@@ -1,152 +1,117 @@
 import streamlit as st
-import time
 
-# --- Page Configuration ---
-# The `st.set_page_config` command is used to set the title, icon, and layout of the page.
-# This should be the first Streamlit command in your script.
-st.set_page_config(page_title="Gemini Chatbot", page_icon="🤖", layout="wide")
+import logging
 
-# --- Session State Initialization ---
-# We use session_state to store data that persists across user interactions (reruns).
-# Here, we initialize a dictionary for chat sessions and set the default active session.
-if "sessions" not in st.session_state:
-    # Start with a default session
-    st.session_state.sessions = {"Chat 1": []}
+import config
+import llm
 
-if "active_session" not in st.session_state:
-    # Set the first session as active by default
-    st.session_state.active_session = "Chat 1"
+from cache import CacheManager
+from rag import RagCorpusManager
+
+import os.path
+import sys
+from PIL import Image
+
+# add local path to sys.path
+local_path = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(local_path)
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
+# Set page configuration
+# https://fonts.google.com/icons?selected=Material+Symbols+Outlined:editor_choice:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%231f1f1f&icon.query=winner
+st.set_page_config(
+    layout="wide",
+    page_icon="""<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M240-40v-329L110-580l185-300h370l185 300-130 211v329l-240-80-240 80Zm80-111 160-53 160 53v-129H320v129Zm20-649L204-580l136 220h280l136-220-136-220H340Zm98 383L296-558l57-57 85 85 169-170 57 56-226 227ZM320-280h320-320Z"/></svg>""",
+    page_title="Gemini Chatbot",
+    initial_sidebar_state="collapsed",
+)
+# Hide deploy options
+st.markdown(
+    """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+st.title(config.HEADER)
+st.markdown(config.DESCRIPTION)
+
+# Let the user choose between Context Cache and RAG
+option = st.radio(
+    "Choose an option:",
+    ("Default", "Use Context Cache", "Use RAG as Tool", "Use Grounding"),
+    horizontal=True,
+)
+
+# Logic to handle the chosen option
+use_context_cache = option == "Use Context Cache"
+use_rag_corpus = option == "Use RAG as Tool"
+use_google_search = option == "Use Grounding"
+
+# Reset chat session if the option has changed
+if "last_option" not in st.session_state:
+    st.session_state.last_option = option
+
+if st.session_state.last_option != option:
+    st.info("Option changed. Resetting chat session.")
+    if "chat_session" in st.session_state:
+        del st.session_state.chat_session
+    st.session_state.last_option = option
+
+cache_name = None
+if use_context_cache:
+    logging.info(f"use_context_cache={use_context_cache}")
+    cache_name = CacheManager().main()
+    logging.info(f"cache_name={cache_name}")
+
+rag_corpus_name = None
+if use_rag_corpus:
+    logging.info(f"use_rag_corpus={use_rag_corpus}")
+    rag_corpus_name = RagCorpusManager().main()
+    logging.info(f"rag_corpus_name={rag_corpus_name}")
 
 
-# --- Helper Functions ---
-def add_new_session():
-    """Adds a new chat session."""
-    session_count = len(st.session_state.sessions) + 1
-    new_session_name = f"Chat {session_count}"
-    st.session_state.sessions[new_session_name] = []
-    st.session_state.active_session = new_session_name
-    # st.rerun()
+# Initialize chat session in Streamlit's session state.
+# This will be run only once, on the first run of the session.
+if "chat_session" not in st.session_state:
+    logging.info("New chat session initialized.")
+    st.session_state.chat_session = llm.get_chat_session(
+        cache_name=cache_name,
+        rag_corpus_name=rag_corpus_name,
+        use_context_cache=use_context_cache,
+        use_rag_corpus=use_rag_corpus,
+        use_google_search=use_google_search,
+    )
+
+# Display chat history from the session state
+for message in st.session_state.chat_session.get_history():
+    with st.chat_message("assistant" if message.role == "model" else "user"):
+        st.markdown(message.parts[0].text)
 
 
-def switch_session(session_name):
-    """Switches the active chat session."""
-    st.session_state.active_session = session_name
-    # st.rerun()
+# Handle user input
+if prompt := st.chat_input("What is up?"):
+    # Display user message
+    with st.chat_message("user"):
+        st.markdown(prompt)
+    logging.info(f"User: {prompt}")
 
-
-# --- UI Rendering ---
-
-# --- Column 1: Session List (Collapsible Sidebar) ---
-# The sidebar is a natural fit for a collapsible list of chat sessions.
-with st.sidebar:
-    st.title("Chat History")
-    st.button("➕ New Chat", on_click=add_new_session, use_container_width=True)
-
-    st.write("---")
-
-    # Display a button for each session. The active session is highlighted.
-    for session in st.session_state.sessions.keys():
-        button_type = (
-            "primary" if session == st.session_state.active_session else "secondary"
-        )
-        if st.button(
-            session,
-            key=f"session_btn_{session}",
-            use_container_width=True,
-            type=button_type,
-        ):
-            switch_session(session)
-
-# --- Main Area ---
-# We split the main area into two columns for the chat and configuration.
-# The ratio is set to 2:1, giving the chat area (66%) more space than the config area (33%).
-chat_col, config_col = st.tabs(["Chat", "Config"])
-
-# --- Table 1: Chat Configuration ---
-with chat_col:
-    cols = st.columns([12, 1, 1])
-    with cols[0]:
-        st.header(f"Active Session: {st.session_state.active_session}")
-    with cols[-2]:
-        if st.button(
-            "🧽󠁝 Clear Chat",
-            use_container_width=True,
-            help="Clears all messages in the current session.",
-        ):
-            st.session_state.sessions[st.session_state.active_session] = []
-            st.rerun()
-    with cols[-1]:
-        if st.button(
-            "🗑 Delete Chat",
-            use_container_width=True,
-            help="Clears all messages in the current session.",
-        ):
-            st.session_state.sessions[st.session_state.active_session] = []
-            st.rerun()
-
-    # Display existing chat messages for the active session
-    for message in st.session_state.sessions[st.session_state.active_session]:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
-
-    # The chat input widget is placed at the bottom.
-    if prompt := st.chat_input("What is up?"):
-        # Add user message to the active session's state and display it
-        st.session_state.sessions[st.session_state.active_session].append(
-            {"role": "user", "content": prompt}
-        )
-        with st.chat_message("user"):
-            st.markdown(prompt)
-
-        # Simulate and display a bot response
-        with st.chat_message("assistant"):
-            message_placeholder = st.empty()
-            full_response = ""
-            # Simulate a streaming response for a better user experience
-            assistant_response = f"Echo: {prompt}"
-            for chunk in assistant_response.split():
-                full_response += chunk + " "
-                time.sleep(0.05)
-                message_placeholder.markdown(full_response + "▌")
-            message_placeholder.markdown(full_response)
-
-        # Add the bot's response to the session state
-        st.session_state.sessions[st.session_state.active_session].append(
-            {"role": "assistant", "content": full_response}
-        )
-
-# --- Tab 2: Configuration ---
-with config_col:
-    # We use an expander to make this section collapsible.
-    with st.expander("⚙️ Configuration", expanded=True):
-        st.write("Model Settings")
-        st.selectbox(
-            "Model",
-            ["gpt-4", "gpt-3.5-turbo", "gemini-pro"],
-            key="model",
-            help="Select the AI model to use.",
-        )
-        st.slider(
-            "Temperature",
-            0.0,
-            1.0,
-            0.7,
-            0.01,
-            key="temperature",
-            help="Controls randomness. Lower is more deterministic.",
-        )
-        st.checkbox(
-            "Enable Streaming",
-            value=True,
-            key="streaming",
-            help="Enable real-time response streaming.",
-        )
-
-        st.write("---")
-
-        st.write("UI Settings")
-        st.checkbox(
-            "Show System Prompts",
-            key="show_system_prompts",
-            help="Display system-level prompts in the chat.",
-        )
+    # Display responses
+    with st.chat_message("assistant"):
+        # Send message to LLM
+        try:
+            response = st.session_state.chat_session.send_message(prompt)
+            st.markdown(response.text)
+            logging.info(f"Model: {response.text}")
+        except Exception as e:
+            logging.error(
+                f"An error occurred while sending message to LLM: {e}", exc_info=True
+            )
+            st.error(f"An error occurred: {e}")
