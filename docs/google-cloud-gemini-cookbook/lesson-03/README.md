@@ -1,4 +1,4 @@
-## Cookbook Lesson 03 🚀 Build Your First Context-aware Gemini Chatbot in Minutes: The Secret to Speed and Relevance! ⚡
+# Cookbook Lesson 03 🚀 Build Your First Context-aware Gemini Chatbot in Minutes: The Secret to Speed and Relevance! ⚡
 
 **Scenario:** It's Tuesday, July 22, 2025, 12:26 PM CEST. You're a developer,
 enjoying your morning coffee in Warsaw ☕, contemplating your next big feature.
@@ -11,11 +11,12 @@ secret weapon to rapidly inject intelligence into your chatbot, focusing on
 direct, consistent, and reusable context methods that get you up and running
 with meaningful interactions fast.
 
-This lesson is part of the 5 part series [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
+> This lesson is part of the 5 part series
+[Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
 
 ______________________________________________________________________
 
-### 1. Understanding Context: Why It's Your Chatbot's Superpower 🦸‍♀️
+## 1. Understanding Context: Why It's Your Chatbot's Superpower 🦸‍♀️
 
 Large Language Models (LLMs) like Gemini are incredible, but they're not
 clairvoyant. Without explicit guidance, their responses can be generic, vague,
@@ -59,14 +60,14 @@ what "Project Alpha" means in _your_ world. ✨
 
 ______________________________________________________________________
 
-### 2. In-Context Learning (ICL): Guiding with Examples, Instantly ✨
+## 2. In-Context Learning (ICL): Guiding with Examples, Instantly ✨
 
 In-Context Learning (ICL) is the quickest way to demonstrate a desired output
 pattern to Gemini. You provide explicit examples directly within your prompt,
 and Gemini learns from these patterns without needing any fine-tuning. It's
 like teaching by showing!
 
-#### One-Shot Learning: A Single Guiding Example ☝️
+### One-Shot Learning: A Single Guiding Example ☝️
 
 For simple tasks, one example might be all you need. You show Gemini a single
 input-output pair, and it follows that pattern for subsequent queries.
@@ -87,7 +88,7 @@ Chatbot (With one-shot example): Quel est votre nom?
 
 ![One shot translation example](image-02-one-shot-learning.png)
 
-#### Few-Shot Learning: Reinforcing Complex Patterns 📚
+### Few-Shot Learning: Reinforcing Complex Patterns 📚
 
 When the task is more nuanced or requires a specific output format, providing a
 few examples helps Gemini better grasp the pattern. It's like providing
@@ -119,7 +120,7 @@ turns. 💸🐢
 
 ______________________________________________________________________
 
-### 3. System Instructions: Setting Your Chatbot's Personality and Rules 📜
+## 3. System Instructions: Setting Your Chatbot's Personality and Rules 📜
 
 System instructions define your chatbot's overarching persona, tone, and
 behavioral guardrails. This is a foundational layer of context that applies to
@@ -151,7 +152,7 @@ chat_session = client.chats.create(
 
 ______________________________________________________________________
 
-### 4. Context Caching: Reusing Static Information Efficiently 📦
+## 4. Context Caching: Reusing Static Information Efficiently 📦
 
 ______________________________________________________________________
 
@@ -181,7 +182,7 @@ using two key research papers as its knowledge base.
   of feeding these PDFs to the model repeatedly, we'll cache them and let our
   chatbot use that cached knowledge.
 
-### How It Works: A Two-Step Process
+## How It Works: A Two-Step Process
 
 **Step 1: Create the Cache**
 
@@ -293,7 +294,7 @@ bash deploy.sh
 Github:
 https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook
 
-### Congratulations 🎉 ( ◠‿◠ )
+## Congratulations 🎉 ( ◠‿◠ )
 
 Congratulations, You've Achieved a Milestone!
 

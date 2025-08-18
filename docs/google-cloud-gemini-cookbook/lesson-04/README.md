@@ -1,4 +1,4 @@
-## Cookbook Lesson 04: 🔓 Unlock Enterprise AI: Grounding Gemini with RAG and Google Cloud Search 🚀
+# Cookbook Lesson 04: 🔓 Unlock Enterprise AI: Grounding Gemini with RAG and Google Cloud Search 🚀
 
 Welcome back! 👋 In Lesson 03, we built fast, relevant chatbots using direct
 context methods like In-Context Learning ✨, System Instructions 📜, and Context
@@ -12,9 +12,10 @@ real-time, external, and even proprietary data using **Retrieval Augmented
 Generation (RAG)**, with Google Cloud Search as your powerful engine. 🔍
 
 > This lesson is part of the 5 part series [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
+
 ______________________________________________________________________
 
-### 1. Grounding LLMs: Combating Hallucinations with External Knowledge 🛡️
+## 1. Grounding LLMs: Combating Hallucinations with External Knowledge 🛡️
 
 LLMs are brilliant pattern matchers, trained on vast amounts of internet data.
 However, their knowledge is frozen at their last training cut-off date. They
@@ -48,7 +49,7 @@ to connect Gemini to our actual, verifiable knowledge. This is called
 
 ______________________________________________________________________
 
-### 2. Introduction to Retrieval Augmented Generation (RAG): Your LLM's Research Assistant 🧑‍🎓
+## 2. Introduction to Retrieval Augmented Generation (RAG): Your LLM's Research Assistant 🧑‍🎓
 
 Retrieval Augmented Generation (RAG) is an architectural pattern that solves
 the hallucination problem by giving LLMs access to external, up-to-date, and
@@ -101,7 +102,7 @@ It's vital to differentiate RAG from Context Caching (Lesson 03).
 
 ______________________________________________________________________
 
-### 3. Application Architecture
+## 3. Application Architecture
 
 This application is designed to be a flexible and extensible chatbot that can
 leverage different grounding techniques. Here's a breakdown of the core
@@ -154,7 +155,7 @@ graph TD
 - [cache.py](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/lesson-04/cache.py)
 - [rag.py](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/lesson-04/rag.py)
 
-### 4. RAG Implementation Flow
+## 4. RAG Implementation Flow
 
 Here’s a more detailed look at how the RAG process works within our application
 when the "Use RAG as Tool" option is enabled:
@@ -183,7 +184,7 @@ sequenceDiagram
     Streamlit UI (streamlit_app.py)-->>User: Displays response
 ```
 
-### 5. Application Screenshots
+## 5. Application Screenshots
 
 ![Demo](./cli-demo.gif)
 
