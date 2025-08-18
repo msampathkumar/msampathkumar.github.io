@@ -1,4 +1,4 @@
-# 🚀 Lesson 01: Your First Chatbot - "Hello, Streamlit & Cloud Run!" 🌐
+# Cookbook Lesson 01: 🚀 Build a `Hello World` app with Gemini, Streamlit & Google Cloud Run
 
 Welcome to the **Google Cloud Gemini Cookbook**! In this very first lesson,
 we're going to embark on an exciting journey: taking your Python code from a
@@ -6,8 +6,7 @@ simple idea to a live web application in minutes. Forget complex setups; with
 Streamlit and Google Cloud Run, deploying your first web app is incredibly fast
 and fun! ✨
 
-GitHub Source:
-[Link](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/)
+This lesson is part of the [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
 
 ______________________________________________________________________
 

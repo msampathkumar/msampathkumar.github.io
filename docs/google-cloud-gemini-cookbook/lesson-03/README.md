@@ -1,6 +1,4 @@
-### Blog Post: Lesson 03
-
-## 🚀 Build Your First Context-aware Gemini Chatbot in Minutes: The Secret to Speed and Relevance! ⚡
+## Cookbook Lesson 03 🚀 Build Your First Context-aware Gemini Chatbot in Minutes: The Secret to Speed and Relevance! ⚡
 
 **Scenario:** It's Tuesday, July 22, 2025, 12:26 PM CEST. You're a developer,
 enjoying your morning coffee in Warsaw ☕, contemplating your next big feature.
@@ -11,7 +9,9 @@ context-aware chatbot for our internal knowledge base – and the meeting is in
 Panic? Absolutely not! Not with Gemini and Streamlit. This lesson is your
 secret weapon to rapidly inject intelligence into your chatbot, focusing on
 direct, consistent, and reusable context methods that get you up and running
-with meaningful interactions fast. 🚀
+with meaningful interactions fast.
+
+This lesson is part of the 5 part series [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
 
 ______________________________________________________________________
 
