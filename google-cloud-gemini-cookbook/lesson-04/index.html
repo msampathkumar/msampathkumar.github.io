@@ -8,6 +8,7 @@
 <meta content="Personal blog of Sampath Kumar M" name="description"/>
 <meta content="Sampath Kumar" name="author"/>
 <link href="../lesson-03/" rel="prev"/>
+<link href="../lesson-05/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.15" name="generator"/>
 <title>Lesson-04 - Google Cloud - Gemini Cookbook</title>
@@ -233,14 +234,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#cookbook-lesson-04-unlock-enterprise-ai-grounding-gemini-with-rag-and-google-cloud-search">
-<span class="md-ellipsis">
-      Cookbook Lesson 04: 🔓 Unlock Enterprise AI: Grounding Gemini with RAG and Google Cloud Search 🚀
-    </span>
-</a>
-<nav aria-label="Cookbook Lesson 04: 🔓 Unlock Enterprise AI: Grounding Gemini with RAG and Google Cloud Search 🚀" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#1-grounding-llms-combating-hallucinations-with-external-knowledge">
 <span class="md-ellipsis">
       1. Grounding LLMs: Combating Hallucinations with External Knowledge 🛡️
@@ -275,9 +268,6 @@
     </span>
 </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#conclusion">
 <span class="md-ellipsis">
@@ -287,6 +277,14 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../lesson-05/">
+<span class="md-ellipsis">
+    Lesson-05
+    
+  </span>
+</a>
 </li>
 </ul>
 </nav>
@@ -306,14 +304,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#cookbook-lesson-04-unlock-enterprise-ai-grounding-gemini-with-rag-and-google-cloud-search">
-<span class="md-ellipsis">
-      Cookbook Lesson 04: 🔓 Unlock Enterprise AI: Grounding Gemini with RAG and Google Cloud Search 🚀
-    </span>
-</a>
-<nav aria-label="Cookbook Lesson 04: 🔓 Unlock Enterprise AI: Grounding Gemini with RAG and Google Cloud Search 🚀" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#1-grounding-llms-combating-hallucinations-with-external-knowledge">
 <span class="md-ellipsis">
       1. Grounding LLMs: Combating Hallucinations with External Knowledge 🛡️
@@ -348,9 +338,6 @@
     </span>
 </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#conclusion">
 <span class="md-ellipsis">
@@ -365,8 +352,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Lesson-04</h1>
-<h2 id="cookbook-lesson-04-unlock-enterprise-ai-grounding-gemini-with-rag-and-google-cloud-search">Cookbook Lesson 04: 🔓 Unlock Enterprise AI: Grounding Gemini with RAG and Google Cloud Search 🚀</h2>
+<h1 id="cookbook-lesson-04-unlock-enterprise-ai-grounding-gemini-with-rag-and-google-cloud-search">Cookbook Lesson 04: 🔓 Unlock Enterprise AI: Grounding Gemini with RAG and Google Cloud Search 🚀</h1>
 <p>Welcome back! 👋 In Lesson 03, we built fast, relevant chatbots using direct
 context methods like In-Context Learning ✨, System Instructions 📜, and Context
 Caching 📦. Those are fantastic for quick demos and consistent persona. But what
@@ -380,7 +366,7 @@ Generation (RAG)</strong>, with Google Cloud Search as your powerful engine. �
 <p>This lesson is part of the 5 part series <a href="https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/">Google Cloud - Gemini Cookbook (GitHub Link)</a>.</p>
 </blockquote>
 <hr/>
-<h3 id="1-grounding-llms-combating-hallucinations-with-external-knowledge">1. Grounding LLMs: Combating Hallucinations with External Knowledge 🛡️</h3>
+<h2 id="1-grounding-llms-combating-hallucinations-with-external-knowledge">1. Grounding LLMs: Combating Hallucinations with External Knowledge 🛡️</h2>
 <p>LLMs are brilliant pattern matchers, trained on vast amounts of internet data.
 However, their knowledge is frozen at their last training cut-off date. They
 don't have real-time access to the internet, nor do they inherently know your
@@ -407,7 +393,7 @@ Model: Today's date is June 16, 2024. 📅
 to connect Gemini to our actual, verifiable knowledge. This is called
 <strong>grounding</strong>. 🌱</p>
 <hr/>
-<h3 id="2-introduction-to-retrieval-augmented-generation-rag-your-llms-research-assistant">2. Introduction to Retrieval Augmented Generation (RAG): Your LLM's Research Assistant 🧑‍🎓</h3>
+<h2 id="2-introduction-to-retrieval-augmented-generation-rag-your-llms-research-assistant">2. Introduction to Retrieval Augmented Generation (RAG): Your LLM's Research Assistant 🧑‍🎓</h2>
 <p>Retrieval Augmented Generation (RAG) is an architectural pattern that solves
 the hallucination problem by giving LLMs access to external, up-to-date, and
 domain-specific information.</p>
@@ -456,7 +442,7 @@ domain-specific information.</p>
   current, or private data. 🌐</li>
 </ul>
 <hr/>
-<h3 id="3-application-architecture">3. Application Architecture</h3>
+<h2 id="3-application-architecture">3. Application Architecture</h2>
 <p>This application is designed to be a flexible and extensible chatbot that can
 leverage different grounding techniques. Here's a breakdown of the core
 components:</p>
@@ -505,7 +491,7 @@ components:</p>
 <li><a href="https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/lesson-04/cache.py">cache.py</a></li>
 <li><a href="https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/lesson-04/rag.py">rag.py</a></li>
 </ul>
-<h3 id="4-rag-implementation-flow">4. RAG Implementation Flow</h3>
+<h2 id="4-rag-implementation-flow">4. RAG Implementation Flow</h2>
 <p>Here’s a more detailed look at how the RAG process works within our application
 when the "Use RAG as Tool" option is enabled:</p>
 <div class="mermaid">sequenceDiagram
@@ -530,7 +516,7 @@ when the "Use RAG as Tool" option is enabled:</p>
     LLM Brain (llm.py)--&gt;&gt;Streamlit UI (streamlit_app.py): Returns grounded response
     Streamlit UI (streamlit_app.py)--&gt;&gt;User: Displays response
 </div>
-<h3 id="5-application-screenshots">5. Application Screenshots</h3>
+<h2 id="5-application-screenshots">5. Application Screenshots</h2>
 <p><img alt="Demo" src="cli-demo.gif"/></p>
 <p>Youtube: https://youtu.be/JIx4Fr4V6Mw</p>
 <hr/>
