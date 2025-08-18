@@ -1,3 +1,0 @@
-streamlit
-google-genai
-google-cloud-aiplatform

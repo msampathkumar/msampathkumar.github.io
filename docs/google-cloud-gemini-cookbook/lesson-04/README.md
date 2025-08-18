@@ -1,6 +1,4 @@
-### Blog Post: Lesson 04
-
-## 🔓 Unlock Enterprise AI: Grounding Gemini with RAG and Google Cloud Search 🚀
+## Cookbook Lesson 04: 🔓 Unlock Enterprise AI: Grounding Gemini with RAG and Google Cloud Search 🚀
 
 Welcome back! 👋 In Lesson 03, we built fast, relevant chatbots using direct
 context methods like In-Context Learning ✨, System Instructions 📜, and Context
@@ -13,6 +11,7 @@ Today, we tackle the next frontier: **Grounding** your Gemini models in
 real-time, external, and even proprietary data using **Retrieval Augmented
 Generation (RAG)**, with Google Cloud Search as your powerful engine. 🔍
 
+> This lesson is part of the 5 part series [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
 ______________________________________________________________________
 
 ### 1. Grounding LLMs: Combating Hallucinations with External Knowledge 🛡️

@@ -11,10 +11,16 @@ This cookbook is a collection of recipes for using the
 - A valid API key or service account credentials.
 - A working Python environment (Python >= 3.8).
 
+## Tools
+
+- Google Cloud Gemini SDK to access the Gemini API.
+- Streamlit for building the user interface.
+- Cloud Run to deploy the app.
+
 ## Lessons
 
-- [Lesson 1: Hello World app with Gemini, Streamlit & Google Cloud Run](./lesson-01/README.md)
-- [Lesson 2: Build a Chatbot(Web App)](./lesson-02/README.md)
-- [Lesson 3: Chatbot with Context Awareness - part 1](./lesson-03/README.md)
-- [Lesson 4: Chatbot with Context Awareness - part 2](./lesson-04/README.md)
-- [Lesson 5: WIP](./lesson-05/README.md)
+- [Cookbook Lesson 01: Build a `Hello World` app with Gemini, Streamlit & Google Cloud Run 🚀](./lesson-01/README.md)
+- [Cookbook Lesson 02: Deploy Your AI Chatbot to Google Cloud Run: Go Live! ☁️](./lesson-02/README.md)
+- [Cookbook Lesson 03  Build Your First Context-aware Gemini Chatbot in Minutes: The Secret to Speed and Relevance! ⚡](./lesson-03/README.md)
+- [Cookbook Lesson 04: 🔓Unlock Enterprise AI: Grounding Gemini with RAG and Google Cloud Search](./lesson-04/README.md)
+- [Cookbook Lesson 05: Review - Five Takeaways to enhance your Gemini Apps](./lesson-05/README.md)

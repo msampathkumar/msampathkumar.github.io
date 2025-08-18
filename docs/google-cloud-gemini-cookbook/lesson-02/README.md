@@ -1,4 +1,4 @@
-# Lesson 2: ☁️ Deploy Your AI Chatbot to Google Cloud Run: Go Live!
+# Cookbook Lesson 02: Deploy Your AI Chatbot to Google Cloud Run: Go Live! ☁️
 
 Welcome to the second lesson in our Gemini Cookbook series! This time, we're
 diving into the exciting world of conversational AI. You'll learn to build a
@@ -6,8 +6,7 @@ smart, interactive chatbot using the power of Streamlit and Google's Gemini 2.5
 Flash model. We'll be using the official Google Cloud Vertex AI SDK, which has
 powerful features like chat sessions that give your bot a memory.
 
-GitHub Source:
-[Link](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/)
+This lesson is part of the [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
 
 ## What You'll Create
 
