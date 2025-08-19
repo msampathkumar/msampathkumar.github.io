@@ -77,10 +77,11 @@ extra:
 nav:
   - index.md
   - Gemini Cookbook:
-    - google-cloud-gemini-cookbook/index.md
+    - Home: google-cloud-gemini-cookbook/README.md
     - Lesson-01: google-cloud-gemini-cookbook/lesson-01/README.md
     - Lesson-02: google-cloud-gemini-cookbook/lesson-02/README.md
     - Lesson-03: google-cloud-gemini-cookbook/lesson-03/README.md
     - Lesson-04: google-cloud-gemini-cookbook/lesson-04/README.md
+    - Lesson-05: google-cloud-gemini-cookbook/lesson-05/README.md
 #  - Blog:
 #    - blog/index.md
