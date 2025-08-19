@@ -9,7 +9,7 @@ I'm excited to introduce my "Cookbook" series! This is where I'll be sharing
 step-by-step guides and practical examples for various technologies.
 
 The first cookbook in the series is the
-[Google Cloud Gemini Cookbook](./google-cloud-gemini-cookbook/index.md).
+[Google Cloud Gemini Cookbook](./google-cloud-gemini-cookbook/README.md).
 
 ## Blog
 

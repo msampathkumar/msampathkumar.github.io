@@ -1,3 +1,4 @@
+![img.png](img.png)
 # Cookbook Lesson 01: 🚀 Build a `Hello World` app with Gemini, Streamlit & Google Cloud Run
 
 Welcome to the **Google Cloud Gemini Cookbook**! In this very first lesson,
