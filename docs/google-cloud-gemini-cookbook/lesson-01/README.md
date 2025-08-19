@@ -6,7 +6,8 @@ simple idea to a live web application in minutes. Forget complex setups; with
 Streamlit and Google Cloud Run, deploying your first web app is incredibly fast
 and fun! ✨
 
-This lesson is part of the [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
+> This lesson is part of the
+[Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
 
 ______________________________________________________________________
 

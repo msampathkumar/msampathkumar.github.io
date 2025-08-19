@@ -67,20 +67,19 @@ actionable advice for everyone on the team.
    vulnerability. Another common mistake is hardcoding API keys directly into a
    script.
 
-   Fix: Developers, maintain a "human in the loop" mindset. Always
-   review code for common security flaws like insecure input handling. Tech
-   leads, mandate static analysis tools and code reviews for any AI-generated
-   code, no matter how small.
+   Fix: Developers, maintain a "human in the loop" mindset. Always review code
+   for common security flaws like insecure input handling. Tech leads, mandate
+   static analysis tools and code reviews for any AI-generated code, no matter
+   how small.
 
 1. The Technical Debt Vortex 🌪️ The Mistake: Treating a vibe-coded prototype as
    a production-ready solution. The code works, but it's a tangled mess that's
    impossible to debug or extend.
 
-   Fix: Developers, refactor aggressively.
-   If a prototype is promising, treat it as pseudo-code and rewrite it with
-   proper structure. Project managers, plan for a "refactoring phase" in your
-   sprints. The AI got you 80% there; now build the last, most crucial 20%
-   responsibly.
+   Fix: Developers, refactor aggressively. If a prototype is promising, treat
+   it as pseudo-code and rewrite it with proper structure. Project managers,
+   plan for a "refactoring phase" in your sprints. The AI got you 80% there;
+   now build the last, most crucial 20% responsibly.
 
 1. The Skills Erosion 🧠 The Mistake: Over-relying on AI to the point where
    developers stop understanding the fundamentals. You lose the ability to
