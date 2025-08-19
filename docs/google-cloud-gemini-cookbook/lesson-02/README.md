@@ -1,3 +1,4 @@
+![img.png](img.png)
 # Cookbook Lesson 02: Deploy Your AI Chatbot to Google Cloud Run: Go Live! ☁️
 
 Welcome to the second lesson in our Gemini Cookbook series! This time, we're

@@ -1,5 +1,5 @@
 ---
-title: Adding a badge to your project
+title: Vibe Coding - What, What Not, and How
 date: 2023-11-30
 authors: [sampathm]
 slug: adding-a-badge-to-your-project
