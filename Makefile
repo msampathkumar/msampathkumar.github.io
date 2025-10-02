@@ -14,7 +14,7 @@ run:
 
 deploy:
 	@echo "Deploying to GitHub Pages"
-	mkdocs gh-deploy
+	mkdocs gh-deploy --clean --force
 
 
 check-ga:

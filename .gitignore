@@ -6,3 +6,13 @@ __pycache__/
 .cache
 node_modules
 internal*
+# gemini-cli settings
+.gemini/
+
+# GitHub App credentials
+gha-creds-*.json
+
+.github/workflow
+.ipynb_checkpoints
+
+GEMINI.md*
