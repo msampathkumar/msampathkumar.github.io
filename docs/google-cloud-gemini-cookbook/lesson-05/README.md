@@ -16,7 +16,8 @@ we’ll do a quick recap of those earlier lessons and then dive into some
 important tips and takeaways for building great Gemini features applicable to
 most users.
 
-> This lesson is the last part of the 5 part series [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
+> This lesson is the last part of the 5 part series
+> [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
 
 ## **Takeaway 01: Multi-Layered Application**
 

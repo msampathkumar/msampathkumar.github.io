@@ -12,7 +12,7 @@ direct, consistent, and reusable context methods that get you up and running
 with meaningful interactions fast.
 
 > This lesson is part of the 5 part series
-[Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
+> [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
 
 ______________________________________________________________________
 
