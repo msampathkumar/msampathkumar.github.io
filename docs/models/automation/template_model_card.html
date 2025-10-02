@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ model.name }} - Model Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lato:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Layer 1: Header -->
+        <div class="header">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Google_Gemini_icon_2025.svg" alt="Gemini Logo" class="logo">
+            <h1>{{ model.name }}</h1>
+            <p class="subtitle">{{ model.variant }}</p>
+            <code class="model-name">{{ model.api_name }}</code>
+        </div>
+        <div class="meta-bar">
+            <span>Release: {{ model.release_date }}</span>
+            <span>Knowledge Cut-off: {{ model.knowledge_cutoff }}</span>
+        </div>
+
+        <!-- Layer 2: IO -->
+        <div class="card io-section">
+            <div class="io-block">
+                <h2 class="card-title title-left">Input</h2>
+                <div class="modality-icons">
+                    {% for modality in model.input.modalities %}
+                        <div class="modality-item">{{ modality | safe }}</div>
+                    {% endfor %}
+                </div>
+                <p class="tokens">Max {{ model.input.max_tokens }} Tokens</p>
+            </div>
+            <div class="arrow">></div>
+            <div class="io-block">
+                <h2 class="card-title title-right">Output</h2>
+                <div class="modality-icons">
+                    {% for modality in model.output.modalities %}
+                        <div class="modality-item">{{ modality | safe }}</div>
+                    {% endfor %}
+                </div>
+                <p class="tokens">Max {{ model.output.max_tokens }} Tokens</p>
+            </div>
+        </div>
+
+        <!-- Layer 3: Location & Model Features -->
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <h2 class="card-title title-left">Location</h2>
+                    <ul class="location-list">
+                        {% for item in model.location %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <h2 class="card-title title-center">Model Feature</h2>
+                    <ul class="checkmark">
+                        {% for feature in model.model_features %}
+                        <li>{{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Layer 4: Pricing -->
+        <div class="card">
+            <h2 class="card-title title-left">Pricing</h2>
+            <div class="pricing-grid">
+                <div>
+                    {% for modality, price in model.pricing.input.items() %}
+                        {% if price is not none %}
+                            <p>1M input {{ modality }} tokens = ${{ price }}</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div>
+                    {% for modality, price in model.pricing.output.items() %}
+                        {% if price is not none %}
+                            <p>1M output {{ modality }} tokens = ${{ price }}</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Layer 5: SDKs -->
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <h2 class="card-title title-left">Latest SDKs</h2>
+                    <div class="sdk-list">
+                        {% for name, version in model.sdks.items() %}
+                        <p><b>{{ name }}:</b> {{ version }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <h2 class="card-title title-center">Latest ADK</h2>
+                    <div class="sdk-list">
+                        {% for name, version in model.adk.items() %}
+                        <p><b>{{ name }}:</b> {{ version }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {% include 'footer.html' %}
+
+</body>
+</html>

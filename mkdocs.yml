@@ -48,7 +48,8 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
-  - blog
+  - meta
+#  - blog
   - search
   - mermaid2
 
@@ -76,12 +77,28 @@ extra:
 
 nav:
   - index.md
-  - Gemini Cookbook:
-    - Home: google-cloud-gemini-cookbook/README.md
-    - Lesson-01: google-cloud-gemini-cookbook/lesson-01/README.md
-    - Lesson-02: google-cloud-gemini-cookbook/lesson-02/README.md
-    - Lesson-03: google-cloud-gemini-cookbook/lesson-03/README.md
-    - Lesson-04: google-cloud-gemini-cookbook/lesson-04/README.md
-    - Lesson-05: google-cloud-gemini-cookbook/lesson-05/README.md
-#  - Blog:
-#    - blog/index.md
+#  - Gemini.md
+#  - HelloWorld.md
+#  - cookbook.md
+  - "Gemini Cookbook":
+    - "Home": google-cloud-gemini-cookbook/README.md
+    - "Internal Plan": google-cloud-gemini-cookbook/internal_cookbook_plan.md
+    - "Lesson-01": google-cloud-gemini-cookbook/lesson-01/README.md
+    - "Lesson-02": google-cloud-gemini-cookbook/lesson-02/README.md
+    - "Lesson-03": google-cloud-gemini-cookbook/lesson-03/README.md
+    - "Lesson-04": google-cloud-gemini-cookbook/lesson-04/README.md
+#        - "Introduction": google-cloud-gemini-cookbook/lesson-04/README.md
+#        - "Project Alpha": google-cloud-gemini-cookbook/lesson-04/rag_dataset/project_alpha.md
+#        - "RAG Intro": google-cloud-gemini-cookbook/lesson-04/rag_dataset/rag_intro.md
+    - "Lesson-05": google-cloud-gemini-cookbook/lesson-05/README.md
+#  - "Blog":
+#      - blog/index.md
+#      - "Gemini 2.5 Flash Image Preview": blog/gemini-2.5-flash-image-preview_md
+#    - "Project Management":
+#        - "Top Level Summary": blog/ProjectMgmt/top-level-summary.md
+#        - "RACI": blog/ProjectMgmt/RACI.md
+#        - "Tasks and Milestones": blog/ProjectMgmt/Tasks-and-Milestones.md
+  - "Gemini Model Cards":
+      - Home: models/index.md
+      - "report_gemini_2.0_flash_live_preview_04_09": models/automation/report_gemini_2.0_flash_live_preview_04_09.html
+      - "report_gemini_2.5_pro_preview_05_15": models/automation/report_gemini_2.5_pro_preview_05_15.html
