@@ -1,4 +1,5 @@
 ![img.png](img.png)
+
 # Cookbook Lesson 02: Deploy Your AI Chatbot to Google Cloud Run: Go Live! ☁️
 
 Welcome to the second lesson in our Gemini Cookbook series! This time, we're
@@ -8,7 +9,7 @@ Flash model. We'll be using the official Google Cloud Vertex AI SDK, which has
 powerful features like chat sessions that give your bot a memory.
 
 > This lesson is part of the
-[Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
+> [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
 
 ## What You'll Create
 

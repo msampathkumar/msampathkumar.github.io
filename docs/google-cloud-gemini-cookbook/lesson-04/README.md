@@ -11,7 +11,8 @@ Today, we tackle the next frontier: **Grounding** your Gemini models in
 real-time, external, and even proprietary data using **Retrieval Augmented
 Generation (RAG)**, with Google Cloud Search as your powerful engine. 🔍
 
-> This lesson is part of the 5 part series [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
+> This lesson is part of the 5 part series
+> [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
 
 ______________________________________________________________________
 

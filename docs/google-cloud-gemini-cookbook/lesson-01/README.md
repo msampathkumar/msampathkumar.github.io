@@ -1,4 +1,5 @@
 ![img.png](img.png)
+
 # Cookbook Lesson 01: 🚀 Build a `Hello World` app with Gemini, Streamlit & Google Cloud Run
 
 Welcome to the **Google Cloud Gemini Cookbook**! In this very first lesson,
@@ -8,7 +9,7 @@ Streamlit and Google Cloud Run, deploying your first web app is incredibly fast
 and fun! ✨
 
 > This lesson is part of the
-[Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
+> [Google Cloud - Gemini Cookbook (GitHub Link)](https://github.com/msampathkumar/msampathkumar.github.io/tree/master/docs/google-cloud-gemini-cookbook/).
 
 ______________________________________________________________________
 
