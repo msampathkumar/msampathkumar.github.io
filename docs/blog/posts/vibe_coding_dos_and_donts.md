@@ -1,14 +1,14 @@
----
-title: Adding a badge to your project
-date: 2023-11-30
-authors: [sampathm]
-slug: adding-a-badge-to-your-project
-description: >
-  Share the love – you can now add a badge to your README, showing that your
-  project is built with Material for MkDocs
-categories:
-  - General
----
+______________________________________________________________________
+
+title: Adding a badge to your project date: 2023-11-30 authors: [sampathm]
+slug: adding-a-badge-to-your-project description: > Share the love – you can
+now add a badge to your README, showing that your project is built with
+Material for MkDocs categories:
+
+- General
+
+______________________________________________________________________
+
 ## title: "DO's and DOnt's with Vibe Coding" date: 2024-01-31
 
 ## DO's and DOnt's with Vibe Coding
