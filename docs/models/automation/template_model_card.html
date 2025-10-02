@@ -14,7 +14,7 @@
     <div class="container">
         <!-- Layer 1: Header -->
         <div class="header">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Google_Gemini_icon_2025.svg" alt="Gemini Logo" class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Google_Gemini_icon_2025.svg" alt="Gemini Logo" class="logo">
             <h1>{{ model.name }}</h1>
             <p class="subtitle">{{ model.variant }}</p>
             <code class="model-name">{{ model.api_name }}</code>
@@ -61,7 +61,7 @@
             </div>
             <div class="col">
                 <div class="card">
-                    <h2 class="card-title title-center">Model Feature</h2>
+                    <h2 class="card-title title-left">Model Feature</h2>
                     <ul class="checkmark">
                         {% for feature in model.model_features %}
                         <li>{{ feature }}</li>
@@ -76,18 +76,22 @@
             <h2 class="card-title title-left">Pricing</h2>
             <div class="pricing-grid">
                 <div>
+                    <ul class="pricing-grid-list">
                     {% for modality, price in model.pricing.input.items() %}
                         {% if price is not none %}
-                            <p>1M input {{ modality }} tokens = ${{ price }}</p>
+                        <li>1M input {{ modality }} tokens = ${{ price }}</li>
                         {% endif %}
-                    {% endfor %}
+                        {% endfor %}
+                    </ul>
                 </div>
                 <div>
+                    <ul class="pricing-grid-list">
                     {% for modality, price in model.pricing.output.items() %}
                         {% if price is not none %}
-                            <p>1M output {{ modality }} tokens = ${{ price }}</p>
+                            <li>1M output {{ modality }} tokens = ${{ price }}</li>
                         {% endif %}
                     {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
@@ -106,7 +110,7 @@
             </div>
             <div class="col">
                 <div class="card">
-                    <h2 class="card-title title-center">Latest ADK</h2>
+                    <h2 class="card-title title-left">Agent ADK</h2>
                     <div class="sdk-list">
                         {% for name, version in model.adk.items() %}
                         <p><b>{{ name }}:</b> {{ version }}</p>
