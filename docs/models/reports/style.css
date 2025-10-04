@@ -91,7 +91,9 @@ body {
 }
 
 .content-card {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
 }
 
 .container > .row,
@@ -101,8 +103,8 @@ body {
 
 .card-title {
     font-family: 'Caveat', cursive;
-    font-size: 1.5rem;
-    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    margin: 0 0 .5rem 0;
     color: #212121;
     font-weight: 700;
 }
@@ -153,8 +155,8 @@ body {
 }
 
 .io-section .arrow {
-    font-size: 3rem;
-    color: #fff;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .io-block {
@@ -188,8 +190,19 @@ ul li {
 ul.checkmark li::before {
     content: '✓ ';
     color: #3a7d3d;
-    margin-right: 0.75rem;
-    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+ul.dotlist li::before {
+    content: '• ';
+    color: #3a7d3d;
+    margin-right: 0.5rem;
+}
+
+ul.pricing-grid-list li::before {
+    content: '⬩';
+    color: #3a7d3d;
+    margin-right: 0.5rem;
 }
 
 /* Layer 4: Pricing */
@@ -200,6 +213,7 @@ ul.checkmark li::before {
 }
 
 .pricing-grid p {
+    content: '- ';
     margin: 0.5rem 0;
 }
 
@@ -211,7 +225,7 @@ ul.checkmark li::before {
 
 footer {
     text-align: center;
-    margin-top: 1rem; /* Increased margin for separation */
+    margin-top: 0.25rem; /* Increased margin for separation */
     color: white;
     font-size: 0.75rem;
 }
