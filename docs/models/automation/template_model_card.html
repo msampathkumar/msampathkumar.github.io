@@ -32,22 +32,26 @@
         <div class="card io-section">
             <div class="io-block">
                 <h2 class="card-title title-left">Input</h2>
-                <div class="modality-icons">
-                    {% for modality in model.input.modalities %}
-                        <div class="modality-item">{{ modality | safe }}</div>
-                    {% endfor %}
+                <div class="content-card">
+                    <div class="modality-icons">
+                        {% for modality in model.input.modalities %}
+                            <div class="modality-item">{{ modality | safe }}</div>
+                        {% endfor %}
+                    </div>
+                    <p class="tokens">Max {{ model.input.max_tokens }} Tokens</p>
                 </div>
-                <p class="tokens">Max {{ model.input.max_tokens }} Tokens</p>
             </div>
             <div class="arrow">></div>
             <div class="io-block">
                 <h2 class="card-title title-right">Output</h2>
-                <div class="modality-icons">
-                    {% for modality in model.output.modalities %}
-                        <div class="modality-item">{{ modality | safe }}</div>
-                    {% endfor %}
+                <div class="content-card">
+                    <div class="modality-icons">
+                        {% for modality in model.output.modalities %}
+                            <div class="modality-item">{{ modality | safe }}</div>
+                        {% endfor %}
+                    </div>
+                    <p class="tokens">Max {{ model.output.max_tokens }} Tokens</p>
                 </div>
-                <p class="tokens">Max {{ model.output.max_tokens }} Tokens</p>
             </div>
         </div>
 
@@ -56,21 +60,25 @@
             <div class="col">
                 <div class="card">
                     <h2 class="card-title title-left">Locations</h2>
-                    <ul class="checkmark">
-                        {% for item in model.location %}
-                        <li>{{ item }}</li>
-                        {% endfor %}
-                    </ul>
+                    <div class="content-card">
+                        <ul class="checkmark">
+                            {% for item in model.location %}
+                            <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
                     <h2 class="card-title title-left">Features</h2>
-                    <ul class="checkmark">
-                        {% for feature in model.model_features %}
-                        <li>{{ feature }}</li>
-                        {% endfor %}
-                    </ul>
+                    <div class="content-card">
+                        <ul class="checkmark">
+                            {% for feature in model.model_features %}
+                            <li>{{ feature }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,24 +86,26 @@
         <!-- Layer 4: Pricing -->
         <div class="card">
             <h2 class="card-title title-left">Pricing</h2>
-            <div class="pricing-grid">
-                <div>
-                    <ul class="pricing-grid-list">
-                    {% for modality, price in model.pricing.input.items() %}
-                        {% if price is not none %}
-                        <li>1M input {{ modality }} tokens = ${{ price }}</li>
-                        {% endif %}
+            <div class="content-card">
+                <div class="pricing-grid">
+                    <div>
+                        <ul class="pricing-grid-list">
+                        {% for modality, price in model.pricing.input.items() %}
+                            {% if price is not none %}
+                            <li>1M input {{ modality }} tokens = ${{ price }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="pricing-grid-list">
+                        {% for modality, price in model.pricing.output.items() %}
+                            {% if price is not none %}
+                                <li>1M output {{ modality }} tokens = ${{ price }}</li>
+                            {% endif %}
                         {% endfor %}
-                    </ul>
-                </div>
-                <div>
-                    <ul class="pricing-grid-list">
-                    {% for modality, price in model.pricing.output.items() %}
-                        {% if price is not none %}
-                            <li>1M output {{ modality }} tokens = ${{ price }}</li>
-                        {% endif %}
-                    {% endfor %}
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,20 +115,24 @@
             <div class="col">
                 <div class="card">
                     <h2 class="card-title title-left">Latest SDKs</h2>
-                    <div class="sdk-list">
-                        {% for name, version in model.sdks.items() %}
-                        <p><b>{{ name }}:</b> {{ version }}</p>
-                        {% endfor %}
+                    <div class="content-card">
+                        <div class="sdk-list">
+                            {% for name, version in model.sdks.items() %}
+                            <p><b>{{ name }}:</b> {{ version }}</p>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
                     <h2 class="card-title title-left">Latest ADK</h2>
-                    <div class="sdk-list">
-                        {% for name, version in model.adk.items() %}
-                        <p><b>{{ name }}:</b> {{ version }}</p>
-                        {% endfor %}
+                    <div class="content-card">
+                        <div class="sdk-list">
+                            {% for name, version in model.adk.items() %}
+                            <p><b>{{ name }}:</b> {{ version }}</p>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
