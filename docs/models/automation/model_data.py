@@ -25,9 +25,9 @@ class ModelContext:
 @dataclass
 class GeminiModel:
     name: str
-    variant: str
+    model_name: str
     api_name: str
-    release_date: str
+    model_availability: str
     knowledge_cutoff: str
     context: ModelContext
     location: List[str]
