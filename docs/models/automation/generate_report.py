@@ -37,9 +37,9 @@ def create_model_from_dict(data: dict) -> GeminiModel:
 
     return GeminiModel(
         name=data.get("name"),
-        variant=data.get("variant"),
+        model_name=data.get("model_name"),
         api_name=data.get("api_name"),
-        release_date=data.get("release_date"),
+        model_availability=data.get("model_availability"),
         knowledge_cutoff=data.get("knowledge_cutoff"),
         location=data.get("location", []),
         model_features=data.get("model_features", []),
@@ -67,9 +67,9 @@ def main():
                 template_data = {
                     "model": {
                         "name": model_obj.name,
-                        "variant": model_obj.variant,
+                        "model_name": model_obj.model_name,
                         "api_name": model_obj.api_name,
-                        "release_date": model_obj.release_date,
+                        "model_availability": model_obj.model_availability,
                         "knowledge_cutoff": model_obj.knowledge_cutoff,
                         "input": {
                             "modalities": [

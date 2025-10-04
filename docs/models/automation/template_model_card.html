@@ -14,13 +14,17 @@
     <div class="container">
         <!-- Layer 1: Header -->
         <div class="header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Google_Gemini_icon_2025.svg" alt="Gemini Logo" class="logo">
-            <h1>{{ model.name }}</h1>
-            <p class="subtitle">{{ model.variant }}</p>
-            <code class="model-name">{{ model.api_name }}</code>
+            <div class="header-col-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Google_Gemini_icon_2025.svg" alt="Gemini Logo" class="logo">
+            </div>
+            <div class="header-col-main">
+                <h1>{{ model.name }}</h1>
+                <p class="subtitle">{{ model.model_name }}</p>
+                <code class="model-name">{{ model.api_name }}</code>
+            </div>
         </div>
         <div class="meta-bar">
-            <span>Release: {{ model.release_date }}</span>
+            <span>Model Availability: {{ model.model_availability }}</span>
             <span>Knowledge Cut-off: {{ model.knowledge_cutoff }}</span>
         </div>
 
@@ -47,12 +51,12 @@
             </div>
         </div>
 
-        <!-- Layer 3: Location & Model Features -->
+        <!-- Layer 3: Locations & Features -->
         <div class="row">
             <div class="col">
                 <div class="card">
-                    <h2 class="card-title title-left">Location</h2>
-                    <ul class="location-list">
+                    <h2 class="card-title title-left">Locations</h2>
+                    <ul class="checkmark">
                         {% for item in model.location %}
                         <li>{{ item }}</li>
                         {% endfor %}
@@ -61,7 +65,7 @@
             </div>
             <div class="col">
                 <div class="card">
-                    <h2 class="card-title title-left">Model Feature</h2>
+                    <h2 class="card-title title-left">Features</h2>
                     <ul class="checkmark">
                         {% for feature in model.model_features %}
                         <li>{{ feature }}</li>
@@ -110,7 +114,7 @@
             </div>
             <div class="col">
                 <div class="card">
-                    <h2 class="card-title title-left">Agent ADK</h2>
+                    <h2 class="card-title title-left">Latest ADK</h2>
                     <div class="sdk-list">
                         {% for name, version in model.adk.items() %}
                         <p><b>{{ name }}:</b> {{ version }}</p>
