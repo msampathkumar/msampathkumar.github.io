@@ -12,7 +12,7 @@
 <body>
 
     <div class="container">
-        <!-- Layer 1: Header -->
+        <!-- Header Section -->
         <div class="header">
             <div class="header-col-logo">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Google_Gemini_icon_2025.svg" alt="Gemini Logo" class="logo">
@@ -28,7 +28,7 @@
             <span>Knowledge Cut-off: {{ model.knowledge_cutoff }}</span>
         </div>
 
-        <!-- Layer 2: IO -->
+        <!-- Input/Output Section -->
         <div class="card io-section">
             <div class="io-block">
                 <h2 class="card-title title-left">Input</h2>
@@ -55,11 +55,11 @@
             </div>
         </div>
 
-        <!-- Layer 3: Locations & Features -->
+        <!-- Locations & Features Section -->
         <div class="row">
             <div class="col">
                 <div class="card">
-                    <h2 class="card-title title-left">Locations</h2>
+                    <h2 class="card-title title-left"> Locations</h2>
                     <div class="content-card">
                         <ul class="dotlist">
                             {% for item in model.location %}
@@ -71,7 +71,7 @@
             </div>
             <div class="col">
                 <div class="card">
-                    <h2 class="card-title title-left">Features</h2>
+                    <h2 class="card-title title-left"> Features</h2>
                     <div class="content-card">
                         <ul class="checkmark">
                             {% for feature in model.model_features %}
@@ -83,7 +83,7 @@
             </div>
         </div>
 
-        <!-- Layer 4: Pricing -->
+        <!-- Pricing Section -->
         <div class="card">
             <h2 class="card-title title-left">Pricing</h2>
             <div class="content-card">
@@ -110,17 +110,17 @@
             </div>
         </div>
 
-        <!-- Layer 5: SDKs -->
+        <!-- SDKs & ADK Section -->
         <div class="row">
             <div class="col">
                 <div class="card">
                     <h2 class="card-title title-left">Latest SDKs</h2>
                     <div class="content-card">
-                        <div class="sdk-list">
+                        <ul class="pricing-grid-list">
                             {% for name, version in model.sdks.items() %}
-                            <p><b>{{ name }}:</b> {{ version }}</p>
+                            <li><b>{{ name }}:</b> {{ version }}</li>
                             {% endfor %}
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -128,11 +128,11 @@
                 <div class="card">
                     <h2 class="card-title title-left">Latest ADK</h2>
                     <div class="content-card">
-                        <div class="sdk-list">
+                        <ul class="pricing-grid-list">
                             {% for name, version in model.adk.items() %}
-                            <p><b>{{ name }}:</b> {{ version }}</p>
+                            <li><b>{{ name }}:</b> {{ version }}</li>
                             {% endfor %}
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </div>
