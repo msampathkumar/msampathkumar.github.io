@@ -1,9 +1,9 @@
-
 models:
   - name: "Gemini 2.0"
-    model_name: "Gemini 2.0 Flash Live"
+    model_name: "Gemini 2.0 Flash Live Image Preview"
     api_name: "gemini-2.0-flash-live"
-    model_availability: "April 9, 2025 - NA"
+    model_availability_start_date: "April 9, 2025"
+    model_availability_end_date: "April 9, 2026"
     knowledge_cutoff: "June 2024"
     context:
       input_modalities:
@@ -25,26 +25,42 @@ models:
       - "Grounding with Google Search"
     pricing:
       input:
-        text: 0.5
-        audio: 3.0
-        video: 3.0
+        text: "$ 1.0 / 1 M Tokens"
+        audio: "$ 4.0 / 1 M Tokens"
+        video: "$ 4.0 / 1 M Tokens"
+        image: "$ 2.0 / 1 M Tokens"
       output:
-        text: 2.0
-        audio: 12.0
+        text: "$ 3.0 / 1 M Tokens"
+        audio: "$ 16.0 / 1 M Tokens"
+        video: "$ 16.0 / 1 M Tokens"
+        image: "$ 8.0 / 1 M Tokens"
     sdks:
-      Python: "<a href='https://github.com/googleapis/python-genai/'>google-genai v1.39.1</a>"
-      Go: "<a href='https://github.com/googleapis/go-genai'>go-genai v1.26.0</a>"
-      NodeJS: "<a href='https://github.com/googleapis/js-genai'>@google-genai v1.22.0</a>"
-      Java: "<a href='https://github.com/googleapis/java-genai'>google-genai v1.18.0</a>"
+      - lang: Python
+        url: "https://github.com/googleapis/python-genai/"
+        version: "google-genai v1.39.1"
+      - lang: Go
+        url: "https://github.com/googleapis/go-genai"
+        version: "go-genai v1.26.0"
+      - lang: NodeJS
+        url: "https://github.com/googleapis/js-genai"
+        version: "@google-genai v1.22.0"
+      - lang: Java
+        url: "https://github.com/googleapis/java-genai"
+        version: "google-genai v1.18.0"
     adk:
-      Python: "<a href='https://github.com/google/adk-python'>google-adk v1.15.1</a>"
-      Java: "<a href='https://github.com/google/adk-java'>google-adk v0.3.0</a>"
+      - lang: Python
+        url: "https://github.com/google/adk-python"
+        version: "google-adk v1.15.1"
+      - lang: Java
+        url: "https://github.com/google/adk-java"
+        version: "google-adk v0.3.0"
 
   - name: "Gemini 2.5"
     model_name: "Gemini 2.5 Pro"
     api_name: "gemini-2.5-pro"
-    model_availability: "May 15, 2025"
-    knowledge_cutoff: "September 2024"
+    model_availability_start_date: "May 15, 2025"
+    model_availability_end_date: "September 12, 2025"
+    knowledge_cutoff: "September, 2024"
     context:
       input_modalities:
         - "Text"
@@ -70,20 +86,32 @@ models:
       - "Grounding with Google Search"
     pricing:
       input:
-        text: 1.0
-        audio: 4.0
-        video: 4.0
-        image: 2.0
+        text: "$ 1.0 / 1 M Tokens"
+        audio: "$ 4.0 / 1 M Tokens"
+        video: "$ 4.0 / 1 M Tokens"
+        image: "$ 2.0 / 1 M Tokens"
       output:
-        text: 3.0
-        audio: 16.0
-        video: 16.0
-        image: 8.0
+        text: "$ 3.0 / 1 M Tokens"
+        audio: "$ 16.0 / 1 M Tokens"
+        video: "$ 16.0 / 1 M Tokens"
+        image: "$ 8.0 / 1 M Tokens"
     sdks:
-      Python: "<a href='https://github.com/googleapis/python-genai/'>google-genai v1.39.1</a>"
-      Go: "<a href='https://github.com/googleapis/go-genai'>go-genai v1.26.0</a>"
-      NodeJS: "<a href='https://github.com/googleapis/js-genai'>@google-genai v1.22.0</a>"
-      Java: "<a href='https://github.com/googleapis/java-genai'>google-genai v1.18.0</a>"
+      - lang: Python
+        url: "https://github.com/googleapis/python-genai/"
+        version: "google-genai v1.39.1"
+      - lang: Go
+        url: "https://github.com/googleapis/go-genai"
+        version: "go-genai v1.26.0"
+      - lang: NodeJS
+        url: "https://github.com/googleapis/js-genai"
+        version: "@google-genai v1.22.0"
+      - lang: Java
+        url: "https://github.com/googleapis/java-genai"
+        version: "google-genai v1.18.0"
     adk:
-      Python: "<a href='https://github.com/google/adk-python'>google-adk v1.15.1</a>"
-      Java: "<a href='https://github.com/google/adk-java'>google-adk v0.3.0</a>"
+      - lang: Python
+        url: "https://github.com/google/adk-python"
+        version: "google-adk v1.15.1"
+      - lang: Java
+        url: "https://github.com/google/adk-java"
+        version: "google-adk v0.3.0"

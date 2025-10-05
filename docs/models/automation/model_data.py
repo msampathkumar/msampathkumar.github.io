@@ -4,14 +4,14 @@ from typing import List, Dict, Optional
 
 @dataclass
 class ModelPricing:
-    input_text: Optional[float] = None
-    input_audio: Optional[float] = None
-    input_video: Optional[float] = None
-    input_image: Optional[float] = None
-    output_text: Optional[float] = None
-    output_audio: Optional[float] = None
-    output_video: Optional[float] = None
-    output_image: Optional[float] = None
+    input_text: Optional[str] = None
+    input_audio: Optional[str] = None
+    input_video: Optional[str] = None
+    input_image: Optional[str] = None
+    output_text: Optional[str] = None
+    output_audio: Optional[str] = None
+    output_video: Optional[str] = None
+    output_image: Optional[str] = None
 
 
 @dataclass
@@ -23,15 +23,30 @@ class ModelContext:
 
 
 @dataclass
+class SdkInfo:
+    lang: str
+    url: str
+    version: str
+
+
+@dataclass
+class AdkInfo:
+    lang: str
+    url: str
+    version: str
+
+
+@dataclass
 class GeminiModel:
     name: str
     model_name: str
     api_name: str
-    model_availability: str
+    model_availability_start_date: str
+    model_availability_end_date: str
     knowledge_cutoff: str
     context: ModelContext
     location: List[str]
     model_features: List[str]
     pricing: ModelPricing
-    sdks: Dict[str, str]
-    adk: Dict[str, str]
+    sdks: List[SdkInfo]
+    adk: List[AdkInfo]

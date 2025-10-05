@@ -227,15 +227,35 @@ ul.pricing-grid-list li::before {
    Pricing Section
    ========================================================================== */
 
-.pricing-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.pricing-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 1rem;
 }
 
-.pricing-grid2 p {
-    content: '- ';
-    margin: 0.5rem 0;
+.pricing-section .arrow {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+    width: 3rem;
+}
+
+.pricing-block {
+    flex: 1;
+}
+
+ul.pricing-list {
+    padding: 0;
+}
+
+ul.pricing-list li {
+    margin-bottom: 0.15rem;
+}
+
+ul.pricing-list li::before {
+    content: '⬩';
+    color: #3a7d3d;
+    margin-right: 0.25rem;
 }
 
 /* ==========================================================================
