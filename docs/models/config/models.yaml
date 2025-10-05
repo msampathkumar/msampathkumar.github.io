@@ -1,7 +1,7 @@
 models:
   - name: "Gemini 2.0"
     model_name: "Gemini 2.0 Flash Live Image Preview"
-    api_name: "gemini-2.0-flash-live"
+    api_name: "gemini-live-2.5-flash-preview-native-audio-09-2025"
     model_availability_start_date: "April 9, 2025"
     model_availability_end_date: "April 9, 2026"
     knowledge_cutoff: "June 2024"
