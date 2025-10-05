@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="meta-bar">
-            <span>Model Availability: {{ model.model_availability }}</span>
+            <span>Available: {{ model.model_availability_start_date }} - {{ model.model_availability_end_date }}</span>
             <span>Knowledge Cut-off: {{ model.knowledge_cutoff }}</span>
         </div>
 
@@ -43,7 +43,7 @@
             </div>
             <div class="arrow">></div>
             <div class="io-block">
-                <h2 class="card-title title-right">Output</h2>
+                <h2 class="card-title title-left">Output</h2>
                 <div class="content-card">
                     <div class="modality-icons">
                         {% for modality in model.output.modalities %}
@@ -84,28 +84,30 @@
         </div>
 
         <!-- Pricing Section -->
-        <div class="card">
-            <h2 class="card-title title-left">Pricing</h2>
-            <div class="content-card">
-                <div class="pricing-grid">
-                    <div>
-                        <ul class="pricing-grid-list">
-                        {% for modality, price in model.pricing.input.items() %}
-                            {% if price is not none %}
-                            <li>1M input {{ modality }} tokens = ${{ price }}</li>
-                            {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    <div>
-                        <ul class="pricing-grid-list">
-                        {% for modality, price in model.pricing.output.items() %}
-                            {% if price is not none %}
-                                <li>1M output {{ modality }} tokens = ${{ price }}</li>
-                            {% endif %}
+        <div class="card pricing-section">
+            <div class="pricing-block">
+                <h2 class="card-title title-left">Pricing-Input</h2>
+                <div class="content-card">
+                    <ul class="pricing-list">
+                    {% for modality, price in model.pricing.input.items() %}
+                        {% if price is not none %}
+                        <li><b>{{ modality | title }}:</b> {{ price }}</li>
+                        {% endif %}
                         {% endfor %}
-                        </ul>
-                    </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="arrow"></div>
+            <div class="pricing-block">
+                <h2 class="card-title title-left">Pricing-Output</h2>
+                <div class="content-card">
+                    <ul class="pricing-list">
+                    {% for modality, price in model.pricing.output.items() %}
+                        {% if price is not none %}
+                            <li><b>{{ modality | title }}:</b> {{ price }}</li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
@@ -117,8 +119,8 @@
                     <h2 class="card-title title-left">Latest SDKs</h2>
                     <div class="content-card">
                         <ul class="pricing-grid-list">
-                            {% for name, version in model.sdks.items() %}
-                            <li><b>{{ name }}:</b> {{ version }}</li>
+                            {% for sdk in model.sdks %}
+                            <li><b>{{ sdk.lang }}:</b> <a href="{{ sdk.url }}">{{ sdk.version }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -129,8 +131,8 @@
                     <h2 class="card-title title-left">Latest ADK</h2>
                     <div class="content-card">
                         <ul class="pricing-grid-list">
-                            {% for name, version in model.adk.items() %}
-                            <li><b>{{ name }}:</b> {{ version }}</li>
+                            {% for adk in model.adk %}
+                            <li><b>{{ adk.lang }}:</b> <a href="{{ adk.url }}">{{ adk.version }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>

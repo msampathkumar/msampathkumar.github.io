@@ -1,7 +1,7 @@
 import os
 import yaml
 from jinja2 import Environment, FileSystemLoader
-from model_data import GeminiModel, ModelContext, ModelPricing
+from model_data import GeminiModel, ModelContext, ModelPricing, SdkInfo, AdkInfo
 
 # SVG icons for modalities
 MODALITY_ICONS = {
@@ -35,16 +35,23 @@ def create_model_from_dict(data: dict) -> GeminiModel:
         output_max_tokens=context_data.get("output_max_tokens"),
     )
 
+    sdks_data = data.get("sdks", [])
+    sdks = [SdkInfo(**sdk_data) for sdk_data in sdks_data]
+
+    adks_data = data.get("adk", [])
+    adks = [AdkInfo(**adk_data) for adk_data in adks_data]
+
     return GeminiModel(
         name=data.get("name"),
         model_name=data.get("model_name"),
         api_name=data.get("api_name"),
-        model_availability=data.get("model_availability"),
+        model_availability_start_date=data.get("model_availability_start_date"),
+        model_availability_end_date=data.get("model_availability_end_date"),
         knowledge_cutoff=data.get("knowledge_cutoff"),
         location=data.get("location", []),
         model_features=data.get("model_features", []),
-        sdks=data.get("sdks", {}),
-        adk=data.get("adk", {}),
+        sdks=sdks,
+        adk=adks,
         pricing=pricing,
         context=context,
     )
@@ -69,7 +76,8 @@ def main():
                         "name": model_obj.name,
                         "model_name": model_obj.model_name,
                         "api_name": model_obj.api_name,
-                        "model_availability": model_obj.model_availability,
+                        "model_availability_start_date": model_obj.model_availability_start_date,
+                        "model_availability_end_date": model_obj.model_availability_end_date,
                         "knowledge_cutoff": model_obj.knowledge_cutoff,
                         "input": {
                             "modalities": [
