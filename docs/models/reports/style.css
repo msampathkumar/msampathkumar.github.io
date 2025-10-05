@@ -37,6 +37,26 @@ body {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    position: relative;
+    justify-content: space-between;
+}
+
+.header-col-qr {
+    /* Container for the QR code */
+}
+
+.qr-code {
+    width: 108px;
+    height: 108px;
+    display: block;
+}
+
+.generation-date {
+    position: absolute;
+    top: 0.75rem;
+    right: 1.5rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .header-col-main {
@@ -196,11 +216,16 @@ ul {
 
 ul li {
     margin-bottom: 0.25rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 ul.pricing-grid-list li {
     margin-bottom: 0.15rem;
+}
+
+ul.pricing-list li,
+ul.pricing-grid-list li {
+    font-weight: 100;
 }
 
 /* Custom list bullets */

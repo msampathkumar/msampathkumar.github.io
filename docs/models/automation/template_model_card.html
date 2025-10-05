@@ -14,6 +14,7 @@
     <div class="container">
         <!-- Header Section -->
         <div class="header">
+            <div class="generation-date">{{ generation_date }}</div>
             <div class="header-col-logo">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Google_Gemini_icon_2025.svg" alt="Gemini Logo" class="logo">
             </div>
@@ -21,6 +22,9 @@
                 <h1>{{ model.name }}</h1>
                 <p class="subtitle">{{ model.model_name }}</p>
                 <code class="model-name">{{ model.api_name }}</code>
+            </div>
+            <div class="header-col-qr">
+                <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code" class="qr-code">
             </div>
         </div>
         <div class="meta-bar">

@@ -1,7 +1,9 @@
 import os
 import yaml
+import datetime
 from jinja2 import Environment, FileSystemLoader
 from model_data import GeminiModel, ModelContext, ModelPricing, SdkInfo, AdkInfo
+from qr_code_generator import generate_qr_code
 
 # SVG icons for modalities
 MODALITY_ICONS = {
@@ -71,6 +73,12 @@ def main():
             for model_data in data.get("models", []):
                 model_obj = create_model_from_dict(model_data)
 
+                safe_api_name = (
+                    model_obj.api_name.lower().replace(" ", "_").replace("-", "_")
+                )
+                output_filename = f"report_{safe_api_name}.html"
+                qr_code_base64 = generate_qr_code(output_filename)
+
                 template_data = {
                     "model": {
                         "name": model_obj.name,
@@ -111,15 +119,13 @@ def main():
                         },
                         "sdks": model_obj.sdks,
                         "adk": model_obj.adk,
-                    }
+                    },
+                    "generation_date": datetime.datetime.now().strftime("%B %d, %Y"),
+                    "qr_code": qr_code_base64,
                 }
 
                 output_html = template.render(template_data)
 
-                safe_api_name = (
-                    model_obj.api_name.lower().replace(" ", "_").replace("-", "_")
-                )
-                output_filename = f"report_{safe_api_name}.html"
                 output_path = os.path.join(current_dir, "..", "reports", output_filename)
 
                 with open(output_path, "w", encoding="utf-8") as outfile:
