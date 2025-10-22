@@ -13,22 +13,18 @@ Google's Gemini models are a powerful family of multimodal AI models. For develo
  
 To help you keep the most common commands at your fingertips, I've created a handy CLI cheatsheet available in both light and dark themes. Download your preferred version and get started!
  
- ## Light Theme
+## Light Theme
 
 
 ![](gemini-cli-cheatsheet-printout/cheatsheet.png)
 
-Download Links
-* [PNG](gemini-cli-cheatsheet-printout/cheatsheet.png)
-* [PDF](gemini-cli-cheatsheet-printout/cheatsheet.pdf)
+**Download Links**: [PNG](gemini-cli-cheatsheet-printout/cheatsheet.png) & [PDF](gemini-cli-cheatsheet-printout/cheatsheet.pdf).
 
 ## Dark Theme
 
 ![](gemini-cli-cheatsheet-printout/cheatsheet-dark-theme.png)
 
-Download Links
-* [PNG](gemini-cli-cheatsheet-printout/cheatsheet-dark-theme.png)
-* [PDF](gemini-cli-cheatsheet-printout/cheatsheet-dark-theme.pdf)
+**Download Links**: [PNG](gemini-cli-cheatsheet-printout/cheatsheet-dark-theme.png) & [PDF](gemini-cli-cheatsheet-printout/cheatsheet-dark-theme.pdf).
 
 
 ## Getting Started
