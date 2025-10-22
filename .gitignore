@@ -1,18 +1,46 @@
-site
-uv.lock
+# Build output
+site/
+
+# Dependencies
+node_modules/
+.venv/
+
+# Python
 __pycache__/
-.venv
-.rag
-.cache
-node_modules
-internal*
-# gemini-cli settings
-.gemini/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# GitHub App credentials
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Lock files
+uv.lock
+
+# Caches
+.cache/
+.rag/
+
+# Credentials
 gha-creds-*.json
+.env
 
-.github/workflow
-.ipynb_checkpoints
+# Notebook checkpoints
+.ipynb_checkpoints/
 
+# Internal files
+internal*
+
+# Gemini files
+.gemini/
 GEMINI.md*
