@@ -5,10 +5,8 @@ clean:
 	rm -f *.o
 
 run:
-	@echo "Running the black"
-	black .
 	@echo "Running the mkdocs"
-	mkdocs serve
+	mkdocs serve -a localhost:8090 -c
 
 deploy:
 	@echo "Deploying to GitHub Pages"
