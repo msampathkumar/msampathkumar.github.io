@@ -76,7 +76,7 @@ extra:
 
 
 nav:
-  - index.md
+  - "Digital Garden": index.md
   - "Gemini Cookbook":
     - "Home": google-cloud-gemini-cookbook/README.md
     - "Internal Plan": google-cloud-gemini-cookbook/internal_cookbook_plan.md
@@ -86,13 +86,21 @@ nav:
     - "Lesson-04": google-cloud-gemini-cookbook/lesson-04/README.md
     - "Lesson-05": google-cloud-gemini-cookbook/lesson-05/README.md
   - "Blog":
-      - blog/index.md
-#      - "Gemini 2.5 Flash Image Preview": blog/gemini-2.5-flash-image-preview_md
-#    - "Project Management":
-#        - "Top Level Summary": blog/ProjectMgmt/top-level-summary.md
-#        - "RACI": blog/ProjectMgmt/RACI.md
-#        - "Tasks and Milestones": blog/ProjectMgmt/Tasks-and-Milestones.md
-  - "Gemini Model Cards":
-      - Home: models/index.md
-      - "report_gemini_2.0_flash_live_preview_04_09": models/automation/report_gemini_2.0_flash_live_preview_04_09.html
-      - "report_gemini_2.5_pro_preview_05_15": models/automation/report_gemini_2.5_pro_preview_05_15.html
+      - "Gemini CLI Cheatsheets": blog/posts/gemini-cli-cheatsheet-printouts.md
+      - "Gemini CLI Top Commands": blog/posts/gemini-cli-top-commands.md
+      - "Gemini 2.5 Flash Image": blog/posts/gemini-2.5-flash-image-preview.md
+      - "Gemini as your Culinary Guide": blog/posts/gemini-as-your-culinary-guide.md
+      - "Role of Python in Google Cloud": blog/images/The-Role-of-Python-in-Google-Cloud-An-Opinionated-View.md
+      - "Vibe Coding": blog/posts/vibe-coding-intro.md
+      - "Vibe Coding Dos and Donts": blog/posts/vibe-coding-dos-donts.md
+      - "10 principles of Miyamoto Musashi": blog/posts/miyamoto-musahi-10-principles.md
+      - "Poem Sky Sea Truth": blog/posts/poem-sky-sea-truth.md
+#      - "Project Management":
+#          - "RACI": blog/ProjectMgmt/RACI.md
+#          - "Tasks and Milestones": blog/ProjectMgmt/Tasks-and-Milestones.md
+#          - "Top Level Summary": blog/ProjectMgmt/top-level-summary.md
+#
+#  - "Gemini Model Cards":
+#      - Home: models/index.md
+#      - "report_gemini_2.0_flash_live_preview_04_09": models/automation/report_gemini_2.0_flash_live_preview_04_09.html
+#      - "report_gemini_2.5_pro_preview_05_15": models/automation/report_gemini_2.5_pro_preview_05_15.html

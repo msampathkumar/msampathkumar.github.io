@@ -31,6 +31,9 @@ def main():
         browser = p.chromium.launch()
         page = browser.new_page()
 
+        # Set a consistent viewport size for all captures
+        page.set_viewport_size({"width": 864, "height": 1200})
+
         for html_file in html_files:
             # Convert the local file path to a file:// URL
             url = f"file://{html_file.resolve()}"
@@ -49,6 +52,8 @@ def main():
                 print(f"   -> Saved PDF to {pdf_path}")
 
                 # --- Create PNG ---
+                # Inject CSS to fix background attachment for the screenshot
+                page.add_style_tag(content="body { background-attachment: scroll !important; }")
                 png_path = output_dir / f"{base_filename}.png"
                 page.screenshot(path=png_path, full_page=True)
                 print(f"   -> Saved PNG to {png_path}")
