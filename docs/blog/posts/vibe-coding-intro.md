@@ -1,13 +1,11 @@
-______________________________________________________________________
-
-title: Vibe Coding - What, What Not, and How date: 2023-11-30 authors:
-[sampathm] slug: adding-a-badge-to-your-project description: > Share the love –
-you can now add a badge to your README, showing that your project is built with
-Material for MkDocs categories:
-
+---
+title: Vibe Coding - Intro
+date: 2025-11-30
+authors: [sampathm]
+categories:
 - General
+---
 
-______________________________________________________________________
 
 ## title: "Vibe Code? The What, Why, and How (And When to Hit the Brakes)" date: 2024-01-31
 
