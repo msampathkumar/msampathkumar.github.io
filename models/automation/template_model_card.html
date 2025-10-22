@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ model.name }} - Model Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lato:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="generation-date">{{ generation_date }}</div>
+            <div class="header-col-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Google_Gemini_icon_2025.svg" alt="Gemini Logo" class="logo">
+            </div>
+            <div class="header-col-main">
+                <h1>{{ model.name }}</h1>
+                <p class="subtitle">{{ model.model_name }}</p>
+                <code class="model-name">{{ model.api_name }}</code>
+            </div>
+            <div class="header-col-qr">
+                <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code" class="qr-code">
+            </div>
+        </div>
+        <div class="meta-bar">
+            <span>Available: {{ model.model_availability_start_date }} - {{ model.model_availability_end_date }}</span>
+            <span>Knowledge Cut-off: {{ model.knowledge_cutoff }}</span>
+        </div>
+
+        <!-- Input/Output Section -->
+        <div class="card io-section">
+            <div class="io-block">
+                <h2 class="card-title title-left">Input</h2>
+                <div class="content-card">
+                    <div class="modality-icons">
+                        {% for modality in model.input.modalities %}
+                            <div class="modality-item">{{ modality | safe }}</div>
+                        {% endfor %}
+                    </div>
+                    <p class="tokens">Max {{ model.input.max_tokens }} Tokens</p>
+                </div>
+            </div>
+            <div class="arrow">></div>
+            <div class="io-block">
+                <h2 class="card-title title-left">Output</h2>
+                <div class="content-card">
+                    <div class="modality-icons">
+                        {% for modality in model.output.modalities %}
+                            <div class="modality-item">{{ modality | safe }}</div>
+                        {% endfor %}
+                    </div>
+                    <p class="tokens">Max {{ model.output.max_tokens }} Tokens</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Locations & Features Section -->
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <h2 class="card-title title-left"> Locations</h2>
+                    <div class="content-card">
+                        <ul class="dotlist">
+                            {% for item in model.location %}
+                            <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <h2 class="card-title title-left"> Features</h2>
+                    <div class="content-card">
+                        <ul class="checkmark">
+                            {% for feature in model.model_features %}
+                            <li>{{ feature }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Section -->
+        <div class="card pricing-section">
+            <div class="pricing-block">
+                <h2 class="card-title title-left">Pricing-Input</h2>
+                <div class="content-card">
+                    <ul class="pricing-list">
+                    {% for modality, price in model.pricing.input.items() %}
+                        {% if price is not none %}
+                        <li><b>{{ modality | title }}:</b> {{ price }}</li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="arrow"></div>
+            <div class="pricing-block">
+                <h2 class="card-title title-left">Pricing-Output</h2>
+                <div class="content-card">
+                    <ul class="pricing-list">
+                    {% for modality, price in model.pricing.output.items() %}
+                        {% if price is not none %}
+                            <li><b>{{ modality | title }}:</b> {{ price }}</li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SDKs & ADK Section -->
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <h2 class="card-title title-left">Latest SDKs</h2>
+                    <div class="content-card">
+                        <ul class="pricing-grid-list">
+                            {% for sdk in model.sdks %}
+                            <li><b>{{ sdk.lang }}:</b> <a href="{{ sdk.url }}">{{ sdk.version }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <h2 class="card-title title-left">Latest ADK</h2>
+                    <div class="content-card">
+                        <ul class="pricing-grid-list">
+                            {% for adk in model.adk %}
+                            <li><b>{{ adk.lang }}:</b> <a href="{{ adk.url }}">{{ adk.version }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {% include 'footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,496 @@
+models:
+- name: Gemini 2.0
+  model_name: Gemini 2.0 Flash Lite
+  api_name: gemini-2.0-flash-lite
+  model_availability_start_date: ''
+  model_availability_end_date: ''
+  knowledge_cutoff: June 2024
+  context:
+    input_modalities:
+    - Text
+    - Code
+    - Images
+    - Audio
+    - Video
+    output_modalities:
+    - Text
+    input_max_tokens: 1,048,576
+    output_max_tokens: 8,192 (default)
+  location: []
+  model_features: []
+  pricing:
+    input:
+      text: $NA
+      audio: $NA
+      video: $NA
+    output:
+      text: $NA
+  sdks:
+  - lang: Python
+    url: https://github.com/googleapis/python-genai/
+    version: v1.41.0
+  - lang: Go
+    url: https://github.com/googleapis/go-genai
+    version: v1.28.0
+  - lang: NodeJS
+    url: https://github.com/googleapis/js-genai
+    version: v1.22.0
+  - lang: Java
+    url: https://github.com/googleapis/java-genai
+    version: v1.20.0
+  adk:
+  - lang: Python
+    url: https://github.com/google/adk-python
+    version: v1.15.1
+  - lang: Java
+    url: https://github.com/google/adk-java
+    version: v0.3.0
+- name: Gemini 2.5
+  model_name: Gemini 2.5 Pro
+  api_name: gemini-2.5-pro
+  model_availability_start_date: ''
+  model_availability_end_date: ''
+  knowledge_cutoff: January 2025
+  context:
+    input_modalities:
+    - Text
+    - Code
+    - Images
+    - Audio
+    - Video
+    output_modalities:
+    - Text
+    input_max_tokens: 1,048,576
+    output_max_tokens: 65,535 (default)
+  location: []
+  model_features: []
+  pricing:
+    input:
+      text: $NA
+      audio: $NA
+      video: $NA
+    output:
+      text: $NA
+  sdks:
+  - lang: Python
+    url: https://github.com/googleapis/python-genai/
+    version: v1.41.0
+  - lang: Go
+    url: https://github.com/googleapis/go-genai
+    version: v1.28.0
+  - lang: NodeJS
+    url: https://github.com/googleapis/js-genai
+    version: v1.22.0
+  - lang: Java
+    url: https://github.com/googleapis/java-genai
+    version: v1.20.0
+  adk:
+  - lang: Python
+    url: https://github.com/google/adk-python
+    version: v1.15.1
+  - lang: Java
+    url: https://github.com/google/adk-java
+    version: v0.3.0
+- name: Gemini 2.0
+  model_name: Gemini 2.0 Flash
+  api_name: gemini-2.0-flash
+  model_availability_start_date: ''
+  model_availability_end_date: ''
+  knowledge_cutoff: June 2024
+  context:
+    input_modalities:
+    - Text
+    - Code
+    - Images
+    - Audio
+    - Video
+    output_modalities:
+    - Text
+    input_max_tokens: 1,048,576
+    output_max_tokens: 8,192 (default)
+  location: []
+  model_features: []
+  pricing:
+    input:
+      text: $NA
+      audio: $NA
+      video: $NA
+    output:
+      text: $NA
+  sdks:
+  - lang: Python
+    url: https://github.com/googleapis/python-genai/
+    version: v1.41.0
+  - lang: Go
+    url: https://github.com/googleapis/go-genai
+    version: v1.28.0
+  - lang: NodeJS
+    url: https://github.com/googleapis/js-genai
+    version: v1.22.0
+  - lang: Java
+    url: https://github.com/googleapis/java-genai
+    version: v1.20.0
+  adk:
+  - lang: Python
+    url: https://github.com/google/adk-python
+    version: v1.15.1
+  - lang: Java
+    url: https://github.com/google/adk-java
+    version: v0.3.0
+- name: Gemini 2.0
+  model_name: Gemini 2.0 Flash Preview Image Generation
+  api_name: gemini-2.0-flash-preview-image-generation
+  model_availability_start_date: ''
+  model_availability_end_date: ''
+  knowledge_cutoff: June 2024
+  context:
+    input_modalities:
+    - Text
+    - Code
+    - Images
+    - Audio
+    - Video
+    output_modalities:
+    - Text and image
+    input_max_tokens: 32,768
+    output_max_tokens: 8,192 (default)
+  location: []
+  model_features: []
+  pricing:
+    input:
+      text: $NA
+      audio: $NA
+      video: $NA
+    output: {}
+  sdks:
+  - lang: Python
+    url: https://github.com/googleapis/python-genai/
+    version: v1.41.0
+  - lang: Go
+    url: https://github.com/googleapis/go-genai
+    version: v1.28.0
+  - lang: NodeJS
+    url: https://github.com/googleapis/js-genai
+    version: v1.22.0
+  - lang: Java
+    url: https://github.com/googleapis/java-genai
+    version: v1.20.0
+  adk:
+  - lang: Python
+    url: https://github.com/google/adk-python
+    version: v1.15.1
+  - lang: Java
+    url: https://github.com/google/adk-java
+    version: v0.3.0
+- name: Gemini 2.0
+  model_name: Gemini 2.0 Flash Live Preview 04 09
+  api_name: gemini-2.0-flash-live-preview-04-09
+  model_availability_start_date: ''
+  model_availability_end_date: ''
+  knowledge_cutoff: June 2024
+  context:
+    input_modalities:
+    - Audio
+    - Video
+    output_modalities:
+    - Audio
+    input_max_tokens: 32,768
+    output_max_tokens: 8,192 (default)
+  location: []
+  model_features: []
+  pricing:
+    input:
+      audio: $NA
+      video: $NA
+    output:
+      audio: $NA
+  sdks:
+  - lang: Python
+    url: https://github.com/googleapis/python-genai/
+    version: v1.41.0
+  - lang: Go
+    url: https://github.com/googleapis/go-genai
+    version: v1.28.0
+  - lang: NodeJS
+    url: https://github.com/googleapis/js-genai
+    version: v1.22.0
+  - lang: Java
+    url: https://github.com/googleapis/java-genai
+    version: v1.20.0
+  adk:
+  - lang: Python
+    url: https://github.com/google/adk-python
+    version: v1.15.1
+  - lang: Java
+    url: https://github.com/google/adk-java
+    version: v0.3.0
+- name: Gemini 2.5
+  model_name: Gemini 2.5 Flash Lite
+  api_name: gemini-2.5-flash-lite
+  model_availability_start_date: ''
+  model_availability_end_date: ''
+  knowledge_cutoff: January 2025
+  context:
+    input_modalities:
+    - Text
+    - Code
+    - Images
+    - Audio
+    - Video
+    output_modalities:
+    - Text
+    input_max_tokens: 1,048,576
+    output_max_tokens: 65,536 (default)
+  location: []
+  model_features: []
+  pricing:
+    input:
+      text: $NA
+      audio: $NA
+      video: $NA
+    output:
+      text: $NA
+  sdks:
+  - lang: Python
+    url: https://github.com/googleapis/python-genai/
+    version: v1.41.0
+  - lang: Go
+    url: https://github.com/googleapis/go-genai
+    version: v1.28.0
+  - lang: NodeJS
+    url: https://github.com/googleapis/js-genai
+    version: v1.22.0
+  - lang: Java
+    url: https://github.com/googleapis/java-genai
+    version: v1.20.0
+  adk:
+  - lang: Python
+    url: https://github.com/google/adk-python
+    version: v1.15.1
+  - lang: Java
+    url: https://github.com/google/adk-java
+    version: v0.3.0
+- name: Gemini 2.5
+  model_name: Gemini 2.5 Flash Lite Preview 09 2025
+  api_name: gemini-2.5-flash-lite-preview-09-2025
+  model_availability_start_date: ''
+  model_availability_end_date: ''
+  knowledge_cutoff: January 2025
+  context:
+    input_modalities:
+    - Text
+    - Code
+    - Images
+    - Audio
+    - Video
+    output_modalities:
+    - Text
+    input_max_tokens: 1,048,576
+    output_max_tokens: 65,536 (default)
+  location: []
+  model_features: []
+  pricing:
+    input:
+      text: $NA
+      audio: $NA
+      video: $NA
+    output:
+      text: $NA
+  sdks:
+  - lang: Python
+    url: https://github.com/googleapis/python-genai/
+    version: v1.41.0
+  - lang: Go
+    url: https://github.com/googleapis/go-genai
+    version: v1.28.0
+  - lang: NodeJS
+    url: https://github.com/googleapis/js-genai
+    version: v1.22.0
+  - lang: Java
+    url: https://github.com/googleapis/java-genai
+    version: v1.20.0
+  adk:
+  - lang: Python
+    url: https://github.com/google/adk-python
+    version: v1.15.1
+  - lang: Java
+    url: https://github.com/google/adk-java
+    version: v0.3.0
+- name: Gemini 2.5
+  model_name: Gemini 2.5 Flash
+  api_name: gemini-2.5-flash
+  model_availability_start_date: ''
+  model_availability_end_date: ''
+  knowledge_cutoff: January 2025
+  context:
+    input_modalities:
+    - Text
+    - Code
+    - Images
+    - Audio
+    - Video
+    output_modalities:
+    - Text
+    input_max_tokens: 1,048,576
+    output_max_tokens: 65,535 (default)
+  location: []
+  model_features: []
+  pricing:
+    input:
+      text: $NA
+      audio: $NA
+      video: $NA
+    output:
+      text: $NA
+  sdks:
+  - lang: Python
+    url: https://github.com/googleapis/python-genai/
+    version: v1.41.0
+  - lang: Go
+    url: https://github.com/googleapis/go-genai
+    version: v1.28.0
+  - lang: NodeJS
+    url: https://github.com/googleapis/js-genai
+    version: v1.22.0
+  - lang: Java
+    url: https://github.com/googleapis/java-genai
+    version: v1.20.0
+  adk:
+  - lang: Python
+    url: https://github.com/google/adk-python
+    version: v1.15.1
+  - lang: Java
+    url: https://github.com/google/adk-java
+    version: v0.3.0
+- name: Gemini 2.5
+  model_name: Gemini 2.5 Flash Preview 09 2025
+  api_name: gemini-2.5-flash-preview-09-2025
+  model_availability_start_date: ''
+  model_availability_end_date: ''
+  knowledge_cutoff: January 2025
+  context:
+    input_modalities:
+    - Text
+    - Code
+    - Images
+    - Audio
+    - Video
+    output_modalities:
+    - Text
+    input_max_tokens: 1,048,576
+    output_max_tokens: 65,535 (default)
+  location: []
+  model_features: []
+  pricing:
+    input:
+      text: $NA
+      audio: $NA
+      video: $NA
+    output:
+      text: $NA
+  sdks:
+  - lang: Python
+    url: https://github.com/googleapis/python-genai/
+    version: v1.41.0
+  - lang: Go
+    url: https://github.com/googleapis/go-genai
+    version: v1.28.0
+  - lang: NodeJS
+    url: https://github.com/googleapis/js-genai
+    version: v1.22.0
+  - lang: Java
+    url: https://github.com/googleapis/java-genai
+    version: v1.20.0
+  adk:
+  - lang: Python
+    url: https://github.com/google/adk-python
+    version: v1.15.1
+  - lang: Java
+    url: https://github.com/google/adk-java
+    version: v0.3.0
+- name: Gemini 2.5
+  model_name: Gemini 2.5 Flash Image
+  api_name: gemini-2.5-flash-image
+  model_availability_start_date: ''
+  model_availability_end_date: ''
+  knowledge_cutoff: January 2025
+  context:
+    input_modalities:
+    - Text
+    - Images
+    output_modalities:
+    - Text and image
+    input_max_tokens: 32,768
+    output_max_tokens: 32,768
+  location: []
+  model_features: []
+  pricing:
+    input:
+      text: $NA
+    output: {}
+  sdks:
+  - lang: Python
+    url: https://github.com/googleapis/python-genai/
+    version: v1.41.0
+  - lang: Go
+    url: https://github.com/googleapis/go-genai
+    version: v1.28.0
+  - lang: NodeJS
+    url: https://github.com/googleapis/js-genai
+    version: v1.22.0
+  - lang: Java
+    url: https://github.com/googleapis/java-genai
+    version: v1.20.0
+  adk:
+  - lang: Python
+    url: https://github.com/google/adk-python
+    version: v1.15.1
+  - lang: Java
+    url: https://github.com/google/adk-java
+    version: v0.3.0
+- name: Gemini Live 2.5
+  model_name: Gemini Live 2.5 Flash Preview Native Audio 09 2025
+  api_name: gemini-live-2.5-flash-preview-native-audio-09-2025
+  model_availability_start_date: ''
+  model_availability_end_date: ''
+  knowledge_cutoff: January 2025
+  context:
+    input_modalities:
+    - Text
+    - Audio
+    - Video
+    output_modalities:
+    - Text
+    - Audio
+    input_max_tokens: 128K
+    output_max_tokens: 64K
+  location: []
+  model_features: []
+  pricing:
+    input:
+      text: $NA
+      audio: $NA
+      video: $NA
+    output:
+      text: $NA
+      audio: $NA
+  sdks:
+  - lang: Python
+    url: https://github.com/googleapis/python-genai/
+    version: v1.41.0
+  - lang: Go
+    url: https://github.com/googleapis/go-genai
+    version: v1.28.0
+  - lang: NodeJS
+    url: https://github.com/googleapis/js-genai
+    version: v1.22.0
+  - lang: Java
+    url: https://github.com/googleapis/java-genai
+    version: v1.20.0
+  adk:
+  - lang: Python
+    url: https://github.com/google/adk-python
+    version: v1.15.1
+  - lang: Java
+    url: https://github.com/google/adk-java
+    version: v0.3.0
