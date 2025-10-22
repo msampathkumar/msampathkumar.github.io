@@ -29,6 +29,6 @@ To help you keep the most common commands at your fingertips, I've created a han
 
 ## Getting Started
  
-Before you can use these commands, you need to set up your local environment and Google Cloud project. Follow the Gemini Cookbook Setup guide to get everything configured correctly.
+Before you can use these commands, you need to set up your local environment and Google Cloud project. Follow the [Gemini Cookbook Setup guide](https://github.com/google-gemini/gemini-cli?tab=readme-ov-file#-installation) to get everything configured correctly.
  
 Happy coding!
