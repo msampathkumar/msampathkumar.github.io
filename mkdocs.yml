@@ -95,6 +95,11 @@ nav:
       - "Vibe Coding Dos and Donts": blog/posts/vibe-coding-dos-donts.md
       - "10 principles of Miyamoto Musashi": blog/posts/miyamoto-musahi-10-principles.md
       - "Poem Sky Sea Truth": blog/posts/poem-sky-sea-truth.md
+  - "Events":
+      -
+      - "Poem Sky Sea Truth": blog/events/poem-sky-sea-truth.md
+      - "Poem Sky Sea Truth": blog/posts/poem-sky-sea-truth.md
+
 #      - "Project Management":
 #          - "RACI": blog/ProjectMgmt/RACI.md
 #          - "Tasks and Milestones": blog/ProjectMgmt/Tasks-and-Milestones.md
