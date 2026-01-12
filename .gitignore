@@ -44,3 +44,9 @@ internal*
 # Gemini files
 .gemini/
 GEMINI.md*
+
+# Temporary: Project Mgmt
+docs/blog/ProjectMgmt/
+
+# Github Workflow
+.github/workflows

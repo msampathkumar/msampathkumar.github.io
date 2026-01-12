@@ -10,7 +10,7 @@ categories:
   - "CLI"
 ---
 
-![img_3.png](images/img_3.png)
+![Gemini CLI Header](images/gemini-cli-top-commands-header.png)
 
 # Master Your Workflow: Top Gemini CLI Commands You Should Know
 
