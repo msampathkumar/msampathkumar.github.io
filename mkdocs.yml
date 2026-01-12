@@ -76,29 +76,36 @@ extra:
 
 
 nav:
-  - "Digital Garden": index.md
+  - "Home": index.md
   - "Gemini Cookbook":
-    - "Home": google-cloud-gemini-cookbook/README.md
-    - "Internal Plan": google-cloud-gemini-cookbook/internal_cookbook_plan.md
-    - "Lesson-01": google-cloud-gemini-cookbook/lesson-01/README.md
-    - "Lesson-02": google-cloud-gemini-cookbook/lesson-02/README.md
-    - "Lesson-03": google-cloud-gemini-cookbook/lesson-03/README.md
-    - "Lesson-04": google-cloud-gemini-cookbook/lesson-04/README.md
-    - "Lesson-05": google-cloud-gemini-cookbook/lesson-05/README.md
+      - "Overview": google-cloud-gemini-cookbook/README.md
+      - "Full Roadmap": cookbook.md
+      - "Tutorials":
+          - "Lesson 1: Basic Chatbot with Streamlit": google-cloud-gemini-cookbook/lesson-01/README.md
+          - "Lesson 2: Chatbot with Memory & Gemma": google-cloud-gemini-cookbook/lesson-02/README.md
+          - "Lesson 3: Multimodality with Vision": google-cloud-gemini-cookbook/lesson-03/README.md
+          - "Lesson 4: Knowledge Base Q&A with RAG": google-cloud-gemini-cookbook/lesson-04/README.md
+          - "Lesson 5: Advanced RAG with Knowledge Graphs": google-cloud-gemini-cookbook/lesson-05/README.md
   - "Blog":
-      - "Gemini CLI Cheatsheets": blog/posts/gemini-cli-cheatsheet-printouts.md
-      - "Gemini CLI Top Commands": blog/posts/gemini-cli-top-commands.md
-      - "Gemini 2.5 Flash Image": blog/posts/gemini-2.5-flash-image-preview.md
-      - "Gemini as your Culinary Guide": blog/posts/gemini-as-your-culinary-guide.md
-      - "Role of Python in Google Cloud": blog/images/The-Role-of-Python-in-Google-Cloud-An-Opinionated-View.md
-      - "Vibe Coding": blog/posts/vibe-coding-intro.md
-      - "Vibe Coding Dos and Donts": blog/posts/vibe-coding-dos-donts.md
-      - "10 principles of Miyamoto Musashi": blog/posts/miyamoto-musahi-10-principles.md
-      - "Poem Sky Sea Truth": blog/posts/poem-sky-sea-truth.md
+      - "Gemini Guides":
+          - "Gemini CLI Cheatsheets": blog/posts/gemini-cli-cheatsheet-printouts.md
+          - "Gemini CLI Top Commands": blog/posts/gemini-cli-top-commands.md
+          - "Gemini 2.5 Flash Image Preview": blog/posts/gemini-2.5-flash-image-preview.md
+          - "Gemini as your Culinary Guide": blog/posts/gemini-as-your-culinary-guide.md
+      - "Technical Articles":
+          - "Role of Python in Google Cloud": blog/posts/the-role-of-python-in-google-cloud.md
+          - "Vibe Coding Introduction": blog/posts/vibe-coding-intro.md
+          - "Vibe Coding Dos and Don'ts": blog/posts/vibe-coding-dos-donts.md
+      - "Personal":
+          - "10 Principles of Miyamoto Musashi": blog/posts/miyamoto-musashi-10-principles.md
+          - "Sky, Sea, and Truth": blog/posts/poem-sky-sea-truth.md
+          - "How to Spot an Ineffective Manager or Leader": blog/posts/spot-fakes-leaders.md
+
   - "Events":
-      -
-      - "Poem Sky Sea Truth": blog/events/poem-sky-sea-truth.md
-      - "Poem Sky Sea Truth": blog/posts/poem-sky-sea-truth.md
+      - "All Events": events/index.md
+      - "AI Day Denmark": events/2025-10-28-ai-day-denmark.md
+      - "AI Day Sweden": events/2025-11-05-ai-day-sweden.md
+      - "Kaggle AI Days": events/2025-11-10-kaggle-ai-days.md
 
 #      - "Project Management":
 #          - "RACI": blog/ProjectMgmt/RACI.md

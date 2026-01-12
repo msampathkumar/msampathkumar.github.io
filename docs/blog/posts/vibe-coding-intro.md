@@ -3,13 +3,11 @@ title: Vibe Coding - Intro
 date: 2025-11-30
 authors: [sampathm]
 categories:
-- General
+- LLM
+- Development
 ---
 
-
-## title: "Vibe Code? The What, Why, and How (And When to Hit the Brakes)" date: 2024-01-31
-
-# Vibe Code? The What, Why, and How (And When to Hit the Brakes)
+## Vibe Code? The What, Why, and How (And When to Hit the Brakes)
 
 What is Vibe Coding? At its heart, vibe coding is about using AI to generate
 code from a high-level intent or "vibe." Think of it less like a co-pilot and
