@@ -1,0 +1,1990 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal blog of Sampath Kumar M">
+      
+      
+        <meta name="author" content="Sampath Kumar">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Internal cookbook plan personal - Google Cloud - Gemini Cookbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-YN54SGR7ZS"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-YN54SGR7ZS",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-YN54SGR7ZS",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vision-executive-summary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Google Cloud - Gemini Cookbook" class="md-header__button md-logo" aria-label="Google Cloud - Gemini Cookbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5 15.5c0 .37-.1.7-.28 1-.34-.59-.98-1-1.72-1s-1.38.41-1.72 1c-.17-.3-.28-.63-.28-1 0-1.1.9-2 2-2s2 .9 2 2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2zm-5.5-2.5c-1.1 0-2 .9-2 2 0 .37.11.7.28 1 .34-.59.98-1 1.72-1s1.38.41 1.72 1c.18-.3.28-.63.28-1a2 2 0 0 0-2-2"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Google Cloud - Gemini Cookbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Internal cookbook plan personal
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="teal"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/msampathkumar/msampathkumar.github.io/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Gemini Cookbook
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/posts/gemini-cli-cheatsheet-printouts/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../events/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Events
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Google Cloud - Gemini Cookbook" class="md-nav__button md-logo" aria-label="Google Cloud - Gemini Cookbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5 15.5c0 .37-.1.7-.28 1-.34-.59-.98-1-1.72-1s-1.38.41-1.72 1c-.17-.3-.28-.63-.28-1 0-1.1.9-2 2-2s2 .9 2 2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2zm-5.5-2.5c-1.1 0-2 .9-2 2 0 .37.11.7.28 1 .34-.59.98-1 1.72-1s1.38.41 1.72 1c.18-.3.28-.63.28-1a2 2 0 0 0-2-2"/></svg>
+
+    </a>
+    Google Cloud - Gemini Cookbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/msampathkumar/msampathkumar.github.io/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Gemini Cookbook
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Gemini Cookbook
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cookbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Full Roadmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../lesson-01/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 2: Chatbot with Memory & Gemma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 3: Multimodality with Vision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 4: Knowledge Base Q&A with RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 5: Advanced RAG with Knowledge Graphs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Gemini Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Gemini Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/posts/gemini-cli-cheatsheet-printouts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gemini CLI Cheatsheets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/posts/gemini-cli-top-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gemini CLI Top Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/posts/gemini-2.5-flash-image-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gemini 2.5 Flash Image Preview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/posts/gemini-as-your-culinary-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gemini as your Culinary Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Technical Articles
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Technical Articles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Six Essential Protocols Powering the AI Agent Ecosystem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/posts/the-role-of-python-in-google-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Role of Python in Google Cloud
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/posts/advanced-memory-management-agentic-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced Memory Management for Agentic AI Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/posts/vibe-coding-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vibe Coding Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/posts/vibe-coding-dos-donts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vibe Coding Dos and Don'ts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Personal
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Personal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/posts/miyamoto-musashi-10-principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Principles of Miyamoto Musashi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/posts/poem-sky-sea-truth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sky, Sea, and Truth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/posts/spot-fakes-leaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Spot an Ineffective Manager or Leader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../events/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Events
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Events
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/2025-10-28-ai-day-denmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI Day Denmark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/2025-11-05-ai-day-sweden/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI Day Sweden
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/2025-11-10-kaggle-ai-days/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kaggle AI Days
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vision-executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vision &amp; Executive Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guiding-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guiding Principles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-outline-lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Outline &amp; Lesson Plan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distribution-community-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distribution &amp; Community Strategy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#potential-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Potential Impact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Success Metrics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Success Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#guidelines-for-lesson-content-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guidelines for Lesson Content Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guidelines for Lesson Content Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-content-structure-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Content Structure / Sections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-formatting-and-style-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Formatting and Style Instructions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Internal cookbook plan personal</h1>
+
+<h2 id="vision-executive-summary">Vision &amp; Executive Summary</h2>
+<p>This project is a cookbook-style series designed to teach developers and AI
+enthusiasts how to build practical, real-world applications using Google
+Cloud's Gemini models. Through a series of hands-on blog posts and a central
+GitHub repository, this guide will provide clear, step-by-step instructions,
+making generative AI accessible even to those with limited prior experience.
+The goal is to empower builders, foster a collaborative community, and showcase
+the power of Gemini.</p>
+<h2 id="guiding-principles">Guiding Principles</h2>
+<ul>
+<li><strong>Practical First:</strong> Focus on hands-on examples and code snippets that solve
+  real problems.</li>
+<li><strong>Clarity and Simplicity:</strong> Provide clear, step-by-step instructions that are
+  easy to follow.</li>
+<li><strong>Gemini Focused:</strong> Deep-dive into Google Cloud Gemini, its specific
+  features, and its ecosystem.</li>
+<li><strong>Fundamental Concepts:</strong> Cover the necessary foundational knowledge to use
+  Gemini effectively.</li>
+</ul>
+<h2 id="questions">Questions</h2>
+<ul>
+<li>Why is the goal ?</li>
+<li>What is the meaning or end goal ?</li>
+<li>Is it really worth doing it ?</li>
+<li>Who is asking for it ?</li>
+</ul>
+<h2 id="target-audience">Target Audience</h2>
+<p>This series is for developers, AI enthusiasts, and anyone interested in
+learning how to build practical AI applications with Gemini.</p>
+<h2 id="content-outline-lesson-plan">Content Outline &amp; Lesson Plan</h2>
+<p>The series will be released as a sequence of lessons, each building upon the
+last.</p>
+<table>
+  <tr>
+   <td style="background-color: null"><strong>Lesson</strong>
+   </td>
+   <td style="background-color: null"><strong>Lesson Title</strong>
+   </td>
+   <td style="background-color: null"><strong>Objective</strong>
+   </td>
+   <td style="background-color: null"><strong>Core Concepts</strong>
+   </td>
+   <td style="background-color: null"><strong>Tech Stack</strong>
+   </td>
+   <td style="background-color: null"><strong>Actionable Items</strong>
+   </td>
+   <td style="background-color: null"><strong>Questions Answered by this Blog Post</strong>
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">1
+   </td>
+   <td style="background-color: null"><strong>Hello World Application</strong>
+   </td>
+   <td style="background-color: null">Learn how to package your application and deploy
+   </td>
+   <td style="background-color: null">Google Cloud Run
+   </td>
+   <td style="background-color: null">Streamlit, Python
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">2
+   </td>
+   <td style="background-color: null"><strong>Build and Deploy a Gemini Chatbot in 15 Minutes</strong>
+<p>
+<b>>>>>>GDCALERT:Found UNSUPPORTED element which lacks an apps script API.>>>>></b>
+<p>
+<strong><a href="https://medium.com/p/8398e4d29819">Medium</a> | <a href="https://github.com/GoogleCloudPlatform/devrel-demos/tree/main/ai-ml/gemini-chatbot-app/lesson03">Github</a> </strong>
+   </td>
+   <td style="background-color: null">Learn how to build and deploy a fully functional chatbot with Gemini and Streamlit in under 15 minutes, just in time for that last-minute demo.
+   </td>
+   <td style="background-color: null">Streamlit Chatbot, Text Generation, Chat history management, Cloud Run
+   </td>
+   <td style="background-color: null">Gemini 2.5 Flash, Python, google-genai SDK, Streamlit, Gemini Code/Jules (Optional)
+   </td>
+   <td style="background-color: null">Create a 5-second GIF of the entire process. Develop a "Demo Day" scenario to frame the tutorial. Incorporate Gemini Code/Jules for faster code generation.
+   </td>
+   <td style="background-color: null">How to build a chatbot with Gemini and Streamlit? What is the fastest way to build and deploy a Gemini-powered application? How to create a quick, interactive demo for a presentation? How to use Gemini Code/Jules to accelerate development?
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">3
+   </td>
+   <td style="background-color: null"><strong>Build a Context Aware Chatbot</strong>
+<p>
+<a href="https://medium.com/google-cloud/build-your-first-context-aware-gemini-chatbot-in-minutes-the-secret-to-speed-and-relevance-4dcb4b62cf9c">Medium</a> | <a href="https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-03/">Github</a>
+   </td>
+   <td style="background-color: null">🚀 Build Your First Context-aware Gemini Chatbot in Minutes: The Secret to Speed and Relevance! ⚡- Part 1
+   </td>
+   <td style="background-color: null">System Instructions; In Context Learning; Context Caching
+   </td>
+   <td style="background-color: null">Gemini 2.5 Flash
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">4
+   </td>
+   <td style="background-color: null"><strong>Build a Context Aware Chatbot</strong>
+<p>
+RAG; Grounding;
+<p>
+<a href="https://medium.com/google-cloud/lesson-04-unlock-enterprise-ai-grounding-gemini-with-rag-and-google-cloud-search-4a3f44f6b93e">Medium</a> | <a href="https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-04/">Github</a>
+   </td>
+   <td style="background-color: null">🚀 Build Your First Context-aware Gemini Chatbot in Minutes: The Secret to Speed and Relevance! ⚡- Part 2
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">Review and Recap
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">5
+   </td>
+   <td style="background-color: null">Building an Agent with the Agents Development Kit (ADK)
+   </td>
+   <td style="background-color: null">Introduce the fundamentals of the Google AI Development Kit and build a simple agent.
+   </td>
+   <td style="background-color: null">Agent basics, tool definition and usage.
+   </td>
+   <td style="background-color: null">Google ADK, Gemini 1.5 Flash. \
+ \
+<a href="https://google.github.io/adk-docs/agents/models/#model-choice">Ollama Example</a>
+   </td>
+   <td style="background-color: null">Create a simple agent that can perform a specific task, like a calculator or a weather checker.
+   </td>
+   <td style="background-color: null">What is the Google AI Development Kit (ADK)? How to build a simple agent with the ADK? How to define and use tools within an agent?
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">6
+   </td>
+   <td style="background-color: null">Enhancing the Chatbot with Memory
+   </td>
+   <td style="background-color: null">Add conversational memory to the chatbot to enable more natural and context-aware interactions.
+   </td>
+   <td style="background-color: null">Chat history management, context passing, state management.
+   </td>
+   <td style="background-color: null">Vertex AI Memory Bank
+   </td>
+   <td style="background-color: null">Implement a memory solution to store and retrieve data.
+<p>
+> Conversation history.
+<p>
+> Key Conversation details like User Preferences
+   </td>
+   <td style="background-color: null">How to add memory to a chatbot? How to manage chat history and context? What is Vertex AI Memory Bank and how to use it?
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">7
+   </td>
+   <td style="background-color: null">Integrating Open Models and Memory with Gemma and MemZero
+   </td>
+   <td style="background-color: null">Explore using open-source models like Gemma and an open memory bank for specialized tasks and data control.
+   </td>
+   <td style="background-color: null">Integrating local/open-source models, working with open memory solutions.
+   </td>
+   <td style="background-color: null">Gemma, <a href="https://github.com/mem0ai/mem0">Mem0ai</a>
+   </td>
+   <td style="background-color: null">Integrate Gemma as the language model and MemZero as the memory bank in the chatbot.
+   </td>
+   <td style="background-color: null">How to use open-source models like Gemma? How to integrate an open memory bank like MemZero? What are the benefits of using open models and memory?
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">8
+   </td>
+   <td style="background-color: null">Integrating an External API with Function Calling
+   </td>
+   <td style="background-color: null">Empower Gemini to interact with a simple, external API to perform a specific action.
+   </td>
+   <td style="background-color: null">Basic tool definition, function calling for a single tool.
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">Integrate a public API (e.g., a weather API) and have the agent use it to answer user queries.
+   </td>
+   <td style="background-color: null">What is function calling? How to integrate an external API with Gemini? How to define a tool for a single API?
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">9
+   </td>
+   <td style="background-color: null">Building a Multi-Tool Agent
+   </td>
+   <td style="background-color: null">Create a more advanced agent that can choose between multiple tools to accomplish a task.
+   </td>
+   <td style="background-color: null">Advanced tool definition, routing between multiple functions.
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">Build an agent that can use multiple tools (e.g., a calculator, a calendar, and a search engine) to answer complex queries.
+   </td>
+   <td style="background-color: null">How to build an agent that can use multiple tools? How to define and route between multiple functions?
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">10
+   </td>
+   <td style="background-color: null">Introduction to RAG with a Single Document
+   </td>
+   <td style="background-color: null">Build a basic RAG system that can answer questions from a single PDF or text file.
+   </td>
+   <td style="background-color: null">Document loading, basic chunking, vector embeddings with a local vector store.
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">Build a RAG system that can answer questions about a specific document.
+   </td>
+   <td style="background-color: null">What is Retrieval-Augmented Generation (RAG)? How to build a basic RAG system? How to load, chunk, and embed a single document?
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">11
+   </td>
+   <td style="background-color: null">Scaling RAG with a Vector Database
+   </td>
+   <td style="background-color: null">Enhance the RAG system to handle a larger knowledge base by using a dedicated vector database.
+   </td>
+   <td style="background-color: null">Vector database setup (e.g., ChromaDB, Pinecone), efficient semantic search over a large corpus.
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">Scale the RAG system to handle a large collection of documents by using a vector database.
+   </td>
+   <td style="background-color: null">How to scale a RAG system? How to set up and use a vector database like ChromaDB or Pinecone? How to perform efficient semantic search over a large corpus?
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">12
+   </td>
+   <td style="background-color: null">Containerizing an AI Application with Docker
+   </td>
+   <td style="background-color: null">Package a Gemini application into a Docker container for portability and consistent deployment.
+   </td>
+   <td style="background-color: null">Dockerfile creation, building and running a Docker image.
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">Create a Dockerfile for the Gemini application and build a Docker image.
+   </td>
+   <td style="background-color: null">What is Docker and why is it useful for AI applications? How to create a Dockerfile for a Gemini application? How to build and run a Docker image?
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">13
+   </td>
+   <td style="background-color: null">Deploying to Google Cloud Run
+   </td>
+   <td style="background-color: null">Deploy the containerized application to Google Cloud Run for a scalable, serverless solution.
+   </td>
+   <td style="background-color: null">Cloud Run deployment, managing environment variables and secrets.
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">Deploy the Dockerized Gemini application to Google Cloud Run.
+   </td>
+   <td style="background-color: null">What is Google Cloud Run? How to deploy a containerized application to Cloud Run? How to manage environment variables and secrets in Cloud Run?
+   </td>
+  </tr>
+  <tr>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">Monitoring and Logging for AI Applications
+   </td>
+   <td style="background-color: null">Implement basic monitoring and logging to track the performance and behavior of the deployed application.
+   </td>
+   <td style="background-color: null">Google Cloud's operations suite (formerly Stackdriver), custom logging within the application.
+   </td>
+   <td style="background-color: null">
+   </td>
+   <td style="background-color: null">Implement monitoring and logging for the deployed Gemini application using Google Cloud's operations suite.
+   </td>
+   <td style="background-color: null">How to monitor and log an AI application? What is Google Cloud's operations suite? How to implement custom logging in a Gemini application?
+   </td>
+  </tr>
+</table>
+
+<p>To consider:</p>
+<ul>
+<li>A2A Protocol</li>
+<li>https://www.youtube.com/watch?v=Fbr_Solax1w</li>
+<li>http://goto.google.com/a2a-slides</li>
+<li>Observability</li>
+<li>Cloud Logging &amp; (open source version like self hosted ELK)</li>
+</ul>
+<hr />
+<h2 id="distribution-community-strategy">Distribution &amp; Community Strategy</h2>
+<ul>
+<li><strong>Source of Truth:</strong> A public GitHub repository will host all code,
+  resources, and drafts.</li>
+<li><strong>Primary Publications:</strong> Blog posts will be published on Medium.com and
+  Dev.to to reach a broad developer audience.</li>
+<li><strong>Community Engagement:</strong> Announcements, key takeaways, and discussions will
+  be shared on X (formerly Twitter) and LinkedIn to foster community
+  interaction and feedback.</li>
+</ul>
+<h2 id="potential-impact">Potential Impact</h2>
+<ul>
+<li><strong>Empower Developers:</strong> Lower the barrier to entry for building and deploying
+  AI-powered applications.</li>
+<li><strong>Foster Community:</strong> Create a hub for Gemini users to share knowledge,
+  collaborate, and get feedback.</li>
+<li><strong>Showcase Gemini:</strong> Highlight the versatility and power of Gemini for
+  solving real-world problems.</li>
+<li><strong>Success Metrics:</strong> Track GitHub stars/forks, blog post views/claps, social
+  media engagement, and community contributions.</li>
+</ul>
+<h2 id="success-metrics">Success Metrics</h2>
+<ul>
+<li>Measure user traffic in blog posts <a href="http://Medium.com">Medium.com</a> and
+  <a href="http://Dev.to">Dev.to</a></li>
+<li>Measure user traffic in github repository as stars, clones and contributions.</li>
+<li>Measure user comments in announcements posts on Linkedin &amp; X.</li>
+</ul>
+<hr />
+<h3 id="guidelines-for-lesson-content-format"><strong>Guidelines for Lesson Content Format</strong></h3>
+<h4 id="1-content-structure-sections"><strong>1. Content Structure / Sections</strong></h4>
+<p>Each lesson should follow a consistent narrative flow, moving from introduction
+to practical application and deployment.</p>
+<ul>
+<li><strong>Catchy Title &amp; Hook:</strong></li>
+<li>A compelling, action-oriented title.</li>
+<li>A "hook" scenario or problem statement to immediately engage the reader.</li>
+<li>(Optional, but encouraged) A GIF animation placeholder to visualize the
+    core concept or speed of development.</li>
+<li><strong>"What You'll Learn" Section:</strong></li>
+<li>Clearly list the key learning objectives for the lesson.</li>
+<li>Use bullet points for readability.</li>
+<li>Include relevant emojis.</li>
+<li><strong>"Prerequisites" Section:</strong></li>
+<li>List any necessary tools, accounts, or prior knowledge required.</li>
+<li>Use bullet points.</li>
+<li>Include relevant emojis.</li>
+<li><strong>Main Content Sections (The Core of the Lesson):</strong></li>
+<li>Each core concept (e.g., In-Context Learning, System Instructions, Context
+    Caching, RAG) should have its own dedicated heading.</li>
+<li>Start with a clear <strong>explanation</strong> of the concept: what it is, why it's
+    important, how it works conceptually.</li>
+<li>Include <strong>use cases</strong> to illustrate practical applications.</li>
+<li>Feature <strong>"Tangible Examples"</strong>:<ul>
+<li>For concepts easily shown through interaction, use <strong>screenshot
+  placeholders</strong> with clear descriptions of what the screenshot would show
+  (e.g., "Imagine a screenshot here..."). Explain the input and the
+  expected output clearly.</li>
+<li>For concepts requiring code demonstration (e.g., System Instructions,
+  Context Caching, RAG Orchestration), provide <strong>code samples</strong> (Python for
+  llm.py and app.py).</li>
+<li>Clearly indicate which file (llm.py or app.py) the code belongs to.</li>
+<li>Ensure code blocks are clearly marked with python: and filename/path.</li>
+<li>Include <strong>conceptual diagrams/flowcharts</strong> (with clear placeholders if
+  not generating directly) for complex flows like RAG.</li>
+</ul>
+</li>
+<li>Discuss <strong>considerations, benefits, or limitations</strong> for each concept.</li>
+<li><strong>"Deployment" Section:</strong></li>
+<li>Provide a single, consolidated code block for the main Streamlit
+    application (app.py and llm.py parts combined, or referencing separate
+    files as demonstrated in the examples).</li>
+<li>Include the requirements.txt file.</li>
+<li>Provide <strong>clear, step-by-step deployment instructions</strong> for Google Cloud
+    Run (including gcloud commands).</li>
+<li>Emphasize necessary API key handling and permissions.</li>
+<li>Conclude with a celebration of the successful deployment.</li>
+</ul>
+<hr />
+<h4 id="2-formatting-and-style-instructions"><strong>2. Formatting and Style Instructions</strong></h4>
+<ul>
+<li><strong>Tone and Voice:</strong> Professional, engaging, and enthusiastic, reflecting a
+  "cookbook" style (practical, easy-to-follow).</li>
+<li><strong>Clarity and Conciseness:</strong> Explain concepts clearly and simply, avoiding
+  jargon where possible. Get straight to the point.</li>
+<li><strong>Emoji Usage:</strong></li>
+<li>Use emojis <strong>moderately</strong> to add visual appeal and emphasize points.</li>
+<li>Place them strategically at the beginning or end of headings, bullet
+    points, or key sentences.</li>
+<li>Ensure they enhance understanding, rather than cluttering the text.</li>
+<li><strong>Headings:</strong> Use clear, descriptive headings (##, ###) to break down
+  content.</li>
+<li><strong>Code Blocks:</strong></li>
+<li>Always use Markdown code blocks for all code snippets (Python, Bash).</li>
+<li>Clearly state what the code block represents (e.g., "Content for app.py").</li>
+<li><strong>Crucially, include DO NOT MODIFY THIS BLOCK comments</strong> within the code
+    sections to guide future iterations.</li>
+<li><strong>Emphasis:</strong> Use bolding (**text**) for key terms and concepts.</li>
+<li><strong>Lists:</strong> Use bullet points (* or -) for lists of objectives,
+  prerequisites, benefits, etc.</li>
+<li><strong>Placeholders:</strong> For content that is implied (like screenshots or GIFs), use
+  clear markdown comments indicating what should be imagined or added.</li>
+<li><strong>Cross-Referencing:</strong> Where relevant, refer back to previous lessons (e.g.,
+  "As seen in Lesson 01...") for continuity.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2025 © M Sampath Kumar
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/msampathkumar" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/u/msampathkumar" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/user/sampath/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6M286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3M167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4m-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://bsky.app/profile/sampathm.bsky.social" target="_blank" rel="noopener" title="bsky.app" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2 42.1-31.6 110.3-56 110.3 21.8 0 15.5-8.9 130.5-14.1 149.2-18.2 64.8-84.4 81.4-143.3 71.3C456 322 482.2 380 425.6 438c-107.4 110.2-154.3-27.6-166.3-62.9-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8c-12 35.3-59 173.1-166.3 62.9-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1 10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/msampathkumar/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
