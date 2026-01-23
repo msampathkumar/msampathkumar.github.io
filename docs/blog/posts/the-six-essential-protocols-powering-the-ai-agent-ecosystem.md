@@ -11,6 +11,8 @@ categories:
 
 # The Six Essential Protocols Powering the AI Agent Ecosystem
 
+![Image](images/ai-agents-protocols-07.png)
+
 > **TL;DR**: Six protocols are emerging as the foundation of AI agent architecture: MCP (tool access), A2A (agent collaboration), AG-UI (UI communication), A2UI (UI generation), AP2 (payments), and UCP (commerce). Together, they enable agents to interact seamlessly with tools, other agents, users, and commerce systems. Understanding these protocols today positions you at the forefront of the AI agent revolution.
 
 | Protocol | Purpose | Key Benefit |
@@ -36,8 +38,7 @@ Having worked extensively with AI agents over the past year, I've identified six
 
 The [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) solves a fundamental challenge: how do agents interact with the thousands of tools and data sources available today? Rather than building custom integrations for each tool, MCP provides a unified interface that allows agents to connect to databases, APIs, files, calendars, calculators, and virtually any other tool through a single protocol.
 
-![img_1.png](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*ydhvFVVoKyOfEHMi.png)
-ImageSource: [BlogPost](https://generativeai.pub/learn-mcp-servers-with-python-an-essential-guide-to-model-context-protocol-servers-97984f37eceb)
+![Image](images/ai-agents-protocols-02.png)
 
 **Why it matters:** Without MCP, every agent would need custom code for every tool integration. With MCP, agents can instantly access any MCP-compatible tool, dramatically reducing development time and expanding capabilities.
 
@@ -49,8 +50,7 @@ ImageSource: [BlogPost](https://generativeai.pub/learn-mcp-servers-with-python-a
 
 The [A2A Protocol](https://a2a-protocol.org/latest/) addresses the reality that no single agent can do everything. In complex workflows, agents need to collaborate. For example, an Inventory Agent might need to work with a Research Agent to understand market trends and a Pricing Agent to set optimal prices.
 
-![Image](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*MTYZLX8EDnYcnz8_)
-ImageSource: [BlogPost](https://ai.plainenglish.io/a2a-protocol-complete-overview-95b792cc24d6)
+![Image](images/ai-agents-protocols-03.png)
 
 **Real-world scenario:** Imagine a supply chain optimization task where multiple specialized agents (logistics, inventory, demand forecasting) need to coordinate to minimize costs while maintaining service levels.
 
@@ -60,23 +60,25 @@ ImageSource: [BlogPost](https://ai.plainenglish.io/a2a-protocol-complete-overvie
 
 **Key Functions:** Streaming state updates, handling approval workflows, maintaining synchronization.
 
-[AG-UI](https://docs.ag-ui.com/introduction) solves the challenge of keeping agent actions visible and controllable. It handles everything from showing real-time progress to managing tool call approvals, ensuring users maintain oversight of agent activities.
+[AG-UI](https://docs.ag-ui.com/introduction) an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications. AG-UI is designed to be the general-purpose, bi-directional connection between a user-facing application and any agentic backend.
 
 **Example:** When an agent needs to access sensitive data or perform a high-stakes action, AG-UI manages the approval flow, presenting the request to the user and waiting for confirmation before proceeding.
 
-### 4. A2UI: Agent-Generated UI Protocol (Agent 🤖 to User Interface 📱)
+### 4. A2UI: Agent-to-User Interface (Agent 🤖 to User Interface 📱)
 
 **Purpose:** Empowers agents to create dynamic, context-appropriate user interface elements.
 
 **Key Concept:** Moving beyond plain text to rich, interactive experiences.
 
-[A2UI](https://a2ui.org/) represents a paradigm shift in how agents communicate with users. Instead of just returning text, agents can generate forms for data input, charts for visualization, progress bars for long-running tasks, and custom widgets tailored to the specific interaction.
+[A2UI](https://a2ui.org/) is an open standard and set of libraries that allows agents to "speak UI." Agents send a declarative JSON format describing the intent of the UI. The client application then renders this using its own native component library (Flutter, Angular, Lit, etc.)
 
 **Benefit:** This creates a more intuitive and efficient user experience. For instance, instead of asking users to type out complex configuration options, an agent can generate a form with appropriate validation and helpful tooltips.
 
 > **AG-UI vs A2UI**: Think of A2UI as the *blueprint for UI widgets* and AG-UI as the *secure communication channel moving them between the AI (backend) and your app (frontend)*.
 
 ### 5. AP2: Agent Payment Protocol (Agent 🤖 to Payment Interface 💳)
+
+![Image](images/ai-agents-protocols-04.png)
 
 **Purpose:** Enables secure, auditable financial transactions for autonomous agents.
 
@@ -91,11 +93,13 @@ The [AP2 Protocol](https://github.com/google-agentic-commerce/AP2) tackles one o
 
 ### 6. UCP: Universal Commerce Protocol (Agent 🤖 to Commerce 🛍)
 
+![Image](images/ai-agents-protocols-05.png)
+
 **Purpose:** Standardizes commerce interactions across different retailers and platforms.
 
 **Key Concept:** "One standard. Every retailer."
 
-[UCP](https://ucp.dev/) solves the fragmentation problem in e-commerce. Instead of agents needing to understand dozens of different checkout flows, product schemas, and API formats, UCP provides a unified interface for product search, cart management, checkout, and delivery tracking across any compatible retailer.
+[UCP](https://ucp.dev/) solves the fragmentation problem in e-commerce. Instead of agents needing to understand dozens of different checkout flows, product schemas, and API formats, UCP provides a unified interface for product search, cart management, checkout, and delivery tracking across any compatible retailer. (UCP is built on top of AP2.)
 
 **Impact:** This enables true shopping agent experiences where a single agent can help users find and purchase products from multiple stores without custom integrations for each retailer.
 
@@ -103,30 +107,7 @@ The [AP2 Protocol](https://github.com/google-agentic-commerce/AP2) tackles one o
 
 These six protocols aren't just independent standards—they work together to create a complete ecosystem:
 
-```mermaid
-graph TD
-    A[AI Agent] --> MCP[MCP: Tool Access]
-    A --> A2A[A2A: Agent Collaboration]
-    A --> AGUI[AG-UI: UI Communication]
-    A --> A2UI[A2UI: UI Generation]
-    A --> AP2[AP2: Payments]
-    A --> UCP[UCP: Commerce]
-
-    MCP --> T[Tools & APIs]
-    A2A --> OA[Other Agents]
-    AGUI --> UI[User Interface]
-    A2UI --> W[Dynamic Widgets]
-    AP2 --> P[Payment Systems]
-    UCP --> R[Retailers]
-
-    style A fill:#f9f,stroke:#333,stroke-width:4px
-    style MCP fill:#bbf,stroke:#333,stroke-width:2px
-    style A2A fill:#bbf,stroke:#333,stroke-width:2px
-    style AGUI fill:#bbf,stroke:#333,stroke-width:2px
-    style A2UI fill:#bbf,stroke:#333,stroke-width:2px
-    style AP2 fill:#bbf,stroke:#333,stroke-width:2px
-    style UCP fill:#bbf,stroke:#333,stroke-width:2px
-```
+![Image](images/ai-agents-protocols-06.png)
 
 ## Real-World Impact: How These Protocols Transform Daily Work
 
