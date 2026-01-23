@@ -94,6 +94,7 @@ nav:
           - "Gemini as your Culinary Guide": blog/posts/gemini-as-your-culinary-guide.md
       - "Technical Articles":
           - "Role of Python in Google Cloud": blog/posts/the-role-of-python-in-google-cloud.md
+          - "Advanced Memory Management for Agentic AI Development": blog/posts/advanced-memory-management-agentic-ai.md
           - "Vibe Coding Introduction": blog/posts/vibe-coding-intro.md
           - "Vibe Coding Dos and Don'ts": blog/posts/vibe-coding-dos-donts.md
       - "Personal":
