@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "black>=25.1.0",
+    "google-adk>=1.22.1",
     "google-genai>=1.27.0",
     "mdformat>=0.7.22",
     "mdformat-black>=0.1.1",
