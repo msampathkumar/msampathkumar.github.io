@@ -1,8 +1,0 @@
-**2025-10-04**
-
-- Updated report styles:
-  - Reduced card padding.
-  - Created a `.content-card` class for card content.
-  - Consolidated font styles into `.content-card` for consistency.
-  - Reduced font size and removed bolding for content cards.
-  - Made the I/O arrow less dominant by reducing its size and lightening its color.
