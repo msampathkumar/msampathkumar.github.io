@@ -44,4 +44,6 @@ Fortunately, a senior leader challenged me with the strategic lens. They argued 
 
 ### The Takeaway
 
-This marked a thrilling moment of perspective shift. While neither approach was inherently 'wrong,' it unveiled an invaluable lesson: sometimes the objective isn't merely to alleviate an operational pinch point by redirecting demand. Instead, true wisdom lies in leaning into that very difficulty, for often, the 'magic' of success precisely resides within those challenging moments.
+This marked a thrilling moment of perspective shift. While neither approach was inherently 'wrong,' it unveiled an invaluable lesson: 
+
+> Sometimes the path forward isn't merely to alleviate an operational pinch point by redirecting demand. Sometimes, the path forward is to lean into the difficulty, because it could be where the magic 🌟 happens.
