@@ -105,13 +105,13 @@ The [AP2 Protocol](https://github.com/google-agentic-commerce/AP2) tackles one o
 
 ## The Bigger Picture: An Integrated Ecosystem
 
-These six protocols aren't just independent standards—they work together to create a complete ecosystem:
+These six protocols aren't just independent protocols—they work together to create a strong ecosystem:
 
 ![Image](images/ai-agents-protocols-06.png)
 
 ## Real-World Impact: How These Protocols Transform Daily Work
 
-Let me share a practical example. My friend runs a small marketing agency and recently started using AI agents. Here's what changed:
+Let me share an example. Say my friend runs a small marketing agency and recently started using AI agents. Here's what changed:
 
 **Before protocols**: She had separate tools for project management (Asana), analytics (Google Analytics), client communication (Slack), and invoicing (QuickBooks). Her AI assistant could only help with basic tasks in isolation.
 
