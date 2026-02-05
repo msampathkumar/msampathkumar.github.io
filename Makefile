@@ -6,7 +6,7 @@ clean:
 
 run:
 	@echo "Running the mkdocs"
-	mkdocs serve -a localhost:8090 -c
+	mkdocs serve -a localhost:8099 -c
 
 deploy:
 	@echo "Deploying to GitHub Pages"

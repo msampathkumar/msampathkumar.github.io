@@ -1,18 +1,20 @@
 # General settings
-site_name: Google Cloud - Gemini Cookbook # msampathkumar.github.io
+site_name: msampathkumar.github.io
 site_description: Personal blog of Sampath Kumar M
-site_author: Sampath Kumar
+site_author: M Sampath Kumar
+
+exclude_docs: |
+  blog/posts/images/
 
 # Repository
 repo_name: Github
 repo_url: https://github.com/msampathkumar/msampathkumar.github.io/
 
 # Copyright
-copyright: Copyright 2025 © M Sampath Kumar
+copyright: Copyright 2024 © M Sampath Kumar
 theme:
   icon:
     logo: material/robot-happy-outline
-  # favicon:
   previous: fontawesome/solid/angle-left
   next: fontawesome/solid/angle-right
   name: material
@@ -40,6 +42,11 @@ theme:
     - navigation.indexes # for blog/index.md
     - navigation.tabs
     - navigation.top
+    - navigation.instant
+    - navigation.footer
+    - content.code.copy
+    - search.suggest
+    - search.highlight
 markdown_extensions:
   - attr_list
   # emojis
@@ -49,9 +56,14 @@ markdown_extensions:
 
 plugins:
   - meta
-#  - blog
+#  - blog:
+#      blog_dir: blog/posts
+#      post_excerpt: optional
+#      post_exclude: ['images']
   - search
   - mermaid2
+  - git-revision-date-localized:
+      type: timeago
 
 # Additional configuration
 extra:
@@ -87,34 +99,25 @@ nav:
           - "Lesson 4: Knowledge Base Q&A with RAG": google-cloud-gemini-cookbook/lesson-04/README.md
           - "Lesson 5: Advanced RAG with Knowledge Graphs": google-cloud-gemini-cookbook/lesson-05/README.md
   - "Blog":
-      - "Gemini Guides":
-          - "Gemini CLI Cheatsheets": blog/posts/gemini-cli-cheatsheet-printouts.md
-          - "Gemini CLI Top Commands": blog/posts/gemini-cli-top-commands.md
-          - "Gemini 2.5 Flash Image Preview": blog/posts/gemini-2.5-flash-image-preview.md
-          - "Gemini as your Culinary Guide": blog/posts/gemini-as-your-culinary-guide.md
-      - "Technical Articles":
-          - "The Six Essential Protocols Powering the AI Agent Ecosystem": blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md
-          - "Role of Python in Google Cloud": blog/posts/the-role-of-python-in-google-cloud.md
-          - "Advanced Memory Management for Agentic AI Development": blog/posts/advanced-memory-management-agentic-ai.md
-          - "Vibe Coding Introduction": blog/posts/vibe-coding-intro.md
-          - "Vibe Coding Dos and Don'ts": blog/posts/vibe-coding-dos-donts.md
-      - "Personal":
-          - "10 Principles of Miyamoto Musashi": blog/posts/miyamoto-musashi-10-principles.md
-          - "Sky, Sea, and Truth": blog/posts/poem-sky-sea-truth.md
-          - "How to Spot an Ineffective Manager or Leader": blog/posts/spot-fakes-leaders.md
+     - "Gemini Guides":
+         - "Gemini CLI Cheatsheets": blog/posts/gemini-cli-cheatsheet-printouts.md
+         - "Gemini CLI Top Commands": blog/posts/gemini-cli-top-commands.md
+         - "Gemini 2.5 Flash Image Preview": blog/posts/gemini-2.5-flash-image-preview.md
+         - "Gemini as your Culinary Guide": blog/posts/gemini-as-your-culinary-guide.md
+     - "Technical Articles":
+         - "The Six Essential Protocols Powering the AI Agent Ecosystem": blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md
+         - "Role of Python in Google Cloud": blog/posts/the-role-of-python-in-google-cloud.md
+         - "Advanced Memory Management for Agentic AI Development": blog/posts/advanced-memory-management-agentic-ai.md
+         - "Vibe Coding Introduction": blog/posts/vibe-coding-intro.md
+         - "Vibe Coding Dos and Don'ts": blog/posts/vibe-coding-dos-donts.md
+     - "Personal":
+         - "10 Principles of Miyamoto Musashi": blog/posts/miyamoto-musashi-10-principles.md
+         - "Sky, Sea, and Truth": blog/posts/poem-sky-sea-truth.md
+         - "How to Spot an Ineffective Manager or Leader": blog/posts/spot-fakes-leaders.md
+         - "The Two Lenses of Leadership": blog/posts/two-lenses-of-leadership.md
 
   - "Events":
       - "All Events": events/index.md
       - "AI Day Denmark": events/2025-10-28-ai-day-denmark.md
       - "AI Day Sweden": events/2025-11-05-ai-day-sweden.md
       - "Kaggle AI Days": events/2025-11-10-kaggle-ai-days.md
-
-#      - "Project Management":
-#          - "RACI": blog/ProjectMgmt/RACI.md
-#          - "Tasks and Milestones": blog/ProjectMgmt/Tasks-and-Milestones.md
-#          - "Top Level Summary": blog/ProjectMgmt/top-level-summary.md
-#
-#  - "Gemini Model Cards":
-#      - Home: models/index.md
-#      - "report_gemini_2.0_flash_live_preview_04_09": models/automation/report_gemini_2.0_flash_live_preview_04_09.html
-#      - "report_gemini_2.5_pro_preview_05_15": models/automation/report_gemini_2.5_pro_preview_05_15.html
