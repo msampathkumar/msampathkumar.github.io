@@ -39,6 +39,6 @@ I presented a technical session on "Building Intelligent Agents: Gemini, Google 
 
 ## [2025-04-09: Google Cloud AI Day - Denmark](2025-04-09-cloud-next.md)
 
-**Location**: Las Vegas, U.S
+**Location**: Las Vegas, U.S.
 **Role(s)**: Go-To-Market DevRel Lead for GenAI SDKs(Python & Go), Presenter of Advanced Development Tools in Vertex AI Demo and one of the speaker for Agent Starter Pack (ASP) at Google Cloud Next 2025.
 
