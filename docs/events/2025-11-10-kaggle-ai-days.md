@@ -11,7 +11,7 @@
 
 ### Technical Leadership
 - **Position**: Course Lead for Day 3: Context Engineering & Memory
-- **Name**: TODO: [Insert full name]
+- **Name**: (Sampath Kumar](https://www.kaggle.com/maddula)
 - **Title**: Developer Programs Engineer, Google Cloud
 - **Responsibility**: Led the curriculum development and implementation for context management in AI agents
 
@@ -19,22 +19,17 @@
 1. **Colab Notebook 1**: Short-term Memory Implementation
    - Demonstrated session management techniques
    - Practical examples using Google ADK SessionManagers
-   - TODO: [Add link to public Colab if available]
+   - https://www.kaggle.com/code/kaggle5daysofai/day-5b-agent-deployment
 
 2. **Colab Notebook 2**: Long-term Memory Implementation
    - Showcased persistent memory patterns
    - Integration with vector databases
    - Production-ready memory architectures
-   - TODO: [Add link to public Colab if available]
-
-### Technical Content Delivered
-- Designed hands-on exercises for context engineering
-- Created practical implementations of memory systems
-- TODO: [Add details about live session participation if any]
+   - https://www.kaggle.com/code/kaggle5daysofai/day-5a-agent2agent-communication
 
 ## Course Overview
 
-This flagship Google AI course attracted over 420,000 registrations globally, following the success of the previous year's Gen AI Intensive Course. The course focused on building autonomous AI agents that go beyond simple chatbots.
+This flagship Google AI course attracted over [420,000 registrations](https://rsvp.withgoogle.com/events/google-ai-agents-intensive_2025) globally, following the success of the previous year's [Gen AI Intensive Course](https://blog.google/innovation-and-ai/technology/developers-tools/ai-agents-intensive-recap/). The course focused on building autonomous AI agents that go beyond simple chatbots.
 
 ### 5-Day Curriculum Structure
 1. **Day 1**: Introduction to Agents & Agentic Architectures
@@ -52,7 +47,6 @@ As the Day 3 lead, I covered:
 
 ## Impact and Reach
 
-- **Global Participation**: TODO: [Insert actual participant numbers for Day 3]
 - **Community Engagement**: Active participation in Discord discussions
 - **Capstone Projects**: Participants used Day 3 concepts in their final projects
 
@@ -62,20 +56,6 @@ As the Day 3 lead, I covered:
 - **Language**: Python
 - **Tools**: Colab notebooks, Gemini API, Vector databases
 - **Platforms**: Kaggle, YouTube (live sessions), Discord (community)
-
-## Professional Outcomes
-
-- Established expertise in AI agent memory systems
-- Contributed to Google's official AI education initiatives
-- TODO: [Add any recognition, badges, or certificates received]
-- TODO: [Add feedback metrics or participant testimonials if available]
-
-## Resources and Follow-up
-
-- **Course Materials**: Available on Kaggle Learn platform
-- **Community**: Ongoing discussions in Kaggle Discord
-- **My Contributions**: TODO: [Add links to your public notebooks/materials]
-- **Future Engagements**: TODO: [Add any planned follow-up workshops or courses]
 
 ## Key Takeaways for Participants
 
