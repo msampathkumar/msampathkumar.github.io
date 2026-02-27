@@ -9,7 +9,7 @@
 ## My Contribution
 
 ### Speaker Profile
-- **Name**: TODO: [Insert full name]
+- **Name**: Sampath Kumar
 - **Title**: Developer Programs Engineer, Google Cloud
 - **Track**: Developer Track
 - **Session Time**: 4:00 PM CET
@@ -27,8 +27,7 @@
 - Best practices for production-ready AI agents
 
 **Audience Impact**:
-- TODO: [Insert number of attendees for your session]
-- TODO: [Insert session feedback score if available]
+- 150+ working professionals attendees the session.
 - Engaged with developers through hands-on demonstrations and Q&A
 
 ## Event Context
@@ -46,7 +45,6 @@ This speaking engagement allowed me to:
 - Share expertise in AI agent development with the Nordic developer community
 - Demonstrate practical applications of Google's latest AI technologies
 - Network with industry leaders and developers implementing AI solutions
-- TODO: [Add any specific outcomes, follow-ups, or partnerships that resulted]
 
 ## Related Events
 

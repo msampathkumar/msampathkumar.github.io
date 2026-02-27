@@ -9,7 +9,7 @@
 ## My Contribution
 
 ### Speaker Profile
-- **Name**: TODO: [Insert full name]
+- **Name**: Sampath Kumar
 - **Title**: Developer Programs Engineer, Google Cloud
 - **Track**: Developer Track (10:45 AM CET)
 - **Sessions Delivered**: 2 technical presentations
@@ -32,8 +32,7 @@
 **Audience Engagement**:
 - Successfully engaged with 200+ developers and technical leaders
 - Utilized the mnemonic "SAM → Session and Memory" to reinforce key concepts
-- Extended Q&A sessions based on high audience interest
-- TODO: [Insert session feedback scores if available]
+- Extended Q&A sessions based on high audience interest.
 
 ## Technical Insights Shared
 
@@ -60,9 +59,7 @@ Google Cloud AI Day Sweden featured:
 
 This speaking engagement resulted in:
 - Deep technical discussions with Nordic developer community
-- TODO: [Add any specific partnerships or collaborations initiated]
-- Valuable feedback incorporated into Google ADK documentation
-- TODO: [Add any follow-up workshops or consultations scheduled]
+- Valuable feedback incorporated into Google ADK documentation.
 
 ## Open Source Contribution
 
@@ -72,6 +69,4 @@ Emphasized Google ADK's open-source nature and encouraged community contribution
 - Real-world implementation patterns
 
 ## Related Materials
-- TODO: [Link to presentation slides if available]
-- TODO: [Link to code samples or repositories shared]
-- TODO: [Link to session recording if available]
+- https://github.com/msampathkumar/google-adk-sam
