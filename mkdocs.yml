@@ -118,6 +118,7 @@ nav:
 
   - "Events":
       - "All Events": events/index.md
-      - "AI Day Denmark": events/2025-10-28-ai-day-denmark.md
-      - "AI Day Sweden": events/2025-11-05-ai-day-sweden.md
       - "Kaggle AI Days": events/2025-11-10-kaggle-ai-days.md
+      - "AI Day Sweden": events/2025-11-05-ai-day-sweden.md
+      - "AI Day Denmark": events/2025-10-28-ai-day-denmark.md
+      - "Cloud Next 25": events/2025-04-09-cloud-next.md
