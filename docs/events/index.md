@@ -5,7 +5,7 @@
 As a Developer Programs Engineer at Google Cloud, I have actively contributed to major AI and cloud computing events across Europe. These engagements demonstrate my expertise in AI agent development, memory management, and the Google Agent Development Kit (ADK).
 
 ### Event Summary
-- **Total Events**: 3 major Google Cloud AI events
+- **Total Events**: 4 major Google Cloud AI events
 - **Geographic Reach**: Nordic region (Denmark, Sweden) and global online audience
 - **Total Attendees**: Approx. 250
 - **Key Technologies**: Google Gemini, Agent Development Kit (ADK), AI Memory Management
