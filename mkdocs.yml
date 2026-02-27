@@ -122,3 +122,5 @@ nav:
       - "AI Day Sweden": events/2025-11-05-ai-day-sweden.md
       - "AI Day Denmark": events/2025-10-28-ai-day-denmark.md
       - "Cloud Next 25": events/2025-04-09-cloud-next.md
+
+  - "Services": services/index.md
