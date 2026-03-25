@@ -1,6 +1,7 @@
 import os
-import vertexai
+from concurrent.futures import ThreadPoolExecutor
 
+import vertexai
 from vertexai import rag
 
 import config
@@ -40,7 +41,7 @@ class RagCorpusManager:
             f.write(self.rag_corpus.name)
         self._upload_files()
 
-    def _upload_files(self):
+    def _upload_files(self, filenames=None):
         print(f"Uploading files from: {self.rag_dataset_folder}")
         if not os.path.exists(self.rag_dataset_folder):
             os.makedirs(self.rag_dataset_folder)
@@ -49,16 +50,21 @@ class RagCorpusManager:
             with open(os.path.join(self.rag_dataset_folder, "sample.txt"), "w") as f:
                 f.write("This is a sample file for the RAG corpus.")
 
-        # Upload all files to the RAG corpus
-        for filename in os.listdir(self.rag_dataset_folder):
-            filepath = os.path.join(self.rag_dataset_folder, filename)
-            if os.path.isfile(filepath):
-                print(f"Uploading file: {filename}")
-                rag.upload_file(
-                    corpus_name=self.rag_corpus.name,
-                    path=filepath,
-                    display_name=filename,
-                )
+        if filenames is None:
+            filenames = os.listdir(self.rag_dataset_folder)
+
+        # Upload all files to the RAG corpus concurrently
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            for filename in filenames:
+                filepath = os.path.join(self.rag_dataset_folder, filename)
+                if os.path.isfile(filepath):
+                    print(f"Uploading file: {filename}")
+                    executor.submit(
+                        rag.upload_file,
+                        corpus_name=self.rag_corpus.name,
+                        path=filepath,
+                        display_name=filename,
+                    )
 
     def list_files(self):
         """Lists all files in the RAG corpus with their status."""
@@ -100,10 +106,11 @@ class RagCorpusManager:
             print("No old files to delete.")
             return
 
-        for rag_file in corpus_files:
-            if rag_file.display_name in files_to_delete:
-                print(f"Deleting old file: {rag_file.display_name}")
-                rag.delete_file(name=rag_file.name)
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            for rag_file in corpus_files:
+                if rag_file.display_name in files_to_delete:
+                    print(f"Deleting old file: {rag_file.display_name}")
+                    executor.submit(rag.delete_file, name=rag_file.name)
 
     def refresh(self):
         """Synchronizes the RAG corpus with the local dataset folder."""
@@ -123,20 +130,13 @@ class RagCorpusManager:
         corpus_files = list(rag.list_files(corpus_name=self.rag_corpus.name))
         corpus_filenames = {f.display_name for f in corpus_files}
 
-        # Upload new files
+        # Upload new files concurrently
         files_to_upload = local_filenames - corpus_filenames
         if not files_to_upload:
             print("No new files to upload.")
         else:
-            print("Uploading new files...")
-            for filename in files_to_upload:
-                print(f"Uploading new file: {filename}")
-                filepath = os.path.join(self.rag_dataset_folder, filename)
-                rag.upload_file(
-                    corpus_name=self.rag_corpus.name,
-                    path=filepath,
-                    display_name=filename,
-                )
+            print(f"Uploading {len(files_to_upload)} new files...")
+            self._upload_files(files_to_upload)
 
         # Delete old files
         self._cleanup_files(local_filenames, corpus_files)
