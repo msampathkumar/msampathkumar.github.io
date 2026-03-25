@@ -111,9 +111,11 @@ class CacheManager:
             print(f" - Expires at: {content_cache.expire_time}")
 
             # cleanup
-            if content_cache.display_name != config.CACHE_FILE:
-                continue
-            self.client.caches.delete(content_cache.name)
+            if cleanup and content_cache.display_name == config.CACHE_NAME:
+                print(
+                    f" - Deleting Cache: {content_cache.display_name} ({content_cache.name})"
+                )
+                self.client.caches.delete(content_cache.name)
 
     def main(self):
         cache_name, creation_datetime_object, is_valid_flag = (
