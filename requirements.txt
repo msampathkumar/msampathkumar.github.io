@@ -7,4 +7,4 @@ mdformat-shfmt==0.2.0
 mkdocs-material==9.7.1
 mkdocs-mermaid2-plugin==1.2.3
 PyYAML==6.0.3
-streamlit==1.53.1
+streamlit==1.54.0
