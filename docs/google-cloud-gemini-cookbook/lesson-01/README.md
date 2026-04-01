@@ -137,7 +137,7 @@ PROJECT="your-gcp-project-id"
 LOCATION="us-central1"
 
 # Deploy app from source code
-gcloud run deploy simple-app --source . --region=$LOCATION --project=$PROJECT --allow-unauthenticated
+gcloud run deploy simple-app --source . --region=$LOCATION --project=$PROJECT --no-allow-unauthenticated
 ```
 
 **Important:** Replace `"your-gcp-project-id"` with your actual Google Cloud

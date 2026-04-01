@@ -18,4 +18,4 @@ gcloud run deploy simple-app --source . \
   --region=$GOOGLE_CLOUD_LOCATION \
   --project=$GOOGLE_CLOUD_PROJECT \
   --set-env-vars=$CLOUD_RUN_INSTANCE_ENV_VARS \
-  --allow-unauthenticated
+  --no-allow-unauthenticated
