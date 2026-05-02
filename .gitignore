@@ -13,12 +13,14 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.cache
 
 # IDEs and editors
 .idea/
 .vscode/
 *.swp
 *.swo
+.beads
 
 # OS-specific files
 .DS_Store

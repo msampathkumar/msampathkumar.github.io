@@ -2,10 +2,16 @@
 
 ## Professional Speaking Engagements and Technical Leadership
 
-As a Developer Programs Engineer at Google Cloud, I have actively contributed to major AI and cloud computing events across Europe. These engagements demonstrate my expertise in AI agent development, memory management, and the Google Agent Development Kit (ADK).
+As a Sr. Developer Programs Engineer at Google Cloud, I have actively contributed to major AI and cloud computing events across Europe. These engagements demonstrate my expertise in AI agent development, memory management, and the Google Agent Development Kit (ADK).
 
 
 ## 2026
+
+### 2026-03-11: GDG Cloud Fest PL
+
+**Role**: Presenter
+
+At the GDG Cloud Fest PL conference in Warsaw, Poland, I have presented a talk about my ideas of building intelligent agents using Google ADK. I have also presented 5 keys science backed takeaways with Agent Architectures. 
 
 ### 2026-02-17: Accelerate AI with Cloud Run Warsaw
 

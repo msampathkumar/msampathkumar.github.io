@@ -13,7 +13,7 @@ categories:
 
 ![Image](images/ai-agents-protocols-07.png)
 
-> **TL;DR**: Six protocols are emerging as the foundation of AI agent architecture: MCP (tool access), A2A (agent collaboration), AG-UI (UI communication), A2UI (UI generation), AP2 (payments), and UCP (commerce). Together, they enable agents to interact seamlessly with tools, other agents, users, and commerce systems. Understanding these protocols today positions you at the forefront of the AI agent revolution.
+Six protocols are quietly emerging as the foundation of AI agent architecture: MCP, A2A, AG-UI, A2UI, AP2, and UCP. Together, they map out how agents will interact with tools, each other, users, and commerce systems. I've put together a quick breakdown of what they are and why they matter for the future of development.
 
 | Protocol | Purpose | Key Benefit |
 |----------|---------|-------------|
@@ -24,9 +24,9 @@ categories:
 | **AP2** | Agent → Payments | Cryptographic transaction safety |
 | **UCP** | Agent → Commerce | One standard, every retailer |
 
-As AI agents become increasingly sophisticated, the need for standardized communication protocols has never been more critical. Just as the internet was built on protocols like HTTP and TCP/IP, the emerging AI agent ecosystem is being shaped by a new generation of protocols that enable seamless interaction between agents, tools, users, and commerce systems.
+As AI agents become increasingly sophisticated, standardizing how they communicate is critical. Just as the early web relied on HTTP and TCP/IP, the emerging agent ecosystem is being shaped by a new generation of open protocols. 
 
-Having worked extensively with AI agents over the past year, I've identified six foundational protocols that are shaping how agents interact with the world around them. Each protocol addresses a specific challenge in the agent ecosystem, and together they form the backbone of what I believe will be the standard architecture for AI agent applications.
+Over the past year, I've spent a lot of time building and experimenting with AI agents. Through that work, I've identified six foundational protocols that are shaping the ecosystem. Here is how they form the backbone of modern agent applications.
 
 ## The Protocol Stack: From Tools to Commerce
 
