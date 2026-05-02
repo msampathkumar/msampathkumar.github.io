@@ -57,7 +57,7 @@ Agent: [Tool call: extended_forecast] → 600 tokens
 
 ## Challenge 2: The Master Data Management (MDM) Challenge for Agents
 
-To create a continuous, personalized experience, I've found that an agent needs to transform the transient chaos of a single session into a highly organized "filing cabinet" of persistent knowledge. 
+To create a continuous, personalized experience, I've found that an agent needs to transform the transient chaos of a single Session into a highly organized "filing cabinet" of persistent knowledge. 
 
 This feels a lot like the enterprise concept of **Master Data Management (MDM)**—essentially, maintaining a single, accurate source of truth for user-specific knowledge. 
 
