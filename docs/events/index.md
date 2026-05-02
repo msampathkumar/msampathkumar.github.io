@@ -11,7 +11,7 @@ As a Sr. Developer Programs Engineer at Google Cloud, I have actively contribute
 
 **Role**: Presenter
 
-At the GDG Cloud Fest PL conference in Warsaw, Poland, I have presented a talk about my ideas of building intelligent agents using Google ADK. I have also presented 5 keys science backed takeaways with Agent Architectures. 
+At the GDG Cloud Fest PL conference in Warsaw, Poland, I presented a talk on building intelligent agents using Google ADK. I also presented 5 key science-backed takeaways for Agent Architectures. 
 
 ### 2026-02-17: Accelerate AI with Cloud Run Warsaw
 
