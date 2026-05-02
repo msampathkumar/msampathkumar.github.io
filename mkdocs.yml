@@ -98,9 +98,9 @@ extra:
 nav:
   - "🏠 Home": index.md
   - "🧠 Gemini Cookbook":
-      - "Overview": google-cloud-gemini-cookbook/README.md
       - "Full Roadmap": cookbook.md
       - "Tutorials":
+          - "Overview": google-cloud-gemini-cookbook/README.md
           - "Lesson 1: Basic Chatbot with Streamlit": google-cloud-gemini-cookbook/lesson-01/README.md
           - "Lesson 2: Chatbot with Memory & Gemma": google-cloud-gemini-cookbook/lesson-02/README.md
           - "Lesson 3: Multimodality with Vision": google-cloud-gemini-cookbook/lesson-03/README.md
