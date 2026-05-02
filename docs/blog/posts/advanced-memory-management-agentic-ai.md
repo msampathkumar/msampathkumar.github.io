@@ -57,40 +57,22 @@ Agent: [Tool call: extended_forecast] → 600 tokens
 
 ## Challenge 2: The Master Data Management (MDM) Challenge for Agents
 
-To create a continuous, personalized user experience, an agent must transform
-the transient chaos of a single Session (the "workbench") into highly organized,
-persistent knowledge (the "organized filing cabinet"). This process is a deep
-challenge akin to managing data coherence in a **Master Data Management (MDM) System**—it requires maintaining a single, accurate source of truth for
-user-specific knowledge.
+To create a continuous, personalized experience, I've found that an agent needs to transform the transient chaos of a single session into a highly organized "filing cabinet" of persistent knowledge. 
 
-_**Note**_: [_Master Data Management_][1]{:.external} (_MDM) is a well known
-discipline in which business and information technology collaborate to ensure
-the uniformity, accuracy, stewardship, semantic consistency, and accountability
-of the enterprise's official shared master data asset_.
+This feels a lot like the enterprise concept of **Master Data Management (MDM)**—essentially, maintaining a single, accurate source of truth for user-specific knowledge. 
 
-The long-term knowledge, called **Memory**, must be curated to be useful.
-Otherwise, a simple extraction process results in a noisy, contradictory, and
-unreliable log. An agent memory manager must tackle the MDM problem by
-performing **consolidation**:
+For this long-term knowledge (or **Memory**) to be useful, it has to be carefully curated. Without a curation process, simple extraction just leads to a noisy, contradictory log. I focus on four key areas of consolidation:
 
-- **Conflict Resolution**: Resolving contradictions when a user's preferences
-  change over time.
+- **Conflict Resolution**: Handling cases where a user's preferences change over time.
+- **Deduplication**: Merging similar facts mentioned in different ways.
+- **Information Evolution**: Updating simple facts as they become more nuanced.
+- **Forgetting**: Pruning old, stale, or low-confidence memories to keep things relevant.
 
-- **Deduplication**: Merging duplicative entities or facts mentioned in multiple
-  ways.
+## My Approach: Leveraging Google ADK and Vertex AI
 
-- **Information Evolution**: Updating initial, simple facts as they become more
-  nuanced.
+Managing this effectively usually requires two complementary strategies: one for short-term (in-session) memory, and one for long-term (cross-session) memory.
 
-- **Forgetting**: Proactively pruning old, stale, or low-confidence memories to
-  keep the knowledge base relevant and efficient.
-
-# Solution: Achieving Agentic MDM with Google ADK and Vertex AI
-
-Effective memory management requires complementary strategies for both
-short-term (in-session) and long-term (cross-session) memory.
-
-### i) Short-Term MDM via ADK Content Compaction
+### 1. Short-Term Memory via ADK Content Compaction
 
 For managing the immediate Session history and fitting it within the LLM's
 context window, the **Google Agent Development Kit (ADK)** offers compaction
@@ -163,16 +145,13 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-### ii) Long-Term MDM with Vertex AI Memory Bank
+### 2. Long-Term Memory with Vertex AI Memory Bank
 
-For persistent, cross-session memory management (the true long-term MDM), Google
-offers **Vertex AI Memory Bank** (also known as Agent Engine Memory Bank).
+For persistent, cross-session memory management, I rely on **Vertex AI Memory Bank** (also known as Agent Engine Memory Bank).
 
-This managed service is an LLM-driven ETL pipeline designed to automatically
-manage the entire lifecycle of long-term memory. It ensures the agent is an
-expert on the _user_, not just on external facts.
+This managed service operates like an LLM-driven pipeline that automatically manages the lifecycle of long-term memory. It ensures the agent becomes an expert on the *user*, not just on static facts.
 
-Vertex AI Memory Bank solves the MDM problem for long-term memory through:
+Vertex AI Memory Bank addresses the long-term challenges through:
 
 - **Extraction and Consolidation**: It uses LLMs to intelligently extract
   meaningful facts from the conversation history (Sessions) and performs the
