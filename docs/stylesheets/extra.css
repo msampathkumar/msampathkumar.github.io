@@ -1,3 +1,55 @@
+:root {
+    --md-admonition-icon--tip: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%2300b0ff" d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 15h-2v-6h2v6m0-8h-2V7h2v2Z"/></svg>');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 .md-grid {
     max-width: initial;
+}
+
+/* Smooth transitions for interactive elements */
+.md-nav__link, .md-social__link, .md-header__button {
+    transition: color 125ms, background-color 125ms, opacity 125ms !important;
+}
+
+/* Subtle hover effect for social links */
+.md-social__link:hover {
+    transform: scale(1.1);
+    color: var(--md-typeset-a-color);
+}
+
+/* Improve code block rendering */
+code, kbd, pre {
+    font-family: 'Fira Code', monospace;
+    font-variant-ligatures: normal;
+}
+
+/* Premium scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
