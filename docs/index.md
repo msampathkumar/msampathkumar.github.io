@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # Welcome to My Digital Garden
 
 This is a space where I share my learnings, thoughts, and experiments. You'll
