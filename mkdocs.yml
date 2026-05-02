@@ -18,14 +18,17 @@ theme:
   previous: fontawesome/solid/angle-left
   next: fontawesome/solid/angle-right
   name: material
+  font:
+    text: Outfit
+    code: Fira Code
   extra_css:
     - stylesheets/extra.css
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
-      accent: purple
+      primary: indigo
+      accent: deep purple
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -33,8 +36,8 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: purple
-      accent: teal
+      primary: indigo
+      accent: cyan
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
@@ -44,6 +47,11 @@ theme:
     - navigation.top
     - navigation.instant
     - navigation.footer
+    - navigation.expand
+    - navigation.path
+    - navigation.tracking
+    - toc.integrate
+    - toc.follow
     - content.code.copy
     - search.suggest
     - search.highlight
@@ -123,4 +131,4 @@ nav:
       - "AI Day Denmark": events/2025-10-28-ai-day-denmark.md
       - "Cloud Next 25": events/2025-04-09-cloud-next.md
 
-  - "Services": services/index.md
+#  - "Services": services/index.md
