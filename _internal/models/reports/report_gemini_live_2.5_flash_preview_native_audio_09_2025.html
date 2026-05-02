@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini 2.0 - Model Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lato:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="generation-date">October 05, 2025</div>
+            <div class="header-col-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Google_Gemini_icon_2025.svg" alt="Gemini Logo" class="logo">
+            </div>
+            <div class="header-col-main">
+                <h1>Gemini 2.0</h1>
+                <p class="subtitle">Gemini 2.0 Flash Live Image Preview</p>
+                <code class="model-name">gemini-live-2.5-flash-preview-native-audio-09-2025</code>
+            </div>
+            <div class="header-col-qr">
+                <img src="data:image/png;base64,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" alt="QR Code" class="qr-code">
+            </div>
+        </div>
+        <div class="meta-bar">
+            <span>Available: April 9, 2025 - April 9, 2026</span>
+            <span>Knowledge Cut-off: June 2024</span>
+        </div>
+
+        <!-- Input/Output Section -->
+        <div class="card io-section">
+            <div class="io-block">
+                <h2 class="card-title title-left">Input</h2>
+                <div class="content-card">
+                    <div class="modality-icons">
+                        
+                            <div class="modality-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line></svg></div>
+                        
+                            <div class="modality-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg></div>
+                        
+                    </div>
+                    <p class="tokens">Max 32,768 Tokens</p>
+                </div>
+            </div>
+            <div class="arrow">></div>
+            <div class="io-block">
+                <h2 class="card-title title-left">Output</h2>
+                <div class="content-card">
+                    <div class="modality-icons">
+                        
+                            <div class="modality-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line></svg></div>
+                        
+                    </div>
+                    <p class="tokens">Max 8,192 Tokens</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Locations & Features Section -->
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <h2 class="card-title title-left"> Locations</h2>
+                    <div class="content-card">
+                        <ul class="dotlist">
+                            
+                            <li>Global</li>
+                            
+                            <li>US-Region</li>
+                            
+                            <li>Europe</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <h2 class="card-title title-left"> Features</h2>
+                    <div class="content-card">
+                        <ul class="checkmark">
+                            
+                            <li>Live API</li>
+                            
+                            <li>Code execution</li>
+                            
+                            <li>System instructions</li>
+                            
+                            <li>Function calling</li>
+                            
+                            <li>Grounding with Google Search</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Section -->
+        <div class="card pricing-section">
+            <div class="pricing-block">
+                <h2 class="card-title title-left">Pricing-Input</h2>
+                <div class="content-card">
+                    <ul class="pricing-list">
+                    
+                        
+                        <li><b>Text:</b> $ 1.0 / 1 M Tokens</li>
+                        
+                        
+                        
+                        <li><b>Audio:</b> $ 4.0 / 1 M Tokens</li>
+                        
+                        
+                        
+                        <li><b>Video:</b> $ 4.0 / 1 M Tokens</li>
+                        
+                        
+                        
+                        <li><b>Image:</b> $ 2.0 / 1 M Tokens</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="arrow"></div>
+            <div class="pricing-block">
+                <h2 class="card-title title-left">Pricing-Output</h2>
+                <div class="content-card">
+                    <ul class="pricing-list">
+                    
+                        
+                            <li><b>Text:</b> $ 3.0 / 1 M Tokens</li>
+                        
+                    
+                        
+                            <li><b>Audio:</b> $ 16.0 / 1 M Tokens</li>
+                        
+                    
+                        
+                            <li><b>Video:</b> $ 16.0 / 1 M Tokens</li>
+                        
+                    
+                        
+                            <li><b>Image:</b> $ 8.0 / 1 M Tokens</li>
+                        
+                    
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SDKs & ADK Section -->
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <h2 class="card-title title-left">Latest SDKs</h2>
+                    <div class="content-card">
+                        <ul class="pricing-grid-list">
+                            
+                            <li><b>Python:</b> <a href="https://github.com/googleapis/python-genai/">google-genai v1.39.1</a></li>
+                            
+                            <li><b>Go:</b> <a href="https://github.com/googleapis/go-genai">go-genai v1.26.0</a></li>
+                            
+                            <li><b>NodeJS:</b> <a href="https://github.com/googleapis/js-genai">@google-genai v1.22.0</a></li>
+                            
+                            <li><b>Java:</b> <a href="https://github.com/googleapis/java-genai">google-genai v1.18.0</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <h2 class="card-title title-left">Latest ADK</h2>
+                    <div class="content-card">
+                        <ul class="pricing-grid-list">
+                            
+                            <li><b>Python:</b> <a href="https://github.com/google/adk-python">google-adk v1.15.1</a></li>
+                            
+                            <li><b>Java:</b> <a href="https://github.com/google/adk-java">google-adk v0.3.0</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+    <div>
+    <p>This site is not an official site of Google and should you find any issues, please report it <a href="https://github.com/msampathkumar/msampathkumar.github.io/issues">here</a>.</p>
+    <p>Feedback encouraged and greatly appreciated. Stay fabulous.</p>
+    <p>Made with &hearts; by <a href="https://www.linkedin.com/in/msampathkumar/">Sampath M</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

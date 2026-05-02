@@ -1,0 +1,18 @@
+name: ""
+model_name: ""
+api_name: ""
+model_availability_start_date: ""
+model_availability_end_date: ""
+knowledge_cutoff: ""
+context:
+  input_modalities: []
+  output_modalities: []
+  input_max_tokens: ""
+  output_max_tokens: ""
+location: []
+model_features: []
+pricing:
+  input: {}
+  output: {}
+sdks: []
+adk: []
