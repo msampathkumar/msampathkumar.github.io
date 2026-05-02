@@ -18,15 +18,15 @@ Before diving in, ensure your local environment has the following:
 ## 📚 Available Lessons
 
 - **[Lesson 01: 🚀 Build a `Hello World` app with Gemini, Streamlit & Google Cloud Run](./lesson-01/README.md)**
-  Take your very first Python script live on the web in just minutes using serverless containers.
-- **[Lesson 02: ☁️ Deploy Your AI Chatbot to Google Cloud Run: Go Live!](./lesson-02/README.md)**
-  Orchestrate a smart, stateful conversational assistant powered by `gemini-2.5-flash`.
-- **[Lesson 03: ⚡ Build Your First Context-aware Gemini Chatbot in Minutes](./lesson-03/README.md)**
-  Inject intelligence using In-Context Learning, System Instructions, and Context Caching for high relevance.
-- **[Lesson 04: 🔓 Unlock Enterprise AI: Grounding Gemini with RAG and Cloud Search](./lesson-04/README.md)**
-  Fight hallucinations by equipping your chatbot with real-time external knowledge bases.
-- **[Lesson 05: 🧠 Review - Five Takeaways to enhance your Gemini Apps](./lesson-05/README.md)**
-  Strategic insights on multi-layered architectures, global endpoints, and code simplicity for long-term maintenance.
+  Take your Python code from a simple idea to a live serverless container web application in minutes.
+- **[Lesson 02: Deploy Your AI Chatbot to Google Cloud Run: Go Live! ☁️](./lesson-02/README.md)**
+  Build a smart, interactive conversational assistant leveraging chat sessions with memory.
+- **[Lesson 03: 🚀 Build Your First Context-aware Gemini Chatbot in Minutes: The Secret to Speed and Relevance! ⚡](./lesson-03/README.md)**
+  Rapidly inject intelligence using In-Context Learning (ICL), System Instructions, and Context Caching.
+- **[Lesson 04: 🔓 Unlock Enterprise AI: Grounding Gemini with RAG and Google Cloud Search 🚀](./lesson-04/README.md)**
+  Combat hallucinations by dynamically augmenting Gemini with your private knowledge base.
+- **[Lesson 05: Review - Five Takeaways to enhance your Gemini Apps](./lesson-05/README.md)**
+  Level up your AI builds with strategic takeaways on layered architectures, latency, cost optimization, and simplicity.
 
 ______________________________________________________________________
 
