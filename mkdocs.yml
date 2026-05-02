@@ -106,6 +106,12 @@ nav:
           - "Lesson 4: Knowledge Base Q&A with RAG": google-cloud-gemini-cookbook/lesson-04/README.md
           - "Lesson 5: Advanced RAG with Knowledge Graphs": google-cloud-gemini-cookbook/lesson-05/README.md
   - "✍️ Blog":
+      - "Google Cloud Next 2026":
+          - "Part 1: Intro & Next Gen Infrastructure": blog/posts/google-cloud-next-2026-agentic-cloud-infrastructure.md
+          - "Part 2: GAP & Foundational Models": blog/posts/google-cloud-next-2026-gap-foundational-models.md
+          - "Part 3: Developer Tools & MCP Servers": blog/posts/google-cloud-next-2026-dev-tools-mcp-servers.md
+          - "Part 4: Data Cloud, Protocols & Security": blog/posts/google-cloud-next-2026-agentic-data-protocols-security.md
+          - "Part 5: Workspace Reimagined & AI Agents": blog/posts/google-cloud-next-2026-workspace-ai-agents.md
       - "Gemini Guides":
           - "Gemini CLI Cheatsheets": blog/posts/gemini-cli-cheatsheet-printouts.md
           - "Gemini CLI Top Commands": blog/posts/gemini-cli-top-commands.md
