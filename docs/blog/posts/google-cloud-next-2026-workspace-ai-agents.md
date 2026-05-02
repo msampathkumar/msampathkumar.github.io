@@ -1,3 +1,11 @@
+---
+title: "Google Cloud Next 2026 (5/5) - Workspace Reimagined & AI Agents"
+date: 2026-05-02
+authors: [sampathm]
+categories:
+- "Google Cloud Next 2026"
+---
+
 **![Google Cloud Next 2026](https://storage.googleapis.com/gweb-cloudblog-publish/images/GCN26_102_BlogHeader_2436x1200_Opt_4_Dark.max-2500x2500.jpg)
 
 # Google Cloud Next 2026 (5/5) - Workspace Reimagined & AI Agents
@@ -23,7 +31,7 @@ To read more: https://workspace.google.com/products/vids/
 ### Collaborative Meeting Intelligence
 - **Smart Meetings**: The "Take Notes for Me" capability has transcended Google Meet. It now actively captures key summaries and action items from in-person conversations or calls placed via mobile devices, Zoom, and Teams.
 - **Sheets Canvas**: Transforms standard spreadsheets into dynamic, interactive workspaces. Users can build visually appealing heat maps, Kanban boards, and customized dashboards without writing a single line of code.
-- **Gemini Enterprise App**: Acts as the primary daily gateway for millions of workers. The app now natively integrates with Calendar for frictionless scheduling and features a "Canvas Mode" allowing direct, tab-free document editing.
+- **Gemini Enterprise App**: Acts the primary daily gateway for millions of workers. The app now natively integrates with Calendar for frictionless scheduling and features a "Canvas Mode" allowing direct, tab-free document editing.
 
 To read more: https://workspace.google.com/solutions/ai
 

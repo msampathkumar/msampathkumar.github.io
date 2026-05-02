@@ -1,3 +1,11 @@
+---
+title: "Google Cloud Next 2026 (1/5) - Intro, Agentic Cloud & Next Gen Infrastructure"
+date: 2026-05-02
+authors: [sampathm]
+categories:
+- "Google Cloud Next 2026"
+---
+
 **![Google Cloud Next 2026](https://storage.googleapis.com/gweb-cloudblog-publish/images/GCN26_102_BlogHeader_2436x1200_Opt_4_Dark.max-2500x2500.jpg)
 
 # Google Cloud Next 2026 (1/5) - Intro, Agentic Cloud & Next Gen Infrastructure
