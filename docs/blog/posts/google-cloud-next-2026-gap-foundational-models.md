@@ -1,13 +1,11 @@
-______________________________________________________________________
-
-title: "Google Cloud Next 2026 (2/5) - GAP & Foundational Models" date:
-2026-05-02 authors: [sampathm] categories:
-
+---
+title: "Google Cloud Next 2026 (2/5) - GAP & Foundational Models"
+date: 2026-05-02
+authors: [sampathm]
+categories:
 - "Google Cloud Next 2026"
-
-______________________________________________________________________
-
-\*\*![Google Cloud Next 2026](https://storage.googleapis.com/gweb-cloudblog-publish/images/GCN26_102_BlogHeader_2436x1200_Opt_4_Dark.max-2500x2500.jpg)
+---
+![Google Cloud Next 2026](https://storage.googleapis.com/gweb-cloudblog-publish/images/GCN26_102_BlogHeader_2436x1200_Opt_4_Dark.max-2500x2500.jpg)
 
 # Google Cloud Next 2026 (2/5) - GAP & Foundational Models
 
