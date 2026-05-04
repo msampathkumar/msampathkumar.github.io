@@ -1,5 +1,4 @@
 ---
-
 title: "Google Cloud Next 2026 (5/5) - Workspace Reimagined & AI Agents"
 date: 2026-05-02
 authors: [sampathm]
