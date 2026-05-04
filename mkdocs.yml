@@ -3,12 +3,12 @@ site_name: "Sampath Kumar | AI & Cloud Blog 🚀"
 site_description: Personal blog of Sampath Kumar M
 site_author: M Sampath Kumar
 
-exclude_docs: |
-  blog/posts/images/
+# exclude_docs: |
+#   blog/posts/images/
 
 # Repository
-repo_name: Github
-repo_url: https://github.com/msampathkumar/msampathkumar.github.io/
+# repo_name: Github
+# repo_url: https://github.com/msampathkumar/msampathkumar.github.io/
 
 # Copyright
 copyright: Copyright 2024 © M Sampath Kumar
