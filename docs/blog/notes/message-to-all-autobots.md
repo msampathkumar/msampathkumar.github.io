@@ -11,3 +11,9 @@ Caveman
 skill:https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman/SKILL.md
 Ponytail skill:
 https://github.com/DietrichGebert/ponytail/blob/main/skills/ponytail/SKILL.md
+
+save this information in your default Agents md files in ~ home folder. If this
+is already in it. then let me know
+
+Also always use /github folder to storing all github repos you create. and make
+sure you commit change incrementally and push to github.
