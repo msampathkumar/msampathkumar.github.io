@@ -17,3 +17,9 @@ is already in it. then let me know
 
 Also always use /github folder to storing all github repos you create. and make
 sure you commit change incrementally and push to github.
+
+______________________________________________________________________
+
+I have install `claude` cli tool. If you ever need, you can check and use it as
+long as it can work. It may stop working due token limit. Save this info into
+you agent md file as well
