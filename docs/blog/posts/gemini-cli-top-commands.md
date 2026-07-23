@@ -3,7 +3,7 @@ title: "Master Your Workflow: Top Gemini CLI Commands You Should Know"
 description: "Master the Gemini CLI. Use AI commands in your terminal to code faster & boost productivity. Learn how."
 date: 2025-10-13
 authors:
-  - msampathkumar
+  - sampathm
 categories:
   - "AI"
   - "Development"

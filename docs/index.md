@@ -4,22 +4,23 @@ hide:
   - toc
 ---
 
-# Welcome to My Digital Garden
+# Sampath Kumar — AI & Cloud
 
-This is a space where I share my learnings, thoughts, and experiments. You'll
-find a collection of my personal notes and things I am learning.
+Senior Developer Programs Engineer at Google Cloud. I write long-form guides and
+cookbooks on AI agents, the Agent Development Kit (ADK), the Agent-to-Agent (A2A)
+protocol, Gemini, and Google Cloud — for **agents first, and the humans who
+build them**.
 
-## Gemini Cookbook
+[Cookbook](google-cloud-gemini-cookbook/README.md){ .md-button }
+[Writing](blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md){ .md-button }
+[About](about.md){ .md-button }
 
-I'm excited to introduce my "Cookbook" series! This is where I'll be sharing
-step-by-step guides and practical examples for various technologies.
+## Latest posts
 
-The first cookbook in the series is the
-[Google Cloud Gemini Cookbook](./google-cloud-gemini-cookbook/README.md).
+<!-- LATEST_POSTS -->
 
-## Blog
+---
 
-I also have a blog where I post short articles and updates. It's a place for
-more informal thoughts and quick tips.
-
-I hope you find these resources helpful!
+Looking for the full index for LLMs and agents? See
+[`/llms.txt`](llms.txt) (concise) or [`/llms-full.txt`](llms-full.txt)
+(full content).
