@@ -1,20 +1,22 @@
----
-title: Vibe Coding - Dos and Donts
-date: 2023-11-30
-authors: [sampathm]
-description: Vibe Coding - Dos and Donts
-categories:
+______________________________________________________________________
+
+title: Vibe Coding - Dos and Donts date: 2023-11-30 authors: [sampathm]
+description: Vibe Coding - Dos and Donts categories:
+
 - General
----
+
+______________________________________________________________________
 
 ## DO's and DOnt's with Vibe Coding
 
 Summary notes of
 https://www.infoworld.com/article/4029093/9-habits-of-the-highly-ineffective-vibe-coder.html
 
-- Do's Do experiment with different models. Different LLMs have varying
-  strengths and weaknesses, and you might need to try a few to find the right
-  one for your specific coding problem.
+## The Do's
+
+- Do experiment with different models. Different LLMs have varying strengths
+  and weaknesses, and you might need to try a few to find the right one for
+  your specific coding problem.
 
 - Do treat the AI as a search tool. LLMs excel at finding and recalling
   information from their vast training data, such as obscure documentation or
@@ -23,9 +25,10 @@ https://www.infoworld.com/article/4029093/9-habits-of-the-highly-ineffective-vib
 - Do use the AI for simple, repetitive tasks. The article suggests AI can be
   helpful for basic programming chores.
 
-- Don'ts Don't trust the LLM completely. The article warns that LLMs can
-  provide incorrect information and even "hallucinate" non-existent code or
-  URLs.
+## The Don'ts
+
+- Don't trust the LLM completely. The article warns that LLMs can provide
+  incorrect information and even "hallucinate" non-existent code or URLs.
 
 - Don't treat the LLM like a "dumpster." Avoid dumping large blocks of code on
   the AI, as this can be inefficient, costly, and even confuse the model.

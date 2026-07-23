@@ -1,10 +1,13 @@
----
-title: Sky, Sea and Truth
-date: 2025-08-21
-authors: [sampathm]
-categories:
+______________________________________________________________________
+
+title: Sky, Sea and Truth date: 2025-08-21 authors: [sampathm] categories:
+
 - General
----
+
+______________________________________________________________________
+
+# Sky, Sea and Truth
+
 A vast blue canvas, Sea and sky, a mirror's gleam, Moments, swiftly pass.
 
 Life's a rushing stream, We stand still, in silent thought, Seeds grow, futures
