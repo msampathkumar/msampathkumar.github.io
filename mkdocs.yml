@@ -116,11 +116,11 @@ nav:
       #     - "Overview": a2a-cookbook/README.md
   - "Writing":
       - "Agent-to-Agent (A2A)":
-          - "Docker for Agents: Intro to A2A": blog/posts/docker-for-agents-a-backend-engineers-introduction-to-a2a.md
-          - "What's New in A2A: v1.0": blog/posts/whats-new-in-a2a-v10-a-python-dx-glow-up-and-a-fresh-new-look.md
-          - "Multi-Tenancy in A2A": blog/posts/three-agents-behind-one-door-multi-tenancy-in-a2a.md
-          - "A2A Integration Test Kit Dashboard": blog/posts/breaking-down-agent-silos-the-a2a-integration-test-kit-dashboard-is-here.md
-          - "Secure Multi-Agent Framework Whitepaper": blog/posts/introducing-the-whitepaper-on-building-secure-multi-agent-framework-on-google-cloud.md
+          - "Docker for Agents: Intro to A2A": blog/posts/a2a_intro.md
+          - "What's New in A2A: v1.0": blog/posts/a2a_v1_release.md
+          - "Multi-Tenancy in A2A": blog/posts/a2a_multi_tenancy.md
+          - "A2A Integration Test Kit Dashboard": blog/posts/a2a_test_kit.md
+          - "Secure Multi-Agent Framework Whitepaper": blog/posts/a2a_security_whitepaper.md
       - "Google Cloud Next 2026":
           - "Part 1: Intro & Next Gen Infrastructure": blog/posts/google-cloud-next-2026-agentic-cloud-infrastructure.md
           - "Part 2: GAP & Foundational Models": blog/posts/google-cloud-next-2026-gap-foundational-models.md
@@ -136,7 +136,7 @@ nav:
           - "The Six Essential Protocols Powering the AI Agent Ecosystem": blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md
           - "Role of Python in Google Cloud": blog/posts/the-role-of-python-in-google-cloud.md
           - "Advanced Memory Management for Agentic AI Development": blog/posts/advanced-memory-management-agentic-ai.md
-          - "Google Cloud GKE Tops 2025 Magic Quadrant": blog/posts/google-clouds-gke-tops-2025-magic-quadrant-for-container-management.md
+          - "Google Cloud GKE Tops 2025 Magic Quadrant": blog/posts/gke_magic_quadrant.md
           - "Vibe Coding Introduction": blog/posts/vibe-coding-intro.md
           - "Vibe Coding Dos and Don'ts": blog/posts/vibe-coding-dos-donts.md
       - "Personal":

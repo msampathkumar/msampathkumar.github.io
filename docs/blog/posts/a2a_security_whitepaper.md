@@ -15,7 +15,7 @@ canonical_url: "https://medium.com/@maddula/introducing-the-whitepaper-on-buildi
 > /
 > [Medium](https://medium.com/@maddula/introducing-the-whitepaper-on-building-secure-multi-agent-framework-on-google-cloud-dd16f65360bb).
 
-![](https://cdn-images-1.medium.com/max/1024/1*HJv-9XCa8T7Rn7ipy9Sy8w.png)
+![](images/a2a/a2a_security_whitepaper_1.png)
 
 Building agents is one thing. Building them to be enterprise-ready and secure
 is a completely different challenge. When agents start acting across systems
