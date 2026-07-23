@@ -1,14 +1,15 @@
 # About
 
 I'm **Sampath Kumar M**, a Senior Developer Programs Engineer at Google Cloud.
-I work on AI agents — the [Agent Development Kit (ADK)](https://google.github.io/adk-docs/)
-and the [Agent-to-Agent (A2A) protocol](https://a2a-protocol.org/) — and write
-about Gemini, Google Cloud, and the craft of building with AI.
+I work on AI agents — the
+[Agent Development Kit (ADK)](https://google.github.io/adk-docs/) and the
+[Agent-to-Agent (A2A) protocol](https://a2a-protocol.org/) — and write about
+Gemini, Google Cloud, and the craft of building with AI.
 
 This site is my digital garden: cookbooks with runnable code, long-form writing
 on agent architectures and protocols, and a record of talks and events. It is
-written **agents-first** — structured so that AI agents can read, learn from, and
-act on the content — and useful to human readers too.
+written **agents-first** — structured so that AI agents can read, learn from,
+and act on the content — and useful to human readers too.
 
 ## What you'll find here
 
@@ -29,5 +30,6 @@ Machine-readable indexes of this site:
 
 - GitHub: [@msampathkumar](https://github.com/msampathkumar)
 - LinkedIn: [msampathkumar](https://www.linkedin.com/in/msampathkumar/)
-- Bluesky: [@sampathm.bsky.social](https://bsky.app/profile/sampathm.bsky.social)
+- Bluesky:
+  [@sampathm.bsky.social](https://bsky.app/profile/sampathm.bsky.social)
 - PyPI: [sampath](https://pypi.org/user/sampath/)
