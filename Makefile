@@ -8,7 +8,16 @@ run:
 	@echo "Running the mkdocs"
 	mkdocs serve -a localhost:8099 -c
 
-deploy:
+# Scaffold a new blog post: make new-post TITLE="My Title"
+new-post:
+	@test -n "$(TITLE)" || (echo 'Usage: make new-post TITLE="My Title"' && exit 1)
+	python scripts/new_post.py "$(TITLE)"
+
+# Regenerate llms-full.txt (full inlined content) from the curated llms.txt
+llms:
+	python scripts/gen_llms_full.py
+
+deploy: llms
 	@echo "Deploying to GitHub Pages"
 	mkdocs gh-deploy --clean --force
 
