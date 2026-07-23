@@ -1,11 +1,11 @@
-______________________________________________________________________
-
-title: "10 Principles of Miyamoto Musashi" date: 2025-08-21 authors: [sampathm]
-description: 10 principles of Miyamoto Musashi categories:
-
-- General
-
-______________________________________________________________________
+---
+title: "10 Principles of Miyamoto Musashi"
+date: 2025-08-21
+authors: [sampathm]
+description: 10 principles of Miyamoto Musashi
+categories:
+  - General
+---
 
 # 10 principles of Miyamoto Musashi
 

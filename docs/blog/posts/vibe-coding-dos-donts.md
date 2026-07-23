@@ -1,11 +1,11 @@
-______________________________________________________________________
-
-title: Vibe Coding - Dos and Donts date: 2023-11-30 authors: [sampathm]
-description: Vibe Coding - Dos and Donts categories:
-
-- General
-
-______________________________________________________________________
+---
+title: Vibe Coding - Dos and Donts
+date: 2023-11-30
+authors: [sampathm]
+description: Vibe Coding - Dos and Donts
+categories:
+  - General
+---
 
 ## DO's and DOnt's with Vibe Coding
 

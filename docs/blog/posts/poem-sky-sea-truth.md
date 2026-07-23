@@ -1,10 +1,10 @@
-______________________________________________________________________
-
-title: Sky, Sea and Truth date: 2025-08-21 authors: [sampathm] categories:
-
-- General
-
-______________________________________________________________________
+---
+title: Sky, Sea and Truth
+date: 2025-08-21
+authors: [sampathm]
+categories:
+  - General
+---
 
 # Sky, Sea and Truth
 
