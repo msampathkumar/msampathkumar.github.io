@@ -24,13 +24,15 @@ Build practical applications with Google Cloud's Gemini models — from a basic
 Streamlit chatbot to Retrieval-Augmented Generation and knowledge graphs, all
 deployable to Cloud Run.
 
-[Open the Gemini Cookbook](google-cloud-gemini-cookbook/README.md){ .md-button .md-button--primary }
+[Open the Gemini Cookbook](google-cloud-gemini-cookbook/README.md){ .md-button
+.md-button--primary }
 
 ### :material-transit-connection-variant: A2A Cookbook <small>(coming soon)</small>
 
 Recipes for the **Agent-to-Agent (A2A) protocol**: exposing agents over A2A,
 wiring multi-agent systems, and interoperating across frameworks. Coming soon —
-watch this space (or the [blog](blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md)).
+watch this space (or the
+[blog](blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md)).
 
 ## What to expect
 
@@ -1946,9 +1948,21 @@ possible.
 ## Gemini as your Culinary Guide
 Source: https://msampathkumar.github.io/blog/posts/gemini-as-your-culinary-guide/
 
+______________________________________________________________________
+
+title: "Gemini: Your Culinary Guide in Italy 🇮🇹 🍕" date: 2025-08-17 authors:
+[sampathm] description: > Gemini as you wonderful guide to Italian Cuisines.
+categories:
+
+- General
+
+______________________________________________________________________
+
 # Gemini: Your Culinary Guide in Italy 🇮🇹 🍕
 
 Savoring Italy, One Personalized Recommendation at a Time
+
+## The Challenge: Vegetarian Food Abroad
 
 Last week I had a wonderful trip to Bologna, Italy. Since I don’t speak italian
 🇮🇹my biggest concern was how do I ask for Indian vegetarian food ? Indian
@@ -1958,6 +1972,8 @@ eat any milk products.
 Usually my trips are planned ahead of time, but this trip was n’t. Luckily the
 Gemini proved invaluable. Instead of manually searching for answers to various
 inquiries, I leveraged its capabilities for real-time recommendations.
+
+## How Gemini Helped
 
 To Gemini, I'd provide restaurant details I am in, and it would swiftly analyze
 reviews to offer a curated list of top choices based on my criteria. I visited
@@ -2470,53 +2486,101 @@ References:
 ## Vibe Coding — Introduction
 Source: https://msampathkumar.github.io/blog/posts/vibe-coding-intro/
 
+______________________________________________________________________
+
+title: Vibe Coding - Intro date: 2025-11-30 authors: [sampathm] categories:
+
+- LLM
+- Development
+
+______________________________________________________________________
+
 ## Vibe Code? The What, Why, and How (And When I Hit the Brakes)
 
-What is Vibe Coding? To me, it's about using AI to generate code from a high-level intent or "vibe." I think of it less like a co-pilot and more like an automated sidekick. I describe what I want, the AI generates the code, and I run it. The focus shifts from syntax to the desired outcome—a workflow of describe-generate-run-refine.
+What is Vibe Coding? To me, it's about using AI to generate code from a
+high-level intent or "vibe." I think of it less like a co-pilot and more like
+an automated sidekick. I describe what I want, the AI generates the code, and I
+run it. The focus shifts from syntax to the desired outcome—a workflow of
+describe-generate-run-refine.
 
-This is a stark contrast to how I approach responsible, production-ready development, where I remain firmly in the driver's seat, meticulously reviewing every line. Vibe coding is fast and fluid, often done when I need a quick result or a throwaway script.
+This is a stark contrast to how I approach responsible, production-ready
+development, where I remain firmly in the driver's seat, meticulously reviewing
+every line. Vibe coding is fast and fluid, often done when I need a quick
+result or a throwaway script.
 
-When I Ride the Vibe 🏄 Vibe coding has become a superpower for specific tasks in my workflow.
+## When I Ride the Vibe 🏄
 
-- **Rapid Prototyping**: When I have a weekend idea for a simple web app or a data script, I vibe code it. I can spin up a proof-of-concept in hours rather than days.
-- **Automating Repetitive Tasks**: If I need a quick Python script to rename files or parse logs, a simple prompt saves me the boilerplate.
-- **Learning New Libraries**: Want to see how a new library works? Asking an AI to generate a simple example is like having personalized, instant documentation.
+Vibe coding has become a superpower for specific tasks in my workflow.
 
-When I Hit the Brakes 🛑 Just as I wouldn't take a sports car on a family road trip, I've learned where vibe coding has its limits.
+- **Rapid Prototyping**: When I have a weekend idea for a simple web app or a
+  data script, I vibe code it. I can spin up a proof-of-concept in hours rather
+  than days.
+- **Automating Repetitive Tasks**: If I need a quick Python script to rename
+  files or parse logs, a simple prompt saves me the boilerplate.
+- **Learning New Libraries**: Want to see how a new library works? Asking an AI
+  to generate a simple example is like having personalized, instant
+  documentation.
 
-- **Critical Systems**: I never vibe code mission-critical or security-sensitive logic. The risk of unknown flaws and the eventual cost of debugging far outweigh the initial speed.
-- **Long-term Projects**: If I know a project needs to be maintained for months, a vibe-coded mess quickly becomes a nightmare. It accumulates technical debt that cripples scalability.
-- **Code Quality**: Vibe-coded solutions often lack documentation and robust error handling. It's easy to fall into an "entropy loop" where every fix introduces two new problems.
+## When I Hit the Brakes 🛑
 
-My Personal Vibe-Coding Guardrails
+Just as I wouldn't take a sports car on a family road trip, I've learned where
+vibe coding has its limits.
 
-The true danger isn't the AI—it's over-relying on it. Here are the pitfalls I actively guard against in my own workflow:
+- **Critical Systems**: I never vibe code mission-critical or
+  security-sensitive logic. The risk of unknown flaws and the eventual cost of
+  debugging far outweigh the initial speed.
+- **Long-term Projects**: If I know a project needs to be maintained for
+  months, a vibe-coded mess quickly becomes a nightmare. It accumulates
+  technical debt that cripples scalability.
+- **Code Quality**: Vibe-coded solutions often lack documentation and robust
+  error handling. It's easy to fall into an "entropy loop" where every fix
+  introduces two new problems.
 
-1. **The Security Trap 🔒**
-   *The Mistake*: Blindly accepting AI-generated code. I've seen assistants naively use `eval()` on user input or hardcode API keys.
-   *My Fix*: I maintain a strict "human in the loop" mindset. I always review AI code for common security flaws and ensure secrets are handled properly via environment variables.
+## My Personal Vibe-Coding Guardrails
 
-2. **The Technical Debt Vortex 🌪️**
-   *The Mistake*: Treating a prototype as a production-ready solution. It works, but it's a tangled mess.
-   *My Fix*: I refactor aggressively. If a vibe-coded prototype proves useful, I treat it as pseudo-code and rewrite it with proper modular structure and tests.
+The true danger isn't the AI—it's over-relying on it. Here are the pitfalls I
+actively guard against in my own workflow:
 
-3. **The Skills Erosion 🧠**
-   *The Mistake*: Using AI as a crutch to the point of forgetting the fundamentals.
-   *My Fix*: I use AI to explore, not just to execute. I always ask the AI *why* it made a certain choice so I continue learning.
+1. **The Security Trap 🔒** *The Mistake*: Blindly accepting AI-generated code.
+   I've seen assistants naively use `eval()` on user input or hardcode API
+   keys. *My Fix*: I maintain a strict "human in the loop" mindset. I always
+   review AI code for common security flaws and ensure secrets are handled
+   properly via environment variables.
+
+1. **The Technical Debt Vortex 🌪️** *The Mistake*: Treating a prototype as a
+   production-ready solution. It works, but it's a tangled mess. *My Fix*: I
+   refactor aggressively. If a vibe-coded prototype proves useful, I treat it
+   as pseudo-code and rewrite it with proper modular structure and tests.
+
+1. **The Skills Erosion 🧠** *The Mistake*: Using AI as a crutch to the point of
+   forgetting the fundamentals. *My Fix*: I use AI to explore, not just to
+   execute. I always ask the AI *why* it made a certain choice so I continue
+   learning.
 
 ---
 
 ## Vibe Coding — Dos and Don'ts
 Source: https://msampathkumar.github.io/blog/posts/vibe-coding-dos-donts/
 
+______________________________________________________________________
+
+title: Vibe Coding - Dos and Donts date: 2023-11-30 authors: [sampathm]
+description: Vibe Coding - Dos and Donts categories:
+
+- General
+
+______________________________________________________________________
+
 ## DO's and DOnt's with Vibe Coding
 
 Summary notes of
 https://www.infoworld.com/article/4029093/9-habits-of-the-highly-ineffective-vibe-coder.html
 
-- Do's Do experiment with different models. Different LLMs have varying
-  strengths and weaknesses, and you might need to try a few to find the right
-  one for your specific coding problem.
+## The Do's
+
+- Do experiment with different models. Different LLMs have varying strengths
+  and weaknesses, and you might need to try a few to find the right one for
+  your specific coding problem.
 
 - Do treat the AI as a search tool. LLMs excel at finding and recalling
   information from their vast training data, such as obscure documentation or
@@ -2525,9 +2589,10 @@ https://www.infoworld.com/article/4029093/9-habits-of-the-highly-ineffective-vib
 - Do use the AI for simple, repetitive tasks. The article suggests AI can be
   helpful for basic programming chores.
 
-- Don'ts Don't trust the LLM completely. The article warns that LLMs can
-  provide incorrect information and even "hallucinate" non-existent code or
-  URLs.
+## The Don'ts
+
+- Don't trust the LLM completely. The article warns that LLMs can provide
+  incorrect information and even "hallucinate" non-existent code or URLs.
 
 - Don't treat the LLM like a "dumpster." Avoid dumping large blocks of code on
   the AI, as this can be inefficient, costly, and even confuse the model.
@@ -2557,14 +2622,35 @@ https://www.infoworld.com/article/4029093/9-habits-of-the-highly-ineffective-vib
 ## 10 Principles of Miyamoto Musashi
 Source: https://msampathkumar.github.io/blog/posts/miyamoto-musashi-10-principles/
 
+______________________________________________________________________
+
+title: "10 Principles of Miyamoto Musashi" date: 2025-08-21 authors: [sampathm]
+description: 10 principles of Miyamoto Musashi categories:
+
+- General
+
+______________________________________________________________________
+
 # 10 principles of Miyamoto Musashi
 
 ![Miyamoto Musashi Portrait](images/miyamoto-musashi-portrait.png)
 
 ## About Miyamoto Musashi
 
-Miyamoto Musashi, a legendary figure in the annals of Japanese history, stands as a symbol of unparalleled mastery in the way of the sword. Renowned not only for his exceptional martial skills but also for his profound philosophical insights, Musashi is a name that resonates through the ages. Born in the late 16th century, during a tumultuous period of Japan’s history, Musashi’s life was marked by a relentless pursuit of perfection in the art of swordsmanship. His remarkable journey led him to become the author of the timeless classic, “The Book of Five Rings,” which continues to inspire warriors and thinkers alike, transcending both time and culture. This introductory glimpse into the life and legacy of Miyamoto Musashi only scratches the surface of his remarkable story, a tale of discipline, relentless ambition, and the quest for martial and spiritual enlightenment.
+Miyamoto Musashi, a legendary figure in the annals of Japanese history, stands
+as a symbol of unparalleled mastery in the way of the sword. Renowned not only
+for his exceptional martial skills but also for his profound philosophical
+insights, Musashi is a name that resonates through the ages. Born in the late
+16th century, during a tumultuous period of Japan’s history, Musashi’s life was
+marked by a relentless pursuit of perfection in the art of swordsmanship. His
+remarkable journey led him to become the author of the timeless classic, “The
+Book of Five Rings,” which continues to inspire warriors and thinkers alike,
+transcending both time and culture. This introductory glimpse into the life and
+legacy of Miyamoto Musashi only scratches the surface of his remarkable story,
+a tale of discipline, relentless ambition, and the quest for martial and
+spiritual enlightenment.
 
+## The 10 Principles
 
 1. Accept everything just the way it is.
 1. Do not seek pleasure for its own sake.
@@ -2584,6 +2670,16 @@ Source:
 
 ## Sky, Sea, and Truth
 Source: https://msampathkumar.github.io/blog/posts/poem-sky-sea-truth/
+
+______________________________________________________________________
+
+title: Sky, Sea and Truth date: 2025-08-21 authors: [sampathm] categories:
+
+- General
+
+______________________________________________________________________
+
+# Sky, Sea and Truth
 
 A vast blue canvas, Sea and sky, a mirror's gleam, Moments, swiftly pass.
 
@@ -3015,26 +3111,34 @@ I was one of the Presenter for [Google Agent Starter Pack](https://github.com/Go
 ## Home
 Source: https://msampathkumar.github.io/
 
+______________________________________________________________________
+
+hide:
+
+- navigation
+- toc
+
+______________________________________________________________________
+
 # Sampath Kumar — AI & Cloud
 
-Senior Developer Programs Engineer at Google Cloud. I write long-form guides and
-cookbooks on AI agents, the Agent Development Kit (ADK), the Agent-to-Agent (A2A)
-protocol, Gemini, and Google Cloud — for **agents first, and the humans who
-build them**.
+Senior Developer Programs Engineer at Google Cloud. I write long-form guides
+and cookbooks on AI agents, the Agent Development Kit (ADK), the Agent-to-Agent
+(A2A) protocol, Gemini, and Google Cloud — for **agents first, and the humans
+who build them**.
 
 [Cookbook](google-cloud-gemini-cookbook/README.md){ .md-button }
-[Writing](blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md){ .md-button }
-[About](about.md){ .md-button }
+[Writing](blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md){
+.md-button } [About](about.md){ .md-button }
 
 ## Latest posts
 
 <!-- LATEST_POSTS -->
 
----
+______________________________________________________________________
 
-Looking for the full index for LLMs and agents? See
-[`/llms.txt`](llms.txt) (concise) or [`/llms-full.txt`](llms-full.txt)
-(full content).
+Looking for the full index for LLMs and agents? See [`/llms.txt`](llms.txt)
+(concise) or [`/llms-full.txt`](llms-full.txt) (full content).
 
 ---
 
@@ -3044,14 +3148,15 @@ Source: https://msampathkumar.github.io/about/
 # About
 
 I'm **Sampath Kumar M**, a Senior Developer Programs Engineer at Google Cloud.
-I work on AI agents — the [Agent Development Kit (ADK)](https://google.github.io/adk-docs/)
-and the [Agent-to-Agent (A2A) protocol](https://a2a-protocol.org/) — and write
-about Gemini, Google Cloud, and the craft of building with AI.
+I work on AI agents — the
+[Agent Development Kit (ADK)](https://google.github.io/adk-docs/) and the
+[Agent-to-Agent (A2A) protocol](https://a2a-protocol.org/) — and write about
+Gemini, Google Cloud, and the craft of building with AI.
 
 This site is my digital garden: cookbooks with runnable code, long-form writing
 on agent architectures and protocols, and a record of talks and events. It is
-written **agents-first** — structured so that AI agents can read, learn from, and
-act on the content — and useful to human readers too.
+written **agents-first** — structured so that AI agents can read, learn from,
+and act on the content — and useful to human readers too.
 
 ## What you'll find here
 
@@ -3072,7 +3177,8 @@ Machine-readable indexes of this site:
 
 - GitHub: [@msampathkumar](https://github.com/msampathkumar)
 - LinkedIn: [msampathkumar](https://www.linkedin.com/in/msampathkumar/)
-- Bluesky: [@sampathm.bsky.social](https://bsky.app/profile/sampathm.bsky.social)
+- Bluesky:
+  [@sampathm.bsky.social](https://bsky.app/profile/sampathm.bsky.social)
 - PyPI: [sampath](https://pypi.org/user/sampath/)
 
 ---

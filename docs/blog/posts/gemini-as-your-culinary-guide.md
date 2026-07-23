@@ -1,16 +1,18 @@
----
-title: "Gemini: Your Culinary Guide in Italy 🇮🇹 🍕"
-date: 2025-08-17
-authors: [sampathm]
-description: >
-  Gemini as you wonderful guide to Italian Cuisines.
+______________________________________________________________________
+
+title: "Gemini: Your Culinary Guide in Italy 🇮🇹 🍕" date: 2025-08-17 authors:
+[sampathm] description: > Gemini as you wonderful guide to Italian Cuisines.
 categories:
-  - General
----
+
+- General
+
+______________________________________________________________________
 
 # Gemini: Your Culinary Guide in Italy 🇮🇹 🍕
 
 Savoring Italy, One Personalized Recommendation at a Time
+
+## The Challenge: Vegetarian Food Abroad
 
 Last week I had a wonderful trip to Bologna, Italy. Since I don’t speak italian
 🇮🇹my biggest concern was how do I ask for Indian vegetarian food ? Indian
@@ -20,6 +22,8 @@ eat any milk products.
 Usually my trips are planned ahead of time, but this trip was n’t. Luckily the
 Gemini proved invaluable. Instead of manually searching for answers to various
 inquiries, I leveraged its capabilities for real-time recommendations.
+
+## How Gemini Helped
 
 To Gemini, I'd provide restaurant details I am in, and it would swiftly analyze
 reviews to offer a curated list of top choices based on my criteria. I visited
