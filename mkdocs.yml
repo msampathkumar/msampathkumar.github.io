@@ -1,5 +1,5 @@
 # General settings
-site_name: "Sampath Kumar | AI & Cloud Blog 🚀"
+site_name: "Sampath Kumar | AI & Cloud Blog"
 site_description: Personal blog of Sampath Kumar M
 site_author: M Sampath Kumar
 
@@ -13,31 +13,32 @@ site_author: M Sampath Kumar
 # Copyright
 copyright: Copyright 2024 © M Sampath Kumar
 theme:
-  icon:
-    logo: material/brain
-  previous: fontawesome/solid/angle-left
-  next: fontawesome/solid/angle-right
   name: material
+  favicon: assets/images/favicon.svg
+  icon:
+    logo: material/book-open-page-variant
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
   font:
-    text: Outfit
+    text: Inter
     code: Fira Code
   extra_css:
     - stylesheets/extra.css
   palette:
-    # Palette toggle for light mode
+    # Palette toggle for light mode — white + pastel pink accent
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: deep purple
+      primary: white
+      accent: pink
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
 
-    # Palette toggle for dark mode
+    # Palette toggle for dark mode — soft black + light blue accent
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: cyan
+      primary: black
+      accent: light blue
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
@@ -46,7 +47,6 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.instant
-    - navigation.footer
     - navigation.expand
     - navigation.path
     - navigation.tracking
@@ -96,8 +96,8 @@ extra:
 
 
 nav:
-  - "🏠 Home": index.md
-  - "🧠 Gemini Cookbook":
+  - "Home": index.md
+  - "Cookbook":
       - "Tutorials":
           - "Gemini Cookbook Overview": google-cloud-gemini-cookbook/README.md
           - "Lesson 1: Basic Chatbot with Streamlit": google-cloud-gemini-cookbook/lesson-01/README.md
@@ -105,7 +105,7 @@ nav:
           - "Lesson 3: Multimodality with Vision": google-cloud-gemini-cookbook/lesson-03/README.md
           - "Lesson 4: Knowledge Base Q&A with RAG": google-cloud-gemini-cookbook/lesson-04/README.md
           - "Lesson 5: Advanced RAG with Knowledge Graphs": google-cloud-gemini-cookbook/lesson-05/README.md
-  - "✍️ Blog":
+  - "Writing":
       - "Google Cloud Next 2026":
           - "Part 1: Intro & Next Gen Infrastructure": blog/posts/google-cloud-next-2026-agentic-cloud-infrastructure.md
           - "Part 2: GAP & Foundational Models": blog/posts/google-cloud-next-2026-gap-foundational-models.md
@@ -129,7 +129,7 @@ nav:
           - "How to Spot an Ineffective Manager or Leader": blog/posts/spot-fakes-leaders.md
           - "The Two Lenses of Leadership": blog/posts/two-lenses-of-leadership.md
 
-  - "🗓️ Events":
+  - "Speaking":
       - "All Events": events/index.md
       - "Kaggle AI Days": events/2025-11-10-kaggle-ai-days.md
       - "AI Day Sweden": events/2025-11-05-ai-day-sweden.md

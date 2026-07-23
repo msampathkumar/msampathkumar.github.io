@@ -1,0 +1,74 @@
+# Sampath Kumar | AI & Cloud Blog
+
+> Personal blog of M Sampath Kumar — Senior Developer Programs Engineer at
+> Google Cloud. Long-form writing and cookbooks on AI agents, the Google Agent
+> Development Kit (ADK), the Agent-to-Agent (A2A) protocol, Gemini, Google
+> Cloud, and adjacent developer topics; plus a record of talks and events.
+
+The site is built with MkDocs-Material. All content is authored as plain
+Markdown and published to GitHub Pages. There is no login wall, no paid
+content, and no dynamic rendering — every URL below returns static HTML and
+the underlying `.md` source is deterministic.
+
+## Cookbook
+
+Step-by-step technical tutorials with runnable code.
+
+- [Gemini Cookbook — Overview](https://msampathkumar.github.io/google-cloud-gemini-cookbook/): Index of the five-lesson Gemini + Google Cloud cookbook series.
+- [Lesson 1 — Basic Chatbot with Streamlit](https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-01/): Build a minimal Gemini chatbot with a Streamlit UI.
+- [Lesson 2 — Chatbot with Memory & Gemma](https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-02/): Add conversational memory; introduce Gemma as an alternative model.
+- [Lesson 3 — Multimodality with Vision](https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-03/): Extend the chatbot to accept images and reason over them.
+- [Lesson 4 — Knowledge Base Q&A with RAG](https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-04/): Retrieval-Augmented Generation over a local knowledge base.
+- [Lesson 5 — Advanced RAG with Knowledge Graphs](https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-05/): Extend RAG with knowledge-graph structure for richer retrieval.
+
+## Writing — Google Cloud Next 2026 series
+
+Five-part recap and analysis of Google Cloud Next 2026 announcements.
+
+- [Part 1 — Intro & Next-Gen Infrastructure](https://msampathkumar.github.io/blog/posts/google-cloud-next-2026-agentic-cloud-infrastructure/): The agentic cloud infrastructure story.
+- [Part 2 — GAP & Foundational Models](https://msampathkumar.github.io/blog/posts/google-cloud-next-2026-gap-foundational-models/): Gemini Enterprise Agent Platform and the foundational model lineup.
+- [Part 3 — Developer Tools & MCP Servers](https://msampathkumar.github.io/blog/posts/google-cloud-next-2026-dev-tools-mcp-servers/): Developer tooling and the role of Model Context Protocol.
+- [Part 4 — Data Cloud, Protocols & Security](https://msampathkumar.github.io/blog/posts/google-cloud-next-2026-agentic-data-protocols-security/): Data-cloud updates plus the agent-protocol and security stories.
+- [Part 5 — Workspace Reimagined & AI Agents](https://msampathkumar.github.io/blog/posts/google-cloud-next-2026-workspace-ai-agents/): Workspace + AI-agent integration.
+
+## Writing — Gemini guides
+
+Hands-on guides for using Gemini and the Gemini CLI.
+
+- [Gemini CLI Cheatsheets](https://msampathkumar.github.io/blog/posts/gemini-cli-cheatsheet-printouts/): Printable one-pagers for common Gemini CLI workflows.
+- [Gemini CLI — Top Commands](https://msampathkumar.github.io/blog/posts/gemini-cli-top-commands/): The commands that matter most in daily use.
+- [Gemini 2.5 Flash Image Preview](https://msampathkumar.github.io/blog/posts/gemini-2.5-flash-image-preview/): First look at Gemini 2.5 Flash image capabilities.
+- [Gemini as your Culinary Guide](https://msampathkumar.github.io/blog/posts/gemini-as-your-culinary-guide/): Using Gemini to plan meals and cook — a practical multimodal example.
+
+## Writing — Technical articles
+
+Long-form analysis of agent architectures, protocols, and developer practice.
+
+- [The Six Essential Protocols Powering the AI Agent Ecosystem](https://msampathkumar.github.io/blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem/): Survey of A2A, MCP, and the other protocols that make agent-to-agent systems work.
+- [The Role of Python in Google Cloud](https://msampathkumar.github.io/blog/posts/the-role-of-python-in-google-cloud/): Why Python remains the lingua franca for cloud + AI on Google Cloud.
+- [Advanced Memory Management for Agentic AI Development](https://msampathkumar.github.io/blog/posts/advanced-memory-management-agentic-ai/): Patterns for short-term, long-term, and shared memory in agent systems.
+- [Vibe Coding — Introduction](https://msampathkumar.github.io/blog/posts/vibe-coding-intro/): What "vibe coding" is and where it fits in the software workflow.
+- [Vibe Coding — Dos and Don'ts](https://msampathkumar.github.io/blog/posts/vibe-coding-dos-donts/): Practical guardrails for shipping code with an AI pair.
+
+## Writing — Reflections
+
+Personal essays on leadership, principles, and craft.
+
+- [10 Principles of Miyamoto Musashi](https://msampathkumar.github.io/blog/posts/miyamoto-musashi-10-principles/): Applying Musashi's principles to modern work.
+- [Sky, Sea, and Truth](https://msampathkumar.github.io/blog/posts/poem-sky-sea-truth/): A short poem.
+- [How to Spot an Ineffective Manager or Leader](https://msampathkumar.github.io/blog/posts/spot-fakes-leaders/): Field notes on identifying weak leadership early.
+- [The Two Lenses of Leadership](https://msampathkumar.github.io/blog/posts/two-lenses-of-leadership/): A framework for balancing empathy and directness.
+
+## Speaking
+
+Talks and event participation.
+
+- [All Speaking Engagements](https://msampathkumar.github.io/events/): Chronological index of talks, workshops, and events.
+- [Kaggle AI Days — 5-Day AI Agents Intensive Course (2025-11-10)](https://msampathkumar.github.io/events/2025-11-10-kaggle-ai-days/): Codelabs lead for Day 3 — Context Engineering & Memory.
+- [AI Day Sweden (2025-11-05)](https://msampathkumar.github.io/events/2025-11-05-ai-day-sweden/): Speaker.
+- [AI Day Denmark (2025-10-28)](https://msampathkumar.github.io/events/2025-10-28-ai-day-denmark/): Speaker.
+- [Google Cloud Next '25 (2025-04-09)](https://msampathkumar.github.io/events/2025-04-09-cloud-next/): Participant / support.
+
+## Optional
+
+- [Home](https://msampathkumar.github.io/): Site entry point and short intro.
