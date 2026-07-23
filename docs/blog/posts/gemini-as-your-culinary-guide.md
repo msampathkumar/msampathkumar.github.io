@@ -1,12 +1,12 @@
-______________________________________________________________________
-
-title: "Gemini: Your Culinary Guide in Italy 🇮🇹 🍕" date: 2025-08-17 authors:
-[sampathm] description: > Gemini as you wonderful guide to Italian Cuisines.
+---
+title: "Gemini: Your Culinary Guide in Italy 🇮🇹 🍕"
+date: 2025-08-17
+authors: [sampathm]
+description: >
+  Gemini as you wonderful guide to Italian Cuisines.
 categories:
-
-- General
-
-______________________________________________________________________
+  - General
+---
 
 # Gemini: Your Culinary Guide in Italy 🇮🇹 🍕
 

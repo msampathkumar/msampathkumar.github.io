@@ -1,14 +1,13 @@
-______________________________________________________________________
-
-title: "Proposal: Documentation-Driven Development (D3) - A New Pattern for the
-AI Era" date: 2025-12-11 authors: [sampathm] categories:
-
-- "Documentation"
-- "AI Development"
-- "Google Cloud"
-- "Development Patterns"
-
-______________________________________________________________________
+---
+title: "Proposal: Documentation-Driven Development (D3) - A New Pattern for the AI Era"
+date: 2025-12-11
+authors: [sampathm]
+categories:
+  - "Documentation"
+  - "AI Development"
+  - "Google Cloud"
+  - "Development Patterns"
+---
 
 # Proposal: Documentation-Driven Development (D3) - A New Pattern for the AI Era
 

@@ -1948,16 +1948,6 @@ possible.
 ## Gemini as your Culinary Guide
 Source: https://msampathkumar.github.io/blog/posts/gemini-as-your-culinary-guide/
 
-______________________________________________________________________
-
-title: "Gemini: Your Culinary Guide in Italy 🇮🇹 🍕" date: 2025-08-17 authors:
-[sampathm] description: > Gemini as you wonderful guide to Italian Cuisines.
-categories:
-
-- General
-
-______________________________________________________________________
-
 # Gemini: Your Culinary Guide in Italy 🇮🇹 🍕
 
 Savoring Italy, One Personalized Recommendation at a Time
@@ -2486,15 +2476,6 @@ References:
 ## Vibe Coding — Introduction
 Source: https://msampathkumar.github.io/blog/posts/vibe-coding-intro/
 
-______________________________________________________________________
-
-title: Vibe Coding - Intro date: 2025-11-30 authors: [sampathm] categories:
-
-- LLM
-- Development
-
-______________________________________________________________________
-
 ## Vibe Code? The What, Why, and How (And When I Hit the Brakes)
 
 What is Vibe Coding? To me, it's about using AI to generate code from a
@@ -2562,15 +2543,6 @@ actively guard against in my own workflow:
 ## Vibe Coding — Dos and Don'ts
 Source: https://msampathkumar.github.io/blog/posts/vibe-coding-dos-donts/
 
-______________________________________________________________________
-
-title: Vibe Coding - Dos and Donts date: 2023-11-30 authors: [sampathm]
-description: Vibe Coding - Dos and Donts categories:
-
-- General
-
-______________________________________________________________________
-
 ## DO's and DOnt's with Vibe Coding
 
 Summary notes of
@@ -2622,15 +2594,6 @@ https://www.infoworld.com/article/4029093/9-habits-of-the-highly-ineffective-vib
 ## 10 Principles of Miyamoto Musashi
 Source: https://msampathkumar.github.io/blog/posts/miyamoto-musashi-10-principles/
 
-______________________________________________________________________
-
-title: "10 Principles of Miyamoto Musashi" date: 2025-08-21 authors: [sampathm]
-description: 10 principles of Miyamoto Musashi categories:
-
-- General
-
-______________________________________________________________________
-
 # 10 principles of Miyamoto Musashi
 
 ![Miyamoto Musashi Portrait](images/miyamoto-musashi-portrait.png)
@@ -2670,14 +2633,6 @@ Source:
 
 ## Sky, Sea, and Truth
 Source: https://msampathkumar.github.io/blog/posts/poem-sky-sea-truth/
-
-______________________________________________________________________
-
-title: Sky, Sea and Truth date: 2025-08-21 authors: [sampathm] categories:
-
-- General
-
-______________________________________________________________________
 
 # Sky, Sea and Truth
 
@@ -3111,34 +3066,26 @@ I was one of the Presenter for [Google Agent Starter Pack](https://github.com/Go
 ## Home
 Source: https://msampathkumar.github.io/
 
-______________________________________________________________________
-
-hide:
-
-- navigation
-- toc
-
-______________________________________________________________________
-
 # Sampath Kumar — AI & Cloud
 
-Senior Developer Programs Engineer at Google Cloud. I write long-form guides
-and cookbooks on AI agents, the Agent Development Kit (ADK), the Agent-to-Agent
-(A2A) protocol, Gemini, and Google Cloud — for **agents first, and the humans
-who build them**.
+Senior Developer Programs Engineer at Google Cloud. I write long-form guides and
+cookbooks on AI agents, the Agent Development Kit (ADK), the Agent-to-Agent (A2A)
+protocol, Gemini, and Google Cloud — for **agents first, and the humans who
+build them**.
 
 [Cookbook](google-cloud-gemini-cookbook/README.md){ .md-button }
-[Writing](blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md){
-.md-button } [About](about.md){ .md-button }
+[Writing](blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md){ .md-button }
+[About](about.md){ .md-button }
 
 ## Latest posts
 
 <!-- LATEST_POSTS -->
 
-______________________________________________________________________
+---
 
-Looking for the full index for LLMs and agents? See [`/llms.txt`](llms.txt)
-(concise) or [`/llms-full.txt`](llms-full.txt) (full content).
+Looking for the full index for LLMs and agents? See
+[`/llms.txt`](llms.txt) (concise) or [`/llms-full.txt`](llms-full.txt)
+(full content).
 
 ---
 

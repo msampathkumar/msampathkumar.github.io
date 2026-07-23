@@ -1,11 +1,11 @@
-______________________________________________________________________
-
-title: Vibe Coding - Intro date: 2025-11-30 authors: [sampathm] categories:
-
-- LLM
-- Development
-
-______________________________________________________________________
+---
+title: Vibe Coding - Intro
+date: 2025-11-30
+authors: [sampathm]
+categories:
+  - LLM
+  - Development
+---
 
 ## Vibe Code? The What, Why, and How (And When I Hit the Brakes)
 
