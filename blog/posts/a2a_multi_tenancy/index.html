@@ -1,0 +1,3295 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A2A Multi-Tenancy: 3 ways to scale your Agentic Apps real fast 🚀          1. Introduction   With the...">
+      
+      
+        <meta name="author" content="M Sampath Kumar">
+      
+      
+      
+        <link rel="prev" href="../a2a_v1_release/">
+      
+      
+        <link rel="next" href="../a2a_test_kit/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Three Agents Behind One Door: Multi-Tenancy in A2A - Sampath Kumar | AI & Cloud Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/timeago.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-header__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sampath Kumar | AI & Cloud Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Three Agents Behind One Door: Multi-Tenancy in A2A
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cookbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Cookbook
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../a2a_intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Writing
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../events/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Speaking
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-nav__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    Sampath Kumar | AI & Cloud Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cookbook
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cookbook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cookbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../google-cloud-gemini-cookbook/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gemini Cookbook
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gemini Cookbook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../google-cloud-gemini-cookbook/lesson-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 1: Basic Chatbot with Streamlit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../google-cloud-gemini-cookbook/lesson-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 2: Chatbot with Memory & Gemma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../google-cloud-gemini-cookbook/lesson-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 3: Multimodality with Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../google-cloud-gemini-cookbook/lesson-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 4: Knowledge Base Q&A with RAG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../google-cloud-gemini-cookbook/lesson-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 5: Advanced RAG with Knowledge Graphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Writing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent-to-Agent (A2A)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agent-to-Agent (A2A)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../a2a_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker for Agents: Intro to A2A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../a2a_v1_release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's New in A2A: v1.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Tenancy in A2A
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Tenancy in A2A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. What you’ll learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-three-ways-to-add-multi-tenancy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Three ways to add multi-tenancy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Three ways to add multi-tenancy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approach-1-url-sub-path-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 1 — URL sub-path routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-2-authentication-header-based-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 2 — Authentication header-based routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-3-body-based-routing-with-the-tenant-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 3 — Body-based routing with the tenant field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bringing-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bringing it all together
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-building-the-demo-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Building the demo app
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Building the demo app">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-it-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See it in action
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-takeaways-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Takeaways &amp; resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Takeaways &amp; resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources-to-get-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources to get started
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../a2a_test_kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A2A Integration Test Kit Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../a2a_security_whitepaper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secure Multi-Agent Framework Whitepaper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google Cloud Next 2026
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Google Cloud Next 2026
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google-cloud-next-2026-agentic-cloud-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1: Intro & Next Gen Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google-cloud-next-2026-gap-foundational-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2: GAP & Foundational Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google-cloud-next-2026-dev-tools-mcp-servers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3: Developer Tools & MCP Servers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google-cloud-next-2026-agentic-data-protocols-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4: Data Cloud, Protocols & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google-cloud-next-2026-workspace-ai-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 5: Workspace Reimagined & AI Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gemini Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gemini Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gemini-cli-cheatsheet-printouts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gemini CLI Cheatsheets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gemini-cli-top-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gemini CLI Top Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gemini-2.5-flash-image-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gemini 2.5 Flash Image Preview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gemini-as-your-culinary-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gemini as your Culinary Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Articles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Articles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../the-six-essential-protocols-powering-the-ai-agent-ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Six Essential Protocols Powering the AI Agent Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../the-role-of-python-in-google-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Role of Python in Google Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-memory-management-agentic-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Memory Management for Agentic AI Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gke_magic_quadrant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google Cloud GKE Tops 2025 Magic Quadrant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vibe-coding-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vibe Coding Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vibe-coding-dos-donts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vibe Coding Dos and Don'ts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personal
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Personal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miyamoto-musashi-10-principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Principles of Miyamoto Musashi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poem-sky-sea-truth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sky, Sea, and Truth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spot-fakes-leaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Spot an Ineffective Manager or Leader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../two-lenses-of-leadership/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Two Lenses of Leadership
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../events/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speaking
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Speaking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../events/2025-11-10-kaggle-ai-days/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kaggle AI Days
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../events/2025-11-05-ai-day-sweden/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Day Sweden
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../events/2025-10-28-ai-day-denmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Day Denmark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../events/2025-04-09-cloud-next/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Next 25
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. What you’ll learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-three-ways-to-add-multi-tenancy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Three ways to add multi-tenancy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Three ways to add multi-tenancy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approach-1-url-sub-path-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 1 — URL sub-path routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-2-authentication-header-based-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 2 — Authentication header-based routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-3-body-based-routing-with-the-tenant-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 3 — Body-based routing with the tenant field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bringing-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bringing it all together
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-building-the-demo-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Building the demo app
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Building the demo app">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-it-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See it in action
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-takeaways-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Takeaways &amp; resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Takeaways &amp; resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources-to-get-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources to get started
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+  
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../a2a_intro/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Writing
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../a2a_intro/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Agent-to-Agent (A2A)
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+
+  <h1>Multi-Tenancy in A2A</h1>
+
+<blockquote>
+<p>Originally published on
+<a href="https://dev.to/sampathm/three-agents-behind-one-door-multi-tenancy-in-a2a-1pih">dev.to</a>
+/ <a href="https://medium.com/google-cloud/a2a-multi-tenancy-ebfbc255497a">Medium</a>.</p>
+</blockquote>
+<p><img alt="" src="../images/a2a/a2a_multi_tenancy_1.png" /> <em>A2A Multi-Tenancy: 3 ways to scale
+your Agentic Apps real fast 🚀</em></p>
+<h3 id="1-introduction">1. Introduction</h3>
+<p>With the launch of the new <strong>ADK v2.0</strong> SDK, building and customizing agents
+has become simpler and easier. But the moment your team ships its second or
+third agent, an infrastructure question shows up: <em>do we really want a separate
+hostname or endpoint for every agent — and how do we connect them all?</em></p>
+<p>A quick bit of history: last year Google open-sourced the <strong>A2A Protocol</strong>
+(Apache 2.0) to give agents a standard way to talk to each other and
+collaborate on tasks, then donated it to the Linux Foundation. Over the past
+year A2A has matured — sharpening the protocol standards, improving the
+developer experience, and reaching enterprise readiness with the recent <strong>A2A
+v1.0</strong> release.</p>
+<p>New to A2A? Here’s the one-line recap: <strong>just as MCP is a wrapper over your
+tools and services, A2A is a wrapper over your agents</strong>  — both bring
+portability, simplicity, and scalability to agentic systems.</p>
+<p>One of A2A’s newer features is <strong>multi-tenancy</strong>. Now that building agents is
+easy, multi-tenancy lets you host multiple independent agents (agentic apps)
+under a single system. Each app shares the same A2A server but is reachable at
+its own URL endpoint — and, just like a standalone A2A app, each keeps its own
+Agent Card, Agent Skills, communication standard, and the rest of the A2A
+features.</p>
+<p>To show it off, this post walks through <strong>three ways to build multi-tenant
+applications in A2A</strong> , then builds a small interactive demo that shows how
+multi-tenancy makes agentic apps easy to build and scale.</p>
+<h3 id="2-what-youll-learn">2. What you’ll learn</h3>
+<p>By the end of this post, you’ll walk away with:</p>
+<ul>
+<li><strong>What A2A multi-tenancy is</strong>  — many independent agents behind one server,
+  each reachable at its own endpoint.</li>
+<li><strong>The three ways to route</strong> a request to the right agent — and a rule of
+  thumb for when to reach for each.</li>
+<li><strong>Why it stays simple</strong>  — routing config lives in each agent’s Agent Card,
+  so clients don’t hard-code anything.</li>
+<li><strong>How to build it</strong>  — a small, runnable demo: one server hosting three
+  agents, and one interactive client that discovers and talks to them.</li>
+</ul>
+<h3 id="3-three-ways-to-add-multi-tenancy">3. Three ways to add multi-tenancy</h3>
+<p>A2A is deliberately unopinionated about routing. It doesn’t prescribe an
+implementation; it gives you <strong>three composable mechanisms</strong> , and routing
+config always lives in the <strong>Agent Card</strong>  — so your clients stay simple and
+your topology stays discoverable.</p>
+<h4 id="approach-1-url-sub-path-routing">Approach 1 — URL sub-path routing</h4>
+<p>Give each agent its own URL prefix, and let each Agent Card advertise that URL.
+Clients need <strong>no special awareness</strong>  — they read the card and send requests
+where it points. (This is the approach our demo uses.)</p>
+<p><img alt="" src="../images/a2a/a2a_multi_tenancy_2.png" /> <em>A2A Multi-tenancy with URL sub-path
+routing</em></p>
+<p>👉 <strong>Tip:</strong> Use this when you have a small, fixed set of agents and want the
+setup that’s easiest to build, scale and debug — the route shows up right in
+your access log.</p>
+<h4 id="approach-2-authentication-header-based-routing">Approach 2 — Authentication header-based routing</h4>
+<p>When several agents share <em>the same</em> URL, a gateway can route based on the
+credential already in the request. Because A2A declares auth requirements in
+the Agent Card (securitySchemes / securityRequirements), this stays fully
+discoverable — and the A2A message itself is never modified.</p>
+<p><img alt="" src="../images/a2a/a2a_multi_tenancy_3.png" /> <em>A2A Multi-tenancy with header-based
+routing</em></p>
+<p><strong>Common patterns:</strong> a <strong>bearer token</strong> whose claims (audience, scope) identify
+the target agent, or an <strong>API key</strong> the gateway maps to a particular agent.</p>
+<p>👉 <strong>Tip:</strong> Use this when you already have solid auth (+ access) management and
+want routing to come for free from it. Every agent shares one URL, your routing
+layout isn’t exposed.</p>
+<h4 id="approach-3-body-based-routing-with-the-tenant-field">Approach 3 — Body-based routing with the tenant field</h4>
+<p>Every A2A request can carry an optional tenant field — an <strong>opaque string</strong>.
+The protocol imposes no format or meaning; the value is whatever the server
+operator decides (an agent id, a workspace slug, an org id). The value a client
+should send is advertised on the agent's AgentInterface.</p>
+<p><strong>The one rule you must not break:</strong> the client <strong>MUST</strong> echo the tenant value
+from the selected AgentInterface back in <em>every</em> request message. If the
+interface doesn't set tenant, the field <strong>MUST</strong> be omitted. (This is the
+normative client rule in spec §8.3.2.)</p>
+<p><img alt="" src="../images/a2a/a2a_multi_tenancy_4.png" /> <em>A2A Multi-tenancy with tenant field</em></p>
+<p>👉 <strong>Tip:</strong> Use this when you want a single URL and give options to the client
+to select the routing direction.</p>
+<h4 id="bringing-it-all-together">Bringing it all together</h4>
+<p>These aren’t mutually exclusive. A realistic large deployment might use
+<strong>sub-path routing</strong> to separate major product lines and the <strong>tenant field</strong>
+to separate individual customers within each line — while <strong>header-based
+routing</strong> quietly handles auth the whole time. The right combination depends on
+your gateway and architecture, not on the protocol.</p>
+<p>And it all rides on discovery: when several agents live behind a shared domain,
+<strong>each agent publishes its own Agent Card</strong>. Clients fetch each card
+independently and use its supportedInterfaces data — including any tenant
+value — to reach the right agent. Get the cards right, and the routing takes
+care of itself.</p>
+<h3 id="4-building-the-demo-app">4. Building the demo app</h3>
+<p>To make this concrete, we’ll stand up <strong>three agents behind one host</strong> and talk
+to each of them — using Approach 1 (URL sub-paths).</p>
+<p>Sub-pathAgentWhat it does/helloHello World AgentReplies with a friendly
+hello/palindromePalindrome AgentSays whether your text is a
+palindrome/reverseWord Reverse AgentReverses the order of the words in your
+text</p>
+<p>These three are intentionally trivial echo-style mocks — the focus is on
+<em>routing</em>, not on what the agents do. (We also drop the authenticated
+“extended” Agent Card; each agent has a single, public card so the example
+stays about routing.)</p>
+<h4 id="how-it-works">How it works</h4>
+<ul>
+<li><strong>server.py</strong> starts one Starlette/uvicorn server and, in a short loop,
+  mounts each agent's Agent Card + JSON-RPC endpoint on its own sub-path. Every
+  agent shares one small AgentExecutor parameterized by a plain text -&gt; text
+  function — so adding a fourth agent is a one-liner.</li>
+<li><strong>client.py</strong> hard-codes nothing. It fetches each agent's Agent Card
+  (discovery), shows a menu, prints an "about this agent" summary from the card
+  (endpoint, protocol, input/output formats, skills), then sends your messages
+  to the agent you picked. An empty message exits.</li>
+</ul>
+<h4 id="run-it">Run it</h4>
+<pre><code class="language-console">pip install &quot;a2a-sdk&gt;=1.0.3&quot; uvicorn starlette httpx
+python a2a_server.py # serves all three agents on :9999
+python a2a_client.py # in another terminal (add --mode stream to stream)
+</code></pre>
+<h4 id="the-code">The code</h4>
+<p><a href="https://github.com/a2aproject/a2a-samples/blob/main/samples/python/agents/multitenancy/a2a_server.py"><strong>a2a_server.py</strong></a> — hosts
+the three agents on sub-paths:</p>
+<pre><code class="language-python">&quot;&quot;&quot;a2a_server.py -- Multi-tenancy demo: three A2A agents behind ONE host.
+
+Companion to the &quot;A2A Multi-Tenancy&quot; blog post. Run it, then run a2a_client.py.
+
+    pip install &quot;a2a-sdk&gt;=1.0.3&quot; uvicorn starlette httpx
+    python a2a_server.py
+
+It hosts three tiny &quot;echo-style&quot; agents, each on its own URL sub-path:
+
+    http://127.0.0.1:9999/hello -&gt; Hello World agent (says hello)
+    http://127.0.0.1:9999/palindrome -&gt; Palindrome agent (is it a palindrome?)
+    http://127.0.0.1:9999/reverse -&gt; Word-reverse agent (reverses word order)
+
+Each agent publishes its own Agent Card at &lt;sub-path&gt;/.well-known/agent-card.json,
+so a client just reads the card and sends requests where it points.
+&quot;&quot;&quot;
+
+import os
+
+from collections.abc import Callable
+
+import uvicorn
+
+from a2a.helpers import (
+    get_message_text,
+    new_task_from_user_message,
+    new_text_message,
+    new_text_part,
+)
+from a2a.server.agent_execution import AgentExecutor, RequestContext
+from a2a.server.events import EventQueue
+from a2a.server.request_handlers import DefaultRequestHandler
+from a2a.server.routes import create_agent_card_routes, create_jsonrpc_routes
+from a2a.server.tasks import InMemoryTaskStore, TaskUpdater
+from a2a.types import AgentCapabilities, AgentCard, AgentInterface, AgentSkill
+from a2a.types.a2a_pb2 import TaskState
+from a2a.utils.constants import AGENT_CARD_WELL_KNOWN_PATH
+from starlette.applications import Starlette
+
+BIND_HOST = os.environ.get(&quot;A2A_BIND_HOST&quot;, &quot;127.0.0.1&quot;)
+PORT = int(os.environ.get(&quot;A2A_PORT&quot;, &quot;9999&quot;))
+PUBLIC_URL = os.environ.get(&quot;A2A_PUBLIC_URL&quot;, f&quot;http://127.0.0.1:{PORT}&quot;)
+
+# --- The three agent &quot;brains&quot;: trivial text -&gt; text functions. ---
+
+
+def hello_world(text: str) -&gt; str:
+    &quot;&quot;&quot;Classic hello-world echo.&quot;&quot;&quot;
+    return f'Hello, World! You said: &quot;{text}&quot;'
+
+
+def palindrome(text: str) -&gt; str:
+    &quot;&quot;&quot;Report whether the input reads the same forwards and backwards.&quot;&quot;&quot;
+    cleaned = &quot;&quot;.join(ch.lower() for ch in text if ch.isalnum())
+    if not cleaned:
+        return &quot;Send me some text and I will check if it is a palindrome.&quot;
+    verdict = &quot;is&quot; if cleaned == cleaned[::-1] else &quot;is not&quot;
+    return f'&quot;{text}&quot; {verdict} a palindrome.'
+
+
+def reverse_words(text: str) -&gt; str:
+    &quot;&quot;&quot;Reverse the order of the words in the input.&quot;&quot;&quot;
+    if not text.strip():
+        return &quot;Send me a sentence and I will reverse the word order.&quot;
+    return f'Reversed: {&quot; &quot;.join(reversed(text.split()))}'
+
+
+# --- One small AgentExecutor, parameterized by a transform function. ---
+
+
+class SimpleAgentExecutor(AgentExecutor):
+    &quot;&quot;&quot;Runs one text -&gt; text transform; A2A does the rest of the work.&quot;&quot;&quot;
+
+    def __init__(self, transform: Callable[[str], str]) -&gt; None:
+        self.transform = transform
+
+    async def execute(self, context: RequestContext, event_queue: EventQueue) -&gt; None:
+        &quot;&quot;&quot;Process user request.&quot;&quot;&quot;
+        # 1. Collect a task from the request context.
+        if context.current_task:
+            task = context.current_task
+        else:
+            # 1.1 If there is no task, create one and add it to the event queue.
+            task = new_task_from_user_message(context.message)
+            await event_queue.enqueue_event(task)
+
+        # 2. Update task status in the EventQueue using a TaskUpdater object.
+        updater = TaskUpdater(
+            event_queue=event_queue, task_id=task.id, context_id=task.context_id
+        )
+        await updater.update_status(
+            state=TaskState.TASK_STATE_WORKING,
+            message=new_text_message(&quot;Working on it...&quot;),
+        )
+
+        # 3. Collect the user's text and run this tenant's transform on it.
+        query = get_message_text(context.message)
+        result = self.transform(query) if query else &quot;No text input was provided!&quot;
+
+        # 4. Add the generated response as an artifact to the EventQueue.
+        await updater.add_artifact(
+            parts=[new_text_part(text=result, media_type=&quot;text/plain&quot;)]
+        )
+
+        # 5. Mark the task completed.
+        await updater.update_status(
+            state=TaskState.TASK_STATE_COMPLETED,
+            message=new_text_message(&quot;Done!&quot;),
+        )
+
+    async def cancel(self, context: RequestContext, event_queue: EventQueue) -&gt; None:
+        &quot;&quot;&quot;Raise exception as cancel is not supported.&quot;&quot;&quot;
+        raise NotImplementedError(&quot;Cancel is not supported.&quot;)
+
+
+def build_card(  # noqa: PLR0913 - demo helper: one clear arg per card field
+    path: str,
+    name: str,
+    description: str,
+    skill_id: str,
+    skill_name: str,
+    examples: list[str],
+) -&gt; AgentCard:
+    &quot;&quot;&quot;Each agent advertises its OWN card, pointing at its OWN sub-path.&quot;&quot;&quot;
+    return AgentCard(
+        # Basic identity information for this tenant's A2A server.
+        name=name,
+        description=description,
+        version=&quot;1.0.0&quot;,
+        # Default media types for the agent's interactions.
+        default_input_modes=[&quot;text/plain&quot;],
+        default_output_modes=[&quot;text/plain&quot;],
+        # Supported A2A features (here, streaming responses).
+        capabilities=AgentCapabilities(streaming=True),
+        # The endpoint(s) where this agent can be reached. This is the heart of
+        # sub-path routing: each card points clients at its own URL prefix.
+        supported_interfaces=[
+            AgentInterface(
+                protocol_binding=&quot;JSONRPC&quot;,
+                url=f&quot;{PUBLIC_URL}{path}&quot;,
+                protocol_version=&quot;1.0&quot;,
+            )
+        ],
+        # The list of AgentSkill objects this agent offers.
+        skills=[
+            AgentSkill(
+                id=skill_id,
+                name=skill_name,
+                description=description,
+                input_modes=[&quot;text/plain&quot;],
+                output_modes=[&quot;text/plain&quot;],
+                tags=[&quot;a2a&quot;, &quot;echo-example&quot;, &quot;multi-tenancy&quot;],
+                examples=examples,
+            )
+        ],
+    )
+
+
+# One (sub-path, card, executor) entry per tenant agent.
+AGENTS = [
+    (
+        &quot;/hello&quot;,
+        build_card(
+            &quot;/hello&quot;,
+            &quot;Hello World Agent&quot;,
+            &quot;Replies with a friendly hello.&quot;,
+            &quot;hello&quot;,
+            &quot;Say hello&quot;,
+            [&quot;hi&quot;, &quot;hello there&quot;],
+        ),
+        SimpleAgentExecutor(hello_world),
+    ),
+    (
+        &quot;/palindrome&quot;,
+        build_card(
+            &quot;/palindrome&quot;,
+            &quot;Palindrome Agent&quot;,
+            &quot;Tells you whether your text is a palindrome.&quot;,
+            &quot;palindrome&quot;,
+            &quot;Palindrome check&quot;,
+            [&quot;racecar&quot;, &quot;hello&quot;],
+        ),
+        SimpleAgentExecutor(palindrome),
+    ),
+    (
+        &quot;/reverse&quot;,
+        build_card(
+            &quot;/reverse&quot;,
+            &quot;Word Reverse Agent&quot;,
+            &quot;Reverses the order of the words in your text.&quot;,
+            &quot;reverse&quot;,
+            &quot;Reverse words&quot;,
+            [&quot;hello world&quot;, &quot;agents talking to agents&quot;],
+        ),
+        SimpleAgentExecutor(reverse_words),
+    ),
+]
+
+
+def build_app() -&gt; Starlette:
+    &quot;&quot;&quot;Mount each agent's card + JSON-RPC endpoint on its own sub-path.&quot;&quot;&quot;
+    routes = []
+    for path, card, executor in AGENTS:
+        # The RequestHandler processes incoming requests and manages tasks for
+        # this one tenant, backed by its own in-memory task store.
+        handler = DefaultRequestHandler(
+            agent_executor=executor,
+            task_store=InMemoryTaskStore(),
+            agent_card=card,
+        )
+        # Publish this agent's Agent Card under &lt;sub-path&gt;/.well-known/... so
+        # clients can discover it independently of the other tenants.
+        routes.extend(
+            create_agent_card_routes(
+                card, card_url=f&quot;{path}{AGENT_CARD_WELL_KNOWN_PATH}&quot;
+            )
+        )
+        # Mount this agent's JSON-RPC endpoint on its own sub-path.
+        routes.extend(create_jsonrpc_routes(handler, rpc_url=path))
+    # A single Starlette app fronts all three agents on one host/port.
+    return Starlette(routes=routes)
+
+
+if __name__ == &quot; __main__&quot;:
+    print(f&quot;Serving three A2A agents (bind {BIND_HOST}:{PORT}, public {PUBLIC_URL}):&quot;)
+    for sub_path, agent_card, _ in AGENTS:
+        print(f&quot; {PUBLIC_URL}{sub_path} -&gt; {agent_card.name}&quot;)
+    uvicorn.run(build_app(), host=BIND_HOST, port=PORT)
+</code></pre>
+<p><a href="https://github.com/a2aproject/a2a-samples/blob/main/samples/python/agents/multitenancy/a2a_client.py"><strong>a2a_client.py</strong></a> — discovers
+the agents and chats with your pick:</p>
+<pre><code class="language-python">&quot;&quot;&quot;a2a_client.py -- Interactive client for the multi-tenancy demo (a2a_server.py).
+
+Companion to the &quot;A2A Multi-Tenancy&quot; blog post.
+
+    pip install &quot;a2a-sdk&gt;=1.0.3&quot; httpx
+    python a2a_server.py # in one terminal
+    python a2a_client.py # in another (non-streaming, default)
+    python a2a_client.py --mode stream # streaming replies
+
+Flow:
+  1. The client discovers the agents the server hosts (one Agent Card each).
+  2. It prints a menu -- press 1, 2 or 3 to pick which agent to connect to.
+  3. Type a message; the chosen agent replies (hello / palindrome / word-reverse).
+  4. Press Enter on an empty message to exit.
+
+The only CLI option is --mode, which selects how replies are received:
+  --mode message non-streaming: one reply per message (default)
+  --mode stream streaming: events arrive as the agent works
+&quot;&quot;&quot;
+
+import argparse
+import asyncio
+import os
+
+from collections.abc import Iterable
+
+import httpx
+
+from a2a.client import A2ACardResolver, ClientConfig, create_client
+from a2a.helpers import get_message_text, new_text_message
+from a2a.types import AgentCard
+from a2a.types.a2a_pb2 import Artifact, Role, SendMessageRequest, StreamResponse
+
+PORT = int(os.environ.get(&quot;A2A_PORT&quot;, &quot;9999&quot;))
+BASE_URL = f&quot;http://127.0.0.1:{PORT}&quot;
+
+# The sub-paths a2a_server.py exposes, in menu order.
+AGENT_PATHS = [&quot;/hello&quot;, &quot;/palindrome&quot;, &quot;/reverse&quot;]
+
+
+def _print_artifacts(artifacts: Iterable[Artifact]) -&gt; None:
+    for artifact in artifacts:
+        for part in artifact.parts:
+            if part.text:
+                print(f&quot;agent &gt; {part.text}&quot;)
+
+
+def print_reply(event: StreamResponse) -&gt; None:
+    &quot;&quot;&quot;Print the human-readable reply from a StreamResponse (either mode).&quot;&quot;&quot;
+    kind = event.WhichOneof(&quot;payload&quot;)
+    if kind == &quot;task&quot;:  # non-streaming: full task
+        _print_artifacts(event.task.artifacts)
+    elif kind == &quot;artifact_update&quot;:  # streaming: the result chunk(s)
+        _print_artifacts([event.artifact_update.artifact])
+    elif kind == &quot;message&quot;:
+        print(f&quot;agent &gt; {get_message_text(event.message)}&quot;)
+    # 'status_update' (working/completed) is progress noise -- ignored here.
+
+
+async def discover_agents(
+    http: httpx.AsyncClient,
+) -&gt; list[tuple[str, AgentCard]]:
+    &quot;&quot;&quot;Fetch each agent's card from its own sub-path.&quot;&quot;&quot;
+    found: list[tuple[str, AgentCard]] = []
+    for path in AGENT_PATHS:
+        # A2ACardResolver reads the Agent Card from &lt;base_url&gt;/.well-known/...
+        # Because each tenant has its own sub-path, we resolve one card per path.
+        resolver = A2ACardResolver(httpx_client=http, base_url=f&quot;{BASE_URL}{path}&quot;)
+        try:
+            card = await resolver.get_agent_card()
+            found.append((path, card))
+        except Exception as exc:  # noqa: BLE001 - demo: show why an agent is skipped
+            print(f&quot;(skipping {path}: {exc})&quot;)
+    return found
+
+
+def choose_agent(
+    agents: list[tuple[str, AgentCard]],
+) -&gt; tuple[str, AgentCard] | None:
+    &quot;&quot;&quot;Print the menu and return the (path, card) the user picks, or None.&quot;&quot;&quot;
+    print(&quot;\nWhich A2A agent do you want to connect to?&quot;)
+    for i, (path, card) in enumerate(agents, start=1):
+        print(f&quot; {i}. {card.name} ({BASE_URL}{path}) - {card.description}&quot;)
+    choice = input(&quot;Select 1, 2 or 3 (Enter to quit): &quot;).strip()
+    if not choice:
+        return None
+    if choice.isdigit():
+        idx = int(choice) - 1
+        if 0 &lt;= idx &lt; len(agents):
+            return agents[idx]
+    print(&quot;Invalid choice.&quot;)
+    return None
+
+
+# Friendly labels for the Agent Card's protocol binding.
+PROTOCOL_LABELS = {
+    &quot;JSONRPC&quot;: &quot;JSON-RPC over HTTP&quot;,
+    &quot;HTTP+JSON&quot;: &quot;HTTP + JSON&quot;,
+    &quot;GRPC&quot;: &quot;gRPC&quot;,
+}
+
+
+def describe_agent(card: AgentCard) -&gt; None:
+    &quot;&quot;&quot;Print a short, friendly summary built from the agent's Agent Card.&quot;&quot;&quot;
+    iface = card.supported_interfaces[0] if card.supported_interfaces else None
+    protocol = (
+        PROTOCOL_LABELS.get(iface.protocol_binding, iface.protocol_binding)
+        if iface
+        else &quot;unknown&quot;
+    )
+    endpoint = iface.url if iface else &quot;n/a&quot;
+    inputs = &quot;, &quot;.join(card.default_input_modes) or &quot;text&quot;
+    outputs = &quot;, &quot;.join(card.default_output_modes) or &quot;text&quot;
+    skills = &quot;, &quot;.join(skill.name for skill in card.skills) or &quot;-&quot;
+
+    print(f&quot;\nYou're connected to the {card.name}.&quot;)
+    print(f&quot; {card.description}&quot;)
+    print(&quot; --- from its Agent Card ---&quot;)
+    print(f&quot; - Endpoint : {endpoint}&quot;)
+    print(f&quot; - Protocol : {protocol}&quot;)
+    print(f&quot; - Format : {inputs} in -&gt; {outputs} out&quot;)
+    print(f&quot; - Skills : {skills}&quot;)
+
+
+async def main(mode: str) -&gt; None:
+    &quot;&quot;&quot;Discover the agents, let the user pick one, and chat with it.&quot;&quot;&quot;
+    async with httpx.AsyncClient() as http:
+        agents = await discover_agents(http)
+        if not agents:
+            print(&quot;No agents reachable. Is a2a_server.py running?&quot;)
+            return
+
+        picked = choose_agent(agents)
+        if not picked:
+            print(&quot;Bye!&quot;)
+            return
+        _path, card = picked
+
+        # Build a client for the chosen agent. The card carries the endpoint, so
+        # the client knows where to send requests; streaming is toggled by --mode.
+        client = await create_client(
+            agent=card,
+            client_config=ClientConfig(streaming=(mode == &quot;stream&quot;)),
+        )
+        describe_agent(card)
+        print(&quot;\nType a message (empty to exit).&quot;)
+        try:
+            while True:
+                # input() is blocking, so run it off the event loop.
+                text = (await asyncio.to_thread(input, &quot;you &gt; &quot;)).strip()
+                if not text:  # empty message -&gt; exit
+                    print(&quot;Bye!&quot;)
+                    break
+                # Wrap the user's text in an A2A message and send it. Replies are
+                # streamed back as events, which print_reply renders per mode.
+                request = SendMessageRequest(
+                    message=new_text_message(text, role=Role.ROLE_USER)
+                )
+                async for event in client.send_message(request):
+                    print_reply(event)
+        finally:
+            # Always close the client to release the underlying HTTP connection.
+            await client.close()
+
+
+if __name__ == &quot; __main__&quot;:
+    parser = argparse.ArgumentParser(
+        description=&quot;Interactive A2A multi-tenancy client.&quot;
+    )
+    parser.add_argument(
+        &quot;--mode&quot;,
+        choices=[&quot;message&quot;, &quot;stream&quot;],
+        default=&quot;message&quot;,
+        help=&quot;how replies are received: 'message' (non-streaming, default) or 'stream' (streaming)&quot;,
+    )
+    args = parser.parse_args()
+    asyncio.run(main(args.mode))
+</code></pre>
+<h4 id="see-it-in-action">See it in action</h4>
+<p><a href="https://www.youtube.com/watch?v=RCmq0igoX3E" title="Agent2Agent (A2A) Protocol Multi-Tenancy Demo (Python)"><img alt="A2A Multitenancy in Action" src="../images/a2a/a2a_multi_tenancy_5.jpg" /></a></p>
+<h3 id="5-takeaways-resources">5. Takeaways &amp; resources</h3>
+<h4 id="takeaways">Takeaways</h4>
+<ul>
+<li><strong>Infrastructure Efficiency:</strong> Hosting many agents behind one host requires a
+  small loop, not a massive rewrite. One shared server, with logically separate
+  endpoints.</li>
+<li><strong>Flexible Routing:</strong> A2A gives you three routing primitives — sub-path, auth
+  header, and the tenant field. You can compose them to fit your exact gateway
+  needs.</li>
+<li><strong>Decentralized Config:</strong> Routing config lives in the Agent Card. Clients
+  stay simple and your topology stays discoverable without hard-coded URLs.</li>
+<li><strong>The Single Client Rule:</strong> Always echo the tenant field when the interface
+  sets it; omit it when it doesn’t.</li>
+</ul>
+<h4 id="resources-to-get-started">Resources to get started</h4>
+<ul>
+<li><strong>Multi-tenancy guide:</strong>
+  <a href="https://a2a-protocol.org/latest/topics/multi-tenancy/">https://a2a-protocol.org/latest/topics/multi-tenancy/</a></li>
+<li><strong>A2A spec &amp; docs:</strong>
+  <a href="https://a2a-protocol.org/latest/">https://a2a-protocol.org/latest/</a></li>
+<li><strong>A2A on GitHub (⭐):</strong>
+  <a href="https://github.com/a2aproject/A2A">https://github.com/a2aproject/A2A</a></li>
+<li><strong>Hello-world sample:</strong>
+  <a href="https://github.com/a2aproject/a2a-samples/tree/main/samples/python/agents/helloworld">a2a-samples/samples/python/agents/helloworld</a></li>
+</ul>
+<p><strong>A question for you:</strong> when you put several agents behind one host, do you
+reach for sub-paths, auth, or the tenant field first — and why?</p>
+<p><strong>#A2A #AIAgents #MultiAgent #Python #PlatformEngineering</strong></p>
+<hr />
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 23, 2026 21:51:45 UTC"><span class="timeago" datetime="2026-07-23T21:51:45+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 23, 2026 21:51:45 UTC">2026-07-23</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+  
+    
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2024 © M Sampath Kumar
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/msampathkumar" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/u/msampathkumar" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/user/sampath/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6M286.2 444.7a20.4 20.4 0 1 1 0-40.7 20.4 20.4 0 1 1 0 40.7M167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4m-6.6-183.4a20.4 20.4 0 1 1 0 40.8 20.4 20.4 0 1 1 0-40.8"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://bsky.app/profile/sampathm.bsky.social" target="_blank" rel="noopener" title="bsky.app" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3M288 227.1c-26.1-50.7-97.1-145.2-163.1-191.8C61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3.5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/msampathkumar/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.path", "navigation.tracking", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../js/timeago.min.js"></script>
+      
+        <script src="../../../js/timeago_mkdocs_material.js"></script>
+      
+    
+  </body>
+</html>
