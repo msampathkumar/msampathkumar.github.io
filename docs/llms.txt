@@ -22,6 +22,16 @@ Step-by-step technical tutorials with runnable code.
 - [Lesson 4 — Knowledge Base Q&A with RAG](https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-04/): Retrieval-Augmented Generation over a local knowledge base.
 - [Lesson 5 — Advanced RAG with Knowledge Graphs](https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-05/): Extend RAG with knowledge-graph structure for richer retrieval.
 
+## Writing — Agent-to-Agent (A2A)
+
+Deep dives on the A2A protocol: what it is, what's new, and how to run it in production.
+
+- [Docker for Agents: A Backend Engineer's Introduction to A2A](https://msampathkumar.github.io/blog/posts/docker-for-agents-a-backend-engineers-introduction-to-a2a/): A2A as a lightweight wrapper (like Docker) that makes any agent interoperable.
+- [What's New in A2A: v1.0, a Python DX Glow-Up, and a Fresh New Look](https://msampathkumar.github.io/blog/posts/whats-new-in-a2a-v10-a-python-dx-glow-up-and-a-fresh-new-look/): The A2A v1.0 release, Python developer experience, and docs refresh.
+- [Three Agents Behind One Door: Multi-Tenancy in A2A](https://msampathkumar.github.io/blog/posts/three-agents-behind-one-door-multi-tenancy-in-a2a/): Three patterns for scaling agentic apps with A2A multi-tenancy.
+- [Breaking Down Agent Silos: The A2A Integration Test Kit Dashboard](https://msampathkumar.github.io/blog/posts/breaking-down-agent-silos-the-a2a-integration-test-kit-dashboard-is-here/): Cross-framework interoperability testing for A2A.
+- [Introducing the Whitepaper on Building Secure Multi-Agent Frameworks on Google Cloud](https://msampathkumar.github.io/blog/posts/introducing-the-whitepaper-on-building-secure-multi-agent-framework-on-google-cloud/): Enterprise-ready, secure multi-agent architecture.
+
 ## Writing — Google Cloud Next 2026 series
 
 Five-part recap and analysis of Google Cloud Next 2026 announcements.

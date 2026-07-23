@@ -1225,6 +1225,1227 @@ Now something for fun :)
 ![XKCD: Computers vs Humans](img_5.png)
 
 ---
+## Writing — Agent-to-Agent (A2A)
+
+## Docker for Agents: A Backend Engineer's Introduction to A2A
+Source: https://msampathkumar.github.io/blog/posts/docker-for-agents-a-backend-engineers-introduction-to-a2a/
+
+> Originally published on
+> [dev.to](https://dev.to/sampathm/docker-for-agents-a-backend-engineers-introduction-to-a2a-3h0p)
+> /
+> [Medium](https://medium.com/google-cloud/a2a-protocol-blog-post-01-introduction-8294ca1d6a61).
+
+![A2A Introduction Post](https://cdn-images-1.medium.com/max/1024/0*jwY8iemtl1oBPKtE)
+_A2A Introduction Post_
+
+A2A is a lightweight wrapper — like Docker. Your app stays exactly as it is;
+you add the wrapper, and it gains the ability to talk to any agent in the
+world. In this posts, I share the three concepts you actually need to know.
+
+### Introduction
+
+You built an agent. It works. Now someone asks the obvious next question: _can
+it talk to the agent another team built?_
+
+Today, the answer is usually, “Only if we write a custom integration for each
+one”. That’s the same trap **REST APIs** solved for web services — and it’s
+exactly the trap **A2A (Agent-to-Agent protocol)** is built to get us out of.
+
+Here’s the mental model I’d lead with, because every backend engineer already
+owns it:
+
+> **_A2A is a lightweight wrapper, like Docker._** _Your Agentic app lives
+> exactly as it is. You wrap it with A2A, and it automatically gains the
+> ability to be discovered by — and talk to — any agent in the world. You
+> didn’t rewrite your app; you made it portable._
+
+With Docker you wrap your app, and it runs anywhere. Similarly, wrap your agent
+with A2A, it talks to any Agents across the world. In this post, I share the
+three concepts you need to understand to make your agent interoperable.
+
+This is **Part 1 of a series.** Later parts go deep on multi-tenancy (serving
+many agents behind one host), a 60-second Quickstart, and more. Today we stay
+at the intro: the smallest complete mental model you can hold in your head.
+
+### What you’ll learn
+
+1. **The Agent Card**  — how an agent advertises who it is and how to reach it
+   (discovery).
+1. **Tasks & messages**  — how a client asks your agent to do work.
+1. **The EventQueue & status updates**  — why long-running work doesn’t block,
+   and the weightlifting A2A does for you.
+
+That’s it. Three concepts. Everything else (auth schemes, multi-tenancy,
+extended cards) is a _later_ post — and you won’t need it to ship your first
+interoperable agent.
+
+#### The mental model, in one diagram
+
+The wrapper sits between any A2A client and your unchanged app:
+
+![A2A Intro — Mermaid Chart 1](https://cdn-images-1.medium.com/max/1024/1*T7nN-ec391OG7PQwaLUiVA.png)
+_A2A Intro — Mermaid Chart 1_
+
+And here’s the same interaction over time — discovery, then the task lifecycle:
+
+![A2A Intro — Mermaid Chart 2](https://cdn-images-1.medium.com/max/1024/1*Bp4v-FnXDiSv8DbffcaOcg.png)
+_A2A Intro — Mermaid Chart 2_
+
+Now the three concepts.
+
+### 1. The Agent Card — discovery
+
+Before two agents can work together, one has to find the other and learn what
+it can do. In A2A, every agent publishes an **Agent Card** : a small,
+structured description served at a well-known URL. It says _who I am_, _what I
+can do_ (skills), _where to reach me_ (interfaces/endpoints), and _what
+features I support_ (e.g. streaming).
+
+```python
+# Conceptual (trimmed from the hello-world sample)
+public_agent_card = AgentCard(
+    name="Hello World Agent",
+    description="Just a hello world agent",
+    version="0.0.1",
+    capabilities=AgentCapabilities(streaming=True),
+    supported_interfaces=[
+        AgentInterface(protocol_binding="JSONRPC", url="http://127.0.0.1:9999"),
+    ],
+    skills=[skill],  # Not the same Agent skills
+)
+```
+
+A client fetches this card from an A2A instance endpoint, reads it, and knows
+exactly how to talk to you — no out-of-band docs, no bespoke client. This is
+the part that makes “any agent in the world” literally true.
+
+**Tips:** Discovery is the front door — if you publish a good Agent Card,
+everything else (including the routing tricks in the multi-tenancy post) falls
+out of it.
+
+### 2. Tasks & Messages — asking an agent to do work
+
+Once a client has your card, it sends a **message** (think: the request — text,
+and optionally files/structured parts). Your wrapper turns that into a **Task**
+— the unit of work A2A tracks from start to finish.
+
+```python
+# Conceptual: the wrapper turns an incoming message into a Task
+task = new_task_from_user_message(context.message)
+await event_queue.enqueue_event(task)
+```
+
+A message is the “what I want.” A task is the “thing being worked on,” with a
+lifecycle and an id the client can follow. Your app’s actual logic — the LLM
+call, the database query, the tool use — runs unchanged underneath.
+
+**Tip:** If you can think in request → unit-of-work → result, you already
+understand tasks and messages.
+
+### 3. The EventQueue & Status updates — A2A does the weightlifting
+
+Here’s the concept that earns A2A its keep. Agents are slow — a real task can
+take seconds or minutes. You don’t want to block, and you don’t want to
+hand-roll streaming, polling, and reconnects for every client.
+
+So you don’t. Your app just **posts events to an EventQueue**  — “working,”
+“here’s a partial result,” “done” — and **A2A handles delivering them to the
+client however and whenever the client prefers** (streaming now, or polling
+later).
+
+```python
+# updater: Helper to update tasks
+updater = TaskUpdater(event_queue, task_id=task.id, context_id=task.context_id)
+
+await updater.update_status(
+    TaskState.TASK_STATE_WORKING, message=new_text_message("Processing request...")
+)
+
+# my_agent.invoke: your app's logic
+# (for simplicity, below code assume text input and output)
+result = await my_agent.invoke(query)
+
+await updater.add_artifact(parts=[new_text_part(text=result)])
+
+await updater.update_status(
+    TaskState.TASK_STATE_COMPLETED, message=new_text_message("Request is completed!")
+)
+```
+
+Read that again from the app’s point of view: you posted three updates and an
+artifact. You wrote **zero** networking code. That’s the weightlifting — A2A
+manages client communication so your agents are truly interoperable and can
+work across teams, services, and continents. You focus on your app and its
+executions.
+
+**Tip:** Any work that isn’t instantaneous (i.e. almost all real agent work).
+Post updates as you go and let A2A meet each client where it is.
+
+### The Complete Flow
+
+These three aren’t separate features you choose between — they’re one flow.
+Discovery (the card) tells a client how to send a message; the message becomes
+a task; the task streams updates back through the EventQueue.
+
+Get the Agent Card right and the rest composes naturally. When you later have
+_many_ agents behind one host, the same card-driven discovery is what makes
+routing tractable — which is exactly where Part 2 (multi-tenancy) picks up.
+
+### Recap/ Key Takeaways
+
+- **A2A is Docker for agents.** Wrap your app; it stays the same and gains
+  interoperability. You don’t rewrite — you make portable.
+- **Three concepts are the whole intro:** the **Agent Card** (discovery),
+  **tasks & messages** (the request and the unit of work), and the
+  **EventQueue** (async status updates).
+- **A2A does the weightlifting.** You post status updates; A2A handles
+  streaming/polling/reconnects so any client can keep up.
+- **Discovery is the front door.** A good Agent Card makes “talk to any agent”
+  literally true — and sets up everything that comes later in the series.
+
+### Demo
+
+**To get started with a simple hands-on-demo:**
+
+1. A2A Server instance — Step
+
+```shell
+# To start an A2A instance
+$ git clone https://github.com/a2aproject/a2a-samples.git
+$ cd a2a-samples/samples/python/agents/helloworld
+$ uv run .
+```
+
+2. Client instance in a new terminal
+
+```shell
+# To start an A2A instance
+$ git clone https://github.com/a2aproject/a2a-samples.git
+$ cd a2a-samples/samples/python/agents/helloworld
+$ uv run test_client.py 
+```
+
+To learn more:
+
+- Read the spec →
+  [https://a2a-protocol.org/latest/](https://a2a-protocol.org/latest/)
+- Star the project →
+  [https://github.com/a2aproject/A2A](https://github.com/a2aproject/A2A)
+
+**A question for you:** what’s the first agent you’d wrap in A2A — and which
+_other_ team’s agent would you most want it to talk to? That second answer is
+usually the one that proves the protocol’s worth.
+
+______________________________________________________________________
+
+---
+
+## What's New in A2A: v1.0, a Python DX Glow-Up, and a Fresh New Look
+Source: https://msampathkumar.github.io/blog/posts/whats-new-in-a2a-v10-a-python-dx-glow-up-and-a-fresh-new-look/
+
+> Originally published on
+> [dev.to](https://dev.to/sampathm/whats-new-in-a2a-v10-a-python-dx-glow-up-and-a-fresh-new-look-1hek)
+> /
+> [Medium](https://medium.com/google-cloud/whats-new-in-a2a-protocol-v1-release-b36dc6b4febd).
+
+![](https://cdn-images-1.medium.com/max/1024/1*zB1cWExaMgqAMYapEInu4w.png) _A2A
+Documentations & New Updates._
+
+🎉 A2A reached v1.0 — a production-ready, open standard for agents to talk to
+each other. It was created by Google but now it’s maintained under the **Linux
+Foundation** by a Technical Steering Committee(TSC) spanning eight companies
+(AWS, Cisco, Google, IBM Research, Microsoft, Salesforce, SAP, and ServiceNow).
+
+I have been attending these TSC meetings and met Google’s Software Engineers
+who are working on A2A. Based on what I saw and understood, this v1.0 is really
+big news and we are planning more cool and exiting things 😀. For today let us
+focus on what’s new under the hood in A2A’s v1.0, a Python (
+[📦 a2a-python](https://github.com/a2aproject/a2a-python) SDK)
+developer-experience glow-up worth getting excited about, and a fresh new look
+on the surface to match. ✨
+
+### What’s new in v1.0
+
+v1.0 is about making A2A protocol **stable, standardized, and
+enterprise-grade**  — and building it so the A2A SDKs can keep evolving
+_without breaking everyone_ down the line. The changes group into four themes:
+1️⃣ protocol maturity, 2️⃣ stronger type safety, 3️⃣ a better developer
+experience, and 4️⃣ enterprise-ready features.
+
+Here’s what’s worth your attention.
+
+→ **Enterprise-ready security and identity.** Agent Cards can now be
+cryptographically signed and verified (JWS, per RFC 7515, with JSON
+Canonicalization per RFC 8785), so you can trust that an agent is who it claims
+to be. OAuth 2.0 support was modernized too: the Device Code flow (RFC 8628) is
+in for CLI, IoT, and headless agents, PKCE is supported, and the insecure
+implicit and password flows are gone.
+
+→ **Multi-tenancy, built in.** A native tenant field means a single endpoint
+can serve multiple agents or tenants — no more bolting it on yourself.
+
+→ **Listing that scales.** A new ListTasks operation adds filtering and
+cursor-based pagination, so task listing holds up as your agents get busy.
+
+→ **Consistent behavior across every transport.** Errors are now standardized
+on google.rpc.Status / ErrorInfo, so you get the same error shape whether
+you're on JSON-RPC, gRPC, or HTTP+JSON. And version negotiation via the
+A2A-Version header — with the protocol version declared _per interface_ — means
+a single agent can support multiple protocol versions at once. That's the
+mechanism that makes graceful, backward-compatible upgrades possible.
+
+→ **A cleaner data model.** The big one: text, file, and data are unified into
+a single Part type — no more separate TextPart / FilePart / DataPart, and no
+kind discriminator to carry around. Enum values are standardized to
+SCREAMING_SNAKE_CASE for ProtoJSON compliance, timestamps are ISO-8601 with
+milliseconds, and tasks now carry createdAt / lastModified. IDs are simple
+UUIDs (no compound tasks/{id}), and the /v1 HTTP path prefix is gone.
+
+**Straight talk:** yes, several of these are breaking changes. v1.0 is a
+genuine version bump, not a coat of paint. The payoff is a protocol that’s
+stable, standardized, and designed so that _future_ versions won’t keep
+breaking your integrations.
+
+Want more details? Three links cover it: the
+[What’s new in v1.0](https://a2a-protocol.org/latest/whats-new-v1/) guide (five
+minutes to find out if anything affects you), the
+[full specification](https://a2a-protocol.org/latest/specification/) for the
+canonical reference, and — if you’re on Python — the
+[v1.0 migration guide](https://github.com/a2aproject/a2a-python/blob/main/docs/migrations/v1_0/README.md).
+Stuck on something? The community hangs out in
+[GitHub Discussions](https://github.com/a2aproject/A2A/discussions) — a good
+place to ask.
+
+### Provably interoperable — the Integration Test Kit
+
+The whole promise of A2A is that agents built by different teams, in different
+languages, actually interoperate — and the **A2A Integration Test Kit (ITK)**
+is how that gets _proven_ rather than asserted. If you ship across SDKs or
+languages, the
+[public ITK dashboard](https://a2aproject.github.io/a2a-itk/dashboard) shows
+you which combinations are known-good — a daily snapshot of nightly cross-SDK
+runs (not a live or real-time view). For the full story on how it works, the
+[ITK dashboard deep-dive](https://dev.to/sampathm/breaking-down-agent-silos-the-a2a-integration-test-kit-dashboard-is-here-4m60)
+covers it.
+
+![](https://cdn-images-1.medium.com/max/1024/0*fyG15BKvFPR7rpBO.png)
+_https://a2aproject.github.io/a2a-itk/dashboard/_
+
+### The Python DX glow-up
+
+Here’s the part I’m genuinely excited about. v1.0 didn’t just tighten the
+protocol — it gave the Python SDK a real developer-experience glow-up, and most
+of it lives in one new module: **a2a.helpers**.
+
+Instead of hunting through scattered a2a.utils.\* imports, you get a single
+consolidated import with friendly factory functions for the things you do all
+day: building messages, parts, tasks, and artifacts (new_text_message,
+new_task, new_text_artifact, …); creating the status and artifact **update
+events** you enqueue while streaming (new_text_status_update_event,
+new_text_artifact_update_event, plus data/raw/url variants); and pulling
+content back out (get_message_text, get_text_parts, get_stream_response_text).
+One import, far less boilerplate.
+
+The before/after says it best — and spinning up a client got the same
+treatment, with create_client() (from a2a.client) collapsing the old
+ClientFactory dance into a single await:
+
+```python
+##############################################################
+# Before — v0.3: wrapper types by hand, and a client factory
+##############################################################
+message = Message(role=Role.user, parts=[Part(TextPart(text="hi"))])
+
+factory = ClientFactory()
+client = factory.create_client(url)
+
+##############################################################
+# After - v1.0: one helper each
+##############################################################
+from a2a.helpers import new_text_message
+from a2a.client import create_client
+
+message = new_text_message("hi", role=Role.ROLE_USER)
+client = await create_client(url)
+```
+
+That’s the flavor of the whole release: fewer wrapper types, fewer lines, less
+to remember. **Upgrading an existing agent?** The
+[v1.0 migration guide](https://github.com/a2aproject/a2a-python/blob/main/docs/migrations/v1_0/README.md)
+walks you through it — and you can run a v1.0 server with v0.3 compatibility
+enabled, so you don’t have to migrate every client at once.
+
+### A fresh look to match
+
+A milestone like this deserves a face — so the parts you see first got
+attention too.
+
+**A friendlier home.** [a2a-protocol.org](https://a2a-protocol.org/) has a
+redesigned home page and navigation, reorganized around one question: _what do
+you want to do next?_ Less overwhelming, easier to find your starting
+point — whether that’s a five-minute “what is A2A?”, the full spec, or the
+hands-on Python tutorial.
+
+[**# New Homepage**](https://a2a-protocol.org/latest/)\
+At the top of the home page, we’ve added _Get started_ and _Read the spec_
+buttons, allowing you to instantly jump straight to the resources you need
+based on your immediate goals.
+
+![](https://cdn-images-1.medium.com/max/1024/1*IF8Z6Rxmh0rxExesN99dFw.png) _A2A
+Home Page — https://a2a-protocol.org/latest/_
+
+[**# Restructured Navigation**](https://github.com/a2aproject/A2A/blob/main/mkdocs.yml#L20)\
+We’ve reorganized our previous layout into highly focused, grouped sections,
+making it effortless to pinpoint your specific topic of interest and dive right
+into development.
+
+![](https://cdn-images-1.medium.com/max/1024/1*NiFeCGWHqkXE62WlB9UqAw.png)
+_A2A — restructured navigation_
+
+[**# New A2A logo**](https://a2a-protocol.org/latest/assets/a2a_logo/color/SVG/a2a_color.svg)\
+A cleaner, more consistent mark across the docs, the repo, and everywhere A2A
+shows up.
+
+![](https://cdn-images-1.medium.com/max/1024/0*8zOfs1t1-z8hdOtq.png) _A2A New
+Logo_
+
+[**# Lastly, our new A2A Mascot**](https://github.com/a2aproject/A2A/blob/main/docs/assets/a2a_logo/mascot/PNG/a2a_ada.png)
+
+A2A now has one: a friendly orange-and-cream, a puppy — sitting, tongue out,
+wearing a collar with an “A2A” dog tag. It’s the warmth a spec and a governance
+doc can’t quite carry on their own: approachable, a little playful, and
+(fittingly for an interoperability protocol) happy to make friends with anyone.
+
+The protocol is grown-up and production-ready; the project should still feel
+like somewhere you’d want to hang out and contribute.
+
+![](https://cdn-images-1.medium.com/max/1024/1*t0kgsULhkHiOqmm9OVn3mQ.png) _A2A
+Mascot_
+
+### Coming next
+
+One more thing worth flagging: the next post digs into **A2A multi-tenancy**
+— how the native tenant model dramatically simplifies building multi-agent
+applications, letting a single deployment serve many agents and tenants
+cleanly. If you’re building anything beyond a single agent, it’ll be worth your
+time. More soon.
+
+### What to do next
+
+- **To see what changed,** check
+  [_What’s new in v1.0_](https://a2a-protocol.org/latest/whats-new-v1/)
+  guide — five minutes to find out if anything affects you.
+- **Need to upgrade your Python A2A Agent?** Start with the
+  [migration guide](https://github.com/a2aproject/a2a-python/blob/main/docs/migrations/v1_0/README.md) — and
+  remember you can run a v1.0 server with v0.3 compatibility while you
+  transition.
+- **To check inter-op for A2A app,** start with
+  [ITK compatibility dashboard](https://a2aproject.github.io/a2a-itk/dashboard).
+
+> **Community Request:** We are actively looking to grow our A2A community and
+> expand our A2A blog content. If you have ideas, feedback, or unique insights,
+> your suggestions are incredibly welcome!
+
+______________________________________________________________________
+
+---
+
+## Three Agents Behind One Door: Multi-Tenancy in A2A
+Source: https://msampathkumar.github.io/blog/posts/three-agents-behind-one-door-multi-tenancy-in-a2a/
+
+> Originally published on
+> [dev.to](https://dev.to/sampathm/three-agents-behind-one-door-multi-tenancy-in-a2a-1pih)
+> / [Medium](https://medium.com/google-cloud/a2a-multi-tenancy-ebfbc255497a).
+
+![](https://cdn-images-1.medium.com/max/1024/1*02HPupbT15v4QpSYmxf8-A.png) _A2A
+Multi-Tenancy: 3 ways to scale your Agentic Apps real fast 🚀_
+
+### 1. Introduction
+
+With the launch of the new **ADK v2.0** SDK, building and customizing agents
+has become simpler and easier. But the moment your team ships its second or
+third agent, an infrastructure question shows up: _do we really want a separate
+hostname or endpoint for every agent — and how do we connect them all?_
+
+A quick bit of history: last year Google open-sourced the **A2A Protocol**
+(Apache 2.0) to give agents a standard way to talk to each other and
+collaborate on tasks, then donated it to the Linux Foundation. Over the past
+year A2A has matured — sharpening the protocol standards, improving the
+developer experience, and reaching enterprise readiness with the recent **A2A
+v1.0** release.
+
+New to A2A? Here’s the one-line recap: **just as MCP is a wrapper over your
+tools and services, A2A is a wrapper over your agents**  — both bring
+portability, simplicity, and scalability to agentic systems.
+
+One of A2A’s newer features is **multi-tenancy**. Now that building agents is
+easy, multi-tenancy lets you host multiple independent agents (agentic apps)
+under a single system. Each app shares the same A2A server but is reachable at
+its own URL endpoint — and, just like a standalone A2A app, each keeps its own
+Agent Card, Agent Skills, communication standard, and the rest of the A2A
+features.
+
+To show it off, this post walks through **three ways to build multi-tenant
+applications in A2A** , then builds a small interactive demo that shows how
+multi-tenancy makes agentic apps easy to build and scale.
+
+### 2. What you’ll learn
+
+By the end of this post, you’ll walk away with:
+
+- **What A2A multi-tenancy is**  — many independent agents behind one server,
+  each reachable at its own endpoint.
+- **The three ways to route** a request to the right agent — and a rule of
+  thumb for when to reach for each.
+- **Why it stays simple**  — routing config lives in each agent’s Agent Card,
+  so clients don’t hard-code anything.
+- **How to build it**  — a small, runnable demo: one server hosting three
+  agents, and one interactive client that discovers and talks to them.
+
+### 3. Three ways to add multi-tenancy
+
+A2A is deliberately unopinionated about routing. It doesn’t prescribe an
+implementation; it gives you **three composable mechanisms** , and routing
+config always lives in the **Agent Card**  — so your clients stay simple and
+your topology stays discoverable.
+
+#### Approach 1 — URL sub-path routing
+
+Give each agent its own URL prefix, and let each Agent Card advertise that URL.
+Clients need **no special awareness**  — they read the card and send requests
+where it points. (This is the approach our demo uses.)
+
+![](https://cdn-images-1.medium.com/max/1024/1*s0ZszjbOTYcFmRZ_Mpgf0Q.png) _A2A
+Multi-tenancy with URL sub-path routing_
+
+👉 **Tip:** Use this when you have a small, fixed set of agents and want the
+setup that’s easiest to build, scale and debug — the route shows up right in
+your access log.
+
+#### Approach 2 — Authentication header-based routing
+
+When several agents share _the same_ URL, a gateway can route based on the
+credential already in the request. Because A2A declares auth requirements in
+the Agent Card (securitySchemes / securityRequirements), this stays fully
+discoverable — and the A2A message itself is never modified.
+
+![](https://cdn-images-1.medium.com/max/1024/1*mFOxZAr7z_YbAw11ajkj3Q.png) _A2A
+Multi-tenancy with header-based routing_
+
+**Common patterns:** a **bearer token** whose claims (audience, scope) identify
+the target agent, or an **API key** the gateway maps to a particular agent.
+
+👉 **Tip:** Use this when you already have solid auth (+ access) management and
+want routing to come for free from it. Every agent shares one URL, your routing
+layout isn’t exposed.
+
+#### Approach 3 — Body-based routing with the tenant field
+
+Every A2A request can carry an optional tenant field — an **opaque string**.
+The protocol imposes no format or meaning; the value is whatever the server
+operator decides (an agent id, a workspace slug, an org id). The value a client
+should send is advertised on the agent's AgentInterface.
+
+**The one rule you must not break:** the client **MUST** echo the tenant value
+from the selected AgentInterface back in _every_ request message. If the
+interface doesn't set tenant, the field **MUST** be omitted. (This is the
+normative client rule in spec §8.3.2.)
+
+![](https://cdn-images-1.medium.com/max/1024/1*UpSjnnXgxbXTXZ2gCPYVMg.png) _A2A
+Multi-tenancy with tenant field_
+
+👉 **Tip:** Use this when you want a single URL and give options to the client
+to select the routing direction.
+
+#### Bringing it all together
+
+These aren’t mutually exclusive. A realistic large deployment might use
+**sub-path routing** to separate major product lines and the **tenant field**
+to separate individual customers within each line — while **header-based
+routing** quietly handles auth the whole time. The right combination depends on
+your gateway and architecture, not on the protocol.
+
+And it all rides on discovery: when several agents live behind a shared domain,
+**each agent publishes its own Agent Card**. Clients fetch each card
+independently and use its supportedInterfaces data — including any tenant
+value — to reach the right agent. Get the cards right, and the routing takes
+care of itself.
+
+### 4. Building the demo app
+
+To make this concrete, we’ll stand up **three agents behind one host** and talk
+to each of them — using Approach 1 (URL sub-paths).
+
+Sub-pathAgentWhat it does/helloHello World AgentReplies with a friendly
+hello/palindromePalindrome AgentSays whether your text is a
+palindrome/reverseWord Reverse AgentReverses the order of the words in your
+text
+
+These three are intentionally trivial echo-style mocks — the focus is on
+_routing_, not on what the agents do. (We also drop the authenticated
+“extended” Agent Card; each agent has a single, public card so the example
+stays about routing.)
+
+#### How it works
+
+- **server.py** starts one Starlette/uvicorn server and, in a short loop,
+  mounts each agent's Agent Card + JSON-RPC endpoint on its own sub-path. Every
+  agent shares one small AgentExecutor parameterized by a plain text -> text
+  function — so adding a fourth agent is a one-liner.
+- **client.py** hard-codes nothing. It fetches each agent's Agent Card
+  (discovery), shows a menu, prints an "about this agent" summary from the card
+  (endpoint, protocol, input/output formats, skills), then sends your messages
+  to the agent you picked. An empty message exits.
+
+#### Run it
+
+```console
+pip install "a2a-sdk>=1.0.3" uvicorn starlette httpx
+python a2a_server.py # serves all three agents on :9999
+python a2a_client.py # in another terminal (add --mode stream to stream)
+```
+
+#### The code
+
+[**a2a_server.py**](https://github.com/a2aproject/a2a-samples/blob/main/samples/python/agents/multitenancy/a2a_server.py) — hosts
+the three agents on sub-paths:
+
+```python
+"""a2a_server.py -- Multi-tenancy demo: three A2A agents behind ONE host.
+
+Companion to the "A2A Multi-Tenancy" blog post. Run it, then run a2a_client.py.
+
+    pip install "a2a-sdk>=1.0.3" uvicorn starlette httpx
+    python a2a_server.py
+
+It hosts three tiny "echo-style" agents, each on its own URL sub-path:
+
+    http://127.0.0.1:9999/hello -> Hello World agent (says hello)
+    http://127.0.0.1:9999/palindrome -> Palindrome agent (is it a palindrome?)
+    http://127.0.0.1:9999/reverse -> Word-reverse agent (reverses word order)
+
+Each agent publishes its own Agent Card at <sub-path>/.well-known/agent-card.json,
+so a client just reads the card and sends requests where it points.
+"""
+
+import os
+
+from collections.abc import Callable
+
+import uvicorn
+
+from a2a.helpers import (
+    get_message_text,
+    new_task_from_user_message,
+    new_text_message,
+    new_text_part,
+)
+from a2a.server.agent_execution import AgentExecutor, RequestContext
+from a2a.server.events import EventQueue
+from a2a.server.request_handlers import DefaultRequestHandler
+from a2a.server.routes import create_agent_card_routes, create_jsonrpc_routes
+from a2a.server.tasks import InMemoryTaskStore, TaskUpdater
+from a2a.types import AgentCapabilities, AgentCard, AgentInterface, AgentSkill
+from a2a.types.a2a_pb2 import TaskState
+from a2a.utils.constants import AGENT_CARD_WELL_KNOWN_PATH
+from starlette.applications import Starlette
+
+BIND_HOST = os.environ.get("A2A_BIND_HOST", "127.0.0.1")
+PORT = int(os.environ.get("A2A_PORT", "9999"))
+PUBLIC_URL = os.environ.get("A2A_PUBLIC_URL", f"http://127.0.0.1:{PORT}")
+
+# --- The three agent "brains": trivial text -> text functions. ---
+
+
+def hello_world(text: str) -> str:
+    """Classic hello-world echo."""
+    return f'Hello, World! You said: "{text}"'
+
+
+def palindrome(text: str) -> str:
+    """Report whether the input reads the same forwards and backwards."""
+    cleaned = "".join(ch.lower() for ch in text if ch.isalnum())
+    if not cleaned:
+        return "Send me some text and I will check if it is a palindrome."
+    verdict = "is" if cleaned == cleaned[::-1] else "is not"
+    return f'"{text}" {verdict} a palindrome.'
+
+
+def reverse_words(text: str) -> str:
+    """Reverse the order of the words in the input."""
+    if not text.strip():
+        return "Send me a sentence and I will reverse the word order."
+    return f'Reversed: {" ".join(reversed(text.split()))}'
+
+
+# --- One small AgentExecutor, parameterized by a transform function. ---
+
+
+class SimpleAgentExecutor(AgentExecutor):
+    """Runs one text -> text transform; A2A does the rest of the work."""
+
+    def __init__(self, transform: Callable[[str], str]) -> None:
+        self.transform = transform
+
+    async def execute(self, context: RequestContext, event_queue: EventQueue) -> None:
+        """Process user request."""
+        # 1. Collect a task from the request context.
+        if context.current_task:
+            task = context.current_task
+        else:
+            # 1.1 If there is no task, create one and add it to the event queue.
+            task = new_task_from_user_message(context.message)
+            await event_queue.enqueue_event(task)
+
+        # 2. Update task status in the EventQueue using a TaskUpdater object.
+        updater = TaskUpdater(
+            event_queue=event_queue, task_id=task.id, context_id=task.context_id
+        )
+        await updater.update_status(
+            state=TaskState.TASK_STATE_WORKING,
+            message=new_text_message("Working on it..."),
+        )
+
+        # 3. Collect the user's text and run this tenant's transform on it.
+        query = get_message_text(context.message)
+        result = self.transform(query) if query else "No text input was provided!"
+
+        # 4. Add the generated response as an artifact to the EventQueue.
+        await updater.add_artifact(
+            parts=[new_text_part(text=result, media_type="text/plain")]
+        )
+
+        # 5. Mark the task completed.
+        await updater.update_status(
+            state=TaskState.TASK_STATE_COMPLETED,
+            message=new_text_message("Done!"),
+        )
+
+    async def cancel(self, context: RequestContext, event_queue: EventQueue) -> None:
+        """Raise exception as cancel is not supported."""
+        raise NotImplementedError("Cancel is not supported.")
+
+
+def build_card(  # noqa: PLR0913 - demo helper: one clear arg per card field
+    path: str,
+    name: str,
+    description: str,
+    skill_id: str,
+    skill_name: str,
+    examples: list[str],
+) -> AgentCard:
+    """Each agent advertises its OWN card, pointing at its OWN sub-path."""
+    return AgentCard(
+        # Basic identity information for this tenant's A2A server.
+        name=name,
+        description=description,
+        version="1.0.0",
+        # Default media types for the agent's interactions.
+        default_input_modes=["text/plain"],
+        default_output_modes=["text/plain"],
+        # Supported A2A features (here, streaming responses).
+        capabilities=AgentCapabilities(streaming=True),
+        # The endpoint(s) where this agent can be reached. This is the heart of
+        # sub-path routing: each card points clients at its own URL prefix.
+        supported_interfaces=[
+            AgentInterface(
+                protocol_binding="JSONRPC",
+                url=f"{PUBLIC_URL}{path}",
+                protocol_version="1.0",
+            )
+        ],
+        # The list of AgentSkill objects this agent offers.
+        skills=[
+            AgentSkill(
+                id=skill_id,
+                name=skill_name,
+                description=description,
+                input_modes=["text/plain"],
+                output_modes=["text/plain"],
+                tags=["a2a", "echo-example", "multi-tenancy"],
+                examples=examples,
+            )
+        ],
+    )
+
+
+# One (sub-path, card, executor) entry per tenant agent.
+AGENTS = [
+    (
+        "/hello",
+        build_card(
+            "/hello",
+            "Hello World Agent",
+            "Replies with a friendly hello.",
+            "hello",
+            "Say hello",
+            ["hi", "hello there"],
+        ),
+        SimpleAgentExecutor(hello_world),
+    ),
+    (
+        "/palindrome",
+        build_card(
+            "/palindrome",
+            "Palindrome Agent",
+            "Tells you whether your text is a palindrome.",
+            "palindrome",
+            "Palindrome check",
+            ["racecar", "hello"],
+        ),
+        SimpleAgentExecutor(palindrome),
+    ),
+    (
+        "/reverse",
+        build_card(
+            "/reverse",
+            "Word Reverse Agent",
+            "Reverses the order of the words in your text.",
+            "reverse",
+            "Reverse words",
+            ["hello world", "agents talking to agents"],
+        ),
+        SimpleAgentExecutor(reverse_words),
+    ),
+]
+
+
+def build_app() -> Starlette:
+    """Mount each agent's card + JSON-RPC endpoint on its own sub-path."""
+    routes = []
+    for path, card, executor in AGENTS:
+        # The RequestHandler processes incoming requests and manages tasks for
+        # this one tenant, backed by its own in-memory task store.
+        handler = DefaultRequestHandler(
+            agent_executor=executor,
+            task_store=InMemoryTaskStore(),
+            agent_card=card,
+        )
+        # Publish this agent's Agent Card under <sub-path>/.well-known/... so
+        # clients can discover it independently of the other tenants.
+        routes.extend(
+            create_agent_card_routes(
+                card, card_url=f"{path}{AGENT_CARD_WELL_KNOWN_PATH}"
+            )
+        )
+        # Mount this agent's JSON-RPC endpoint on its own sub-path.
+        routes.extend(create_jsonrpc_routes(handler, rpc_url=path))
+    # A single Starlette app fronts all three agents on one host/port.
+    return Starlette(routes=routes)
+
+
+if __name__ == " __main__":
+    print(f"Serving three A2A agents (bind {BIND_HOST}:{PORT}, public {PUBLIC_URL}):")
+    for sub_path, agent_card, _ in AGENTS:
+        print(f" {PUBLIC_URL}{sub_path} -> {agent_card.name}")
+    uvicorn.run(build_app(), host=BIND_HOST, port=PORT)
+```
+
+[**a2a_client.py**](https://github.com/a2aproject/a2a-samples/blob/main/samples/python/agents/multitenancy/a2a_client.py) — discovers
+the agents and chats with your pick:
+
+```python
+"""a2a_client.py -- Interactive client for the multi-tenancy demo (a2a_server.py).
+
+Companion to the "A2A Multi-Tenancy" blog post.
+
+    pip install "a2a-sdk>=1.0.3" httpx
+    python a2a_server.py # in one terminal
+    python a2a_client.py # in another (non-streaming, default)
+    python a2a_client.py --mode stream # streaming replies
+
+Flow:
+  1. The client discovers the agents the server hosts (one Agent Card each).
+  2. It prints a menu -- press 1, 2 or 3 to pick which agent to connect to.
+  3. Type a message; the chosen agent replies (hello / palindrome / word-reverse).
+  4. Press Enter on an empty message to exit.
+
+The only CLI option is --mode, which selects how replies are received:
+  --mode message non-streaming: one reply per message (default)
+  --mode stream streaming: events arrive as the agent works
+"""
+
+import argparse
+import asyncio
+import os
+
+from collections.abc import Iterable
+
+import httpx
+
+from a2a.client import A2ACardResolver, ClientConfig, create_client
+from a2a.helpers import get_message_text, new_text_message
+from a2a.types import AgentCard
+from a2a.types.a2a_pb2 import Artifact, Role, SendMessageRequest, StreamResponse
+
+PORT = int(os.environ.get("A2A_PORT", "9999"))
+BASE_URL = f"http://127.0.0.1:{PORT}"
+
+# The sub-paths a2a_server.py exposes, in menu order.
+AGENT_PATHS = ["/hello", "/palindrome", "/reverse"]
+
+
+def _print_artifacts(artifacts: Iterable[Artifact]) -> None:
+    for artifact in artifacts:
+        for part in artifact.parts:
+            if part.text:
+                print(f"agent > {part.text}")
+
+
+def print_reply(event: StreamResponse) -> None:
+    """Print the human-readable reply from a StreamResponse (either mode)."""
+    kind = event.WhichOneof("payload")
+    if kind == "task":  # non-streaming: full task
+        _print_artifacts(event.task.artifacts)
+    elif kind == "artifact_update":  # streaming: the result chunk(s)
+        _print_artifacts([event.artifact_update.artifact])
+    elif kind == "message":
+        print(f"agent > {get_message_text(event.message)}")
+    # 'status_update' (working/completed) is progress noise -- ignored here.
+
+
+async def discover_agents(
+    http: httpx.AsyncClient,
+) -> list[tuple[str, AgentCard]]:
+    """Fetch each agent's card from its own sub-path."""
+    found: list[tuple[str, AgentCard]] = []
+    for path in AGENT_PATHS:
+        # A2ACardResolver reads the Agent Card from <base_url>/.well-known/...
+        # Because each tenant has its own sub-path, we resolve one card per path.
+        resolver = A2ACardResolver(httpx_client=http, base_url=f"{BASE_URL}{path}")
+        try:
+            card = await resolver.get_agent_card()
+            found.append((path, card))
+        except Exception as exc:  # noqa: BLE001 - demo: show why an agent is skipped
+            print(f"(skipping {path}: {exc})")
+    return found
+
+
+def choose_agent(
+    agents: list[tuple[str, AgentCard]],
+) -> tuple[str, AgentCard] | None:
+    """Print the menu and return the (path, card) the user picks, or None."""
+    print("\nWhich A2A agent do you want to connect to?")
+    for i, (path, card) in enumerate(agents, start=1):
+        print(f" {i}. {card.name} ({BASE_URL}{path}) - {card.description}")
+    choice = input("Select 1, 2 or 3 (Enter to quit): ").strip()
+    if not choice:
+        return None
+    if choice.isdigit():
+        idx = int(choice) - 1
+        if 0 <= idx < len(agents):
+            return agents[idx]
+    print("Invalid choice.")
+    return None
+
+
+# Friendly labels for the Agent Card's protocol binding.
+PROTOCOL_LABELS = {
+    "JSONRPC": "JSON-RPC over HTTP",
+    "HTTP+JSON": "HTTP + JSON",
+    "GRPC": "gRPC",
+}
+
+
+def describe_agent(card: AgentCard) -> None:
+    """Print a short, friendly summary built from the agent's Agent Card."""
+    iface = card.supported_interfaces[0] if card.supported_interfaces else None
+    protocol = (
+        PROTOCOL_LABELS.get(iface.protocol_binding, iface.protocol_binding)
+        if iface
+        else "unknown"
+    )
+    endpoint = iface.url if iface else "n/a"
+    inputs = ", ".join(card.default_input_modes) or "text"
+    outputs = ", ".join(card.default_output_modes) or "text"
+    skills = ", ".join(skill.name for skill in card.skills) or "-"
+
+    print(f"\nYou're connected to the {card.name}.")
+    print(f" {card.description}")
+    print(" --- from its Agent Card ---")
+    print(f" - Endpoint : {endpoint}")
+    print(f" - Protocol : {protocol}")
+    print(f" - Format : {inputs} in -> {outputs} out")
+    print(f" - Skills : {skills}")
+
+
+async def main(mode: str) -> None:
+    """Discover the agents, let the user pick one, and chat with it."""
+    async with httpx.AsyncClient() as http:
+        agents = await discover_agents(http)
+        if not agents:
+            print("No agents reachable. Is a2a_server.py running?")
+            return
+
+        picked = choose_agent(agents)
+        if not picked:
+            print("Bye!")
+            return
+        _path, card = picked
+
+        # Build a client for the chosen agent. The card carries the endpoint, so
+        # the client knows where to send requests; streaming is toggled by --mode.
+        client = await create_client(
+            agent=card,
+            client_config=ClientConfig(streaming=(mode == "stream")),
+        )
+        describe_agent(card)
+        print("\nType a message (empty to exit).")
+        try:
+            while True:
+                # input() is blocking, so run it off the event loop.
+                text = (await asyncio.to_thread(input, "you > ")).strip()
+                if not text:  # empty message -> exit
+                    print("Bye!")
+                    break
+                # Wrap the user's text in an A2A message and send it. Replies are
+                # streamed back as events, which print_reply renders per mode.
+                request = SendMessageRequest(
+                    message=new_text_message(text, role=Role.ROLE_USER)
+                )
+                async for event in client.send_message(request):
+                    print_reply(event)
+        finally:
+            # Always close the client to release the underlying HTTP connection.
+            await client.close()
+
+
+if __name__ == " __main__":
+    parser = argparse.ArgumentParser(
+        description="Interactive A2A multi-tenancy client."
+    )
+    parser.add_argument(
+        "--mode",
+        choices=["message", "stream"],
+        default="message",
+        help="how replies are received: 'message' (non-streaming, default) or 'stream' (streaming)",
+    )
+    args = parser.parse_args()
+    asyncio.run(main(args.mode))
+```
+
+#### See it in action
+
+{% youtube RCmq0igoX3E %}
+
+### 5. Takeaways & resources
+
+#### Takeaways
+
+- **Infrastructure Efficiency:** Hosting many agents behind one host requires a
+  small loop, not a massive rewrite. One shared server, with logically separate
+  endpoints.
+- **Flexible Routing:** A2A gives you three routing primitives — sub-path, auth
+  header, and the tenant field. You can compose them to fit your exact gateway
+  needs.
+- **Decentralized Config:** Routing config lives in the Agent Card. Clients
+  stay simple and your topology stays discoverable without hard-coded URLs.
+- **The Single Client Rule:** Always echo the tenant field when the interface
+  sets it; omit it when it doesn’t.
+
+#### Resources to get started
+
+- **Multi-tenancy guide:**
+  [https://a2a-protocol.org/latest/topics/multi-tenancy/](https://a2a-protocol.org/latest/topics/multi-tenancy/)
+- **A2A spec & docs:**
+  [https://a2a-protocol.org/latest/](https://a2a-protocol.org/latest/)
+- **A2A on GitHub (⭐):**
+  [https://github.com/a2aproject/A2A](https://github.com/a2aproject/A2A)
+- **Hello-world sample:**
+  [a2a-samples/samples/python/agents/helloworld](https://github.com/a2aproject/a2a-samples/tree/main/samples/python/agents/helloworld)
+
+**A question for you:** when you put several agents behind one host, do you
+reach for sub-paths, auth, or the tenant field first — and why?
+
+**#A2A #AIAgents #MultiAgent #Python #PlatformEngineering**
+
+______________________________________________________________________
+
+---
+
+## Breaking Down Agent Silos: The A2A Integration Test Kit Dashboard
+Source: https://msampathkumar.github.io/blog/posts/breaking-down-agent-silos-the-a2a-integration-test-kit-dashboard-is-here/
+
+> Originally published on
+> [dev.to](https://dev.to/sampathm/breaking-down-agent-silos-the-a2a-integration-test-kit-dashboard-is-here-4m60)
+> /
+> [Medium](https://medium.com/google-cloud/breaking-down-agent-silos-the-a2a-integration-test-kit-dashboard-is-here-71b5b85c290d).
+
+![](https://cdn-images-1.medium.com/max/1024/1*9F2bPACRzMWp-2KXsy_iBQ.jpeg)
+
+#### Interoperability shouldn’t be an afterthought. In a world of diverse AI frameworks, the A2A protocol is building the common language for agents to collaborate seamlessly. Today, we’re making that mission measurable.
+
+### Introduction
+
+[The A2A protocol](https://a2a-protocol.org/latest/) is more than just a
+specification; it’s an open communication language designed for independent
+agents to talk and work together. Originally developed by Google and now part
+of the Linux Foundation, A2A is the definitive common language for agent
+interoperability in an ecosystem where agents are built by different vendors
+across diverse frameworks.
+
+### Why Interoperability Matters
+
+Building a standalone agent is one thing, but getting a Python agent to
+collaborate with a Go or Rust agent without custom glue code is the real
+challenge. While the A2A protocol establishes the common language for agents to
+collaborate, the
+[Integration Test Kit (ITK)](https://github.com/a2aproject/a2a-itk#readme) and
+its [Dashboard](https://a2aproject.github.io/a2a-itk/dashboard/) provide the
+vital verification and visibility needed to maintain consistency. The ITK acts
+as a toolkit to verify compatibility across different SDK implementations by
+routing test messages, while the Dashboard centralizes this data(test results)
+into a holistic interoperability matrix. This ensures that agents built across
+diverse frameworks can integrate robustly throughout the protocol’s evolution.
+
+**Note:** We recently presented this dashboard to the A2A Technical Steering
+Committee (TSC) to gather feedback. Please share your feedback.
+
+### How the Dashboard Works
+
+[The A2A ITK dashboard](https://a2aproject.github.io/a2a-itk/dashboard/)
+performs automated interoperability checks between various A2A SDKs. For
+example, for Python SDK ITK tests, it utilizes the latest SDK code from its
+GitHub repository and runs cross-compatibility checks against the following
+versions:
+
+1. Stable Versions: Python v1.0 and Go v1.0
+1. Legacy Versions: Python v0.3 and Go v0.3
+
+Support for additional SDK languages and versions will be expanded in future
+iterations.
+
+#### Understanding the Dashboard Layout
+
+To provide comprehensive and detailed metrics, the ITK Dashboard is organized
+into **two distinct sections**.
+
+#### A. Summary Table (Holistic Picture)
+
+The summary table below provides a holistic view of how the current SDK
+interoperates with others. This view includes checks for stable versions like
+Python v1.0 and v0.3, as well as other SDKs such as Go, evaluated across
+various behaviors and protocols (e.g., JSON-RPC, gRPC, and HTTP/JSON).
+
+![](https://cdn-images-1.medium.com/max/1024/1*OEWnfqAnUpc6MmH4KtT3KQ.png)
+
+#### B. Pairwise Interoperability Matrices
+
+The pairwise interoperability matrices in the section below drill down into
+pairwise compatibility. These matrices verify full compatibility between
+specific versions, ensuring robust integration throughout the protocol’s
+evolution.
+
+![](https://cdn-images-1.medium.com/max/1024/1*vVUNcR4q9gv4hhDtzxamZQ.png)
+
+Use this section to debug niche edge cases or to verify if a protocol upgrade
+will safely support legacy clients in production.
+
+#### Status Legend
+
+- **PASS:** The feature is fully functional and compliant between the tested
+  versions.
+- **FAIL:** A regression or incompatibility was detected. Investigation is
+  required.
+- **Not Covered:** Test cases for this specific feature combination have not
+  yet been implemented.
+
+### **🚀 Get Involved & Next Steps**
+
+As an evolving tool designed to maintain the stability of the A2A ecosystem, we
+encourage your participation. Here is how you can take action right now:
+
+- **Spot a Failure?** If you notice a **FAIL** status on a feature you rely on,
+  please check the
+  [active issues](https://github.com/a2aproject/a2a-itk/issues) or sync with
+  the team in
+  the[#a2a-tck](https://discord.com/channels/1362108044737253548/1392611003711094835)
+  Discord channel.
+- **Contribute Test Cases:** Help us expand our coverage! If you are developing
+  new features for any A2A SDKs, ensure you add corresponding integration tests
+  to
+  the[ITK GitHub Repository](https://github.com/a2aproject/a2a-itk/tree/main/test_suite).
+- **Track Upcoming Support:** We are actively working on expanding our test
+  matrices to include **TypeScript/Node.js** , **Java, Rust** , and **.NET**
+  environments soon. Keep an eye on our
+  [ITK Roadmap](https://github.com/a2aproject/a2a-itk/tree/main#-task-backlog)
+  for delivery timelines.
+
+______________________________________________________________________
+
+---
+
+## Introducing the Whitepaper on Building Secure Multi-Agent Frameworks on Google Cloud
+Source: https://msampathkumar.github.io/blog/posts/introducing-the-whitepaper-on-building-secure-multi-agent-framework-on-google-cloud/
+
+> Originally published on
+> [dev.to](https://dev.to/sampathm/introducing-the-whitepaper-on-building-secure-multi-agent-framework-on-google-cloud-11hc)
+> /
+> [Medium](https://medium.com/@maddula/introducing-the-whitepaper-on-building-secure-multi-agent-framework-on-google-cloud-dd16f65360bb).
+
+![](https://cdn-images-1.medium.com/max/1024/1*HJv-9XCa8T7Rn7ipy9Sy8w.png)
+
+Building agents is one thing. Building them to be enterprise-ready and secure
+is a completely different challenge. When agents start acting across systems
+and making decisions autonomously, your security strategy has to evolve from
+model-level guardrails to full-system defense-in-depth.
+
+This
+[new whitepaper](https://services.google.com/fh/files/events/agent_security.pdf)
+breaks down how to build a secure ‘Warranty Claim System’ (a practical usecase
+for your better understanding and) using the
+[Gemini Enterprise Agent Platform](https://cloud.google.com/products/gemini-enterprise-agent-platform).
+
+[https://services.google.com/fh/files/events/agent_security.pdf](https://services.google.com/fh/files/events/agent_security.pdf)
+
+Here’s the blueprint for securing the Agentic future:
+
+🏗️ Build with Intent\
+→ Agent Development Kit (ADK): Native support for session management and
+tool-level authentication.\
+→ Deterministic Callbacks: Using BeforeToolCallback to validate inputs (like
+serial numbers) before they ever hit your backend.\
+→ Hybrid Runtimes: Seamlessly bridging managed Agent Runtimes with custom Cloud
+Run environments.
+
+🚀 Scale Safely\
+→ Identity-Centric Design: Every agent gets a unique, cryptographic Agent
+Identity (SPIFFE-backed). No more over-permissioned service accounts.\
+→ Human-in-the-Loop (HITL): Built-in confirmation primitives to pause
+high-stakes actions for explicit approval.\
+→ Memory Isolation: Ensuring long-term context is securely mapped and isolated
+per user session.
+
+🛡️ Govern & Protect\
+→ Agent Gateway: The central control plane for all ingress and egress. It
+intercepts every call to authenticate and authorize in real-time.\
+→ Model Armor Integration: Automatically scrubbing PII and neutralizing prompt
+injections/jailbreaks inline.\
+→ Dual Guardrails: Combining IAM boundaries (Access Control) with Semantic
+Governance (Intent Control) to prevent “Shadow AI.”
+
+📊 Observe & Defend\
+→ Chain-of-Thought Tracing: Using Cloud Trace to visualize why an agent made a
+decision, not just what it did.\
+→ Virtual Red-Teaming: Automated, AI-driven adversarial simulations to
+stress-test your boundaries before attackers do.
+
+💬 Closing thoughts: “Its time to shift from building chatbots to “Secure
+Autonomous Worker”.
+
+📚 Here are some resources to get you started!\
+→ AgentSecurity PDF:
+[https://services.google.com/fh/files/events/agent_security.pdf](https://services.google.com/fh/files/events/agent_security.pdf)\
+→ Google SAIF (Secure AI Framework):
+[https://saif.google/secure-ai-framework/saif-map](https://saif.google/secure-ai-framework/saif-map)\
+→ Agent Identity & SPIFFE :
+[https://docs.cloud.google.com/iam/docs/agent-identity-overview#spiffe-identity](https://docs.cloud.google.com/iam/docs/agent-identity-overview#spiffe-identity)\
+→ Cloud Trace:
+[https://docs.cloud.google.com/trace/docs/overview](https://docs.cloud.google.com/trace/docs/overview)\
+→ Agent Gateway:
+[https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/gateways/agent-gateway-overview](https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/gateways/agent-gateway-overview)
+
+---
 ## Writing — Google Cloud Next 2026 series
 
 ## Part 1 — Intro & Next-Gen Infrastructure
