@@ -13,15 +13,14 @@ Build practical applications with Google Cloud's Gemini models — from a basic
 Streamlit chatbot to Retrieval-Augmented Generation and knowledge graphs, all
 deployable to Cloud Run.
 
-[Open the Gemini Cookbook](google-cloud-gemini-cookbook/README.md){ .md-button
-.md-button--primary }
+[Open the Gemini Cookbook →](google-cloud-gemini-cookbook/){ .md-button }
 
 ### :material-transit-connection-variant: A2A Cookbook <small>(coming soon)</small>
 
 Recipes for the **Agent-to-Agent (A2A) protocol**: exposing agents over A2A,
 wiring multi-agent systems, and interoperating across frameworks. Coming soon —
 watch this space (or the
-[blog](blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md)).
+[blog](https://msampathkumar.github.io/)).
 
 ## What to expect
 
