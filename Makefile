@@ -17,6 +17,10 @@ new-post:
 llms:
 	python scripts/gen_llms_full.py
 
+# Import dev.to/Medium posts into _internal/devto_import/ for review
+import-devto:
+	python scripts/import_devto.py --username sampathm
+
 deploy: llms
 	@echo "Deploying to GitHub Pages"
 	mkdocs gh-deploy --clean --force
