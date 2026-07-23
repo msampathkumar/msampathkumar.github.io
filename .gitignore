@@ -40,8 +40,9 @@ gha-creds-*.json
 # Notebook checkpoints
 .ipynb_checkpoints/
 
-# Internal files
+# Internal files (local-only drafts; leading-underscore dir was not matched by internal*)
 internal*
+_internal/
 
 # Gemini files
 .gemini/
