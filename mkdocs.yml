@@ -104,13 +104,16 @@ extra:
 nav:
   - "Home": index.md
   - "Cookbook":
-      - "Tutorials":
-          - "Gemini Cookbook Overview": google-cloud-gemini-cookbook/README.md
+      - "Overview": cookbook.md
+      - "Gemini Cookbook":
+          - "Overview": google-cloud-gemini-cookbook/README.md
           - "Lesson 1: Basic Chatbot with Streamlit": google-cloud-gemini-cookbook/lesson-01/README.md
           - "Lesson 2: Chatbot with Memory & Gemma": google-cloud-gemini-cookbook/lesson-02/README.md
           - "Lesson 3: Multimodality with Vision": google-cloud-gemini-cookbook/lesson-03/README.md
           - "Lesson 4: Knowledge Base Q&A with RAG": google-cloud-gemini-cookbook/lesson-04/README.md
           - "Lesson 5: Advanced RAG with Knowledge Graphs": google-cloud-gemini-cookbook/lesson-05/README.md
+      # - "A2A Cookbook":  # coming soon — add lessons here
+      #     - "Overview": a2a-cookbook/README.md
   - "Writing":
       - "Google Cloud Next 2026":
           - "Part 1: Intro & Next Gen Infrastructure": blog/posts/google-cloud-next-2026-agentic-cloud-infrastructure.md
