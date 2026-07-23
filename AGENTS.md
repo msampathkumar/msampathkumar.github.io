@@ -21,6 +21,15 @@ Personal MkDocs-Material site published to GitHub Pages (`msampathkumar.github.i
 - **Agents-first**: posts should have `##`/`###` sections (so the right-hand TOC renders), lead with a TL;DR, and define acronyms. Score a draft with `python scripts/score_post.py <file>` or the `agent-ready-blog` skill.
 - Imported/cross-posted content should set `canonical_url` to the original (avoids duplicate-content SEO).
 
+### Naming & URL conventions (foundational — keep it simple)
+
+- **Filenames = URLs.** A post at `docs/blog/posts/<slug>.md` is served at `/blog/posts/<slug>/`. Choose the filename deliberately; it is the public URL.
+- **Short, topical slugs.** Prefer `a2a_intro.md` over dev.to's `docker-for-agents-a-backend-engineers-introduction-to-a2a.md`. Lowercase; use `_` to separate words.
+- **Topic prefixes** group related content and sort together: `a2a_*` (Agent-to-Agent), `gke_*`, `gemini_*`, etc. Add new prefixes sparingly.
+- **Don't rename established posts** without adding a redirect — it breaks live URLs, inbound links, and SEO. Apply the convention to new content; retro-rename only with `mkdocs-redirects` in place.
+- **Images** live in `docs/blog/posts/images/<topic>/` named `<post-stem>_<n>.<ext>`. Localize remote images (e.g. Medium CDN) with `python scripts/localize_images.py --subdir <topic> <files>` so the site is self-contained.
+- **Buttons**: author Material buttons on a single short line (`[Text](url){ .md-button }`) that fits under 79 cols — mdformat's `wrap=79` will otherwise split the `{ .md-button }` attr-list across lines and it renders as literal text.
+
 ## Commands
 
 ```bash

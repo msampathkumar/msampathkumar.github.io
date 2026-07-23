@@ -16,7 +16,7 @@ canonical_url: "https://medium.com/google-cloud/breaking-down-agent-silos-the-a2
 > /
 > [Medium](https://medium.com/google-cloud/breaking-down-agent-silos-the-a2a-integration-test-kit-dashboard-is-here-71b5b85c290d).
 
-![](https://cdn-images-1.medium.com/max/1024/1*9F2bPACRzMWp-2KXsy_iBQ.jpeg)
+![](images/a2a/a2a_test_kit_1.jpg)
 
 #### Interoperability shouldn’t be an afterthought. In a world of diverse AI frameworks, the A2A protocol is building the common language for agents to collaborate seamlessly. Today, we’re making that mission measurable.
 
@@ -72,7 +72,7 @@ interoperates with others. This view includes checks for stable versions like
 Python v1.0 and v0.3, as well as other SDKs such as Go, evaluated across
 various behaviors and protocols (e.g., JSON-RPC, gRPC, and HTTP/JSON).
 
-![](https://cdn-images-1.medium.com/max/1024/1*OEWnfqAnUpc6MmH4KtT3KQ.png)
+![](images/a2a/a2a_test_kit_2.png)
 
 #### B. Pairwise Interoperability Matrices
 
@@ -81,7 +81,7 @@ pairwise compatibility. These matrices verify full compatibility between
 specific versions, ensuring robust integration throughout the protocol’s
 evolution.
 
-![](https://cdn-images-1.medium.com/max/1024/1*vVUNcR4q9gv4hhDtzxamZQ.png)
+![](images/a2a/a2a_test_kit_3.png)
 
 Use this section to debug niche edge cases or to verify if a protocol upgrade
 will safely support legacy clients in production.

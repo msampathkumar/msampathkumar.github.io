@@ -14,8 +14,8 @@ canonical_url: "https://medium.com/google-cloud/a2a-multi-tenancy-ebfbc255497a"
 > [dev.to](https://dev.to/sampathm/three-agents-behind-one-door-multi-tenancy-in-a2a-1pih)
 > / [Medium](https://medium.com/google-cloud/a2a-multi-tenancy-ebfbc255497a).
 
-![](https://cdn-images-1.medium.com/max/1024/1*02HPupbT15v4QpSYmxf8-A.png) _A2A
-Multi-Tenancy: 3 ways to scale your Agentic Apps real fast 🚀_
+![](images/a2a/a2a_multi_tenancy_1.png) _A2A Multi-Tenancy: 3 ways to scale
+your Agentic Apps real fast 🚀_
 
 ### 1. Introduction
 
@@ -72,8 +72,8 @@ Give each agent its own URL prefix, and let each Agent Card advertise that URL.
 Clients need **no special awareness**  — they read the card and send requests
 where it points. (This is the approach our demo uses.)
 
-![](https://cdn-images-1.medium.com/max/1024/1*s0ZszjbOTYcFmRZ_Mpgf0Q.png) _A2A
-Multi-tenancy with URL sub-path routing_
+![](images/a2a/a2a_multi_tenancy_2.png) _A2A Multi-tenancy with URL sub-path
+routing_
 
 👉 **Tip:** Use this when you have a small, fixed set of agents and want the
 setup that’s easiest to build, scale and debug — the route shows up right in
@@ -86,8 +86,8 @@ credential already in the request. Because A2A declares auth requirements in
 the Agent Card (securitySchemes / securityRequirements), this stays fully
 discoverable — and the A2A message itself is never modified.
 
-![](https://cdn-images-1.medium.com/max/1024/1*mFOxZAr7z_YbAw11ajkj3Q.png) _A2A
-Multi-tenancy with header-based routing_
+![](images/a2a/a2a_multi_tenancy_3.png) _A2A Multi-tenancy with header-based
+routing_
 
 **Common patterns:** a **bearer token** whose claims (audience, scope) identify
 the target agent, or an **API key** the gateway maps to a particular agent.
@@ -108,8 +108,7 @@ from the selected AgentInterface back in _every_ request message. If the
 interface doesn't set tenant, the field **MUST** be omitted. (This is the
 normative client rule in spec §8.3.2.)
 
-![](https://cdn-images-1.medium.com/max/1024/1*UpSjnnXgxbXTXZ2gCPYVMg.png) _A2A
-Multi-tenancy with tenant field_
+![](images/a2a/a2a_multi_tenancy_4.png) _A2A Multi-tenancy with tenant field_
 
 👉 **Tip:** Use this when you want a single URL and give options to the client
 to select the routing direction.
@@ -583,7 +582,7 @@ if __name__ == " __main__":
 
 #### See it in action
 
-{% youtube RCmq0igoX3E %}
+[![A2A Multitenancy in Action](images/a2a/a2a_multi_tenancy_5.jpg)](https://www.youtube.com/watch?v=RCmq0igoX3E "Agent2Agent (A2A) Protocol Multi-Tenancy Demo (Python)")
 
 ### 5. Takeaways & resources
 

@@ -24,15 +24,14 @@ Build practical applications with Google Cloud's Gemini models — from a basic
 Streamlit chatbot to Retrieval-Augmented Generation and knowledge graphs, all
 deployable to Cloud Run.
 
-[Open the Gemini Cookbook](google-cloud-gemini-cookbook/README.md){ .md-button
-.md-button--primary }
+[Open the Gemini Cookbook →](google-cloud-gemini-cookbook/){ .md-button }
 
 ### :material-transit-connection-variant: A2A Cookbook <small>(coming soon)</small>
 
 Recipes for the **Agent-to-Agent (A2A) protocol**: exposing agents over A2A,
 wiring multi-agent systems, and interoperating across frameworks. Coming soon —
 watch this space (or the
-[blog](blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md)).
+[blog](https://msampathkumar.github.io/)).
 
 ## What to expect
 
@@ -1228,15 +1227,14 @@ Now something for fun :)
 ## Writing — Agent-to-Agent (A2A)
 
 ## Docker for Agents: A Backend Engineer's Introduction to A2A
-Source: https://msampathkumar.github.io/blog/posts/docker-for-agents-a-backend-engineers-introduction-to-a2a/
+Source: https://msampathkumar.github.io/blog/posts/a2a_intro/
 
 > Originally published on
 > [dev.to](https://dev.to/sampathm/docker-for-agents-a-backend-engineers-introduction-to-a2a-3h0p)
 > /
 > [Medium](https://medium.com/google-cloud/a2a-protocol-blog-post-01-introduction-8294ca1d6a61).
 
-![A2A Introduction Post](https://cdn-images-1.medium.com/max/1024/0*jwY8iemtl1oBPKtE)
-_A2A Introduction Post_
+![A2A Introduction Post](images/a2a/a2a_intro_1.jpg) _A2A Introduction Post_
 
 A2A is a lightweight wrapper — like Docker. Your app stays exactly as it is;
 you add the wrapper, and it gains the ability to talk to any agent in the
@@ -1283,13 +1281,13 @@ interoperable agent.
 
 The wrapper sits between any A2A client and your unchanged app:
 
-![A2A Intro — Mermaid Chart 1](https://cdn-images-1.medium.com/max/1024/1*T7nN-ec391OG7PQwaLUiVA.png)
-_A2A Intro — Mermaid Chart 1_
+![A2A Intro — Mermaid Chart 1](images/a2a/a2a_intro_2.png) _A2A Intro — Mermaid
+Chart 1_
 
 And here’s the same interaction over time — discovery, then the task lifecycle:
 
-![A2A Intro — Mermaid Chart 2](https://cdn-images-1.medium.com/max/1024/1*Bp4v-FnXDiSv8DbffcaOcg.png)
-_A2A Intro — Mermaid Chart 2_
+![A2A Intro — Mermaid Chart 2](images/a2a/a2a_intro_3.png) _A2A Intro — Mermaid
+Chart 2_
 
 Now the three concepts.
 
@@ -1441,15 +1439,14 @@ ______________________________________________________________________
 ---
 
 ## What's New in A2A: v1.0, a Python DX Glow-Up, and a Fresh New Look
-Source: https://msampathkumar.github.io/blog/posts/whats-new-in-a2a-v10-a-python-dx-glow-up-and-a-fresh-new-look/
+Source: https://msampathkumar.github.io/blog/posts/a2a_v1_release/
 
 > Originally published on
 > [dev.to](https://dev.to/sampathm/whats-new-in-a2a-v10-a-python-dx-glow-up-and-a-fresh-new-look-1hek)
 > /
 > [Medium](https://medium.com/google-cloud/whats-new-in-a2a-protocol-v1-release-b36dc6b4febd).
 
-![](https://cdn-images-1.medium.com/max/1024/1*zB1cWExaMgqAMYapEInu4w.png) _A2A
-Documentations & New Updates._
+![](images/a2a/a2a_v1_release_1.png) _A2A Documentations & New Updates._
 
 🎉 A2A reached v1.0 — a production-ready, open standard for agents to talk to
 each other. It was created by Google but now it’s maintained under the **Linux
@@ -1528,7 +1525,7 @@ runs (not a live or real-time view). For the full story on how it works, the
 [ITK dashboard deep-dive](https://dev.to/sampathm/breaking-down-agent-silos-the-a2a-integration-test-kit-dashboard-is-here-4m60)
 covers it.
 
-![](https://cdn-images-1.medium.com/max/1024/0*fyG15BKvFPR7rpBO.png)
+![](images/a2a/a2a_v1_release_2.png)
 _https://a2aproject.github.io/a2a-itk/dashboard/_
 
 ### The Python DX glow-up
@@ -1591,23 +1588,21 @@ At the top of the home page, we’ve added _Get started_ and _Read the spec_
 buttons, allowing you to instantly jump straight to the resources you need
 based on your immediate goals.
 
-![](https://cdn-images-1.medium.com/max/1024/1*IF8Z6Rxmh0rxExesN99dFw.png) _A2A
-Home Page — https://a2a-protocol.org/latest/_
+![](images/a2a/a2a_v1_release_3.png) _A2A Home
+Page — https://a2a-protocol.org/latest/_
 
 [**# Restructured Navigation**](https://github.com/a2aproject/A2A/blob/main/mkdocs.yml#L20)\
 We’ve reorganized our previous layout into highly focused, grouped sections,
 making it effortless to pinpoint your specific topic of interest and dive right
 into development.
 
-![](https://cdn-images-1.medium.com/max/1024/1*NiFeCGWHqkXE62WlB9UqAw.png)
-_A2A — restructured navigation_
+![](images/a2a/a2a_v1_release_4.png) _A2A — restructured navigation_
 
 [**# New A2A logo**](https://a2a-protocol.org/latest/assets/a2a_logo/color/SVG/a2a_color.svg)\
 A cleaner, more consistent mark across the docs, the repo, and everywhere A2A
 shows up.
 
-![](https://cdn-images-1.medium.com/max/1024/0*8zOfs1t1-z8hdOtq.png) _A2A New
-Logo_
+![](images/a2a/a2a_v1_release_5.png) _A2A New Logo_
 
 [**# Lastly, our new A2A Mascot**](https://github.com/a2aproject/A2A/blob/main/docs/assets/a2a_logo/mascot/PNG/a2a_ada.png)
 
@@ -1619,8 +1614,7 @@ doc can’t quite carry on their own: approachable, a little playful, and
 The protocol is grown-up and production-ready; the project should still feel
 like somewhere you’d want to hang out and contribute.
 
-![](https://cdn-images-1.medium.com/max/1024/1*t0kgsULhkHiOqmm9OVn3mQ.png) _A2A
-Mascot_
+![](images/a2a/a2a_v1_release_6.png) _A2A Mascot_
 
 ### Coming next
 
@@ -1651,14 +1645,14 @@ ______________________________________________________________________
 ---
 
 ## Three Agents Behind One Door: Multi-Tenancy in A2A
-Source: https://msampathkumar.github.io/blog/posts/three-agents-behind-one-door-multi-tenancy-in-a2a/
+Source: https://msampathkumar.github.io/blog/posts/a2a_multi_tenancy/
 
 > Originally published on
 > [dev.to](https://dev.to/sampathm/three-agents-behind-one-door-multi-tenancy-in-a2a-1pih)
 > / [Medium](https://medium.com/google-cloud/a2a-multi-tenancy-ebfbc255497a).
 
-![](https://cdn-images-1.medium.com/max/1024/1*02HPupbT15v4QpSYmxf8-A.png) _A2A
-Multi-Tenancy: 3 ways to scale your Agentic Apps real fast 🚀_
+![](images/a2a/a2a_multi_tenancy_1.png) _A2A Multi-Tenancy: 3 ways to scale
+your Agentic Apps real fast 🚀_
 
 ### 1. Introduction
 
@@ -1715,8 +1709,8 @@ Give each agent its own URL prefix, and let each Agent Card advertise that URL.
 Clients need **no special awareness**  — they read the card and send requests
 where it points. (This is the approach our demo uses.)
 
-![](https://cdn-images-1.medium.com/max/1024/1*s0ZszjbOTYcFmRZ_Mpgf0Q.png) _A2A
-Multi-tenancy with URL sub-path routing_
+![](images/a2a/a2a_multi_tenancy_2.png) _A2A Multi-tenancy with URL sub-path
+routing_
 
 👉 **Tip:** Use this when you have a small, fixed set of agents and want the
 setup that’s easiest to build, scale and debug — the route shows up right in
@@ -1729,8 +1723,8 @@ credential already in the request. Because A2A declares auth requirements in
 the Agent Card (securitySchemes / securityRequirements), this stays fully
 discoverable — and the A2A message itself is never modified.
 
-![](https://cdn-images-1.medium.com/max/1024/1*mFOxZAr7z_YbAw11ajkj3Q.png) _A2A
-Multi-tenancy with header-based routing_
+![](images/a2a/a2a_multi_tenancy_3.png) _A2A Multi-tenancy with header-based
+routing_
 
 **Common patterns:** a **bearer token** whose claims (audience, scope) identify
 the target agent, or an **API key** the gateway maps to a particular agent.
@@ -1751,8 +1745,7 @@ from the selected AgentInterface back in _every_ request message. If the
 interface doesn't set tenant, the field **MUST** be omitted. (This is the
 normative client rule in spec §8.3.2.)
 
-![](https://cdn-images-1.medium.com/max/1024/1*UpSjnnXgxbXTXZ2gCPYVMg.png) _A2A
-Multi-tenancy with tenant field_
+![](images/a2a/a2a_multi_tenancy_4.png) _A2A Multi-tenancy with tenant field_
 
 👉 **Tip:** Use this when you want a single URL and give options to the client
 to select the routing direction.
@@ -2226,7 +2219,7 @@ if __name__ == " __main__":
 
 #### See it in action
 
-{% youtube RCmq0igoX3E %}
+[![A2A Multitenancy in Action](images/a2a/a2a_multi_tenancy_5.jpg)](https://www.youtube.com/watch?v=RCmq0igoX3E "Agent2Agent (A2A) Protocol Multi-Tenancy Demo (Python)")
 
 ### 5. Takeaways & resources
 
@@ -2264,14 +2257,14 @@ ______________________________________________________________________
 ---
 
 ## Breaking Down Agent Silos: The A2A Integration Test Kit Dashboard
-Source: https://msampathkumar.github.io/blog/posts/breaking-down-agent-silos-the-a2a-integration-test-kit-dashboard-is-here/
+Source: https://msampathkumar.github.io/blog/posts/a2a_test_kit/
 
 > Originally published on
 > [dev.to](https://dev.to/sampathm/breaking-down-agent-silos-the-a2a-integration-test-kit-dashboard-is-here-4m60)
 > /
 > [Medium](https://medium.com/google-cloud/breaking-down-agent-silos-the-a2a-integration-test-kit-dashboard-is-here-71b5b85c290d).
 
-![](https://cdn-images-1.medium.com/max/1024/1*9F2bPACRzMWp-2KXsy_iBQ.jpeg)
+![](images/a2a/a2a_test_kit_1.jpg)
 
 #### Interoperability shouldn’t be an afterthought. In a world of diverse AI frameworks, the A2A protocol is building the common language for agents to collaborate seamlessly. Today, we’re making that mission measurable.
 
@@ -2327,7 +2320,7 @@ interoperates with others. This view includes checks for stable versions like
 Python v1.0 and v0.3, as well as other SDKs such as Go, evaluated across
 various behaviors and protocols (e.g., JSON-RPC, gRPC, and HTTP/JSON).
 
-![](https://cdn-images-1.medium.com/max/1024/1*OEWnfqAnUpc6MmH4KtT3KQ.png)
+![](images/a2a/a2a_test_kit_2.png)
 
 #### B. Pairwise Interoperability Matrices
 
@@ -2336,7 +2329,7 @@ pairwise compatibility. These matrices verify full compatibility between
 specific versions, ensuring robust integration throughout the protocol’s
 evolution.
 
-![](https://cdn-images-1.medium.com/max/1024/1*vVUNcR4q9gv4hhDtzxamZQ.png)
+![](images/a2a/a2a_test_kit_3.png)
 
 Use this section to debug niche edge cases or to verify if a protocol upgrade
 will safely support legacy clients in production.
@@ -2376,14 +2369,14 @@ ______________________________________________________________________
 ---
 
 ## Introducing the Whitepaper on Building Secure Multi-Agent Frameworks on Google Cloud
-Source: https://msampathkumar.github.io/blog/posts/introducing-the-whitepaper-on-building-secure-multi-agent-framework-on-google-cloud/
+Source: https://msampathkumar.github.io/blog/posts/a2a_security_whitepaper/
 
 > Originally published on
 > [dev.to](https://dev.to/sampathm/introducing-the-whitepaper-on-building-secure-multi-agent-framework-on-google-cloud-11hc)
 > /
 > [Medium](https://medium.com/@maddula/introducing-the-whitepaper-on-building-secure-multi-agent-framework-on-google-cloud-dd16f65360bb).
 
-![](https://cdn-images-1.medium.com/max/1024/1*HJv-9XCa8T7Rn7ipy9Sy8w.png)
+![](images/a2a/a2a_security_whitepaper_1.png)
 
 Building agents is one thing. Building them to be enterprise-ready and secure
 is a completely different challenge. When agents start acting across systems
