@@ -6,19 +6,28 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Layout: widen the shell so the left nav and right TOC sit near the corners
-   (capped so ultra-wide monitors don't look sparse), while the article itself
-   stays at a comfortable, centered reading measure. */
-.md-grid {
-    max-width: 1360px;
+/* Layout: fluid, responsive shell inspired by adk.dev and a2a-protocol.org
+   (both MkDocs-Material). Instead of a fixed pixel cap, the grid scales with
+   the viewport (max-width: 80%) so the left nav and right TOC track ~10% from
+   each edge and the whole page grows/shrinks with the window.
+
+   Guarded to >=60em (960px): below that Material collapses the nav into a
+   drawer with no static sidebars, so an 80% cap would just waste 20% of a
+   phone screen. On mobile we keep Material's default full width. */
+@media screen and (min-width: 60em) {
+    .md-grid {
+        max-width: 80%;
+    }
 }
 
 .md-content__inner {
-    /* 38rem ~= 760px at Material's 20px root font: a comfortable reading
-       measure that leaves visible whitespace on both sides so the article
-       reads as a standalone column between the nav and TOC. !important is
-       required because Material sets a fixed left/right margin on
-       .md-content__inner that otherwise wins and left-aligns the column. */
+    /* Cap the article at a comfortable reading measure and centre it, so on
+       wide monitors the text stays readable (the reference sites let it run
+       full-width, which gives ~100+ char lines). In rem, so the measure tracks
+       Material's responsive root font (~20-24px) and holds a steady character
+       count. On narrower screens the region is smaller than this cap, so the
+       content just fills naturally. !important is required because Material
+       sets a fixed left/right margin that otherwise wins and left-aligns it. */
     max-width: 38rem;
     margin-left: auto !important;
     margin-right: auto !important;
