@@ -20,7 +20,8 @@ build them**.
 <!-- LATEST_POSTS -->
 
 ---
-
+<!-- For LLMS
 Looking for the full index for LLMs and agents? See
 [`/llms.txt`](llms.txt) (concise) or [`/llms-full.txt`](llms-full.txt)
 (full content).
+-->
