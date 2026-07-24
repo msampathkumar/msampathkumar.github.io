@@ -22,8 +22,6 @@ theme:
   font:
     text: Inter
     code: Fira Code
-  extra_css:
-    - stylesheets/extra.css
   palette:
     # Palette toggle for light mode — white + pastel pink accent
     - media: "(prefers-color-scheme: light)"
@@ -56,6 +54,15 @@ theme:
     - content.code.copy
     - search.suggest
     - search.highlight
+
+# Custom styles & scripts. NOTE: these MUST be top-level keys (not nested under
+# `theme:`) — MkDocs only injects <link>/<script> tags for the top-level
+# extra_css/extra_javascript. Nesting them under `theme:` silently drops them.
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/reading-progress.js
+
 markdown_extensions:
   - attr_list
   # emojis

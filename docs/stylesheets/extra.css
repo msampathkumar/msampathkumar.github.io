@@ -6,8 +6,22 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Layout: widen the shell so the left nav and right TOC sit near the corners
+   (capped so ultra-wide monitors don't look sparse), while the article itself
+   stays at a comfortable, centered reading measure. */
 .md-grid {
-    max-width: initial;
+    max-width: 1360px;
+}
+
+.md-content__inner {
+    /* 38rem ~= 760px at Material's 20px root font: a comfortable reading
+       measure that leaves visible whitespace on both sides so the article
+       reads as a standalone column between the nav and TOC. !important is
+       required because Material sets a fixed left/right margin on
+       .md-content__inner that otherwise wins and left-aligns the column. */
+    max-width: 38rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 /* Smooth transitions for interactive elements */
@@ -52,4 +66,20 @@ code, kbd, pre {
 
 [data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.2);
+}
+
+/* Reading progress bar: a thin line pinned to the very top of the viewport
+   that fills left-to-right as the reader scrolls. Width is driven by
+   javascripts/reading-progress.js. Uses the theme accent (pink in light mode,
+   light blue in dark mode). */
+#reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background: var(--md-accent-fg-color);
+    z-index: 1000; /* above the sticky header */
+    transition: width 100ms linear;
+    pointer-events: none;
 }
