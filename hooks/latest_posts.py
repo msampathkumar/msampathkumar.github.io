@@ -1,9 +1,15 @@
 """MkDocs hook: inject the latest blog posts into the Home page.
 
 Replaces the marker ``<!-- LATEST_POSTS -->`` in ``index.md`` with a list of
-the most recent posts under ``docs/blog/posts/``, newest first. Post metadata
-(title, date, description) is read from each file's YAML front matter, so the
-Home page stays current automatically — just drop a new post in and rebuild.
+the most recent posts, newest first. Post metadata (title, date, description)
+is read from each file's YAML front matter, so the Home page stays current
+automatically — just drop a new post in and rebuild.
+
+Posts are discovered in two locations so the site can migrate incrementally:
+``docs/writing/<section>/<slug>/index.md`` (current convention) and the legacy
+``docs/blog/posts/<slug>.md``. The public URL is derived from the file's path
+relative to ``docs_dir`` (mirroring MkDocs' own ``use_directory_urls`` rules),
+so it stays correct wherever a post lives.
 """
 
 from __future__ import annotations
@@ -20,7 +26,19 @@ MARKER = "<!-- LATEST_POSTS -->"
 _FRONT_MATTER = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
 
 
-def _parse_post(path: Path) -> dict | None:
+def _post_url(path: Path, docs_dir: Path) -> str:
+    """Derive the site URL for a post from its path (use_directory_urls rules).
+
+    ``writing/a2a/multi-tenancy/index.md`` -> ``writing/a2a/multi-tenancy/`` and
+    ``blog/posts/foo.md`` -> ``blog/posts/foo/``.
+    """
+    rel = path.relative_to(docs_dir).with_suffix("")
+    if rel.name == "index":
+        rel = rel.parent
+    return f"{rel.as_posix()}/"
+
+
+def _parse_post(path: Path, docs_dir: Path) -> dict | None:
     """Return {title, date, description, url} for a post, or None to skip."""
     text = path.read_text(encoding="utf-8")
     match = _FRONT_MATTER.match(text)
@@ -41,12 +59,14 @@ def _parse_post(path: Path) -> dict | None:
     if not isinstance(date, _dt.date):
         return None
 
-    title = meta.get("title") or path.stem.replace("-", " ").title()
+    # For folder-per-post the slug is the parent dir, not the "index" stem.
+    slug = path.parent.name if path.stem == "index" else path.stem
+    title = meta.get("title") or slug.replace("-", " ").title()
     return {
         "title": str(title).strip('"'),
         "date": date,
         "description": (meta.get("description") or "").strip(),
-        "url": f"blog/posts/{path.stem}/",
+        "url": _post_url(path, docs_dir),
     }
 
 
@@ -65,7 +85,10 @@ def on_page_markdown(markdown: str, *, page, config, files):
     if page.file.src_uri != "index.md" or MARKER not in markdown:
         return markdown
 
-    posts_dir = Path(config["docs_dir"]) / "blog" / "posts"
-    posts = [p for f in posts_dir.glob("*.md") if (p := _parse_post(f))]
+    docs_dir = Path(config["docs_dir"])
+    # Current convention (folder-per-post) + legacy flat location.
+    files = sorted(docs_dir.glob("writing/**/index.md"))
+    files += sorted((docs_dir / "blog" / "posts").glob("*.md"))
+    posts = [p for f in files if (p := _parse_post(f, docs_dir))]
     posts.sort(key=lambda p: p["date"], reverse=True)
     return markdown.replace(MARKER, _render(posts[:MAX_POSTS]))

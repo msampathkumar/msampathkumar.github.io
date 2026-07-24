@@ -81,6 +81,14 @@ plugins:
   - mermaid2
   - git-revision-date-localized:
       type: timeago
+  # Preserve old /blog/posts/<slug>/ URLs after the move to /writing/<section>/
+  # <slug>/. On GitHub Pages these emit client-side meta-refresh stubs (not
+  # 301s) — enough to keep inbound links and the search index from 404ing.
+  # Keys/values are doc source paths relative to docs/. Keep this map in sync
+  # whenever a post is moved or renamed.
+  - redirects:
+      redirect_maps:
+        blog/posts/a2a_multi_tenancy.md: writing/a2a/multi-tenancy/index.md
 
 # Build hooks
 hooks:
@@ -125,7 +133,7 @@ nav:
       - "Agent-to-Agent (A2A)":
           - "Docker for Agents: Intro to A2A": blog/posts/a2a_intro.md
           - "What's New in A2A: v1.0": blog/posts/a2a_v1_release.md
-          - "Multi-Tenancy in A2A": blog/posts/a2a_multi_tenancy.md
+          - "Multi-Tenancy in A2A": writing/a2a/multi-tenancy/index.md
           - "A2A Integration Test Kit Dashboard": blog/posts/a2a_test_kit.md
           - "Secure Multi-Agent Framework Whitepaper": blog/posts/a2a_security_whitepaper.md
       - "Google Cloud Next 2026":
