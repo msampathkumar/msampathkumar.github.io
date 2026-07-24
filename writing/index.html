@@ -6,35 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Personal blog of Sampath Kumar M">
+        <meta name="description" content="Essays, guides, and notes on A2A, Google Cloud, Gemini, and more.">
       
       
         <meta name="author" content="M Sampath Kumar">
       
       
       
-        <link rel="prev" href="../foundational-models/">
+        <link rel="prev" href="../google-cloud-gemini-cookbook/lesson-05/">
       
       
-        <link rel="next" href="../data-protocols-security/">
+        <link rel="next" href="a2a/intro/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.svg">
+      <link rel="icon" href="../assets/images/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Google Cloud Next 2026 (3/5) - Developer Tools, Guides, and MCP Servers - Sampath Kumar | AI & Cloud Blog</title>
+        <title>Writing - Sampath Kumar | AI & Cloud Blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,11 +53,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/timeago.css">
+      <link rel="stylesheet" href="../css/timeago.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#google-cloud-next-2026-35-developer-tools-guides-and-mcp-servers" class="md-skip">
+        <a href="#writing" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-header__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
+    <a href=".." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-header__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Google Cloud Next 2026 (3/5) - Developer Tools, Guides, and MCP Servers
+              Writing
             
           </span>
         </div>
@@ -227,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -248,7 +248,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../cookbook/" class="md-tabs__link">
+        <a href="../cookbook/" class="md-tabs__link">
           
   
   
@@ -272,7 +272,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -294,7 +294,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../events/" class="md-tabs__link">
+        <a href="../events/" class="md-tabs__link">
           
   
   
@@ -314,7 +314,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../about/" class="md-tabs__link">
+      <a href="../about/" class="md-tabs__link">
         
   
   
@@ -338,6 +338,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -349,7 +351,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-nav__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
+    <a href=".." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-nav__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
@@ -367,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -452,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cookbook/" class="md-nav__link">
+      <a href="../cookbook/" class="md-nav__link">
         
   
   
@@ -513,7 +515,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../google-cloud-gemini-cookbook/" class="md-nav__link ">
+            <a href="../google-cloud-gemini-cookbook/" class="md-nav__link ">
               
   
   
@@ -557,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../google-cloud-gemini-cookbook/lesson-01/" class="md-nav__link">
+      <a href="../google-cloud-gemini-cookbook/lesson-01/" class="md-nav__link">
         
   
   
@@ -585,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../google-cloud-gemini-cookbook/lesson-02/" class="md-nav__link">
+      <a href="../google-cloud-gemini-cookbook/lesson-02/" class="md-nav__link">
         
   
   
@@ -613,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../google-cloud-gemini-cookbook/lesson-03/" class="md-nav__link">
+      <a href="../google-cloud-gemini-cookbook/lesson-03/" class="md-nav__link">
         
   
   
@@ -641,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../google-cloud-gemini-cookbook/lesson-04/" class="md-nav__link">
+      <a href="../google-cloud-gemini-cookbook/lesson-04/" class="md-nav__link">
         
   
   
@@ -669,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../google-cloud-gemini-cookbook/lesson-05/" class="md-nav__link">
+      <a href="../google-cloud-gemini-cookbook/lesson-05/" class="md-nav__link">
         
   
   
@@ -748,7 +750,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   
@@ -766,7 +768,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -823,7 +825,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../a2a/intro/" class="md-nav__link ">
+            <a href="a2a/intro/" class="md-nav__link ">
               
   
   
@@ -867,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../a2a/v1-release/" class="md-nav__link">
+      <a href="a2a/v1-release/" class="md-nav__link">
         
   
   
@@ -895,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../a2a/multi-tenancy/" class="md-nav__link">
+      <a href="a2a/multi-tenancy/" class="md-nav__link">
         
   
   
@@ -923,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../a2a/test-kit/" class="md-nav__link">
+      <a href="a2a/test-kit/" class="md-nav__link">
         
   
   
@@ -951,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../a2a/security-whitepaper/" class="md-nav__link">
+      <a href="a2a/security-whitepaper/" class="md-nav__link">
         
   
   
@@ -984,8 +986,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1010,15 +1010,17 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../infrastructure/" class="md-nav__link ">
+            <a href="cloud-next-2026/infrastructure/" class="md-nav__link ">
               
   
   
@@ -1042,7 +1044,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1062,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../foundational-models/" class="md-nav__link">
+      <a href="cloud-next-2026/foundational-models/" class="md-nav__link">
         
   
   
@@ -1087,37 +1089,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Part 3: Developer Tools & MCP Servers
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="cloud-next-2026/dev-tools-mcp-servers/" class="md-nav__link">
         
   
   
@@ -1133,59 +1108,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#developer-tools-guides-and-mcp-servers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        👨🏻‍💻 Developer Tools, Guides, and MCP Servers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mcp-servers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔌 MCP Servers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#free-learning-resources-references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📚 Free Learning Resources &amp; References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1198,7 +1120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-protocols-security/" class="md-nav__link">
+      <a href="cloud-next-2026/data-protocols-security/" class="md-nav__link">
         
   
   
@@ -1226,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../workspace-ai-agents/" class="md-nav__link">
+      <a href="cloud-next-2026/workspace-ai-agents/" class="md-nav__link">
         
   
   
@@ -1291,7 +1213,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../gemini/cli-cheatsheets/" class="md-nav__link ">
+            <a href="gemini/cli-cheatsheets/" class="md-nav__link ">
               
   
   
@@ -1335,7 +1257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gemini/cli-top-commands/" class="md-nav__link">
+      <a href="gemini/cli-top-commands/" class="md-nav__link">
         
   
   
@@ -1363,7 +1285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gemini/flash-image-preview/" class="md-nav__link">
+      <a href="gemini/flash-image-preview/" class="md-nav__link">
         
   
   
@@ -1391,7 +1313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gemini/culinary-guide/" class="md-nav__link">
+      <a href="gemini/culinary-guide/" class="md-nav__link">
         
   
   
@@ -1460,7 +1382,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../technical/six-essential-protocols/" class="md-nav__link ">
+            <a href="technical/six-essential-protocols/" class="md-nav__link ">
               
   
   
@@ -1504,7 +1426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../technical/python-in-google-cloud/" class="md-nav__link">
+      <a href="technical/python-in-google-cloud/" class="md-nav__link">
         
   
   
@@ -1532,7 +1454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../technical/memory-management-agentic-ai/" class="md-nav__link">
+      <a href="technical/memory-management-agentic-ai/" class="md-nav__link">
         
   
   
@@ -1560,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../technical/gke-magic-quadrant/" class="md-nav__link">
+      <a href="technical/gke-magic-quadrant/" class="md-nav__link">
         
   
   
@@ -1588,7 +1510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../technical/vibe-coding-intro/" class="md-nav__link">
+      <a href="technical/vibe-coding-intro/" class="md-nav__link">
         
   
   
@@ -1616,7 +1538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../technical/vibe-coding-dos-donts/" class="md-nav__link">
+      <a href="technical/vibe-coding-dos-donts/" class="md-nav__link">
         
   
   
@@ -1681,7 +1603,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../personal/miyamoto-musashi/" class="md-nav__link ">
+            <a href="personal/miyamoto-musashi/" class="md-nav__link ">
               
   
   
@@ -1725,7 +1647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../personal/sky-sea-truth/" class="md-nav__link">
+      <a href="personal/sky-sea-truth/" class="md-nav__link">
         
   
   
@@ -1753,7 +1675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../personal/spot-fake-leaders/" class="md-nav__link">
+      <a href="personal/spot-fake-leaders/" class="md-nav__link">
         
   
   
@@ -1781,7 +1703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../personal/two-lenses-of-leadership/" class="md-nav__link">
+      <a href="personal/two-lenses-of-leadership/" class="md-nav__link">
         
   
   
@@ -1855,7 +1777,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../events/" class="md-nav__link ">
+            <a href="../events/" class="md-nav__link ">
               
   
   
@@ -1899,7 +1821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../events/2025-11-10-kaggle-ai-days/" class="md-nav__link">
+      <a href="../events/2025-11-10-kaggle-ai-days/" class="md-nav__link">
         
   
   
@@ -1927,7 +1849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../events/2025-11-05-ai-day-sweden/" class="md-nav__link">
+      <a href="../events/2025-11-05-ai-day-sweden/" class="md-nav__link">
         
   
   
@@ -1955,7 +1877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../events/2025-10-28-ai-day-denmark/" class="md-nav__link">
+      <a href="../events/2025-10-28-ai-day-denmark/" class="md-nav__link">
         
   
   
@@ -1983,7 +1905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../events/2025-04-09-cloud-next/" class="md-nav__link">
+      <a href="../events/2025-04-09-cloud-next/" class="md-nav__link">
         
   
   
@@ -2018,7 +1940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   
@@ -2046,7 +1968,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -2065,10 +1989,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#developer-tools-guides-and-mcp-servers" class="md-nav__link">
+  <a href="#agent-to-agent-a2a" class="md-nav__link">
     <span class="md-ellipsis">
       
-        👨🏻‍💻 Developer Tools, Guides, and MCP Servers
+        Agent-to-Agent (A2A)
       
     </span>
   </a>
@@ -2076,10 +2000,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp-servers" class="md-nav__link">
+  <a href="#google-cloud-next-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔌 MCP Servers
+        Google Cloud Next 2026
       
     </span>
   </a>
@@ -2087,10 +2011,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#free-learning-resources-references" class="md-nav__link">
+  <a href="#gemini-guides" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📚 Free Learning Resources &amp; References
+        Gemini Guides
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Articles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Personal
       
     </span>
   </a>
@@ -2110,6 +2056,8 @@
               
                 
 
+  
+
 
 
   
@@ -2122,7 +2070,7 @@
   
   
     <li class="md-path__item">
-      <a href="../../.." class="md-path__link">
+      <a href=".." class="md-path__link">
         
   <span class="md-ellipsis">
     Home
@@ -2140,28 +2088,10 @@
     
     
       <li class="md-path__item">
-        <a href="../../" class="md-path__link">
+        <a href="./" class="md-path__link">
           
   <span class="md-ellipsis">
     Writing
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../infrastructure/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Google Cloud Next 2026
   </span>
 
         </a>
@@ -2177,70 +2107,53 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
 
 
 
-<p><img alt="Google Cloud Next 2026" src="https://storage.googleapis.com/gweb-cloudblog-publish/images/GCN26_102_BlogHeader_2436x1200_Opt_4_Dark.max-2500x2500.jpg" /></p>
-<h1 id="google-cloud-next-2026-35-developer-tools-guides-and-mcp-servers">Google Cloud Next 2026 (3/5) - Developer Tools, Guides, and MCP Servers</h1>
-<blockquote>
-<p>This is from my personal collection/notes. Hope you find it informative :)</p>
-</blockquote>
-<p>In my first post, we reviewed hardware updates like 8th-Gen TPUs, Axion
-processors, and Virgo Networks. In my second, we peeked into Google Cloud's
-Gemini Enterprise Agent Platform and its underlying models. For this third
-part, let's shift our focus to the Developer Tools that Google Cloud makes
-available to users.</p>
-<hr />
-<h2 id="developer-tools-guides-and-mcp-servers">👨🏻‍💻 Developer Tools, Guides, and MCP Servers</h2>
+
+<h1 id="writing">Writing</h1>
+<p>Essays, guides, and notes — grouped by topic. Newest work lives under
+Agent-to-Agent (A2A) and Google Cloud Next 2026.</p>
+<h2 id="agent-to-agent-a2a">Agent-to-Agent (A2A)</h2>
 <ul>
-<li><a href="https://adk.dev/"><strong>Google ADK</strong></a>: The open-source agent development
-  framework that lets you build, debug, and deploy reliable AI agents at
-  enterprise scale. Available in Python, TypeScript, Go, and Java.</li>
-<li><a href="https://github.com/google/agents-cli"><strong>Agent CLI</strong></a>: Serves as both a CLI
-  tool and a <strong>Skill package</strong> for your agentic developer environments
-  (including Gemini CLI, Antigravity, Codex, Claude Code, and others).</li>
-<li><a href="https://github.com/google/skills/tree/main"><strong>Agent Skills</strong></a>: Pre-packaged
-  agent skills tailored for Google products and technologies, including Google
-  Cloud integrations.</li>
-<li><a href="https://antigravity.google/"><strong>Google Antigravity</strong></a>: An advanced agentic
-  development platform that evolves the traditional IDE into an autonomous,
-  multi-surface "mission control" where AI agents plan, execute, and verify
-  complex software tasks.</li>
-<li><a href="https://docs.cloud.google.com/data-cloud-extension/vs-code/install"><strong>Google Cloud Data Agent Kit</strong></a>:
-  A rich Visual Studio Code extension designed for data engineers, scientists,
-  and app developers to efficiently manage data assets, run queries, and deploy
-  data pipelines.</li>
+<li><a href="a2a/intro/">Docker for Agents: Intro to A2A</a></li>
+<li><a href="a2a/v1-release/">What's New in A2A: v1.0</a></li>
+<li><a href="a2a/multi-tenancy/">Multi-Tenancy in A2A</a></li>
+<li><a href="a2a/test-kit/">A2A Integration Test Kit Dashboard</a></li>
+<li><a href="a2a/security-whitepaper/">Secure Multi-Agent Framework Whitepaper</a></li>
 </ul>
-<h2 id="mcp-servers">🔌 MCP Servers</h2>
+<h2 id="google-cloud-next-2026">Google Cloud Next 2026</h2>
 <ul>
-<li><a href="https://docs.cloud.google.com/mcp/supported-products#google-workspace-mcp-servers"><strong>Google Workspace MCP Servers</strong></a>:
-  A collection of MCP server your agents can use to interact with Google
-  Workspace products(Calendar, Gmail, Drive, etc).</li>
-<li><a href="https://docs.cloud.google.com/mcp/supported-products#google-cloud-mcp-servers"><strong>Google Cloud MCP Servers</strong></a>:
-  A collection of MCP server your agents can use to interact with Google Cloud
-  products(Agent Registry, BigQuery, Cloud Run, Cloud Sql, Firestore,
-  Memorystore, Pub/Sub, etc).</li>
+<li><a href="cloud-next-2026/infrastructure/">Part 1: Intro &amp; Next Gen Infrastructure</a></li>
+<li><a href="cloud-next-2026/foundational-models/">Part 2: GAP &amp; Foundational Models</a></li>
+<li><a href="cloud-next-2026/dev-tools-mcp-servers/">Part 3: Developer Tools &amp; MCP Servers</a></li>
+<li><a href="cloud-next-2026/data-protocols-security/">Part 4: Data Cloud, Protocols &amp; Security</a></li>
+<li><a href="cloud-next-2026/workspace-ai-agents/">Part 5: Workspace Reimagined &amp; AI Agents</a></li>
 </ul>
-<h2 id="free-learning-resources-references">📚 Free Learning Resources &amp; References</h2>
+<h2 id="gemini-guides">Gemini Guides</h2>
 <ul>
-<li><strong>Professional Certification</strong>:
-  <a href="https://www.coursera.org/professional-certificates/google-ai">Google AI Professional Certificate</a>
-  (8 hrs)</li>
-<li><strong>Hands-on Labs</strong>: Over 75 free codelabs available at
-  <a href="https://codelabs.developers.google.com/?event=googlecloudnext2026">Google Cloud Next 2026 Codelabs</a></li>
-<li><strong>Sub-Agents Deep Dive</strong>: Read "Mastering Gemini CLI Subagents" on Medium
-  (<a href="https://medium.com/google-cloud/mastering-gemini-cli-subagents-part-1-a4666091c154">Part 1</a>
-  &amp;
-  <a href="https://medium.com/google-cloud/mastering-gemini-cli-subagents-part-2-tool-isolation-advanced-governance-af4cbb287204">Part 2</a>)</li>
-<li><strong>White Paper</strong>: Dive into enterprise security with
-  <a href="https://services.google.com/fh/files/events/agent_security.pdf">Agent Security Overview</a></li>
-<li><strong>Atlas Agents (WIP)</strong>: Check out the work-in-progress book by A. Gulli on
-  <a href="https://github.com/agulli/atlas-agents">GitHub</a></li>
+<li><a href="gemini/cli-cheatsheets/">Gemini CLI Cheatsheets</a></li>
+<li><a href="gemini/cli-top-commands/">Gemini CLI Top Commands</a></li>
+<li><a href="gemini/flash-image-preview/">Gemini 2.5 Flash Image Preview</a></li>
+<li><a href="gemini/culinary-guide/">Gemini as your Culinary Guide</a></li>
 </ul>
-<hr />
-<p><em>In my fourth post, I will unpack the "Agentic Data Cloud"—from Spanner Omni to
-the standardized Iceberg data layer, along with the newly governing A2A &amp; MCP
-protocols. Stay tuned!</em></p>
+<h2 id="technical-articles">Technical Articles</h2>
+<ul>
+<li><a href="technical/six-essential-protocols/">The Six Essential Protocols Powering the AI Agent Ecosystem</a></li>
+<li><a href="technical/python-in-google-cloud/">Role of Python in Google Cloud</a></li>
+<li><a href="technical/memory-management-agentic-ai/">Advanced Memory Management for Agentic AI Development</a></li>
+<li><a href="technical/gke-magic-quadrant/">Google Cloud GKE Tops 2025 Magic Quadrant</a></li>
+<li><a href="technical/vibe-coding-intro/">Vibe Coding Introduction</a></li>
+<li><a href="technical/vibe-coding-dos-donts/">Vibe Coding Dos and Don'ts</a></li>
+</ul>
+<h2 id="personal">Personal</h2>
+<ul>
+<li><a href="personal/miyamoto-musashi/">10 Principles of Miyamoto Musashi</a></li>
+<li><a href="personal/sky-sea-truth/">Sky, Sea, and Truth</a></li>
+<li><a href="personal/spot-fake-leaders/">How to Spot an Ineffective Manager or Leader</a></li>
+<li><a href="personal/two-lenses-of-leadership/">The Two Lenses of Leadership</a></li>
+</ul>
 
 
 
@@ -2261,7 +2174,7 @@ protocols. Stay tuned!</em></p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 4, 2026 10:38:33 UTC"><span class="timeago" datetime="2026-05-04T10:38:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 4, 2026 10:38:33 UTC">2026-05-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 24, 2026 18:35:56 UTC"><span class="timeago" datetime="2026-07-24T18:35:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 24, 2026 18:35:56 UTC">2026-07-24</span>
   </span>
 
     
@@ -2273,6 +2186,8 @@ protocols. Stay tuned!</em></p>
 
   
 
+
+  
 
 
 
@@ -2383,16 +2298,16 @@ protocols. Stay tuned!</em></p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.path", "navigation.tracking", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top", "navigation.instant", "navigation.expand", "navigation.path", "navigation.tracking", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../js/timeago.min.js"></script>
+        <script src="../js/timeago.min.js"></script>
       
-        <script src="../../../js/timeago_mkdocs_material.js"></script>
+        <script src="../js/timeago_mkdocs_material.js"></script>
       
-        <script src="../../../javascripts/reading-progress.js"></script>
+        <script src="../javascripts/reading-progress.js"></script>
       
     
   </body>
