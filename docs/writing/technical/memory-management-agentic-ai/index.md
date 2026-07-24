@@ -12,7 +12,7 @@ categories:
 
 # Advanced Memory Management for Agentic AI Development
 
-![AI Memory Management Hero Image - From Chaos to Order](./images/ai-memory-management-chaos-to-order.png)
+![AI Memory Management Hero Image - From Chaos to Order](./ai-memory-management-chaos-to-order.png)
 *Transforming stateless LLMs into intelligent agents with proper memory architecture.*
 
 One of the biggest hurdles I've faced while building AI assistants is their inherent amnesia. Large Language Models are stateless by default—every conversation starts from zero. It's frustrating to watch an agent you've worked hard to configure immediately forget a user's preferences the moment the API call ends.

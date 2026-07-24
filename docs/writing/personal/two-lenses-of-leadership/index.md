@@ -10,7 +10,7 @@ categories:
 
 # The Two Lenses of Leadership: Operational Fixes vs. Strategic Bets
 
-![Two Lenses of Leadership](images/two-lenses-of-leadership-title-image.png)
+![Two Lenses of Leadership](two-lenses-of-leadership-title-image.png)
 
 We all want to be "data-driven." It’s the mantra of modern business. Yet, one of the most thrilling moments in my professional journey wasn't just about discovering data; it was the profound realization that the same exact metrics can narrate two entirely different stories, simply by changing the lens through which you view them.
 
@@ -32,7 +32,7 @@ But if you wear a **Strategic Growth lens**, you look at that same data and see 
 
 Thus, one perspective seeks to save by optimizing the existing framework, while the other aims to generate by aggressively scaling what truly resonates with customers.
 
-![img.png](images/two-lenses-of-leadership-sourdough-dilemma-example-plot.png)
+![img.png](two-lenses-of-leadership-sourdough-dilemma-example-plot.png)
 
 ### The Real-World Realization
 

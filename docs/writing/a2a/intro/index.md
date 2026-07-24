@@ -16,7 +16,7 @@ canonical_url: "https://medium.com/google-cloud/a2a-protocol-blog-post-01-introd
 > /
 > [Medium](https://medium.com/google-cloud/a2a-protocol-blog-post-01-introduction-8294ca1d6a61).
 
-![A2A Introduction Post](images/a2a/a2a_intro_1.jpg) _A2A Introduction Post_
+![A2A Introduction Post](a2a_intro_1.jpg) _A2A Introduction Post_
 
 A2A is a lightweight wrapper — like Docker. Your app stays exactly as it is;
 you add the wrapper, and it gains the ability to talk to any agent in the
@@ -63,12 +63,12 @@ interoperable agent.
 
 The wrapper sits between any A2A client and your unchanged app:
 
-![A2A Intro — Mermaid Chart 1](images/a2a/a2a_intro_2.png) _A2A Intro — Mermaid
+![A2A Intro — Mermaid Chart 1](a2a_intro_2.png) _A2A Intro — Mermaid
 Chart 1_
 
 And here’s the same interaction over time — discovery, then the task lifecycle:
 
-![A2A Intro — Mermaid Chart 2](images/a2a/a2a_intro_3.png) _A2A Intro — Mermaid
+![A2A Intro — Mermaid Chart 2](a2a_intro_3.png) _A2A Intro — Mermaid
 Chart 2_
 
 Now the three concepts.

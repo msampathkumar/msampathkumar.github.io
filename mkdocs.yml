@@ -89,6 +89,29 @@ plugins:
   - redirects:
       redirect_maps:
         blog/posts/a2a_multi_tenancy.md: writing/a2a/multi-tenancy/index.md
+        blog/posts/a2a_intro.md: writing/a2a/intro/index.md
+        blog/posts/a2a_v1_release.md: writing/a2a/v1-release/index.md
+        blog/posts/a2a_test_kit.md: writing/a2a/test-kit/index.md
+        blog/posts/a2a_security_whitepaper.md: writing/a2a/security-whitepaper/index.md
+        blog/posts/google-cloud-next-2026-agentic-cloud-infrastructure.md: writing/cloud-next-2026/infrastructure/index.md
+        blog/posts/google-cloud-next-2026-gap-foundational-models.md: writing/cloud-next-2026/foundational-models/index.md
+        blog/posts/google-cloud-next-2026-dev-tools-mcp-servers.md: writing/cloud-next-2026/dev-tools-mcp-servers/index.md
+        blog/posts/google-cloud-next-2026-agentic-data-protocols-security.md: writing/cloud-next-2026/data-protocols-security/index.md
+        blog/posts/google-cloud-next-2026-workspace-ai-agents.md: writing/cloud-next-2026/workspace-ai-agents/index.md
+        blog/posts/gemini-cli-cheatsheet-printouts.md: writing/gemini/cli-cheatsheets/index.md
+        blog/posts/gemini-cli-top-commands.md: writing/gemini/cli-top-commands/index.md
+        blog/posts/gemini-2.5-flash-image-preview.md: writing/gemini/flash-image-preview/index.md
+        blog/posts/gemini-as-your-culinary-guide.md: writing/gemini/culinary-guide/index.md
+        blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md: writing/technical/six-essential-protocols/index.md
+        blog/posts/the-role-of-python-in-google-cloud.md: writing/technical/python-in-google-cloud/index.md
+        blog/posts/advanced-memory-management-agentic-ai.md: writing/technical/memory-management-agentic-ai/index.md
+        blog/posts/gke_magic_quadrant.md: writing/technical/gke-magic-quadrant/index.md
+        blog/posts/vibe-coding-intro.md: writing/technical/vibe-coding-intro/index.md
+        blog/posts/vibe-coding-dos-donts.md: writing/technical/vibe-coding-dos-donts/index.md
+        blog/posts/miyamoto-musashi-10-principles.md: writing/personal/miyamoto-musashi/index.md
+        blog/posts/poem-sky-sea-truth.md: writing/personal/sky-sea-truth/index.md
+        blog/posts/spot-fakes-leaders.md: writing/personal/spot-fake-leaders/index.md
+        blog/posts/two-lenses-of-leadership.md: writing/personal/two-lenses-of-leadership/index.md
 
 # Build hooks
 hooks:
@@ -131,34 +154,34 @@ nav:
       #     - "Overview": a2a-cookbook/README.md
   - "Writing":
       - "Agent-to-Agent (A2A)":
-          - "Docker for Agents: Intro to A2A": blog/posts/a2a_intro.md
-          - "What's New in A2A: v1.0": blog/posts/a2a_v1_release.md
+          - "Docker for Agents: Intro to A2A": writing/a2a/intro/index.md
+          - "What's New in A2A: v1.0": writing/a2a/v1-release/index.md
           - "Multi-Tenancy in A2A": writing/a2a/multi-tenancy/index.md
-          - "A2A Integration Test Kit Dashboard": blog/posts/a2a_test_kit.md
-          - "Secure Multi-Agent Framework Whitepaper": blog/posts/a2a_security_whitepaper.md
+          - "A2A Integration Test Kit Dashboard": writing/a2a/test-kit/index.md
+          - "Secure Multi-Agent Framework Whitepaper": writing/a2a/security-whitepaper/index.md
       - "Google Cloud Next 2026":
-          - "Part 1: Intro & Next Gen Infrastructure": blog/posts/google-cloud-next-2026-agentic-cloud-infrastructure.md
-          - "Part 2: GAP & Foundational Models": blog/posts/google-cloud-next-2026-gap-foundational-models.md
-          - "Part 3: Developer Tools & MCP Servers": blog/posts/google-cloud-next-2026-dev-tools-mcp-servers.md
-          - "Part 4: Data Cloud, Protocols & Security": blog/posts/google-cloud-next-2026-agentic-data-protocols-security.md
-          - "Part 5: Workspace Reimagined & AI Agents": blog/posts/google-cloud-next-2026-workspace-ai-agents.md
+          - "Part 1: Intro & Next Gen Infrastructure": writing/cloud-next-2026/infrastructure/index.md
+          - "Part 2: GAP & Foundational Models": writing/cloud-next-2026/foundational-models/index.md
+          - "Part 3: Developer Tools & MCP Servers": writing/cloud-next-2026/dev-tools-mcp-servers/index.md
+          - "Part 4: Data Cloud, Protocols & Security": writing/cloud-next-2026/data-protocols-security/index.md
+          - "Part 5: Workspace Reimagined & AI Agents": writing/cloud-next-2026/workspace-ai-agents/index.md
       - "Gemini Guides":
-          - "Gemini CLI Cheatsheets": blog/posts/gemini-cli-cheatsheet-printouts.md
-          - "Gemini CLI Top Commands": blog/posts/gemini-cli-top-commands.md
-          - "Gemini 2.5 Flash Image Preview": blog/posts/gemini-2.5-flash-image-preview.md
-          - "Gemini as your Culinary Guide": blog/posts/gemini-as-your-culinary-guide.md
+          - "Gemini CLI Cheatsheets": writing/gemini/cli-cheatsheets/index.md
+          - "Gemini CLI Top Commands": writing/gemini/cli-top-commands/index.md
+          - "Gemini 2.5 Flash Image Preview": writing/gemini/flash-image-preview/index.md
+          - "Gemini as your Culinary Guide": writing/gemini/culinary-guide/index.md
       - "Technical Articles":
-          - "The Six Essential Protocols Powering the AI Agent Ecosystem": blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md
-          - "Role of Python in Google Cloud": blog/posts/the-role-of-python-in-google-cloud.md
-          - "Advanced Memory Management for Agentic AI Development": blog/posts/advanced-memory-management-agentic-ai.md
-          - "Google Cloud GKE Tops 2025 Magic Quadrant": blog/posts/gke_magic_quadrant.md
-          - "Vibe Coding Introduction": blog/posts/vibe-coding-intro.md
-          - "Vibe Coding Dos and Don'ts": blog/posts/vibe-coding-dos-donts.md
+          - "The Six Essential Protocols Powering the AI Agent Ecosystem": writing/technical/six-essential-protocols/index.md
+          - "Role of Python in Google Cloud": writing/technical/python-in-google-cloud/index.md
+          - "Advanced Memory Management for Agentic AI Development": writing/technical/memory-management-agentic-ai/index.md
+          - "Google Cloud GKE Tops 2025 Magic Quadrant": writing/technical/gke-magic-quadrant/index.md
+          - "Vibe Coding Introduction": writing/technical/vibe-coding-intro/index.md
+          - "Vibe Coding Dos and Don'ts": writing/technical/vibe-coding-dos-donts/index.md
       - "Personal":
-          - "10 Principles of Miyamoto Musashi": blog/posts/miyamoto-musashi-10-principles.md
-          - "Sky, Sea, and Truth": blog/posts/poem-sky-sea-truth.md
-          - "How to Spot an Ineffective Manager or Leader": blog/posts/spot-fakes-leaders.md
-          - "The Two Lenses of Leadership": blog/posts/two-lenses-of-leadership.md
+          - "10 Principles of Miyamoto Musashi": writing/personal/miyamoto-musashi/index.md
+          - "Sky, Sea, and Truth": writing/personal/sky-sea-truth/index.md
+          - "How to Spot an Ineffective Manager or Leader": writing/personal/spot-fake-leaders/index.md
+          - "The Two Lenses of Leadership": writing/personal/two-lenses-of-leadership/index.md
 
   - "Speaking":
       - "All Events": events/index.md

@@ -17,7 +17,7 @@ canonical_url: "https://medium.com/google-cloud/whats-new-in-a2a-protocol-v1-rel
 > /
 > [Medium](https://medium.com/google-cloud/whats-new-in-a2a-protocol-v1-release-b36dc6b4febd).
 
-![](images/a2a/a2a_v1_release_1.png) _A2A Documentations & New Updates._
+![](a2a_v1_release_1.png) _A2A Documentations & New Updates._
 
 🎉 A2A reached v1.0 — a production-ready, open standard for agents to talk to
 each other. It was created by Google but now it’s maintained under the **Linux
@@ -96,7 +96,7 @@ runs (not a live or real-time view). For the full story on how it works, the
 [ITK dashboard deep-dive](https://dev.to/sampathm/breaking-down-agent-silos-the-a2a-integration-test-kit-dashboard-is-here-4m60)
 covers it.
 
-![](images/a2a/a2a_v1_release_2.png)
+![](a2a_v1_release_2.png)
 _https://a2aproject.github.io/a2a-itk/dashboard/_
 
 ### The Python DX glow-up
@@ -159,7 +159,7 @@ At the top of the home page, we’ve added _Get started_ and _Read the spec_
 buttons, allowing you to instantly jump straight to the resources you need
 based on your immediate goals.
 
-![](images/a2a/a2a_v1_release_3.png) _A2A Home
+![](a2a_v1_release_3.png) _A2A Home
 Page — https://a2a-protocol.org/latest/_
 
 [**# Restructured Navigation**](https://github.com/a2aproject/A2A/blob/main/mkdocs.yml#L20)\
@@ -167,13 +167,13 @@ We’ve reorganized our previous layout into highly focused, grouped sections,
 making it effortless to pinpoint your specific topic of interest and dive right
 into development.
 
-![](images/a2a/a2a_v1_release_4.png) _A2A — restructured navigation_
+![](a2a_v1_release_4.png) _A2A — restructured navigation_
 
 [**# New A2A logo**](https://a2a-protocol.org/latest/assets/a2a_logo/color/SVG/a2a_color.svg)\
 A cleaner, more consistent mark across the docs, the repo, and everywhere A2A
 shows up.
 
-![](images/a2a/a2a_v1_release_5.png) _A2A New Logo_
+![](a2a_v1_release_5.png) _A2A New Logo_
 
 [**# Lastly, our new A2A Mascot**](https://github.com/a2aproject/A2A/blob/main/docs/assets/a2a_logo/mascot/PNG/a2a_ada.png)
 
@@ -185,7 +185,7 @@ doc can’t quite carry on their own: approachable, a little playful, and
 The protocol is grown-up and production-ready; the project should still feel
 like somewhere you’d want to hang out and contribute.
 
-![](images/a2a/a2a_v1_release_6.png) _A2A Mascot_
+![](a2a_v1_release_6.png) _A2A Mascot_
 
 ### Coming next
 

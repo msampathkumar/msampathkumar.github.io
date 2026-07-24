@@ -56,4 +56,7 @@ docs/blog/ProjectMgmt/
 
 # User documents
 *personal*
+# ...but the blog's "Personal" writing section IS published content.
+# (*personal* above would otherwise swallow the whole /writing/personal/ tree.)
+!docs/writing/personal/
 

@@ -11,7 +11,7 @@ categories:
 
 # The Six Essential Protocols Powering the AI Agent Ecosystem
 
-![Image](images/ai-agents-protocols-07.png)
+![Image](ai-agents-protocols-07.png)
 
 Six protocols are quietly emerging as the foundation of AI agent architecture: MCP, A2A, AG-UI, A2UI, AP2, and UCP. Together, they map out how agents will interact with tools, each other, users, and commerce systems. I've put together a quick breakdown of what they are and why they matter for the future of development.
 
@@ -38,7 +38,7 @@ Over the past year, I've spent a lot of time building and experimenting with AI 
 
 The [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) solves a fundamental challenge: how do agents interact with the thousands of tools and data sources available today? Rather than building custom integrations for each tool, MCP provides a unified interface that allows agents to connect to databases, APIs, files, calendars, calculators, and virtually any other tool through a single protocol.
 
-![Image](images/ai-agents-protocols-02.png)
+![Image](ai-agents-protocols-02.png)
 
 **Why it matters:** Without MCP, every agent would need custom code for every tool integration. With MCP, agents can instantly access any MCP-compatible tool, dramatically reducing development time and expanding capabilities.
 
@@ -50,7 +50,7 @@ The [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-starte
 
 The [A2A Protocol](https://a2a-protocol.org/latest/) addresses the reality that no single agent can do everything. In complex workflows, agents need to collaborate. For example, an Inventory Agent might need to work with a Research Agent to understand market trends and a Pricing Agent to set optimal prices.
 
-![Image](images/ai-agents-protocols-03.png)
+![Image](ai-agents-protocols-03.png)
 
 **Real-world scenario:** Imagine a supply chain optimization task where multiple specialized agents (logistics, inventory, demand forecasting) need to coordinate to minimize costs while maintaining service levels.
 
@@ -78,7 +78,7 @@ The [A2A Protocol](https://a2a-protocol.org/latest/) addresses the reality that 
 
 ### 5. AP2: Agent Payment Protocol (Agent 🤖 to Payment Interface 💳)
 
-![Image](images/ai-agents-protocols-04.png)
+![Image](ai-agents-protocols-04.png)
 
 **Purpose:** Enables secure, auditable financial transactions for autonomous agents.
 
@@ -93,7 +93,7 @@ The [AP2 Protocol](https://github.com/google-agentic-commerce/AP2) tackles one o
 
 ### 6. UCP: Universal Commerce Protocol (Agent 🤖 to Commerce 🛍)
 
-![Image](images/ai-agents-protocols-05.png)
+![Image](ai-agents-protocols-05.png)
 
 **Purpose:** Standardizes commerce interactions across different retailers and platforms.
 
@@ -107,7 +107,7 @@ The [AP2 Protocol](https://github.com/google-agentic-commerce/AP2) tackles one o
 
 These six protocols aren't just independent protocols—they work together to create a strong ecosystem:
 
-![Image](images/ai-agents-protocols-06.png)
+![Image](ai-agents-protocols-06.png)
 
 ## Real-World Impact: How These Protocols Transform Daily Work
 

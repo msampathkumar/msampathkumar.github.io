@@ -15,7 +15,7 @@ and act on the content — and useful to human readers too.
 
 - **[Cookbook](google-cloud-gemini-cookbook/README.md)** — step-by-step,
   runnable tutorials (the Gemini + Google Cloud series).
-- **[Writing](blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md)**
+- **[Writing](writing/technical/six-essential-protocols/index.md)**
   — essays and guides on agents, protocols, and developer practice.
 - **Speaking** — talks, workshops, and events.
 

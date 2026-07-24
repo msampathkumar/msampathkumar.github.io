@@ -9,7 +9,7 @@ categories:
 
 # 10 principles of Miyamoto Musashi
 
-![Miyamoto Musashi Portrait](images/miyamoto-musashi-portrait.png)
+![Miyamoto Musashi Portrait](miyamoto-musashi-portrait.png)
 
 ## About Miyamoto Musashi
 

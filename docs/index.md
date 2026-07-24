@@ -12,7 +12,7 @@ protocol, Gemini, and Google Cloud — for **agents first, and the humans who
 build them**.
 
 [Cookbook](google-cloud-gemini-cookbook/README.md){ .md-button }
-[Writing](blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem.md){ .md-button }
+[Writing](writing/technical/six-essential-protocols/index.md){ .md-button }
 [About](about.md){ .md-button }
 
 ## Latest posts

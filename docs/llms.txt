@@ -26,49 +26,49 @@ Step-by-step technical tutorials with runnable code.
 
 Deep dives on the A2A protocol: what it is, what's new, and how to run it in production.
 
-- [Docker for Agents: A Backend Engineer's Introduction to A2A](https://msampathkumar.github.io/blog/posts/a2a_intro/): A2A as a lightweight wrapper (like Docker) that makes any agent interoperable.
-- [What's New in A2A: v1.0, a Python DX Glow-Up, and a Fresh New Look](https://msampathkumar.github.io/blog/posts/a2a_v1_release/): The A2A v1.0 release, Python developer experience, and docs refresh.
-- [Three Agents Behind One Door: Multi-Tenancy in A2A](https://msampathkumar.github.io/blog/posts/a2a_multi_tenancy/): Three patterns for scaling agentic apps with A2A multi-tenancy.
-- [Breaking Down Agent Silos: The A2A Integration Test Kit Dashboard](https://msampathkumar.github.io/blog/posts/a2a_test_kit/): Cross-framework interoperability testing for A2A.
-- [Introducing the Whitepaper on Building Secure Multi-Agent Frameworks on Google Cloud](https://msampathkumar.github.io/blog/posts/a2a_security_whitepaper/): Enterprise-ready, secure multi-agent architecture.
+- [Docker for Agents: A Backend Engineer's Introduction to A2A](https://msampathkumar.github.io/writing/a2a/intro/): A2A as a lightweight wrapper (like Docker) that makes any agent interoperable.
+- [What's New in A2A: v1.0, a Python DX Glow-Up, and a Fresh New Look](https://msampathkumar.github.io/writing/a2a/v1-release/): The A2A v1.0 release, Python developer experience, and docs refresh.
+- [Three Agents Behind One Door: Multi-Tenancy in A2A](https://msampathkumar.github.io/writing/a2a/multi-tenancy/): Three patterns for scaling agentic apps with A2A multi-tenancy.
+- [Breaking Down Agent Silos: The A2A Integration Test Kit Dashboard](https://msampathkumar.github.io/writing/a2a/test-kit/): Cross-framework interoperability testing for A2A.
+- [Introducing the Whitepaper on Building Secure Multi-Agent Frameworks on Google Cloud](https://msampathkumar.github.io/writing/a2a/security-whitepaper/): Enterprise-ready, secure multi-agent architecture.
 
 ## Writing — Google Cloud Next 2026 series
 
 Five-part recap and analysis of Google Cloud Next 2026 announcements.
 
-- [Part 1 — Intro & Next-Gen Infrastructure](https://msampathkumar.github.io/blog/posts/google-cloud-next-2026-agentic-cloud-infrastructure/): The agentic cloud infrastructure story.
-- [Part 2 — GAP & Foundational Models](https://msampathkumar.github.io/blog/posts/google-cloud-next-2026-gap-foundational-models/): Gemini Enterprise Agent Platform and the foundational model lineup.
-- [Part 3 — Developer Tools & MCP Servers](https://msampathkumar.github.io/blog/posts/google-cloud-next-2026-dev-tools-mcp-servers/): Developer tooling and the role of Model Context Protocol.
-- [Part 4 — Data Cloud, Protocols & Security](https://msampathkumar.github.io/blog/posts/google-cloud-next-2026-agentic-data-protocols-security/): Data-cloud updates plus the agent-protocol and security stories.
-- [Part 5 — Workspace Reimagined & AI Agents](https://msampathkumar.github.io/blog/posts/google-cloud-next-2026-workspace-ai-agents/): Workspace + AI-agent integration.
+- [Part 1 — Intro & Next-Gen Infrastructure](https://msampathkumar.github.io/writing/cloud-next-2026/infrastructure/): The agentic cloud infrastructure story.
+- [Part 2 — GAP & Foundational Models](https://msampathkumar.github.io/writing/cloud-next-2026/foundational-models/): Gemini Enterprise Agent Platform and the foundational model lineup.
+- [Part 3 — Developer Tools & MCP Servers](https://msampathkumar.github.io/writing/cloud-next-2026/dev-tools-mcp-servers/): Developer tooling and the role of Model Context Protocol.
+- [Part 4 — Data Cloud, Protocols & Security](https://msampathkumar.github.io/writing/cloud-next-2026/data-protocols-security/): Data-cloud updates plus the agent-protocol and security stories.
+- [Part 5 — Workspace Reimagined & AI Agents](https://msampathkumar.github.io/writing/cloud-next-2026/workspace-ai-agents/): Workspace + AI-agent integration.
 
 ## Writing — Gemini guides
 
 Hands-on guides for using Gemini and the Gemini CLI.
 
-- [Gemini CLI Cheatsheets](https://msampathkumar.github.io/blog/posts/gemini-cli-cheatsheet-printouts/): Printable one-pagers for common Gemini CLI workflows.
-- [Gemini CLI — Top Commands](https://msampathkumar.github.io/blog/posts/gemini-cli-top-commands/): The commands that matter most in daily use.
-- [Gemini 2.5 Flash Image Preview](https://msampathkumar.github.io/blog/posts/gemini-2.5-flash-image-preview/): First look at Gemini 2.5 Flash image capabilities.
-- [Gemini as your Culinary Guide](https://msampathkumar.github.io/blog/posts/gemini-as-your-culinary-guide/): Using Gemini to plan meals and cook — a practical multimodal example.
+- [Gemini CLI Cheatsheets](https://msampathkumar.github.io/writing/gemini/cli-cheatsheets/): Printable one-pagers for common Gemini CLI workflows.
+- [Gemini CLI — Top Commands](https://msampathkumar.github.io/writing/gemini/cli-top-commands/): The commands that matter most in daily use.
+- [Gemini 2.5 Flash Image Preview](https://msampathkumar.github.io/writing/gemini/flash-image-preview/): First look at Gemini 2.5 Flash image capabilities.
+- [Gemini as your Culinary Guide](https://msampathkumar.github.io/writing/gemini/culinary-guide/): Using Gemini to plan meals and cook — a practical multimodal example.
 
 ## Writing — Technical articles
 
 Long-form analysis of agent architectures, protocols, and developer practice.
 
-- [The Six Essential Protocols Powering the AI Agent Ecosystem](https://msampathkumar.github.io/blog/posts/the-six-essential-protocols-powering-the-ai-agent-ecosystem/): Survey of A2A, MCP, and the other protocols that make agent-to-agent systems work.
-- [The Role of Python in Google Cloud](https://msampathkumar.github.io/blog/posts/the-role-of-python-in-google-cloud/): Why Python remains the lingua franca for cloud + AI on Google Cloud.
-- [Advanced Memory Management for Agentic AI Development](https://msampathkumar.github.io/blog/posts/advanced-memory-management-agentic-ai/): Patterns for short-term, long-term, and shared memory in agent systems.
-- [Vibe Coding — Introduction](https://msampathkumar.github.io/blog/posts/vibe-coding-intro/): What "vibe coding" is and where it fits in the software workflow.
-- [Vibe Coding — Dos and Don'ts](https://msampathkumar.github.io/blog/posts/vibe-coding-dos-donts/): Practical guardrails for shipping code with an AI pair.
+- [The Six Essential Protocols Powering the AI Agent Ecosystem](https://msampathkumar.github.io/writing/technical/six-essential-protocols/): Survey of A2A, MCP, and the other protocols that make agent-to-agent systems work.
+- [The Role of Python in Google Cloud](https://msampathkumar.github.io/writing/technical/python-in-google-cloud/): Why Python remains the lingua franca for cloud + AI on Google Cloud.
+- [Advanced Memory Management for Agentic AI Development](https://msampathkumar.github.io/writing/technical/memory-management-agentic-ai/): Patterns for short-term, long-term, and shared memory in agent systems.
+- [Vibe Coding — Introduction](https://msampathkumar.github.io/writing/technical/vibe-coding-intro/): What "vibe coding" is and where it fits in the software workflow.
+- [Vibe Coding — Dos and Don'ts](https://msampathkumar.github.io/writing/technical/vibe-coding-dos-donts/): Practical guardrails for shipping code with an AI pair.
 
 ## Writing — Reflections
 
 Personal essays on leadership, principles, and craft.
 
-- [10 Principles of Miyamoto Musashi](https://msampathkumar.github.io/blog/posts/miyamoto-musashi-10-principles/): Applying Musashi's principles to modern work.
-- [Sky, Sea, and Truth](https://msampathkumar.github.io/blog/posts/poem-sky-sea-truth/): A short poem.
-- [How to Spot an Ineffective Manager or Leader](https://msampathkumar.github.io/blog/posts/spot-fakes-leaders/): Field notes on identifying weak leadership early.
-- [The Two Lenses of Leadership](https://msampathkumar.github.io/blog/posts/two-lenses-of-leadership/): A framework for balancing empathy and directness.
+- [10 Principles of Miyamoto Musashi](https://msampathkumar.github.io/writing/personal/miyamoto-musashi/): Applying Musashi's principles to modern work.
+- [Sky, Sea, and Truth](https://msampathkumar.github.io/writing/personal/sky-sea-truth/): A short poem.
+- [How to Spot an Ineffective Manager or Leader](https://msampathkumar.github.io/writing/personal/spot-fake-leaders/): Field notes on identifying weak leadership early.
+- [The Two Lenses of Leadership](https://msampathkumar.github.io/writing/personal/two-lenses-of-leadership/): A framework for balancing empathy and directness.
 
 ## Speaking
 
