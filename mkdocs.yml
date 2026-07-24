@@ -79,6 +79,12 @@ plugins:
   # `make new-post` (see Makefile), which also wires them into the nav.
   - search
   - mermaid2
+  # Material's built-in media optimizer (free since 9.7.0). Optimizes .jpg via
+  # Pillow at build time (cached in .cache/plugin/optimize). PNG optimization is
+  # OFF because it needs the `pngquant` system binary; to enable it, install
+  # pngquant (e.g. `sudo apt-get install pngquant`) and drop `optimize_png`.
+  - optimize:
+      optimize_png: false
   - git-revision-date-localized:
       type: timeago
   # Preserve old /blog/posts/<slug>/ URLs after the move to /writing/<section>/
