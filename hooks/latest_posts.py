@@ -27,15 +27,14 @@ _FRONT_MATTER = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
 
 
 def _post_url(path: Path, docs_dir: Path) -> str:
-    """Derive the site URL for a post from its path (use_directory_urls rules).
+    """Source-relative link target for a post (docs_dir-relative ``.md`` path).
 
-    ``writing/a2a/multi-tenancy/index.md`` -> ``writing/a2a/multi-tenancy/`` and
-    ``blog/posts/foo.md`` -> ``blog/posts/foo/``.
+    Returning the source path (e.g. ``writing/a2a/multi-tenancy/index.md``)
+    rather than the directory URL lets MkDocs recognise and rewrite the link to
+    the final page URL — which avoids the "unrecognized relative link" INFO
+    messages MkDocs emits for bare-directory links.
     """
-    rel = path.relative_to(docs_dir).with_suffix("")
-    if rel.name == "index":
-        rel = rel.parent
-    return f"{rel.as_posix()}/"
+    return path.relative_to(docs_dir).as_posix()
 
 
 def _parse_post(path: Path, docs_dir: Path) -> dict | None:

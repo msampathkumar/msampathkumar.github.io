@@ -13,7 +13,7 @@ Build practical applications with Google Cloud's Gemini models — from a basic
 Streamlit chatbot to Retrieval-Augmented Generation and knowledge graphs, all
 deployable to Cloud Run.
 
-[Open the Gemini Cookbook →](google-cloud-gemini-cookbook/){ .md-button }
+[Open the Gemini Cookbook →](google-cloud-gemini-cookbook/README.md){ .md-button }
 
 ### :material-transit-connection-variant: A2A Cookbook <small>(coming soon)</small>
 
