@@ -1,6 +1,6 @@
 ---
 name: "agent-ready-blog"
-description: "Score and improve a blog post/page for agent-readiness (agents-first content) on the msampathkumar.github.io MkDocs site. Use when scoping a draft post before publishing, asking \"is this good for agents/LLMs?\", or preparing content in docs/blog/posts. Checks structure, TOC-worthy headings, TL;DR, canonical/front matter, runnable code, and llms.txt inclusion."
+description: "Score and improve a blog post/page for agent-readiness (agents-first content) on the msampathkumar.github.io MkDocs site. Use when scoping a draft post before publishing, asking \"is this good for agents/LLMs?\", or preparing content in docs/writing. Checks structure, TOC-worthy headings, TL;DR, canonical/front matter, runnable code, and llms.txt inclusion."
 ---
 
 # agent-ready-blog
@@ -15,11 +15,11 @@ with judgement.
 
 ## When to use this
 
-- Before publishing a new post in `docs/blog/posts/`.
+- Before publishing a new post in `docs/writing/<section>/<slug>/index.md`.
 - When asked "is this good for agents?", "make this agent-ready", or to review a
   draft's structure.
 - After importing posts (e.g. via `make import-devto`) and before promoting them
-  from `_internal/devto_import/` into `docs/blog/posts/`.
+  from `_internal/devto_import/` into `docs/writing/<section>/<slug>/`.
 
 ## When NOT to use this
 
@@ -29,7 +29,7 @@ with judgement.
 ## Steps
 
 1. **Run the mechanical scorer** on the target file:
-   `python scripts/score_post.py docs/blog/posts/<slug>.md`
+   `python scripts/score_post.py docs/writing/<section>/<slug>/index.md`
    It prints a 0-100 score and per-check PASS/FAIL. Treat <70 as "not ready".
 2. **Fix the mechanical gaps** it flags (see rubric). Re-run until >=85.
 3. **Apply the editorial rubric** (judgement, not scriptable) below.

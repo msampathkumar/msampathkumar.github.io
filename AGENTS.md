@@ -5,7 +5,7 @@ Personal MkDocs-Material site published to GitHub Pages (`msampathkumar.github.i
 ## Repo Layout
 
 - `docs/` — published site content. Entry: `docs/index.md` (Home).
-  - `docs/blog/posts/` — blog posts (front matter required; see below). `docs/blog/notes/` — unlisted notes (built but not in nav).
+  - `docs/writing/<section>/<slug>/index.md` — blog posts (folder-per-post, images/assets co-located; front matter required, see below). Sections map to `/writing/<section>/`: `a2a`, `cloud-next-2026`, `gemini`, `technical`, `personal`. `docs/blog/posts/` retains a few unlisted drafts; `docs/blog/notes/` — unlisted notes (built but not in nav). Old `/blog/posts/<slug>/` URLs are preserved via `mkdocs-redirects` (see `redirect_maps` in `mkdocs.yml`).
   - `docs/cookbook.md` — Cookbook **hub** at `/cookbook/` (Gemini live; A2A slot commented in nav for later). `docs/google-cloud-gemini-cookbook/` — the Gemini cookbook + lessons.
   - `docs/about.md` — About page (last nav item). `docs/blog/.authors.yml` — author profiles (id `sampathm`).
   - `docs/llms.txt` — hand-curated, link-first index for LLMs/agents. `docs/llms-full.txt` — **generated**, full inlined content (do not hand-edit; run `make llms`).
@@ -23,11 +23,11 @@ Personal MkDocs-Material site published to GitHub Pages (`msampathkumar.github.i
 
 ### Naming & URL conventions (foundational — keep it simple)
 
-- **Filenames = URLs.** A post at `docs/blog/posts/<slug>.md` is served at `/blog/posts/<slug>/`. Choose the filename deliberately; it is the public URL.
-- **Short, topical slugs.** Prefer `a2a_intro.md` over dev.to's `docker-for-agents-a-backend-engineers-introduction-to-a2a.md`. Lowercase; use `_` to separate words.
-- **Topic prefixes** group related content and sort together: `a2a_*` (Agent-to-Agent), `gke_*`, `gemini_*`, etc. Add new prefixes sparingly.
-- **Don't rename established posts** without adding a redirect — it breaks live URLs, inbound links, and SEO. Apply the convention to new content; retro-rename only with `mkdocs-redirects` in place.
-- **Images** live in `docs/blog/posts/images/<topic>/` named `<post-stem>_<n>.<ext>`. Localize remote images (e.g. Medium CDN) with `python scripts/localize_images.py --subdir <topic> <files>` so the site is self-contained.
+- **Paths = URLs.** A post at `docs/writing/<section>/<slug>/index.md` is served at `/writing/<section>/<slug>/`. Choose the section + slug deliberately; together they are the public URL. Scaffold with `make new-post TITLE="…" SECTION="a2a"` (or `python scripts/new_post.py`), which prints the nav line to paste into `mkdocs.yml`.
+- **Lowercase-kebab slugs, folder-per-post.** Each post is its own folder (`.../<slug>/index.md`) so images and assets live beside it. Lowercase, hyphen-separated; keep slugs short and topical (`/writing/a2a/multi-tenancy/`, not a long dev.to title). Drop the redundant section prefix from the slug (under `/writing/a2a/`, use `intro`, not `a2a-intro`).
+- **Sections** are the first URL segment and group related posts: `a2a`, `cloud-next-2026`, `gemini`, `technical`, `personal`. Add a new section deliberately — it becomes a public URL segment. (Note: `.gitignore`'s `*personal*` rule is explicitly un-ignored for `docs/writing/personal/` — keep that negation.)
+- **Don't rename or move an established post** without adding a `redirect_maps` entry in `mkdocs.yml` (`old/path.md: new/path/index.md`) — it breaks live URLs, inbound links, and SEO. On GitHub Pages these are client-side meta-refresh stubs, not 301s.
+- **Images** are co-located in the post's own folder and referenced by bare filename (`![](diagram.png)`). Keep names descriptive (`<topic>_<n>.<ext>`). Remote CDN images may be left as absolute URLs; only localize when you want the site self-contained.
 - **Buttons**: author Material buttons on a single short line (`[Text](url){ .md-button }`) that fits under 79 cols — mdformat's `wrap=79` will otherwise split the `{ .md-button }` attr-list across lines and it renders as literal text.
 
 ## Commands
@@ -37,7 +37,7 @@ make run                       # mkdocs serve on http://localhost:8099
 make deploy                    # runs `make llms` then gh-deploy (manual publish)
 make check-ga                  # build site/ and grep for Google Analytics injection
 make llms                      # regenerate docs/llms-full.txt from docs/llms.txt
-make new-post TITLE="My Title" # scaffold a dated post in docs/blog/posts/
+make new-post TITLE="My Title" SECTION="a2a"  # scaffold docs/writing/<section>/<slug>/index.md
 make import-devto              # pull dev.to/Medium posts to _internal/devto_import/ (review-first)
 mkdocs build                   # one-shot build into site/
 ```

@@ -2,7 +2,7 @@
 """Score a blog post for agent-readiness (mechanical checks).
 
 Usage:
-    python scripts/score_post.py docs/blog/posts/my-post.md
+    python scripts/score_post.py docs/writing/<section>/<slug>/index.md
 
 Prints a 0-100 score plus per-check PASS/WARN/FAIL. This covers the
 *mechanical* signals only — structure, front matter, headings, TL;DR,

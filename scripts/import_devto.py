@@ -4,7 +4,7 @@
 dev.to cross-posts to/from Medium, so pulling from dev.to covers both. This
 fetches your published articles' full Markdown into ``_internal/devto_import/``
 (git-ignored — nothing is published until you move a file into
-``docs/blog/posts/`` and wire it into mkdocs.yml).
+``docs/writing/<section>/<slug>/index.md`` and wire it into mkdocs.yml).
 
 - Skips any article whose title already exists on the site (dedupe).
 - Adds ``canonical_url`` front matter pointing at the original, to avoid

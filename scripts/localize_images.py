@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 """Download remote images referenced by Markdown posts into the repo.
 
-Makes the site self-contained: fetches remote images (e.g. Medium CDN) into
-``docs/blog/posts/images/<subdir>/`` with clean, predictable filenames
-(``<post-stem>_<n>.<ext>``) and rewrites the Markdown to point at the local
-copies. Article/source links (medium.com/... article URLs) are left alone —
-only image references are localized.
+Makes the site self-contained: fetches remote images (e.g. Medium CDN) and
+rewrites the Markdown to point at the local copies. Article/source links
+(medium.com/... article URLs) are left alone — only image references are
+localized.
+
+NOTE: posts now live in ``docs/writing/<section>/<slug>/index.md`` with images
+co-located in that same folder (referenced by bare filename). Prefer
+``--subdir .`` alongside the post, or move the downloaded files into the post
+folder afterwards. The default ``docs/blog/posts/images/`` layout is legacy.
 
 Usage:
-    python scripts/localize_images.py docs/blog/posts/a2a_intro.md ...
-    python scripts/localize_images.py --subdir a2a docs/blog/posts/a2a_*.md
+    python scripts/localize_images.py docs/writing/a2a/intro/index.md ...
 """
 
 from __future__ import annotations

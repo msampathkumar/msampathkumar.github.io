@@ -8,10 +8,10 @@ run:
 	@echo "Running the mkdocs"
 	mkdocs serve -a localhost:8099 -c
 
-# Scaffold a new blog post: make new-post TITLE="My Title"
+# Scaffold a new blog post: make new-post TITLE="My Title" SECTION="a2a"
 new-post:
-	@test -n "$(TITLE)" || (echo 'Usage: make new-post TITLE="My Title"' && exit 1)
-	python scripts/new_post.py "$(TITLE)"
+	@test -n "$(TITLE)" || (echo 'Usage: make new-post TITLE="My Title" [SECTION="technical"]' && exit 1)
+	python scripts/new_post.py "$(TITLE)" $(if $(SECTION),--section "$(SECTION)")
 
 # Regenerate llms-full.txt (full inlined content) from the curated llms.txt
 llms:
