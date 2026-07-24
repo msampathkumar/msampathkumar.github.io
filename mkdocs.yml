@@ -159,6 +159,7 @@ nav:
       # - "A2A Cookbook":  # coming soon — add lessons here
       #     - "Overview": a2a-cookbook/README.md
   - "Writing":
+      - writing/index.md
       - "Agent-to-Agent (A2A)":
           - "Docker for Agents: Intro to A2A": writing/a2a/intro/index.md
           - "What's New in A2A: v1.0": writing/a2a/v1-release/index.md
