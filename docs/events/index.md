@@ -7,6 +7,16 @@ As a Sr. Developer Programs Engineer at Google Cloud, I have actively contribute
 
 ## 2026
 
+### 2026-03-11: Google I/O Connect Berlin
+
+At Google I/O Connect Berlin I presented on Building Agents with Gemini, Google ADK and A2A (Agent-to-Agent) Communication. 
+
+In the first part of my demo, I have demonstrated how A2A's new multitenancy feature allows one to scale AI agent applications effortlessly while minimzing the infrastructure and operational code needed to do so.
+
+In the second part of my demo, I have presented a demo on ARDS - Agentic Resource Discovery Service which allows developers to easily discover and utilize services to get their tasks done.
+
+**Role**: Presenter
+
 ### 2026-03-11: GDG Cloud Fest PL
 
 **Role**: Presenter
