@@ -20,7 +20,7 @@ draft: false
 # Mastering tmux: Headless Sessions, Persistent Workflows & Automation
 
 <!-- AI Image Generation Prompt: A minimalist, clean illustration of a terminal window showing remote server persistence with tmux, glowing green and cyan accents on a dark slate background, no text, professional developer aesthetic, 16:9 ratio. -->
-![Mastering tmux Hero Image](images/mastering-tmux-hero.png)
+![Mastering tmux Hero Image](mastering-tmux-hero.png)
 
 **In a typical software developer's workflow, SSH disconnect anxiety is a silent productivity killer.** Whether you're running a long-term build, training an AI model, or migrating database records on a remote server, a sudden network drop or unstable connection can abruptly halt your command, leave tasks incomplete, and force hours of tedious cleanup.
 
@@ -45,7 +45,7 @@ When you create a standard manual session or execute commands directly in your t
 - You can simply reconnect via SSH, check your active sessions, and jump right back in using `tmux attach` (or `tmux-attach`), or leave it running in the background using `tmux detach` (or `tmux-detach`).
 
 <!-- AI Image Generation Prompt: A simple infographic diagram comparing a standard terminal session vs a remote tmux session. Left side: local session dying on network disconnect or PC lock. Right side: remote tmux daemon keeping sessions alive with attach and detach arrows, clean minimalist design, dark background. -->
-![Manual vs Remote Tmux Session Comparison](images/mastering-tmux-headless-workflow.png)
+![Manual vs Remote Tmux Session Comparison](mastering-tmux-headless-workflow.png)
 
 ---
 

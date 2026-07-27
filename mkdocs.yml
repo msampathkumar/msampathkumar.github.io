@@ -178,6 +178,7 @@ nav:
           - "Gemini 2.5 Flash Image Preview": writing/gemini/flash-image-preview/index.md
           - "Gemini as your Culinary Guide": writing/gemini/culinary-guide/index.md
       - "Technical Articles":
+          - "Mastering tmux: Headless Sessions & Automation": writing/technical/mastering-tmux/index.md
           - "The Six Essential Protocols Powering the AI Agent Ecosystem": writing/technical/six-essential-protocols/index.md
           - "Role of Python in Google Cloud": writing/technical/python-in-google-cloud/index.md
           - "Advanced Memory Management for Agentic AI Development": writing/technical/memory-management-agentic-ai/index.md
