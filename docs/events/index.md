@@ -7,7 +7,7 @@ As a Sr. Developer Programs Engineer at Google Cloud, I have actively contribute
 
 ## 2026
 
-### 2026-03-11: Google I/O Connect Berlin
+### 2026-06-25: Google I/O Connect Berlin
 
 **Role**: Presenter
 
