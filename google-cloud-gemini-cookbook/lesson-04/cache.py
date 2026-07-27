@@ -101,6 +101,9 @@ class CacheManager:
         except FileNotFoundError:
             print(f"Info: Cache file '{config.CACHE_FILE}' not found.")
             return None, None, False
+        except (IndexError, ValueError) as e:
+            print(f"Error: Cache file '{config.CACHE_FILE}' is corrupted or invalid: {e}")
+            return None, None, False
 
     def list_caches(self, cleanup=False):
         for content_cache in self.client.caches.list():
@@ -111,9 +114,11 @@ class CacheManager:
             print(f" - Expires at: {content_cache.expire_time}")
 
             # cleanup
-            if content_cache.display_name != config.CACHE_FILE:
-                continue
-            self.client.caches.delete(content_cache.name)
+            if cleanup and content_cache.display_name == config.CACHE_NAME:
+                print(
+                    f" - Deleting Cache: {content_cache.display_name} ({content_cache.name})"
+                )
+                self.client.caches.delete(content_cache.name)
 
     def main(self):
         cache_name, creation_datetime_object, is_valid_flag = (
