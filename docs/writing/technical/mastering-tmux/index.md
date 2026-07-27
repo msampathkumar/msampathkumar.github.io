@@ -159,7 +159,6 @@ When you attach to a single session from different windows or SSH terminals, exe
 
 Found this guide helpful? I'd love to hear your thoughts or share your tmux tips!
 
-- 🐦 Share your setup on [Twitter/X](https://twitter.com/sampathm)
 - 💼 Connect on [LinkedIn](https://linkedin.com/in/msampathkumar)
 - 🌟 Star the project on [GitHub](https://github.com/msampathkumar)
 

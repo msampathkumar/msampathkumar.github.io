@@ -52,7 +52,9 @@ GEMINI.md*
 docs/blog/ProjectMgmt/
 
 # Github Workflow
-.github/workflows
+.github/workflows/
+!.github/workflows/publish-docs.yaml
+
 
 # User documents
 *personal*

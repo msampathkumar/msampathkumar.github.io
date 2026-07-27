@@ -47,4 +47,5 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install -r requirements.txt
-      - run: mkdocs gh-deploy --force
+      - run: python scripts/gen_llms_full.py
+      - run: mkdocs gh-deploy --clean --force
