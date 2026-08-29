@@ -41,11 +41,11 @@ theme:
         icon: material/brightness-4
         name: Switch to system preference
   features:
-    - navigation.indexes # for blog/index.md
+    # - navigation.indexes # for blog/index.md
     - navigation.tabs
     - navigation.top
     - navigation.instant
-    - navigation.expand
+    # - navigation.expand
     - navigation.path
     - navigation.tracking
     # toc.integrate is intentionally OFF so the table of contents renders as a
