@@ -104,6 +104,7 @@ plugins:
   # whenever a post is moved or renamed.
   - redirects:
       redirect_maps:
+        blog/index.md: writing/index.md
         blog/posts/a2a_multi_tenancy.md: writing/a2a/multi-tenancy/index.md
         blog/posts/a2a_intro.md: writing/a2a/intro/index.md
         blog/posts/a2a_v1_release.md: writing/a2a/v1-release/index.md
