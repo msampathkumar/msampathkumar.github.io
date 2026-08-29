@@ -4,7 +4,32 @@ This document details the technical architecture, design patterns, rendering pip
 
 ______________________________________________________________________
 
-## 1. Core Architecture & Tech Stack
+## 1. Architectural Goals & Non-Goals
+
+### 🎯 Goals
+- **Deterministic & Agent-Centric**: Provide clean, predictable Markdown endpoints and automated machine-readable context streams (`/llms.txt`, `/llms-full.txt`) for AI crawlers, IDE assistants, and sub-agents.
+- **Fast, Zero-JS Content Delivery**: Ensure all critical prose, code samples, and architectural guides render statically and execute blazingly fast without requiring client-side JavaScript execution.
+- **Permanent URL Stability**: Preserve every historical and syndicate link via automated client-side redirect maps (`mkdocs-redirects`).
+- **Co-Located Asset Model**: Every article is self-contained within its own directory (`docs/writing/<section>/<slug>/index.md`) alongside its dedicated hero image and media assets.
+
+### 🚫 Non-Goals
+- **No Dynamic Backend Server Runtimes**: Avoid database-backed CMS complexity; all state is checked into Git and compiled into pure static HTML/CSS.
+- **No Client-Side Framework Bloat**: Avoid heavy client frameworks (React, Vue, SPA bundles) for basic documentation reading.
+- **No Orphaned or Broken Links**: Disallow broken relative paths or missing nav linkages (`mkdocs build --strict` gating).
+
+______________________________________________________________________
+
+## 2. Core Architecture Rules & Constraints
+
+1. **Strict Build Integrity**: Every change must pass `mkdocs build --strict` with zero warnings and zero broken relative links.
+2. **Reverse-Chronological Ordering**: All navigation trees (`mkdocs.yml`), LLM indexes (`docs/llms.txt`), and writing hubs (`docs/writing/index.md`) must strictly list new posts top-first by publication date.
+3. **Canonical Attribution**: Any post imported or cross-posted from Medium or dev.to must include `canonical_url` in YAML frontmatter and a standard blockquote callout.
+4. **Hero Image Standards**: Co-located `hero.png` (16:9, dark slate `#0f172a`, glowing accents, zero text) with prompt documentation comment.
+5. **No Direct Git Commits**: Never perform git operations without explicit user confirmation.
+
+______________________________________________________________________
+
+## 3. Core Architecture & Tech Stack
 
 - **Static Site Generator**: [MkDocs](https://www.mkdocs.org/) with [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) theme.
 - **Hosting & CDN**: GitHub Pages with custom domain publishing (`msampathkumar.github.io`).
@@ -12,9 +37,10 @@ ______________________________________________________________________
 - **Navigation Model**: Fully manual curated navigation defined in `mkdocs.yml` (`nav:`). The Material `blog` plugin is intentionally disabled to avoid auto-hiding posts from manual tabs.
 - **Client-Side Redirects**: Managed via `mkdocs-redirects` plugin (`redirect_maps` in `mkdocs.yml`) to preserve historical URLs without 404s.
 
+
 ______________________________________________________________________
 
-## 2. Directory Layout & Routing Conventions
+## 4. Directory Layout & Routing Conventions
 
 ```text
 ├── docs/
@@ -35,6 +61,7 @@ ______________________________________________________________________
 │   └── latest_posts.py          # MkDocs build hook injecting latest posts into Home
 ├── scripts/                     # For tasks, scripts, and automation use this
 │   ├── gen_llms_full.py         # Inlines full markdown docs into docs/llms-full.txt
+│   ├── gen_readme.py            # Regenerates README.md and docs/writing/index.md in sync
 │   ├── new_post.py              # CLI scaffolding tool for new folder-per-post articles
 │   ├── score_post.py            # Mechanical agent-readiness linting script (0–100)
 │   └── import_devto.py          # Migration script for external syndication
@@ -51,7 +78,7 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
-## 3. Hero Image Specifications & Design System
+## 5. Hero Image Specifications & Design System
 
 To maintain visual cohesion across technical and architectural articles, all hero images adhere to a strict visual design system:
 
@@ -75,7 +102,7 @@ Every hero image must be preceded by an HTML comment with the exact prompt used:
 
 ______________________________________________________________________
 
-## 4. Build Hooks & Dynamic Injection
+## 6. Build Hooks & Dynamic Injection
 
 ### Latest Posts Hook (`hooks/latest_posts.py`)
 
@@ -96,7 +123,7 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
-## 5. CI/CD & GitHub Pages Deployment Pipeline
+## 7. CI/CD & GitHub Pages Deployment Pipeline
 
 The site is automatically deployed via GitHub Actions:
 
@@ -107,3 +134,4 @@ The site is automatically deployed via GitHub Actions:
   1. Python setup & dependency installation from `requirements.txt`.
   1. `python scripts/gen_llms_full.py` to regenerate the full LLM index.
   1. `mkdocs gh-deploy --clean --force` to build and publish static HTML to the `gh-pages` branch.
+
