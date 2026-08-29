@@ -8,9 +8,12 @@ categories:
   - "AI"
   - "Development"
   - "CLI"
+canonical_url: "https://medium.com/google-cloud/master-your-workflow-top-gemini-cli-commands-you-should-know-gemini-cli-cheatsheet-7b1f5788e428"
 ---
 
 # Master Your Workflow: Top Gemini CLI Commands You Should Know
+
+> 💡 *Originally published on [Google Cloud Community on Medium](https://medium.com/google-cloud/master-your-workflow-top-gemini-cli-commands-you-should-know-gemini-cli-cheatsheet-7b1f5788e428).*
 
 I've always been a terminal dweller. There's something uniquely satisfying about staying in the command line, but as my workflows grew, I found myself constantly context-switching—jumping to the browser to check docs, to a GUI for Git, and back. It was a focus killer.
 

@@ -62,6 +62,15 @@ def get_all_posts() -> list[dict]:
     return posts
 
 
+SECTION_ORDER = [
+    ("a2a", "🤖 Agent-to-Agent (A2A)"),
+    ("cloud-next-2026", "☁️ Google Cloud Next 2026"),
+    ("gemini", "♊ Gemini Guides"),
+    ("technical", "🛠️ Technical Articles"),
+    ("personal", "💡 Personal & Reflections"),
+]
+
+
 def render_readme(posts: list[dict]) -> str:
     parts = [
         "# Sampath Kumar — Digital Garden & Engineering Reference",
@@ -72,13 +81,22 @@ def render_readme(posts: list[dict]) -> str:
         "",
         "## 📚 Published Articles & Technical Guides",
         "",
-        f"Below is a list of all {len(posts)} articles published on the site, ordered newest first:",
+        f"Below is a directory of all {len(posts)} articles published on the site, organized by topic:",
         "",
     ]
 
-    for p in posts:
-        date_str = p["date"].strftime("%b %d, %Y")
-        parts.append(f"- **`{date_str}`** — [{p['title']}]({p['url']})")
+    for sec_key, sec_title in SECTION_ORDER:
+        sec_posts = [p for p in posts if p["section"] == sec_key]
+        if not sec_posts:
+            continue
+        parts.extend([
+            f"### {sec_title}",
+            "",
+        ])
+        for p in sec_posts:
+            date_str = p["date"].strftime("%b %d, %Y")
+            parts.append(f"- **`{date_str}`** — [{p['title']}]({p['url']})")
+        parts.append("")
 
     parts.extend([
         "",

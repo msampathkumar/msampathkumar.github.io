@@ -7,11 +7,14 @@ categories:
   - "Protocols"
   - "AI Development"
   - "Integration"
+canonical_url: "https://medium.com/google-cloud/the-six-essential-protocols-powering-the-ai-agent-ecosystem-8b752c74f2e0"
 ---
 
 # The Six Essential Protocols Powering the AI Agent Ecosystem
 
 ![Image](ai-agents-protocols-07.png)
+
+> 💡 *Originally published on [Google Cloud Community on Medium](https://medium.com/google-cloud/the-six-essential-protocols-powering-the-ai-agent-ecosystem-8b752c74f2e0).*
 
 Six protocols are quietly emerging as the foundation of AI agent architecture: MCP, A2A, AG-UI, A2UI, AP2, and UCP. Together, they map out how agents will interact with tools, each other, users, and commerce systems. I've put together a quick breakdown of what they are and why they matter for the future of development.
 

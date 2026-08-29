@@ -58,23 +58,38 @@ Long-form analysis of agent architectures, protocols, and developer practice.
 
 - [Building an Agentic Sandbox: Provisioning a Google Cloud VM Workstation](https://msampathkumar.github.io/writing/technical/building-agentic-sandbox-vm/): How to configure an isolated Compute Engine VM as a personal sandbox and secondary workstation for running Agentic AI harnesses, Gemini, and Vertex AI experiments.
 - [Setting Up GUI & Chrome Remote Desktop on a Google Cloud VM](https://msampathkumar.github.io/writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/): How to configure a lightweight XFCE desktop environment and Chrome Remote Desktop on a Google Cloud Compute Engine VM for browser-based remote access.
-- [Context-Driven Development with Conductor for Gemini CLI](https://msampathkumar.github.io/writing/technical/conductor-gemini-cli/): Learn how to give Gemini CLI the full context of your project with Conductor and Context-Driven Development (CDD).
-- [Documentation-Driven Development (D3) in the AI Era](https://msampathkumar.github.io/writing/technical/documentation-driven-development/): Why documentation is becoming the primary driver for software development in the age of LLMs, Agents, and Vibe Coding.
-- [The Quantum Leap in AI: Faster, Greener, and More Powerful](https://msampathkumar.github.io/writing/technical/quantum-ai-era/): Exploring the synergies between quantum computing and AI.
-- [The Six Essential Protocols Powering the AI Agent Ecosystem](https://msampathkumar.github.io/writing/technical/six-essential-protocols/): Survey of A2A, MCP, and the other protocols that make agent-to-agent systems work.
+- [Mastering tmux: Headless Sessions & Automation](https://msampathkumar.github.io/writing/technical/mastering-tmux/): How tmux headless sessions, session resurrection, and automation empower persistent developer workflows.
+- [5 Science-Backed Takeaways to Improve Your Multi-Agentic Systems](https://msampathkumar.github.io/writing/technical/science-backed-multi-agent-takeaways/): Empirical findings from 180 multi-agent configurations on scalability, coordination trade-offs, and architecture design.
+- [The Beads Memory System: Technical Architecture and Integration with Gemini CLI](https://msampathkumar.github.io/writing/technical/beads-memory-system/): Architecture breakdown of the Beads memory system, SQLite + JSONL hybrid storage, and Gemini CLI MCP integration.
 - [The Role of Python in Google Cloud](https://msampathkumar.github.io/writing/technical/python-in-google-cloud/): Why Python remains the lingua franca for cloud + AI on Google Cloud.
 - [Advanced Memory Management for Agentic AI Development](https://msampathkumar.github.io/writing/technical/memory-management-agentic-ai/): Patterns for short-term, long-term, and shared memory in agent systems.
-- [Vibe Coding — Introduction](https://msampathkumar.github.io/writing/technical/vibe-coding-intro/): What "vibe coding" is and where it fits in the software workflow.
-- [Vibe Coding — Dos and Don'ts](https://msampathkumar.github.io/writing/technical/vibe-coding-dos-donts/): Practical guardrails for shipping code with an AI pair.
+- [The Quantum Leap in AI: Faster, Greener, and More Powerful](https://msampathkumar.github.io/writing/technical/quantum-ai-era/): Exploring the synergies between quantum computing and AI.
+- [Context-Driven Development with Conductor for Gemini CLI](https://msampathkumar.github.io/writing/technical/conductor-gemini-cli/): Learn how to give Gemini CLI the full context of your project with Conductor and Context-Driven Development (CDD).
+- [Documentation-Driven Development (D3) in the AI Era](https://msampathkumar.github.io/writing/technical/documentation-driven-development/): Why documentation is becoming the primary driver for software development in the age of LLMs, Agents, and Vibe Coding.
+- [Vibe Coding: What It Is, When to Use It, and When to Hit the Brakes](https://msampathkumar.github.io/writing/technical/vibe-coding-intro/): What "vibe coding" is, when it supercharges developer velocity, and where it fits in the software workflow.
+- [Beyond the Prompt: Why Your Next AI Agent Needs a Brain (The COALA Architecture)](https://msampathkumar.github.io/writing/technical/coala-agent-brain-architecture/): Decomposing agent intelligence into modular memory, action spaces, and cognitive decision cycles.
+- [Google Cloud GKE Tops 2025 Magic Quadrant](https://msampathkumar.github.io/writing/technical/gke-magic-quadrant/): Analysis of Google Kubernetes Engine leadership in enterprise container management.
+- [DeepSeek API Service on Vertex AI Model Garden](https://msampathkumar.github.io/writing/technical/deepseek-vertex-ai-model-garden/): Deploying, securing, and querying DeepSeek models on Google Cloud Vertex AI infrastructure.
+- [Unlocking the Secret Language of Sound: How Computers 'Hear' (for Python Devs!)](https://msampathkumar.github.io/writing/technical/secret-language-of-sound/): Audio signal processing fundamentals, Fourier transforms (FFT), and Mel-spectrograms for AI models.
+- [Gemini Global Endpoint: Enhanced Availability for Your AI Applications](https://msampathkumar.github.io/writing/technical/gemini-global-endpoint/): High-availability routing and cross-region resilience with Vertex AI Gemini global endpoints.
+- [Keep Your Git Clean: Setting Up a Global .gitignore](https://msampathkumar.github.io/writing/technical/global-gitignore-setup/): Universal workstation configuration to keep OS artifacts and IDE caches out of git repositories.
+- [Podman Developer Notes: A Daemonless, Rootless Container Guide](https://msampathkumar.github.io/writing/technical/podman-developer-notes/): Using Podman as a secure, rootless Docker alternative with native Kubernetes Pod manifest support.
+- [The Six Essential Protocols Powering the AI Agent Ecosystem](https://msampathkumar.github.io/writing/technical/six-essential-protocols/): Survey of A2A, MCP, and the other protocols that make agent-to-agent systems work.
+- [Token Counting: What is it? Why is it required? How to use?](https://msampathkumar.github.io/writing/technical/token-counting-explained/): How language models tokenize text, why token counting prevents billing surprises, and SDK implementation.
+- [Load Balancing Blitz: Google Cloud Load Balancing Introduction](https://msampathkumar.github.io/writing/technical/load-balancing-blitz-intro/): Overview of global vs regional, external vs internal application load balancing on Google Cloud.
+- [Vibe Coding: Essential Dos, Don'ts and Guardrails](https://msampathkumar.github.io/writing/technical/vibe-coding-dos-donts/): Practical guardrails for shipping code with an AI pair.
+- [What is Sharding, Partitioning and Why Sharding Managers?](https://msampathkumar.github.io/writing/technical/sharding-partitioning-sharding-managers/): Database scaling principles, horizontal sharding vs vertical partitioning, and shard manager proxy architectures.
 
 ## Writing — Reflections
 
 Personal essays on leadership, principles, and craft.
 
-- [10 Principles of Miyamoto Musashi](https://msampathkumar.github.io/writing/personal/miyamoto-musashi/): Applying Musashi's principles to modern work.
-- [Sky, Sea, and Truth](https://msampathkumar.github.io/writing/personal/sky-sea-truth/): A short poem.
+- [The Two Lenses of Leadership: Operational Fixes vs. Strategic Bets](https://msampathkumar.github.io/writing/personal/two-lenses-of-leadership/): A framework for balancing empathy and directness.
 - [How to Spot an Ineffective Manager or Leader](https://msampathkumar.github.io/writing/personal/spot-fake-leaders/): Field notes on identifying weak leadership early.
-- [The Two Lenses of Leadership](https://msampathkumar.github.io/writing/personal/two-lenses-of-leadership/): A framework for balancing empathy and directness.
+- [Sky, Sea, and Truth](https://msampathkumar.github.io/writing/personal/sky-sea-truth/): A short poem.
+- [10 Principles of Miyamoto Musashi](https://msampathkumar.github.io/writing/personal/miyamoto-musashi/): Applying Musashi's principles to modern work.
+- [A DevRel's Perspective: Navigating Product Launches, Quality, and Market Velocity in the AI Era](https://msampathkumar.github.io/writing/personal/devrel-product-launches-market-velocity/): Managing Developer Relations and technical trust in the fast-moving AI landscape.
+- [7 Key Strategies for Maximising Productivity and Avoiding Burnout at Work](https://msampathkumar.github.io/writing/personal/productivity-avoiding-burnout/): Sustainable energy management, deep work protection, and burnout prevention for engineers.
 
 ## Speaking
 

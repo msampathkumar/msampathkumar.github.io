@@ -4,11 +4,14 @@ date: 2025-09-04
 authors: [sampathm]
 categories:
   - "Gemini Flash Image Generations"
+canonical_url: "https://medium.com/google-cloud/gemini-2-5-flash-vs-gemini-2-0-flash-a-new-era-for-ai-image-generation-e2a08fc5d82b"
 ---
 
 # Gemini 2.5 Flash Image Preview
 
 ![](gemini-2.5-flash-image-preview-final-banner.png)
+
+> 💡 *Originally published on [Google Cloud Community on Medium](https://medium.com/google-cloud/gemini-2-5-flash-vs-gemini-2-0-flash-a-new-era-for-ai-image-generation-e2a08fc5d82b).*
 
 ## **Gemini 2.5 Flash vs. Gemini 2.0 Flash: A New Era for AI Image Generation**
 

@@ -1,13 +1,14 @@
 ---
-title: Vibe Coding - Dos and Donts
+title: "Vibe Coding: Essential Dos, Don'ts and Guardrails"
 date: 2023-11-30
 authors: [sampathm]
-description: Vibe Coding - Dos and Donts
+description: "Practical guardrails and dos and don'ts for pairing effectively with AI while preserving code correctness and security."
 categories:
-  - General
+  - Development
+  - Best Practices
 ---
 
-# Vibe Coding Dos and Don'ts
+# Vibe Coding: Essential Dos, Don'ts and Guardrails
 
 ## DO's and DOnt's with Vibe Coding
 

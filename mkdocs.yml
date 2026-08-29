@@ -204,20 +204,33 @@ nav:
           - "Building an Agentic Sandbox VM": writing/technical/building-agentic-sandbox-vm/index.md
           - "Setting Up GUI & Chrome Remote Desktop on GCP VM": writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/index.md
           - "Mastering tmux: Headless Sessions & Automation": writing/technical/mastering-tmux/index.md
+          - "5 Science-Backed Takeaways for Multi-Agent Systems": writing/technical/science-backed-multi-agent-takeaways/index.md
+          - "The Beads Memory System: Architecture & Gemini CLI": writing/technical/beads-memory-system/index.md
           - "Role of Python in Google Cloud": writing/technical/python-in-google-cloud/index.md
           - "Advanced Memory Management for Agentic AI Development": writing/technical/memory-management-agentic-ai/index.md
           - "The Quantum Leap in AI": writing/technical/quantum-ai-era/index.md
           - "Context-Driven Development with Conductor": writing/technical/conductor-gemini-cli/index.md
           - "Documentation-Driven Development (D3)": writing/technical/documentation-driven-development/index.md
-          - "Vibe Coding Introduction": writing/technical/vibe-coding-intro/index.md
+          - "Vibe Coding: What, When & Limits": writing/technical/vibe-coding-intro/index.md
+          - "Beyond the Prompt: COALA Agent Architecture": writing/technical/coala-agent-brain-architecture/index.md
           - "Google Cloud GKE Tops 2025 Magic Quadrant": writing/technical/gke-magic-quadrant/index.md
+          - "DeepSeek API Service on Vertex AI": writing/technical/deepseek-vertex-ai-model-garden/index.md
+          - "Unlocking the Secret Language of Sound": writing/technical/secret-language-of-sound/index.md
+          - "Gemini Global Endpoint: High Availability": writing/technical/gemini-global-endpoint/index.md
+          - "Keep Your Git Clean: Global .gitignore": writing/technical/global-gitignore-setup/index.md
+          - "Podman Developer Notes": writing/technical/podman-developer-notes/index.md
           - "The Six Essential Protocols Powering the AI Agent Ecosystem": writing/technical/six-essential-protocols/index.md
-          - "Vibe Coding Dos and Don'ts": writing/technical/vibe-coding-dos-donts/index.md
+          - "Token Counting: What, Why & How": writing/technical/token-counting-explained/index.md
+          - "Load Balancing Blitz: Introduction": writing/technical/load-balancing-blitz-intro/index.md
+          - "Vibe Coding: Dos, Don'ts & Guardrails": writing/technical/vibe-coding-dos-donts/index.md
+          - "What is Sharding, Partitioning and Why Sharding Managers?": writing/technical/sharding-partitioning-sharding-managers/index.md
       - "Personal":
-          - "10 Principles of Miyamoto Musashi": writing/personal/miyamoto-musashi/index.md
-          - "Sky, Sea, and Truth": writing/personal/sky-sea-truth/index.md
-          - "How to Spot an Ineffective Manager or Leader": writing/personal/spot-fake-leaders/index.md
           - "The Two Lenses of Leadership": writing/personal/two-lenses-of-leadership/index.md
+          - "How to Spot an Ineffective Manager or Leader": writing/personal/spot-fake-leaders/index.md
+          - "Sky, Sea, and Truth": writing/personal/sky-sea-truth/index.md
+          - "10 Principles of Miyamoto Musashi": writing/personal/miyamoto-musashi/index.md
+          - "A DevRel's Perspective on Product Launches & Velocity": writing/personal/devrel-product-launches-market-velocity/index.md
+          - "7 Key Strategies for Maximising Productivity & Avoiding Burnout": writing/personal/productivity-avoiding-burnout/index.md
 
   - "Speaking":
       - "All Events": events/index.md

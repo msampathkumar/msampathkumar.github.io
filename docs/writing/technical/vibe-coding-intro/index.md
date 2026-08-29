@@ -1,13 +1,14 @@
 ---
-title: Vibe Coding - Intro
+title: "Vibe Coding: What It Is, When to Use It, and When to Hit the Brakes"
 date: 2025-11-30
 authors: [sampathm]
+description: "What is vibe coding, when does it supercharge developer velocity, and when should you hit the brakes for production reliability."
 categories:
   - LLM
   - Development
 ---
 
-# Vibe Coding Introduction
+# Vibe Coding: What It Is, When to Use It, and When to Hit the Brakes
 
 ## Vibe Code? The What, Why, and How (And When I Hit the Brakes)
 

@@ -6,9 +6,12 @@ description: >
   An opinionated, yet fact-driven, perspective on Python's prominent role in Google Cloud, clarifying why you often encounter Python examples in Google Cloud documentation, especially for Gemini features.
 categories:
   - Technical Articles
+canonical_url: "https://medium.com/google-cloud/python-in-google-cloud-more-than-just-examples-for-gemini-6be2975097f7"
 ---
 
 # **Python in Google Cloud: More Than Just Examples for Gemini**
+
+> 💡 *Originally published on [Google Cloud Community on Medium](https://medium.com/google-cloud/python-in-google-cloud-more-than-just-examples-for-gemini-6be2975097f7).*
 
 Is Python the ultimate language for Google Cloud development? Is it Google's
 official recommendation, or do alternatives like Java, Go, or Rust hold sway in

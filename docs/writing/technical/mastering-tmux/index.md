@@ -14,6 +14,7 @@ tags:
   - automation
   - devops
   - headless
+canonical_url: "https://medium.com/@maddula/mastering-tmux-how-a-lunch-break-saved-my-persistent-workflows-045d1cfe64d8"
 draft: false
 ---
 
@@ -22,6 +23,8 @@ draft: false
 <!-- AI Image Generation Prompt: A minimalist, clean illustration of a terminal window showing remote server persistence with tmux, glowing green and cyan accents on a dark slate background, no text, professional developer aesthetic, 16:9 ratio. -->
 
 ![Mastering tmux Hero Image](mastering-tmux-hero.png)
+
+> 💡 *Originally published on [Medium](https://medium.com/@maddula/mastering-tmux-how-a-lunch-break-saved-my-persistent-workflows-045d1cfe64d8).*
 
 **In a typical software developer's workflow, SSH disconnect anxiety is a silent productivity killer.** Whether you're running a long-term build, training an AI model, or migrating database records on a remote server, a sudden network drop or unstable connection can abruptly halt your command, leave tasks incomplete, and force hours of tedious cleanup.
 
