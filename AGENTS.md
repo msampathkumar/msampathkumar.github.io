@@ -1,75 +1,88 @@
-# Agent Instructions
+# Agent Instructions & Operating Manual
 
-Personal MkDocs-Material site published to GitHub Pages (`msampathkumar.github.io`). Content-only repo — no application code.
+This document defines the agent operating principles, user goals, content workflows, and quality standards for `msampathkumar.github.io`.
 
-## Repo Layout
+For full technical architecture, site layout, CI/CD pipeline, and design specifications, see [**`DESIGN.md`**](DESIGN.md).
 
-- `docs/` — published site content. Entry: `docs/index.md` (Home).
-  - `docs/writing/<section>/<slug>/index.md` — blog posts (folder-per-post, images/assets co-located; front matter required, see below). Sections map to `/writing/<section>/`: `a2a`, `cloud-next-2026`, `gemini`, `technical`, `personal`. `docs/blog/posts/` retains a few unlisted drafts; `docs/blog/notes/` — unlisted notes (built but not in nav). Old `/blog/posts/<slug>/` URLs are preserved via `mkdocs-redirects` (see `redirect_maps` in `mkdocs.yml`).
-  - `docs/cookbook.md` — Cookbook **hub** at `/cookbook/` (Gemini live; A2A slot commented in nav for later). `docs/google-cloud-gemini-cookbook/` — the Gemini cookbook + lessons.
-  - `docs/about.md` — About page (last nav item). `docs/blog/.authors.yml` — author profiles (id `sampathm`).
-  - `docs/llms.txt` — hand-curated, link-first index for LLMs/agents. `docs/llms-full.txt` — **generated**, full inlined content (do not hand-edit; run `make llms`).
-- `mkdocs.yml` — site config + navigation. New pages must be wired into `nav:` or they won't appear. The Material **`blog` plugin is intentionally disabled** (it excludes `blog/posts` from the manual nav and breaks the curated Writing tab).
-- `hooks/latest_posts.py` — build hook that injects newest posts into Home at the `<!-- LATEST_POSTS -->` marker (reads each post's front-matter `date`).
-- `scripts/` — `gen_llms_full.py` (llms-full), `new_post.py` (scaffold), `import_devto.py` (import), `score_post.py` (agent-readiness score).
-- `.cloudcode/skills/agent-ready-blog/` — skill to scope a post for agents-first quality.
-- `_internal/`, `archive/`, `docs/blog/ProjectMgmt/`, anything matching `internal*` or `*personal*` — gitignored drafts. Don't commit. (Note: the pattern is `internal*` **and** `_internal/` — the leading underscore needs its own rule.)
+______________________________________________________________________
 
-## Content conventions
+## 1. User Profile & Strategic Ambitions
 
-- **Every blog post needs valid YAML front matter**: `title`, `date` (YYYY-MM-DD), `authors: [sampathm]`, `categories:`, and ideally `description:`. The Home "Latest posts" list and dates depend on it.
-- **Agents-first**: posts should have `##`/`###` sections (so the right-hand TOC renders), lead with a TL;DR, and define acronyms. Score a draft with `python scripts/score_post.py <file>` or the `agent-ready-blog` skill.
-- Imported/cross-posted content should set `canonical_url` to the original (avoids duplicate-content SEO).
+- **Site Owner**: Sampath Kumar (`sampathm`)
+- **Focus Areas**: Google Cloud, Gemini AI, Agentic Workflows (A2A, ADK), Modern Cloud Architecture, and Developer Tooling.
+- **Audience & Tone**: Professional cloud architects, AI engineers, and technical leaders. Clean, direct, highly structured, and actionable ("agents-first, human-delight").
+- **Strategic Goals (by end of 2026)**:
+  - Reach 50 million viewers and 20 million subscribers across technical distribution channels (YouTube, Medium, LinkedIn, Blog).
+  - Establish the "Google Cloud Gemini Cookbook" and "A2A / Agentic Systems" as premier reference resources.
 
-### Naming & URL conventions (foundational — keep it simple)
+______________________________________________________________________
 
-- **Paths = URLs.** A post at `docs/writing/<section>/<slug>/index.md` is served at `/writing/<section>/<slug>/`. Choose the section + slug deliberately; together they are the public URL. Scaffold with `make new-post TITLE="…" SECTION="a2a"` (or `python scripts/new_post.py`), which prints the nav line to paste into `mkdocs.yml`.
-- **Lowercase-kebab slugs, folder-per-post.** Each post is its own folder (`.../<slug>/index.md`) so images and assets live beside it. Lowercase, hyphen-separated; keep slugs short and topical (`/writing/a2a/multi-tenancy/`, not a long dev.to title). Drop the redundant section prefix from the slug (under `/writing/a2a/`, use `intro`, not `a2a-intro`).
-- **Sections** are the first URL segment and group related posts: `a2a`, `cloud-next-2026`, `gemini`, `technical`, `personal`. Add a new section deliberately — it becomes a public URL segment. (Note: `.gitignore`'s `*personal*` rule is explicitly un-ignored for `docs/writing/personal/` — keep that negation.)
-- **Don't rename or move an established post** without adding a `redirect_maps` entry in `mkdocs.yml` (`old/path.md: new/path/index.md`) — it breaks live URLs, inbound links, and SEO. On GitHub Pages these are client-side meta-refresh stubs, not 301s.
-- **Images** are co-located in the post's own folder and referenced by bare filename (`![](diagram.png)`). Keep names descriptive (`<topic>_<n>.<ext>`). Remote CDN images may be left as absolute URLs; only localize when you want the site self-contained.
-- **Buttons**: author Material buttons on a single short line (`[Text](url){ .md-button }`) that fits under 79 cols — mdformat's `wrap=79` will otherwise split the `{ .md-button }` attr-list across lines and it renders as literal text.
+## 2. Core Operating Principles & Communication
 
-## Commands
+1. **Clarity & Trust**: Ensure at least 80% clarity on requirements before executing large changes. Proactively ask clarifying questions instead of guessing.
+1. **Explicit Permissions**: **Never execute git commits or pushes without explicit user permission.**
+1. **Sequential & Minimal**: Plan sequentially, execute task-by-task, and apply minimal necessary changes.
+1. **Preserve History & Legacy**: Comment out deprecated code/logic with clear rationale rather than deleting unprompted. Always wire redirects when moving published URLs.
+1. **Always Land Cleanly**: When completing a task, verify the build (`mkdocs build`), format touched Markdown (`mdformat`), and ensure no loose ends or broken links remain.
 
-```bash
-make run                       # mkdocs serve on http://localhost:8099
-make deploy                    # runs `make llms` then gh-deploy (manual publish)
-make check-ga                  # build site/ and grep for Google Analytics injection
-make llms                      # regenerate docs/llms-full.txt from docs/llms.txt
-make new-post TITLE="My Title" SECTION="a2a"  # scaffold docs/writing/<section>/<slug>/index.md
-make import-devto              # pull dev.to/Medium posts to _internal/devto_import/ (review-first)
-mkdocs build                   # one-shot build into site/
+______________________________________________________________________
+
+## 3. Blog Post Lifecycle & Mandatory Workflow
+
+When creating, updating, or moving a blog post, follow this end-to-end workflow:
+
+```text
+[Draft / Scaffold] ➔ [Refine & Visuals] ➔ [Mandatory 7-Point Linkage] ➔ [Quality Gate / Build]
 ```
 
-Install deps with `pip install -r requirements.txt` (pinned, used by CI). `pyproject.toml` exists for uv but versions there are looser — `requirements.txt` is the source of truth.
+### Mandatory 7-Point Update Checklist
 
-Python 3.13+ required (see `.python-version`, `pyproject.toml`).
+Whenever adding, renaming, or moving a blog post, update all 7 locations:
 
-## CI / Deploy Quirks
+1. **Post Document**: `docs/writing/<section>/<slug>/index.md` with valid YAML front matter (`title`, `date`, `authors: [sampathm]`, `categories:`, `description:`).
+1. **Left Navigation**: Add entry under `nav > Writing > <Section>` in `mkdocs.yml`.
+1. **Writing Hub Index**: Add link and 1-line summary to `docs/writing/index.md`.
+1. **LLM Link-First Index**: Add URL and description under the section in `docs/llms.txt`.
+1. **Generate Full LLM Text**: Run `python scripts/gen_llms_full.py` (or `make llms`).
+1. **Redirect Maps**: If moving/renaming an existing post, add `old/path.md: new/path/index.md` in `mkdocs.yml` (`redirect_maps`).
+1. **Verification**: Run `python scripts/score_post.py <path>` (target score ≥ 85) and `mkdocs build`.
 
-- Auto-deploy workflow: `.github/workflow/publish-docs.yaml` (note: **`workflow/` singular**, not the standard `workflows/`). `.gitignore` excludes `.github/workflows`, so creating a `workflows/` directory will not be tracked. Edit the existing file in place; do not rename the directory.
-- Pushes to `master` (or `main`) trigger `mkdocs gh-deploy --force` on the `gh-pages` branch. The default branch is `master`.
-- The checkout uses `fetch-depth: 0` — required so the `git-revision-date-localized` plugin can read commit history for last-updated dates.
-- `GOOGLE_ANALYTICS_KEY` is provided via GitHub Actions secret; locally it reads `GOOGLE_ANALYTICS_KEY_GITHUB_IO_BLOG` (see `check-ga`).
+______________________________________________________________________
 
-## Markdown Formatting
+## 4. Visuals & Content Patterns
 
-`.mdformat.toml` enforces `wrap=79`, LF endings, and runs `python` + `json` code-block formatters (via `mdformat-black`, `mdformat-config`). Run `mdformat <file>` before committing markdown changes if formatting may have drifted.
+- **Hero Image Requirement**:
+  - Every post includes a co-located hero image placed immediately below the `# Title`.
+  - Visual Style: Minimalist technical illustration, dark slate canvas, glowing neon accents, **zero embedded text/words**.
+  - Must include generation prompt comment directly above the image tag:
+    ```markdown
+    <!-- AI Image Generation Prompt: A minimalist, clean modern tech illustration of <subject>, glowing cyan accents on a dark slate background, no text. -->
+    ![<Title> Hero](hero.png)
+    ```
+- **Structure Pattern**:
+  - Lead with a clear **TL;DR** or summary in the first section.
+  - Use descriptive `##` and `###` headers so the right-hand table of contents renders cleanly.
+  - Include 1–2 inline diagrams (Mermaid or screenshots/visuals) in technical deep dives.
+  - Define all domain acronyms on first use.
 
-> **CRITICAL:** `mdformat-frontmatter` **must** be installed (it is pinned in `requirements.txt`). Without it, mdformat rewrites the leading `---` YAML front-matter fences into horizontal rules and reflows the metadata into a paragraph — silently breaking the Home page and dropping post `title`/`date`. After running mdformat, sanity-check that touched files still start with `---`.
+______________________________________________________________________
 
-## Landing the Plane (Session Completion)
+## 5. Technical Overview & Link to Design
 
-Work is NOT complete until `git push` succeeds. Required sequence at session end:
+This repository is a static site built with **MkDocs Material** and deployed via GitHub Actions to GitHub Pages.
 
-1. Run quality gates if content changed (`mkdocs build` to catch broken nav/links; `mdformat` on touched markdown).
-2. **Push:**
-   ```bash
-   git pull --rebase
-   git push
-   git status   # must show "up to date with origin"
-   ```
-3. Clear stashes, prune remote branches, hand off context.
+For the high-level system architecture, routing principles, build hooks, CI/CD deployment mechanics, and hero image design system specifications, refer to:
+👉 [**`DESIGN.md`**](DESIGN.md)
 
-Never stop before `git push` succeeds. If it fails, resolve and retry.
+______________________________________________________________________
+
+## 6. Common Commands
+
+| Command | Purpose |
+| :--- | :--- |
+| `make run` | Start local live preview server on `http://localhost:8099` |
+| `make new-post TITLE="..." SECTION="..."` | Scaffold a new folder-per-post markdown file |
+| `make llms` | Regenerate `docs/llms-full.txt` from `docs/llms.txt` |
+| `mkdocs build` | One-shot build to test site compilation and nav links |
+| `python scripts/score_post.py <path>` | Score draft for agent-readiness (0–100) |
+| `mdformat <file>` | Format markdown cleanly (requires `mdformat-frontmatter`) |

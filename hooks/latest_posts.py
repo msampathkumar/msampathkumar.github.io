@@ -21,7 +21,7 @@ from pathlib import Path
 import yaml
 
 # How many recent posts to surface on the Home page.
-MAX_POSTS = 6
+MAX_POSTS = 3
 MARKER = "<!-- LATEST_POSTS -->"
 _FRONT_MATTER = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
 
