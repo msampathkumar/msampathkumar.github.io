@@ -1,7 +1,7 @@
 ---
 title: "A2A Joins AAIF"
 description: "The Agent2Agent (A2A) protocol has officially joined the Agentic AI Foundation (AAIF) under the Linux Foundation as a Growth Stage project."
-date: 2026-08-27
+date: 2026-08-29
 authors:
   - sampathm
 categories:
