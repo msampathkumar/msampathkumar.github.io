@@ -4,17 +4,17 @@ Building Agentic applications requires more than just code; it requires a secure
 
 In this post, we’ll walk through how to create a Google Compute Engine VM specifically configured for AI development, focusing on the critical identity and permission steps often missed.
 
-## Pre-requisites
+## Prerequisites
 
-1. You need to have a Google Cloud project
-2. You need to run all the following commands from Google Cloud Project's Web Cloud Shell (https://shell.cloud.google.com/)
-3. You can use you personal mac or linux, to run ssh commands provided
+1. A Google Cloud project with billing enabled.
+2. Access to Google Cloud Shell (https://shell.cloud.google.com/) or the Google Cloud CLI installed locally.
+3. A local computer (Mac, Linux, or Windows) to run SSH commands.
 
 ## Step 1: Enable the AI Infrastructure APIs
 
-> **Note:** Run these commands from Google Cloud Project - Cloud Shell.
+> **Note:** Run these commands from Google Cloud Shell.
 
-Before creating resources, you must tell Google Cloud to turn on the necessary “brains” for your project. We need the Vertex AI API (for Gemini/Model Garden) and the Discovery Engine API (for agentic search).
+Before creating resources, enable the required Google Cloud APIs for Vertex AI (for Gemini and Model Garden), Discovery Engine (for agentic search), and Compute Engine.
 
 ```bash
 # Enable Vertex AI and Discovery Engine (Vertex AI Search & Conversation)
@@ -22,14 +22,13 @@ gcloud services enable \
   aiplatform.googleapis.com \
   discoveryengine.googleapis.com \
   compute.googleapis.com
-
 ```
 
 ## Step 2: Create a Dedicated Service Account
 
-> **Note:** Run these commands from Google Cloud Project - Cloud Shell.
+> **Note:** Run these commands from Google Cloud Shell.
 
-Never use the default “Compute Engine default service account” for AI apps. Instead, create a dedicated identity following the principle of least privilege.
+Avoid using the default Compute Engine service account for AI applications. Instead, create a dedicated identity following the principle of least privilege:
 
 ```bash
 # Create the service account
@@ -42,9 +41,9 @@ SA_EMAIL="ai-agent-sa@$(gcloud config get-value project).iam.gserviceaccount.com
 
 ## Step 3: Grant IAM Permissions
 
-> **Note:** Run these commands from Google Cloud Project - Cloud Shell.
+> **Note:** Run these commands from Google Cloud Shell.
 
-To build an “agentic” app, your VM needs to find models, call them, and potentially deploy them.
+Grant the dedicated service account the necessary permissions to access models and search capabilities:
 
 ```bash
 # 1. Access Gemini and Model Garden
@@ -57,26 +56,25 @@ gcloud projects add-iam-policy-binding $(gcloud config get-value project) \
   --member="serviceAccount:$SA_EMAIL" \
   --role="roles/discoveryengine.viewer"
 
-# 3. Allow the SA to use itself (required for deploying models like Claude)
+# 3. Allow the service account to use itself (required for deploying certain models)
 gcloud iam service-accounts add-iam-policy-binding $SA_EMAIL \
   --member="serviceAccount:$SA_EMAIL" \
   --role="roles/iam.serviceAccountUser"
-
 ```
 
 ## Step 4: Create the VM with Correct Scopes
 
-> **Note:** Run these commands from my personal pc.
+> **Note:** Run these commands from your local computer or Cloud Shell.
 
-To make it easy to reuse, I am defining the variables in the following manner.
+Define the environment variables below for easy reuse:
 
 ```bash
-GCP_PROJECT_ID=gemini-demo-project-4242
+GCP_PROJECT_ID=YOUR_GOOGLE_CLOUD_PROJECT_ID_HERE
 GCP_PROJECT_ZONE=us-central1-a
 VM_NAME=ai-development-vm
 ```
 
-This is the most critical step. Even with IAM roles, a VM cannot call APIs unless its Access Scopes are set to `cloud-platform`.
+This is the most critical step: even with IAM roles, a VM cannot invoke GCP APIs unless its access scopes include `cloud-platform`.
 
 ```bash
 gcloud compute instances create $VM_NAME \
@@ -84,53 +82,52 @@ gcloud compute instances create $VM_NAME \
   --zone=$GCP_PROJECT_ZONE \
   --machine-type=e2-standard-4 \
   --service-account=$SA_EMAIL \
-  --scopes=[https://www.googleapis.com/auth/cloud-platform](https://www.googleapis.com/auth/cloud-platform) \
-  --image-family=debian-11 \
+  --scopes=https://www.googleapis.com/auth/cloud-platform \
+  --image-family=debian-12 \
   --image-project=debian-cloud
-
 ```
 
-## Step 5: How login to VM ?
+## Step 5: Log In to the VM
 
-> **Note:** Run these commands from my personal pc.
+> **Note:** Run these commands from your local computer.
 
-To login to the above created VM, use the following command:
+To log in to the newly created VM:
 
 ```bash
 gcloud compute ssh --project $GCP_PROJECT_ID --zone $GCP_PROJECT_ZONE "$VM_NAME"
 ```
 
-### (Optiona) Other helpful command
+### (Optional) Other Helpful Commands
 
-> **Note:** Run these commands from my personal pc.
+> **Note:** Run these commands from your local computer.
 
-To check VM instance in your project
+To list VM instances in your project:
 
 ```bash
 gcloud compute instances list --project $GCP_PROJECT_ID
 ```
 
-To simplify the login command, you can use the following command to update the SSH config:
+To configure SSH aliases for simpler login:
 
 ```bash
 gcloud compute config-ssh --project $GCP_PROJECT_ID --zone $GCP_PROJECT_ZONE "$VM_NAME"
 ```
 
-To open port-forwarding using cloud-shell, use `-L <local-port>:<local-host>:<remote-port>` option. You can use multiple `-L` options to forward multiple ports.
+To forward ports from the VM to your local computer, use the `-L <local-port>:<local-host>:<remote-port>` option (you can pass multiple `-L` flags simultaneously):
 
 ```bash
 gcloud compute ssh --project $GCP_PROJECT_ID --zone $GCP_PROJECT_ZONE "$VM_NAME" -- -L 8888:127.0.0.1:8888 -L 9595:127.0.0.1:9595
 ```
 
-### (Optional) Install necessary developer utilities
+### (Optional) Install Developer Utilities
 
-> **Note:** Run these commands from my new VM.
+> **Note:** Run these commands inside the VM.
 
-As a developer, you would neeed utilities to work in a VM. For example, git, vim, python and etc.
+Install common development utilities (such as Git, Vim, and Python):
 
 ```bash
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 sudo apt-get install -y git vim gedit tree
 ```
 
@@ -151,4 +148,4 @@ pip3 --version
 
 ## Conclusion
 
-In this post, you learned how to setup a VM in Google Cloud Platform for agentic AI experiments using Gemini and Model Garden. You can now use this VM to run your agentic AI experiments.
+In this guide, you learned how to provision and configure a Google Cloud VM for agentic AI experiments using Gemini and Model Garden. You can now use this VM as a reliable environment to develop and test agentic workflows.

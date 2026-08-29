@@ -181,6 +181,7 @@ nav:
       - "Agent-to-Agent (A2A)":
           - "Docker for Agents: Intro to A2A": writing/a2a/intro/index.md
           - "What's New in A2A: v1.0": writing/a2a/v1-release/index.md
+          - "A2A Joins AAIF": writing/a2a/a2a-joins-aaif/index.md
           - "Multi-Tenancy in A2A": writing/a2a/multi-tenancy/index.md
           - "A2A Integration Test Kit Dashboard": writing/a2a/test-kit/index.md
           - "Secure Multi-Agent Framework Whitepaper": writing/a2a/security-whitepaper/index.md

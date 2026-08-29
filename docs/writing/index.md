@@ -14,6 +14,7 @@ Agent-to-Agent (A2A) and Google Cloud Next 2026.
 
 - [Docker for Agents: Intro to A2A](a2a/intro/index.md)
 - [What's New in A2A: v1.0](a2a/v1-release/index.md)
+- [A2A Joins AAIF](a2a/a2a-joins-aaif/index.md)
 - [Multi-Tenancy in A2A](a2a/multi-tenancy/index.md)
 - [A2A Integration Test Kit Dashboard](a2a/test-kit/index.md)
 - [Secure Multi-Agent Framework Whitepaper](a2a/security-whitepaper/index.md)

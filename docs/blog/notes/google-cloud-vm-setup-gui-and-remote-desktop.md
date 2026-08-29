@@ -1,21 +1,20 @@
-# google-cloud-vm-setup-gui-and-remote-desktop.md
+# Setting Up GUI and Chrome Remote Desktop on Google Cloud VM
 
-In this blog post, you will learn how to set up a graphical user interface in your Google Cloud VM and how to set up Google Chrome remote desktop for accessing the VM from your personal laptop. To understand how to set up your Google Cloud VM, check the blog post below.
+In this guide, you will learn how to set up a graphical user interface (GUI) on your Google Cloud VM and configure Google Chrome Remote Desktop to access the VM desktop securely from your personal computer.
 
+To understand how to provision the VM with the required IAM roles and scopes, see:
 [google-cloud-vm-for-agentic-coding-harness-experiments.md](google-cloud-vm-for-agentic-coding-harness-experiments.md)
 
-Prequired
+## Prerequisites
 
-1. personal pc - i am using Mac book
-2. google compute ubuntu vm
+1. A local computer (Mac, Linux, or Windows) with Google Chrome installed.
+2. A Google Compute Engine VM running Debian or Ubuntu.
 
-# Compute VM Setup
+## Compute VM Setup
 
-> **Note:** If you are manually running these commands, comment 1 and 9 from the script below. Otherwise add this script to your Compute VM's startup script.
+> **Note:** If you are running these commands interactively in an SSH session, omit steps 1 and 9 from the script below. Otherwise, add this script to your Compute VM's startup script metadata.
 
-To setup a GUI in VM, I have shutdown VM and added following script to it's startup script. In this setup I use `XFCE` as the GUI for our remote deskopt connection. I have also setup necessary placeholder to ensure that this script run one time.
-
-You may either do the same or run below command from 2 to 8. Commenting 1 and 9.
+To set up a GUI on the VM, shut down the instance and add the following script to the VM metadata as a startup script. In this setup, we use `XFCE` as a lightweight GUI for the remote desktop connection. The script creates a flag file to ensure it executes only once.
 
 ```bash
 #!/bin/bash
@@ -61,53 +60,51 @@ apt-get install -y --fix-broken git vim gedit tree
 touch "$FLAG_FILE"
 ```
 
-If you are using this script as os start up script, then it may take some time for these commands to completed. May be take 10-15 min for coffee break. Once you login to VM, you find `/var/log/workstation_setup_complete.flag` to confirm if the setup is done.
-
-# (Optional) PyEnv Build dependencies setup
-
-If you plan to use this VM for long time, you may need [additional packages](https://github.com/pyenv/pyenv/wiki#suggested-build-environment) for pyenv setup.
+If you configure this as a startup script, it may take 5–10 minutes to complete during the initial boot. Once logged in via SSH, verify completion by checking for the flag file:
 
 ```bash
-sudo apt update; sudo apt install make build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev libsqlite3-dev curl git \
-libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev libzstd-dev
+ls -l /var/log/workstation_setup_complete.flag
 ```
 
-# Remote deskopt setup
+## (Optional) PyEnv Build Dependencies Setup
 
-## step1: Personal PC
+If you plan to build Python versions using `pyenv`, install the [suggested build dependencies](https://github.com/pyenv/pyenv/wiki#suggested-build-environment):
 
-In Chrome, go to https://remotedesktop.google.com/headless and look for `SetUp via SSH`.
+```bash
+sudo apt update
+sudo apt install -y make build-essential libssl-dev zlib1g-dev \
+  libbz2-dev libreadline-dev libsqlite3-dev curl git \
+  libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
+  libffi-dev liblzma-dev libzstd-dev
+```
 
-You have a "Ubuntu Command" shared in page titled "Set up another computer"
+## Remote Desktop Setup
 
-Click Begin, then click Next, and finally click Authorize (make sure you are signed into the Google account you want to use for work).
+### Step 1: Authorize from Your Local Computer
 
+1. In Chrome on your local computer, navigate to: https://remotedesktop.google.com/headless
+2. Locate the section titled **"Set up via SSH"** (or "Set up another computer").
+3. Click **Begin**, then **Next**, and then **Authorize** (ensure you are signed into the Google account you intend to use).
+4. Copy the generated authorization command for Debian/Linux. It will resemble:
+
+```bash
 DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/aXo............................" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
+```
 
+### Step 2: Run the Authorization Command on the Compute Engine VM
 
-## step 2: Compute VM
+1. Connect to the VM via SSH.
+2. Paste and run the command copied from Step 1.
+3. When prompted, enter a 6-digit PIN to secure your Remote Desktop connection.
 
-In SSH Shell, pass your code to it.
+### Step 3: Connect from Your Local Computer
 
-It will ask you to setup a 6 digit pin code to be passcode for your Remote Desktop
-
-
-## setp 3: Personal PC
-
-In Chrome, go to https://remotedesktop.google.com/access
-You will find that your `ComputeVM` is already added here.
-Click it and provide the 6 digit pin to login to the VM
-
-## step 4: 
-
-This is the most important part of this tutorial. You must do this step within 2 min.
-
-Say `Yay! I did it.` :)
-
+1. In Chrome on your local computer, navigate to: https://remotedesktop.google.com/access
+2. You will see your VM listed under available remote devices.
+3. Click on the VM and enter your 6-digit PIN to launch the desktop session.
 
 ---
 
-That it! In this post, you learned how to setup GUI and remote desktop for your Google Cloud VM.
+That's it! In this guide, you learned how to configure an XFCE desktop environment and access your Google Cloud VM through Chrome Remote Desktop.
 
 Happy Coding!
