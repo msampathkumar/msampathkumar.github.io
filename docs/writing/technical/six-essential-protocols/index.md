@@ -138,4 +138,3 @@ As someone who's been building with AI agents, I'm convinced that these protocol
 
 **A question for the community:** Which of these protocols do you see as most critical for your use cases? Are there gaps that need addressing? I'd love to hear about your experiences building agent-based systems and the integration challenges you've faced.
 
-#AIAgents #Protocols #AIDevelopment #MCP #A2A #AgentEconomy #AIIntegration

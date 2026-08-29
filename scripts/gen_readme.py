@@ -55,6 +55,7 @@ def get_all_posts() -> list[dict]:
             "description": desc,
             "url": url,
             "section": section,
+            "slug": slug,
         })
 
     # Sort reverse-chronologically (newest first)
@@ -139,13 +140,51 @@ def render_readme(posts: list[dict]) -> str:
     return "\n".join(parts)
 
 
+def render_writing_index(posts: list[dict]) -> str:
+    parts = [
+        "---",
+        "title: Writing",
+        "description: Essays, guides, and notes on A2A, Google Cloud, Gemini, and more.",
+        "hide:",
+        "  - toc",
+        "---",
+        "",
+        "# Writing",
+        "",
+        "Essays, guides, and notes — organized by topic and reverse-chronological order.",
+        "",
+    ]
+
+    for sec_key, sec_title in SECTION_ORDER:
+        sec_posts = [p for p in posts if p["section"] == sec_key]
+        if not sec_posts:
+            continue
+        parts.extend([
+            f"## {sec_title}",
+            "",
+        ])
+        for p in sec_posts:
+            date_str = p["date"].strftime("%b %d, %Y")
+            rel_path = f"{sec_key}/{p['slug']}/index.md"
+            parts.append(f"- **`{date_str}`** — [{p['title']}]({rel_path})")
+        parts.append("")
+
+    return "\n".join(parts)
+
+
 def main() -> int:
     posts = get_all_posts()
     readme_content = render_readme(posts)
     README.write_text(readme_content, encoding="utf-8")
     print(f"Generated {README.name} with {len(posts)} published articles.")
+
+    writing_index = DOCS / "writing" / "index.md"
+    writing_content = render_writing_index(posts)
+    writing_index.write_text(writing_content, encoding="utf-8")
+    print(f"Generated {writing_index.relative_to(ROOT)} with {len(posts)} published articles.")
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
