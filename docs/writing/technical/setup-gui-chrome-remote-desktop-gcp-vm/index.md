@@ -19,7 +19,7 @@ draft: false
 
 # Setting Up GUI & Chrome Remote Desktop on a Google Cloud VM
 
-<!-- TODO: Generate image with prompt: Minimalist illustration of a laptop screen accessing a remote Linux cloud workstation desktop via Chrome browser, modern tech workspace background, glowing accents, 16:9 ratio. -->
+![Setting Up GUI & Chrome Remote Desktop on Google Cloud VM](hero.jpg)
 
 While command-line workflows and headless SSH sessions handle most cloud engineering tasks, certain developer tools, agent debugging UIs, browser automation harnesses, and visual data explorers require a full graphical user interface (GUI).
 

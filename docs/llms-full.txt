@@ -3196,13 +3196,16 @@ Source: https://msampathkumar.github.io/writing/technical/building-agentic-sandb
 
 # Building an Agentic Sandbox: Provisioning a Google Cloud VM Workstation
 
-<!-- TODO: Generate image with prompt: Modern minimal illustration of an isolated cloud sandbox workstation running autonomous AI agents, connecting securely to Gemini and Vertex AI foundation models, glowing blue and violet accents, dark slate background, 16:9 ratio. -->
+![Building an Agentic Sandbox VM Workstation](hero.jpg)
 
 When building, benchmarking, or executing autonomous Agentic AI applications, running unverified code or agent loops directly on your primary personal laptop poses security, resource, and dependency risks. A far better pattern is to configure an isolated **Google Cloud Compute Engine VM** as a dedicated **personal sandbox and secondary workstation**.
 
 In this guide, I share my personal setup for provisioning an AI-ready cloud sandbox. We'll configure a dedicated identity, precise least-privilege IAM permissions, and access scopes required for headless agent harnesses to communicate seamlessly with [Gemini](https://cloud.google.com/vertex-ai) and open models via Vertex AI Model Garden.
 
----
+> [!TIP]
+> **Need a Graphical Desktop (GUI)?** This guide focuses on setting up a fast, headless cloud sandbox for terminal workflows and automated agent harnesses. If your workflow requires browser automation visual debugging or a full graphical desktop environment, check out our companion tutorial: [Setting Up GUI & Chrome Remote Desktop on a Google Cloud VM](../setup-gui-chrome-remote-desktop-gcp-vm/index.md).
+
+______________________________________________________________________
 
 ## TL;DR
 
@@ -3211,7 +3214,7 @@ In this guide, I share my personal setup for provisioning an AI-ready cloud sand
 - **Cloud-Platform Scope**: Set `--scopes=https://www.googleapis.com/auth/cloud-platform` during instance creation so API calls to Vertex AI are not constrained by legacy default scopes.
 - **Secure Port Forwarding**: Access remote development servers (Jupyter notebooks on `8888`, custom agent dashboards on `9595`) over encrypted SSH tunnels directly from your local browser without exposing public IP endpoints.
 
----
+______________________________________________________________________
 
 ## Architecture Overview
 
@@ -3239,15 +3242,15 @@ flowchart LR
     SA -->|roles/discoveryengine.viewer| Search
 ```
 
----
+______________________________________________________________________
 
 ## Prerequisites
 
 1. A **Google Cloud Project** with active billing enabled.
-2. Access to **Google Cloud Shell** (via [shell.cloud.google.com](https://shell.cloud.google.com/)) or the local Google Cloud CLI (`gcloud`).
-3. A local machine (macOS, Linux, or Windows) to execute SSH commands.
+1. Access to **Google Cloud Shell** (via [shell.cloud.google.com](https://shell.cloud.google.com/)) or the local Google Cloud CLI (`gcloud`).
+1. A local machine (macOS, Linux, or Windows) to execute SSH commands.
 
----
+______________________________________________________________________
 
 ## Step 1: Enable Required AI Infrastructure APIs
 
@@ -3263,7 +3266,7 @@ gcloud services enable \
   compute.googleapis.com
 ```
 
----
+______________________________________________________________________
 
 ## Step 2: Create a Dedicated Service Account
 
@@ -3280,7 +3283,7 @@ gcloud iam service-accounts create ai-agent-sa \
 SA_EMAIL="ai-agent-sa@$(gcloud config get-value project).iam.gserviceaccount.com"
 ```
 
----
+______________________________________________________________________
 
 ## Step 3: Grant Least-Privilege IAM Roles
 
@@ -3305,7 +3308,7 @@ gcloud iam service-accounts add-iam-policy-binding $SA_EMAIL \
   --role="roles/iam.serviceAccountUser"
 ```
 
----
+______________________________________________________________________
 
 ## Step 4: Create the Compute Engine VM
 
@@ -3335,7 +3338,7 @@ gcloud compute instances create $VM_NAME \
 > [!IMPORTANT]
 > Setting `--scopes=https://www.googleapis.com/auth/cloud-platform` is critical. Without this scope, the OAuth token generated inside the VM will be restricted by default legacy GCE access scopes, preventing the instance from calling Vertex AI APIs even if IAM roles are configured properly.
 
----
+______________________________________________________________________
 
 ## Step 5: Connect to the VM via SSH
 
@@ -3363,7 +3366,7 @@ Forward remote ports (such as Jupyter notebooks on `8888` or agent harness web U
 gcloud compute ssh --project $GCP_PROJECT_ID --zone $GCP_PROJECT_ZONE "$VM_NAME" -- -L 8888:127.0.0.1:8888 -L 9595:127.0.0.1:9595
 ```
 
----
+______________________________________________________________________
 
 ## Step 6: Install Essential Developer Utilities
 
@@ -3388,7 +3391,7 @@ python3 --version
 pip3 --version
 ```
 
----
+______________________________________________________________________
 
 ## Next Steps
 
@@ -3404,7 +3407,7 @@ Source: https://msampathkumar.github.io/writing/technical/setup-gui-chrome-remot
 
 # Setting Up GUI & Chrome Remote Desktop on a Google Cloud VM
 
-<!-- TODO: Generate image with prompt: Minimalist illustration of a laptop screen accessing a remote Linux cloud workstation desktop via Chrome browser, modern tech workspace background, glowing accents, 16:9 ratio. -->
+![Setting Up GUI & Chrome Remote Desktop on Google Cloud VM](hero.jpg)
 
 While command-line workflows and headless SSH sessions handle most cloud engineering tasks, certain developer tools, agent debugging UIs, browser automation harnesses, and visual data explorers require a full graphical user interface (GUI).
 
