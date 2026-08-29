@@ -28,6 +28,7 @@ Deep dives on the A2A protocol: what it is, what's new, and how to run it in pro
 
 - [Docker for Agents: A Backend Engineer's Introduction to A2A](https://msampathkumar.github.io/writing/a2a/intro/): A2A as a lightweight wrapper (like Docker) that makes any agent interoperable.
 - [What's New in A2A: v1.0, a Python DX Glow-Up, and a Fresh New Look](https://msampathkumar.github.io/writing/a2a/v1-release/): The A2A v1.0 release, Python developer experience, and docs refresh.
+- [A2A Joins AAIF](https://msampathkumar.github.io/writing/a2a/a2a-joins-aaif/): Acceptance into the Linux Foundation-directed AAIF as a Growth Stage project.
 - [Three Agents Behind One Door: Multi-Tenancy in A2A](https://msampathkumar.github.io/writing/a2a/multi-tenancy/): Three patterns for scaling agentic apps with A2A multi-tenancy.
 - [Breaking Down Agent Silos: The A2A Integration Test Kit Dashboard](https://msampathkumar.github.io/writing/a2a/test-kit/): Cross-framework interoperability testing for A2A.
 - [Introducing the Whitepaper on Building Secure Multi-Agent Frameworks on Google Cloud](https://msampathkumar.github.io/writing/a2a/security-whitepaper/): Enterprise-ready, secure multi-agent architecture.
