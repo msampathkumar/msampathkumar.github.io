@@ -130,6 +130,9 @@ plugins:
         blog/posts/two-lenses-of-leadership.md: writing/personal/two-lenses-of-leadership/index.md
         blog/notes/google-cloud-vm-for-agentic-coding-harness-experiments.md: writing/technical/building-agentic-sandbox-vm/index.md
         blog/notes/google-cloud-vm-setup-gui-and-remote-desktop.md: writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/index.md
+        blog/posts/conductor-gemini-cli.md: writing/technical/conductor-gemini-cli/index.md
+        blog/posts/documentation-driven-development.md: writing/technical/documentation-driven-development/index.md
+        blog/posts/quantum-ai-era.md: writing/technical/quantum-ai-era/index.md
         writing/technical/agentic-ai-vm-setup/index.md: writing/technical/building-agentic-sandbox-vm/index.md
         writing/technical/agentic-sandbox-vm-setup/index.md: writing/technical/building-agentic-sandbox-vm/index.md
         writing/technical/agentic-sandbox-vm/index.md: writing/technical/building-agentic-sandbox-vm/index.md
@@ -179,10 +182,10 @@ nav:
   - "Writing":
       - writing/index.md
       - "Agent-to-Agent (A2A)":
-          - "Docker for Agents: Intro to A2A": writing/a2a/intro/index.md
-          - "What's New in A2A: v1.0": writing/a2a/v1-release/index.md
           - "A2A Joins AAIF": writing/a2a/a2a-joins-aaif/index.md
           - "Multi-Tenancy in A2A": writing/a2a/multi-tenancy/index.md
+          - "What's New in A2A: v1.0": writing/a2a/v1-release/index.md
+          - "Docker for Agents: Intro to A2A": writing/a2a/intro/index.md
           - "A2A Integration Test Kit Dashboard": writing/a2a/test-kit/index.md
           - "Secure Multi-Agent Framework Whitepaper": writing/a2a/security-whitepaper/index.md
       - "Google Cloud Next 2026":
@@ -200,11 +203,14 @@ nav:
           - "Building an Agentic Sandbox VM": writing/technical/building-agentic-sandbox-vm/index.md
           - "Setting Up GUI & Chrome Remote Desktop on GCP VM": writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/index.md
           - "Mastering tmux: Headless Sessions & Automation": writing/technical/mastering-tmux/index.md
-          - "The Six Essential Protocols Powering the AI Agent Ecosystem": writing/technical/six-essential-protocols/index.md
           - "Role of Python in Google Cloud": writing/technical/python-in-google-cloud/index.md
           - "Advanced Memory Management for Agentic AI Development": writing/technical/memory-management-agentic-ai/index.md
-          - "Google Cloud GKE Tops 2025 Magic Quadrant": writing/technical/gke-magic-quadrant/index.md
+          - "The Quantum Leap in AI": writing/technical/quantum-ai-era/index.md
+          - "Context-Driven Development with Conductor": writing/technical/conductor-gemini-cli/index.md
+          - "Documentation-Driven Development (D3)": writing/technical/documentation-driven-development/index.md
           - "Vibe Coding Introduction": writing/technical/vibe-coding-intro/index.md
+          - "Google Cloud GKE Tops 2025 Magic Quadrant": writing/technical/gke-magic-quadrant/index.md
+          - "The Six Essential Protocols Powering the AI Agent Ecosystem": writing/technical/six-essential-protocols/index.md
           - "Vibe Coding Dos and Don'ts": writing/technical/vibe-coding-dos-donts/index.md
       - "Personal":
           - "10 Principles of Miyamoto Musashi": writing/personal/miyamoto-musashi/index.md

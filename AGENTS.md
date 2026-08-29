@@ -40,8 +40,8 @@ When creating, updating, or moving a blog post, follow this end-to-end workflow:
 Whenever adding, renaming, or moving a blog post, update all 7 locations:
 
 1. **Post Document**: `docs/writing/<section>/<slug>/index.md` with valid YAML front matter (`title`, `date`, `authors: [sampathm]`, `categories:`, `description:`).
-1. **Left Navigation**: Add entry under `nav > Writing > <Section>` in `mkdocs.yml`.
-1. **Writing Hub Index**: Add link and 1-line summary to `docs/writing/index.md`.
+1. **Left Navigation**: Add entry under `nav > Writing > <Section>` in `mkdocs.yml` (**ordered reverse-chronologically with newest posts at the top**).
+1. **Writing Hub Index**: Add link and 1-line summary to `docs/writing/index.md` (**ordered newest first**).
 1. **LLM Link-First Index**: Add URL and description under the section in `docs/llms.txt`.
 1. **Generate Full LLM Text**: Run `python scripts/gen_llms_full.py` (or `make llms`).
 1. **Redirect Maps**: If moving/renaming an existing post, add `old/path.md: new/path/index.md` in `mkdocs.yml` (`redirect_maps`).
