@@ -35,6 +35,9 @@ Agent-to-Agent (A2A) and Google Cloud Next 2026.
 
 ## Technical Articles
 
+- [Building an Agentic Sandbox: Provisioning a Google Cloud VM Workstation](technical/building-agentic-sandbox-vm/index.md)
+- [Setting Up GUI & Chrome Remote Desktop on a Google Cloud VM](technical/setup-gui-chrome-remote-desktop-gcp-vm/index.md)
+- [Mastering tmux: Headless Sessions & Automation](technical/mastering-tmux/index.md)
 - [The Six Essential Protocols Powering the AI Agent Ecosystem](technical/six-essential-protocols/index.md)
 - [Role of Python in Google Cloud](technical/python-in-google-cloud/index.md)
 - [Advanced Memory Management for Agentic AI Development](technical/memory-management-agentic-ai/index.md)
