@@ -92,3 +92,33 @@ code, kbd, pre {
     transition: width 100ms linear;
     pointer-events: none;
 }
+
+/* Post metadata header (Date, Read Time, Author) */
+.post-metadata-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--md-default-fg-color--light);
+    margin-top: -0.5rem;
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+}
+
+.post-metadata-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.post-metadata-item .twemoji svg {
+    width: 0.95rem;
+    height: 0.95rem;
+    fill: currentColor;
+    opacity: 0.75;
+}
+
+.post-metadata-divider {
+    opacity: 0.4;
+}
