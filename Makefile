@@ -17,6 +17,10 @@ new-post:
 llms:
 	python scripts/gen_llms_full.py
 
+# Regenerate README.md article index from published posts
+readme:
+	python scripts/gen_readme.py
+
 # Import dev.to/Medium posts into _internal/devto_import/ for review
 import-devto:
 	python scripts/import_devto.py --username sampathm
