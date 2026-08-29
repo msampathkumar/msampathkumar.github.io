@@ -55,6 +55,8 @@ Hands-on guides for using Gemini and the Gemini CLI.
 
 Long-form analysis of agent architectures, protocols, and developer practice.
 
+- [Building an Agentic Sandbox: Provisioning a Google Cloud VM Workstation](https://msampathkumar.github.io/writing/technical/building-agentic-sandbox-vm/): How to configure an isolated Compute Engine VM as a personal sandbox and secondary workstation for running Agentic AI harnesses, Gemini, and Vertex AI experiments.
+- [Setting Up GUI & Chrome Remote Desktop on a Google Cloud VM](https://msampathkumar.github.io/writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/): How to configure a lightweight XFCE desktop environment and Chrome Remote Desktop on a Google Cloud Compute Engine VM for browser-based remote access.
 - [The Six Essential Protocols Powering the AI Agent Ecosystem](https://msampathkumar.github.io/writing/technical/six-essential-protocols/): Survey of A2A, MCP, and the other protocols that make agent-to-agent systems work.
 - [The Role of Python in Google Cloud](https://msampathkumar.github.io/writing/technical/python-in-google-cloud/): Why Python remains the lingua franca for cloud + AI on Google Cloud.
 - [Advanced Memory Management for Agentic AI Development](https://msampathkumar.github.io/writing/technical/memory-management-agentic-ai/): Patterns for short-term, long-term, and shared memory in agent systems.
