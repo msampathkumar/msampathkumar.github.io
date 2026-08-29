@@ -12,6 +12,8 @@ categories:
 canonical_url: "https://a2a-protocol.org/latest/blog/2026/08/27/a-new-chapter-for-a2a-joining-the-agentic-ai-foundation/"
 ---
 
+# A2A Joins AAIF
+
 <div style="background: #0f172a; border-radius: 12px; padding: 2.75rem 2.5rem; margin: 1rem 0 1.5rem 0; text-align: center; border: 1px solid #1e293b; width: 100%; box-sizing: border-box;">
   <div style="font-size: 2rem; font-weight: 700; color: #ffffff; line-height: 2.3; letter-spacing: -0.01em;">
     A2A Joins AAIF

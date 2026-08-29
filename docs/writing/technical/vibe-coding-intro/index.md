@@ -7,6 +7,8 @@ categories:
   - Development
 ---
 
+# Vibe Coding Introduction
+
 ## Vibe Code? The What, Why, and How (And When I Hit the Brakes)
 
 What is Vibe Coding? To me, it's about using AI to generate code from a

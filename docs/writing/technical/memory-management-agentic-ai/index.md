@@ -3,11 +3,11 @@ title: "Advanced Memory Management for Agentic AI Development"
 date: 2026-01-16
 authors: [sampathm]
 categories:
-- "AI Development"
-- "Memory Management"
-- "Google Cloud"
-- "Vertex AI"
-- "Agent Development Kit"
+  - "AI Development"
+  - "Memory Management"
+  - "Google Cloud"
+  - "Vertex AI"
+  - "Agent Development Kit"
 ---
 
 # Advanced Memory Management for Agentic AI Development
@@ -17,7 +17,7 @@ categories:
 
 One of the biggest hurdles I've faced while building AI assistants is their inherent amnesia. Large Language Models are stateless by default—every conversation starts from zero. It's frustrating to watch an agent you've worked hard to configure immediately forget a user's preferences the moment the API call ends.
 
-To build truly intelligent, stateful agents that can handle long-term interactions, I've had to dive deep into **Context Engineering**—the art of dynamically assembling and managing the information an LLM needs to reason and act. 
+To build truly intelligent, stateful agents that can handle long-term interactions, I've had to dive deep into **Context Engineering**—the art of dynamically assembling and managing the information an LLM needs to reason and act.
 
 The challenge I quickly ran into is that while past data is essential for intelligence, managing it effectively is a massive hurdle.
 
@@ -29,6 +29,7 @@ This history rapidly spirals out of control, introducing four major challenges:
 
 - **Context Window Limits**: The conversation transcript can exceed the maximum
   token count the LLM can process, causing the API call to fail.
+
 - **Cost and Latency**: Most LLM providers charge by tokens sent and received.
   Larger contexts increase costs and latency, resulting in a slower response
   time for the user.
@@ -42,6 +43,7 @@ This history rapidly spirals out of control, introducing four major challenges:
   relevant information gets pushed out of the window.
 
 Consider a simple conversation that quickly explodes:
+
 ```
 User: "What's the weather today?"
 Agent: [Tool call: weather_api] → 500 tokens
@@ -57,9 +59,9 @@ Agent: [Tool call: extended_forecast] → 600 tokens
 
 ## Challenge 2: The Master Data Management (MDM) Challenge for Agents
 
-To create a continuous, personalized experience, I've found that an agent needs to transform the transient chaos of a single Session into a highly organized "filing cabinet" of persistent knowledge. 
+To create a continuous, personalized experience, I've found that an agent needs to transform the transient chaos of a single Session into a highly organized "filing cabinet" of persistent knowledge.
 
-This feels a lot like the enterprise concept of **Master Data Management (MDM)**—essentially, maintaining a single, accurate source of truth for user-specific knowledge. 
+This feels a lot like the enterprise concept of **Master Data Management (MDM)**—essentially, maintaining a single, accurate source of truth for user-specific knowledge.
 
 For this long-term knowledge (or **Memory**) to be useful, it has to be carefully curated. Without a curation process, simple extraction just leads to a noisy, contradictory log. I focus on four key areas of consolidation:
 
@@ -96,7 +98,6 @@ from google.adk.agents.llm_agent import Agent
 from google.adk.apps.app import App, EventsCompactionConfig
 from google.adk.apps.llm_event_summarizer import LlmEventSummarizer
 from google.adk.models import Gemini
-
 
 root_agent = Agent(
     model="gemini-2.5-flash-lite",
@@ -219,10 +220,9 @@ Memory management isn't just a technical optimization—it's the foundation that
 
 Adopting a two-tiered approach—using ADK for session compaction and Vertex AI for long-term persistence—has been a game-changer for my projects. It provides the balance needed between immediate context availability and long-term knowledge retention.
 
-If you're building agentic applications, I highly recommend thinking about your memory strategy early on. Your users—and your token budget—will definitely notice the difference. 
+If you're building agentic applications, I highly recommend thinking about your memory strategy early on. Your users—and your token budget—will definitely notice the difference.
 
 For those interested in exploring the tools I've mentioned, the [ADK documentation](https://google.github.io/adk-docs/) is a great place to start.
-
 
 References:
 
@@ -231,7 +231,6 @@ References:
 - [Session Context compression - Agent Development Kit][4]{:.external}
 - [Memory - Agent Development Kit][5]{:.external}
 
-[1]: https://en.wikipedia.org/wiki/Master_data_management
 [2]: https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/overview
 [3]: https://google.github.io/adk-docs/sessions/session/
 [4]: https://google.github.io/adk-docs/context/compaction/

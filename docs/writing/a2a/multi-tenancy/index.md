@@ -10,6 +10,8 @@ categories:
 canonical_url: "https://medium.com/google-cloud/a2a-multi-tenancy-ebfbc255497a"
 ---
 
+# Multi-Tenancy in A2A
+
 > Originally published on
 > [dev.to](https://dev.to/sampathm/three-agents-behind-one-door-multi-tenancy-in-a2a-1pih)
 > / [Medium](https://medium.com/google-cloud/a2a-multi-tenancy-ebfbc255497a).

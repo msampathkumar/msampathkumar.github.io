@@ -12,6 +12,8 @@ categories:
 canonical_url: "https://medium.com/google-cloud/whats-new-in-a2a-protocol-v1-release-b36dc6b4febd"
 ---
 
+# What's New in A2A: v1.0
+
 > Originally published on
 > [dev.to](https://dev.to/sampathm/whats-new-in-a2a-v10-a-python-dx-glow-up-and-a-fresh-new-look-1hek)
 > /

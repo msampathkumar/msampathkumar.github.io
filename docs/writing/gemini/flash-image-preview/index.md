@@ -3,8 +3,10 @@ title: "Gemini 2.5 - A New Era for AI Image Generation"
 date: 2025-09-04
 authors: [sampathm]
 categories:
-- "Gemini Flash Image Generations"
+  - "Gemini Flash Image Generations"
 ---
+
+# Gemini 2.5 Flash Image Preview
 
 ![](gemini-2.5-flash-image-preview-final-banner.png)
 

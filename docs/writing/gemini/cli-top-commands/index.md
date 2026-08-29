@@ -20,64 +20,64 @@ That changed when I started integrating the Gemini CLI into my daily routine. In
 
 Here are the foundational commands I use to get oriented in a new project.
 
-*   **/init** 🎬: This is where your journey should begin. Running `/init` in your project directory allows Gemini to analyze your codebase and create a `GEMINI.md` file.
+- **/init** 🎬: This is where your journey should begin. Running `/init` in your project directory allows Gemini to analyze your codebase and create a `GEMINI.md` file.
 
-*   **/about** ℹ️: Curious about your setup? This command quickly displays your Gemini CLI version, the underlying model being used, and your current authentication method.
+- **/about** ℹ️: Curious about your setup? This command quickly displays your Gemini CLI version, the underlying model being used, and your current authentication method.
 
-*   **/auth** 🔑: Security and access are paramount. The `/auth` command lets you configure how you authenticate with Google's AI services.
+- **/auth** 🔑: Security and access are paramount. The `/auth` command lets you configure how you authenticate with Google's AI services.
 
-*   **/help & /docs** 📚: The `/help` command is your go-to for a quick overview. For more details, `/docs` opens the full documentation in your browser.
+- **/help & /docs** 📚: The `/help` command is your go-to for a quick overview. For more details, `/docs` opens the full documentation in your browser.
 
-*   **/quit** 👋: When you're done for the day, simply use `/quit` to exit the Gemini CLI application.
+- **/quit** 👋: When you're done for the day, simply use `/quit` to exit the Gemini CLI application.
 
 ## 🛠️ Core Workflow Commands
 
 These are the commands you'll use day-to-day to interact with Gemini and your codebase.
 
-*   **`!` (Shell Commands)** 🐚: This is one of the most powerful features. Press `SHIFT + 1` to enter "shell mode," allowing you to execute shell commands or describe them in natural language.
+- **`!` (Shell Commands)** 🐚: This is one of the most powerful features. Press `SHIFT + 1` to enter "shell mode," allowing you to execute shell commands or describe them in natural language.
 
-    <!-- TODO: Generate a GIF demonstrating natural language shell command, e.g., user types "list all ts files" and Gemini executes `find . -name "*.ts"` -->
+  <!-- TODO: Generate a GIF demonstrating natural language shell command, e.g., user types "list all ts files" and Gemini executes `find . -name "*.ts"` -->
 
-*   **/tools** 🧰: Ever wonder what capabilities Gemini has? The `/tools` command lists all available tools Gemini can use to help you.
+- **/tools** 🧰: Ever wonder what capabilities Gemini has? The `/tools` command lists all available tools Gemini can use to help you.
 
-*   **/editor** ✍️: **Pro-Tip:** For complex, multi-line prompts, use `/editor` to set your preferred external editor (like Vim or VS Code), then use `Ctrl+X` to open it.
+- **/editor** ✍️: **Pro-Tip:** For complex, multi-line prompts, use `/editor` to set your preferred external editor (like Vim or VS Code), then use `Ctrl+X` to open it.
 
 ## 💬 Managing Your Conversations
 
 A conversation with Gemini is a valuable asset. Here's how to manage it effectively.
 
-*   **/chat (save, resume, list, delete, share)** 💾: The `/chat` command is a powerful tool for managing your session history. `save` a conversation, `resume` it later, or `share` it as a file.
+- **/chat (save, resume, list, delete, share)** 💾: The `/chat` command is a powerful tool for managing your session history. `save` a conversation, `resume` it later, or `share` it as a file.
 
-    <!-- TODO: Generate a GIF demonstrating the /chat save and /chat resume workflow, showing a user saving a session and coming back to it later. -->
+  <!-- TODO: Generate a GIF demonstrating the /chat save and /chat resume workflow, showing a user saving a session and coming back to it later. -->
 
-*   **/clear** 🧹: Need a fresh start? `/clear` will wipe the screen and your current conversation history.
+- **/clear** 🧹: Need a fresh start? `/clear` will wipe the screen and your current conversation history.
 
-*   **/compress** 🧠: When a conversation gets long, `/compress` intelligently summarizes the context to keep things focused.
+- **/compress** 🧠: When a conversation gets long, `/compress` intelligently summarizes the context to keep things focused.
 
 ## 🎨 Customization and Stats
 
 Tailor the CLI to your liking and keep an eye on your usage.
 
-*   **/theme** 🖌️: Customize your experience. The `/theme` command allows you to change the look and feel of the Gemini CLI.
+- **/theme** 🖌️: Customize your experience. The `/theme` command allows you to change the look and feel of the Gemini CLI.
 
-*   **/stats** 📊: Curious about your usage? `/stats` provides statistics for your current session, including model and tool usage.
+- **/stats** 📊: Curious about your usage? `/stats` provides statistics for your current session, including model and tool usage.
 
 ## ⌨️ Gemini CLI Keyboard Shortcuts You Should Know
 
 To work even faster, it's worth learning a few essential keyboard shortcuts.
 
-*   **`ESC`**: Cancel a long-running task or clear your input.
-*   **`Ctrl+C`**: Quit the application (press twice).
-*   **`Ctrl+X` / `Meta+Enter`**: Open your input in an external editor.
-*   **`Enter`**: Send your query to Gemini.
+- **`ESC`**: Cancel a long-running task or clear your input.
+- **`Ctrl+C`**: Quit the application (press twice).
+- **`Ctrl+X` / `Meta+Enter`**: Open your input in an external editor.
+- **`Enter`**: Send your query to Gemini.
 
 ## ✨ Common Use Cases to Try Today
 
 Here are a few practical ideas to get you started:
 
-*   **Quick Refactoring:** Use `@` to provide a file as context (e.g., `@src/utils.py`) and ask Gemini: "Refactor the `calculate_total` function in this file to be more readable."
-*   **Commit Message Generation:** Run `!git diff --staged` and then ask Gemini: "Based on the diff, write a conventional commit message."
-*   **Command-Line Coach:** Paste a complex shell command and ask: `tar -xzvf archive.tar.gz` "What do each of these flags do?"
+- **Quick Refactoring:** Use `@` to provide a file as context (e.g., `@src/utils.py`) and ask Gemini: "Refactor the `calculate_total` function in this file to be more readable."
+- **Commit Message Generation:** Run `!git diff --staged` and then ask Gemini: "Based on the diff, write a conventional commit message."
+- **Command-Line Coach:** Paste a complex shell command and ask: `tar -xzvf archive.tar.gz` "What do each of these flags do?"
 
 ```aiexclude
 ╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
@@ -98,6 +98,6 @@ Here are a few practical ideas to get you started:
 
 ## Final Thoughts
 
-Integrating these commands took a bit of muscle memory at first, but it's vastly improved how I work day-to-day. If you're also trying to maximize your terminal time, I definitely recommend giving some of these a shot. 
+Integrating these commands took a bit of muscle memory at first, but it's vastly improved how I work day-to-day. If you're also trying to maximize your terminal time, I definitely recommend giving some of these a shot.
 
 What does your terminal setup look like? I'm always looking for ways to optimize my workflow, so let me know if you have any favorite CLI tricks.

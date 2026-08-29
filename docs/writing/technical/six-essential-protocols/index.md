@@ -3,10 +3,10 @@ title: "The Six Essential Protocols Powering the AI Agent Ecosystem"
 date: 2025-01-20
 authors: [sampathm]
 categories:
-- "AI Agents"
-- "Protocols"
-- "AI Development"
-- "Integration"
+  - "AI Agents"
+  - "Protocols"
+  - "AI Development"
+  - "Integration"
 ---
 
 # The Six Essential Protocols Powering the AI Agent Ecosystem
@@ -24,7 +24,7 @@ Six protocols are quietly emerging as the foundation of AI agent architecture: M
 | **AP2** | Agent → Payments | Cryptographic transaction safety |
 | **UCP** | Agent → Commerce | One standard, every retailer |
 
-As AI agents become increasingly sophisticated, standardizing how they communicate is critical. Just as the early web relied on HTTP and TCP/IP, the emerging agent ecosystem is being shaped by a new generation of open protocols. 
+As AI agents become increasingly sophisticated, standardizing how they communicate is critical. Just as the early web relied on HTTP and TCP/IP, the emerging agent ecosystem is being shaped by a new generation of open protocols.
 
 Over the past year, I've spent a lot of time building and experimenting with AI agents. Through that work, I've identified six foundational protocols that are shaping the ecosystem. Here is how they form the backbone of modern agent applications.
 
@@ -85,6 +85,7 @@ The [A2A Protocol](https://a2a-protocol.org/latest/) addresses the reality that 
 **Key Features:** Cryptographic proof at every step, granular permission controls.
 
 The [AP2 Protocol](https://github.com/google-agentic-commerce/AP2) tackles one of the most challenging aspects of autonomous agents: handling money. It implements a three-stage mandate system:
+
 - Intent Mandate: What the agent is authorized to do (e.g., "Buy shoes under $150")
 - Cart Mandate: What the agent has selected
 - Payment Mandate: The actual transaction execution
@@ -116,6 +117,7 @@ Let me share an example. Say my friend runs a small marketing agency and recentl
 **Before protocols**: She had separate tools for project management (Asana), analytics (Google Analytics), client communication (Slack), and invoicing (QuickBooks). Her AI assistant could only help with basic tasks in isolation.
 
 **After MCP adoption**: Her AI assistant now connects to all these tools through a single protocol. When a client emails about campaign performance, the assistant automatically:
+
 - Pulls the latest analytics data
 - Checks project status in Asana
 - Drafts a comprehensive update email with actual metrics

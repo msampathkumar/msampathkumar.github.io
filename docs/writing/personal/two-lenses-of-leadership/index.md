@@ -3,9 +3,9 @@ title: "The Two Lenses of Leadership: Operational Fixes vs. Strategic Bets"
 date: 2026-01-28
 authors: [sampathm]
 categories:
-- "Leadership"
-- "Strategy"
-- "Management"
+  - "Leadership"
+  - "Strategy"
+  - "Management"
 ---
 
 # The Two Lenses of Leadership: Operational Fixes vs. Strategic Bets
@@ -44,6 +44,6 @@ Fortunately, a senior leader challenged me with the strategic lens. They argued 
 
 ### The Takeaway
 
-This marked a thrilling moment of perspective shift. While neither approach was inherently 'wrong,' it unveiled an invaluable lesson: 
+This marked a thrilling moment of perspective shift. While neither approach was inherently 'wrong,' it unveiled an invaluable lesson:
 
 > Sometimes the path forward isn't merely to alleviate an operational pinch point by redirecting demand. Sometimes, the path forward is to lean into the difficulty, because it could be where the magic 🌟 happens.

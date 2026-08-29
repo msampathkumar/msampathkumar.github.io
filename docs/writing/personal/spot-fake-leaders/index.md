@@ -3,10 +3,11 @@ title: "How to Spot an Ineffective Manager or Leader"
 date: 2026-01-06
 authors: [sampathm]
 categories:
-- "Work-Life-Balance"
-- "Ineffective Manager"
-- "Tips-and-Tricks"
+  - "Work-Life-Balance"
+  - "Ineffective Manager"
+  - "Tips-and-Tricks"
 ---
+
 # How to Spot an Ineffective Manager or Leader
 
 Identifying poor leadership is a critical skill for career growth and mental well-being. In many corporate environments, a person's position or title can mask their true leadership capabilities. Ineffective leaders often exploit communication gaps and their perceived authority, creating a toxic environment for their team.

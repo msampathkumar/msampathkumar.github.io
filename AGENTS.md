@@ -51,8 +51,10 @@ ______________________________________________________________________
 
 ## 4. Visuals & Content Patterns
 
+- **Standard Article Structure**:
+  - `[# Title]` ➔ `[Metadata Bar (Date · Read time · Author)]` (auto-injected by build hook) ➔ `[Hero Image]` ➔ `[TL;DR / Body]`.
 - **Hero Image Requirement**:
-  - Every post includes a co-located hero image placed immediately below the `# Title`.
+  - Every post includes a co-located hero image placed below the `# Title` and metadata bar.
   - Visual Style: Minimalist technical illustration, dark slate canvas, glowing neon accents, **zero embedded text/words**.
   - Must include generation prompt comment directly above the image tag:
     ```markdown

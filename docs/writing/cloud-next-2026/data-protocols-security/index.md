@@ -3,12 +3,12 @@ title: "Google Cloud Next 2026 (4/5) - The Agentic Data Cloud, Agent Protocols &
 date: 2026-05-02
 authors: [sampathm]
 categories:
-- "Google Cloud Next 2026"
+  - "Google Cloud Next 2026"
 ---
 
-![Google Cloud Next 2026](https://storage.googleapis.com/gweb-cloudblog-publish/images/GCN26_102_BlogHeader_2436x1200_Opt_4_Dark.max-2500x2500.jpg)
-
 # Google Cloud Next 2026 (4/5) - The Agentic Data Cloud, Agent Protocols & Agentic Security
+
+![Google Cloud Next 2026](https://storage.googleapis.com/gweb-cloudblog-publish/images/GCN26_102_BlogHeader_2436x1200_Opt_4_Dark.max-2500x2500.jpg)
 
 > This is from my personal collection/notes. Hope you find it informative :)
 

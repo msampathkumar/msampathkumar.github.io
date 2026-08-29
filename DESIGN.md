@@ -83,6 +83,12 @@ ______________________________________________________________________
 - Scans `docs/writing/**/*.md` and extracts `title`, `date`, `description`, and URL from YAML front matter.
 - Injects the top 3 newest posts into `docs/index.md` at the `<!-- LATEST_POSTS -->` placeholder.
 
+### Automated Post Metadata Header Hook (`hooks/latest_posts.py`)
+
+- Automatically runs across all articles under `docs/writing/**/*.md`.
+- Injects a single-line metadata bar (`Date · Read Time · Author`) immediately beneath the `# Title` and above the hero image.
+- Estimates reading time using the **Medium.com standard algorithm** (265 words/min on English prose, excluding code/diagrams, plus 12s/11s progressive image weighting).
+
 ### LLM Indexing System (`docs/llms.txt` & `docs/llms-full.txt`)
 
 - `docs/llms.txt`: Curated, link-first index categorized by topic for LLMs and crawler agents.

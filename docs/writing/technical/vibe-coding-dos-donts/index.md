@@ -7,6 +7,8 @@ categories:
   - General
 ---
 
+# Vibe Coding Dos and Don'ts
+
 ## DO's and DOnt's with Vibe Coding
 
 Summary notes of
