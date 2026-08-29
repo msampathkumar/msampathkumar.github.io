@@ -52,6 +52,7 @@ theme:
     # right-hand sidebar (right nav) instead of being folded into the left nav.
     - toc.follow
     - content.code.copy
+    - content.tabs.link
     - search.suggest
     - search.highlight
 
@@ -65,6 +66,15 @@ extra_javascript:
 
 markdown_extensions:
   - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
   # emojis
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -118,6 +128,14 @@ plugins:
         blog/posts/poem-sky-sea-truth.md: writing/personal/sky-sea-truth/index.md
         blog/posts/spot-fakes-leaders.md: writing/personal/spot-fake-leaders/index.md
         blog/posts/two-lenses-of-leadership.md: writing/personal/two-lenses-of-leadership/index.md
+        blog/notes/google-cloud-vm-for-agentic-coding-harness-experiments.md: writing/technical/building-agentic-sandbox-vm/index.md
+        blog/notes/google-cloud-vm-setup-gui-and-remote-desktop.md: writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/index.md
+        writing/technical/agentic-ai-vm-setup/index.md: writing/technical/building-agentic-sandbox-vm/index.md
+        writing/technical/agentic-sandbox-vm-setup/index.md: writing/technical/building-agentic-sandbox-vm/index.md
+        writing/technical/agentic-sandbox-vm/index.md: writing/technical/building-agentic-sandbox-vm/index.md
+        writing/technical/gcp-vm-gui-remote-desktop/index.md: writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/index.md
+        writing/technical/agentic-sandbox-gui/index.md: writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/index.md
+        writing/technical/setup-gui-chrome-remote-desktop/index.md: writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/index.md
 
 # Build hooks
 hooks:
@@ -178,6 +196,8 @@ nav:
           - "Gemini 2.5 Flash Image Preview": writing/gemini/flash-image-preview/index.md
           - "Gemini as your Culinary Guide": writing/gemini/culinary-guide/index.md
       - "Technical Articles":
+          - "Building an Agentic Sandbox VM": writing/technical/building-agentic-sandbox-vm/index.md
+          - "Setting Up GUI & Chrome Remote Desktop on GCP VM": writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/index.md
           - "Mastering tmux: Headless Sessions & Automation": writing/technical/mastering-tmux/index.md
           - "The Six Essential Protocols Powering the AI Agent Ecosystem": writing/technical/six-essential-protocols/index.md
           - "Role of Python in Google Cloud": writing/technical/python-in-google-cloud/index.md
