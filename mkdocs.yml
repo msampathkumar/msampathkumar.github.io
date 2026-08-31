@@ -153,7 +153,7 @@ extra:
   analytics:
     # https://analytics.google.com/analytics/web/
     provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY_GITHUB_IO_BLOG
+    property: G-YN54SGR7ZS
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/msampathkumar
