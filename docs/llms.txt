@@ -14,13 +14,17 @@ the underlying `.md` source is deterministic.
 
 Step-by-step technical tutorials with runnable code.
 
-- [Cookbook — Hub](https://msampathkumar.github.io/cookbook/): Landing page for all cookbooks (Gemini now; A2A coming soon).
+- [Cookbook — Hub](https://msampathkumar.github.io/cookbook/): Landing page for all cookbooks (Gemini, SCION, and A2A).
 - [Gemini Cookbook — Overview](https://msampathkumar.github.io/google-cloud-gemini-cookbook/): Index of the five-lesson Gemini + Google Cloud cookbook series.
 - [Lesson 1 — Basic Chatbot with Streamlit](https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-01/): Build a minimal Gemini chatbot with a Streamlit UI.
 - [Lesson 2 — Chatbot with Memory & Gemma](https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-02/): Add conversational memory; introduce Gemma as an alternative model.
 - [Lesson 3 — Multimodality with Vision](https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-03/): Extend the chatbot to accept images and reason over them.
 - [Lesson 4 — Knowledge Base Q&A with RAG](https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-04/): Retrieval-Augmented Generation over a local knowledge base.
 - [Lesson 5 — Advanced RAG with Knowledge Graphs](https://msampathkumar.github.io/google-cloud-gemini-cookbook/lesson-05/): Extend RAG with knowledge-graph structure for richer retrieval.
+- [SCION Cookbook — Overview](https://msampathkumar.github.io/scion-cookbook/): Guide to running concurrent autonomous AI coding agents inside isolated containers with dedicated Git worktrees.
+- [SCION Part 1 — The Case for Containerized Agents](https://msampathkumar.github.io/scion-cookbook/01-case-for-containerized-agents/): Architecture breakdown and the case for container isolation in multi-agent workflows.
+- [SCION Part 2 — Setup, Architecture & Troubleshooting](https://msampathkumar.github.io/scion-cookbook/02-setup-architecture-troubleshooting/): Step-by-step setup guide on macOS/Linux, multi-provider credentials, and troubleshooting.
+- [SCION Part 3 — Practical User Guide & Workflows](https://msampathkumar.github.io/scion-cookbook/03-user-guide-workflows/): Operations manual, CLI cheatsheet, interactive tmux attach/detach, and repo audits.
 
 ## Writing — Agent-to-Agent (A2A)
 

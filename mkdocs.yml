@@ -178,6 +178,11 @@ nav:
           - "Lesson 3: Multimodality with Vision": google-cloud-gemini-cookbook/lesson-03/README.md
           - "Lesson 4: Knowledge Base Q&A with RAG": google-cloud-gemini-cookbook/lesson-04/README.md
           - "Lesson 5: Advanced RAG with Knowledge Graphs": google-cloud-gemini-cookbook/lesson-05/README.md
+      - "SCION Cookbook":
+          - "Overview": scion-cookbook/README.md
+          - "Part 1: The Case for Containerized Agents": scion-cookbook/01-case-for-containerized-agents.md
+          - "Part 2: Setup, Architecture & Troubleshooting": scion-cookbook/02-setup-architecture-troubleshooting.md
+          - "Part 3: Practical User Guide & Workflows": scion-cookbook/03-user-guide-workflows.md
       # - "A2A Cookbook":  # coming soon — add lessons here
       #     - "Overview": a2a-cookbook/README.md
   - "Writing":

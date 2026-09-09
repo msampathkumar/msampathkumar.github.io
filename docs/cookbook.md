@@ -15,6 +15,13 @@ deployable to Cloud Run.
 
 [Open the Gemini Cookbook →](google-cloud-gemini-cookbook/README.md){ .md-button }
 
+### :material-docker: SCION Cookbook
+
+Run, orchestrate, and supervise concurrent autonomous AI coding agents inside
+isolated lightweight containers (Podman/Docker) with dedicated Git worktrees.
+
+[Open the SCION Cookbook →](scion-cookbook/README.md){ .md-button }
+
 ### :material-transit-connection-variant: A2A Cookbook <small>(coming soon)</small>
 
 Recipes for the **Agent-to-Agent (A2A) protocol**: exposing agents over A2A,
