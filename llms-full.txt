@@ -26,6 +26,13 @@ deployable to Cloud Run.
 
 [Open the Gemini Cookbook →](google-cloud-gemini-cookbook/README.md){ .md-button }
 
+### :material-docker: SCION Cookbook
+
+Run, orchestrate, and supervise concurrent autonomous AI coding agents inside
+isolated lightweight containers (Podman/Docker) with dedicated Git worktrees.
+
+[Open the SCION Cookbook →](scion-cookbook/README.md){ .md-button }
+
 ### :material-transit-connection-variant: A2A Cookbook <small>(coming soon)</small>
 
 Recipes for the **Agent-to-Agent (A2A) protocol**: exposing agents over A2A,
@@ -1222,6 +1229,700 @@ ______________________________________________________________________
 Now something for fun :)
 
 ![XKCD: Computers vs Humans](img_5.png)
+
+---
+
+## SCION Cookbook — Overview
+Source: https://msampathkumar.github.io/scion-cookbook/
+
+# 🚀 SCION Cookbook: Containerized Multi-Agent AI Engineering
+
+Welcome to the **SCION (Source-Code Inference & Orchestration Node) Cookbook**! This hands-on series explores how to run, orchestrate, and supervise concurrent autonomous AI coding agents inside isolated containers.
+
+---
+
+## 💡 Why SCION?
+
+Autonomous AI coding agents can inspect codebases, execute shell commands, create branches, and run tests. Running them directly on your host machine introduces serious risks:
+
+- **Host Pollution & Safety**: Autonomous commands can alter global state, overwrite dependencies, or run destructive scripts.
+- **Sequential Bottlenecks**: Developers must wait for one agent to finish before starting another.
+- **Git Branch Collisions**: Multiple agents on the same branch clash over uncommitted edits and index locks.
+- **Credential Exposure**: Unrestricted host execution risks exposing environment variables, tokens, and SSH keys.
+
+**SCION** packages each agent into an ephemeral container (Podman or Docker) with a **dedicated Git worktree, isolated filesystem, and scoped runtime credentials**.
+
+---
+
+## 📚 Cookbook Sections
+
+This cookbook is structured into three practical parts:
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                             SCION Cookbook Series                                │
+│                                                                                  │
+│   Part 1: The Case for Containerized Agents                                      │
+│   ├── Architecture breakdown: Hub, Runtime Broker, and Harnesses                 │
+│   └── Why container isolation unlocks true multi-agent parallelism               │
+│                                                                                  │
+│   Part 2: Setup, Architecture & Troubleshooting                                  │
+│   ├── Podman & Docker runtime initialization (macOS & Linux)                     │
+│   ├── Multi-provider auth setup (Gemini, Vertex AI, Claude, OpenAI)              │
+│   └── Battle-tested solutions for common error codes & socket issues             │
+│                                                                                  │
+│   Part 3: Practical User Guide & Workflows                                       │
+│   ├── Master the CLI cheatsheet (start, message, look, attach, suspend, resume) │
+│   ├── Non-intrusive monitoring vs interactive tmux steering (Ctrl+B, D)          │
+│   └── Real-world multi-agent workflows on a Go repository                        │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+1. **[Part 1: The Case for Containerized Agents](01-case-for-containerized-agents.md)**  
+   *Deep dive into the architecture of container-isolated agent orchestration and why it changes software engineering for developers, leads, and CTOs.*
+
+2. **[Part 2: Setup, Architecture & Troubleshooting](02-setup-architecture-troubleshooting.md)**  
+   *Step-by-step setup guide for macOS and Linux, configuring Podman/Docker, setting up harness credentials (Gemini, Claude, Vertex AI), and resolving runtime errors.*
+
+3. **[Part 3: Practical User Guide & Workflows](03-user-guide-workflows.md)**  
+   *Comprehensive operational manual, command cheatsheets, session lifecycle management, and real-world multi-agent repository audits.*
+
+---
+
+## 🛠️ Prerequisites
+
+To follow the recipes in this cookbook, ensure you have:
+- **Operating System**: macOS (Apple Silicon or Intel) or Linux (Ubuntu, Debian, Fedora, Arch).
+- **Container Engine**: [Podman](https://podman.io/) (recommended on macOS) or [Docker](https://www.docker.com/).
+- **Git**: Git 2.30+ installed.
+- **API Access**: Access to Google Gemini (`GEMINI_API_KEY` or Vertex AI credentials), Anthropic Claude, or OpenAI Codex.
+
+---
+
+[Start Part 1: The Case for Containerized Agents →](01-case-for-containerized-agents.md){ .md-button .md-button--primary }
+
+---
+
+## SCION Part 1 — The Case for Containerized Agents
+Source: https://msampathkumar.github.io/scion-cookbook/01-case-for-containerized-agents/
+
+# Why Container-Isolated AI Agent Orchestration is the Future of Software Engineering
+
+> **Series Navigation:**
+> **[Overview](README.md)** | **[Part 1: The Case for Containerized Agents](01-case-for-containerized-agents.md)** (Current) | **[Part 2: Setup, Architecture & Troubleshooting](02-setup-architecture-troubleshooting.md)** | **[Part 3: Practical User Guide & Workflows](03-user-guide-workflows.md)**
+
+---
+
+*A deep dive into SCION (Source-Code Inference & Orchestration Node) — and why running AI coding agents in isolated containers changes everything for developers, tech leads, and engineering leaders.*
+
+---
+
+## 1. The Problem with Host-Bound Agents
+
+Developer tools have evolved from autocomplete to autonomous agents that analyze codebases, execute terminal commands, and modify files.
+
+Yet most agentic tools share a critical limitation: **they run directly on the host machine.**
+
+### Risks of Uncontained Agents
+1. **Host Pollution & Damage**: Autonomous agents can unintentionally run destructive scripts, overwrite dependencies, or alter system state.
+2. **Sequential Blocking**: When an agent occupies your local Git branch, you cannot work on another feature or run a second agent without file conflicts and lock errors.
+3. **Lost Concurrency**: Developers must wait for one agent to finish before starting the next.
+4. **Credential Exposure**: Unrestricted host access exposes global environment variables, cloud tokens, and SSH keys.
+
+---
+
+## 2. Enter SCION: Containerized Agent Orchestration
+
+[**SCION**](https://github.com/GoogleCloudPlatform/scion) is an open-source, container-native orchestration platform designed for **concurrent, multi-agent AI engineering**.
+
+Instead of running agents directly on your host machine, SCION wraps each agent in a lightweight container (Podman or Docker) with a **dedicated Git worktree, isolated filesystem, and scoped credentials**.
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           SCION Server (Hub)                            │
+│    Web UI (127.0.0.1:8080)  │  Runtime Broker API (127.0.0.1:9800)       │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │
+                 Container Engine (Podman / Docker)
+                                     │
+   ┌─────────────────────────────────┴─────────────────────────────────┐
+   │                                                                   │
+┌──▼───────────────────────────────┐ ┌──▼───────────────────────────────┐
+│     Agent A: "test-auditor"      │ │      Agent B: "doc-writer"      │
+│  - Harness: Claude 3.7 Sonnet    │ │  - Harness: Gemini 2.5 Pro      │
+│  - Git Worktree: branch-ag-01    │ │  - Git Worktree: branch-ag-02   │
+│  - Isolated dependencies/tools   │ │  - Isolated dependencies/tools  │
+│  - Persistent container session  │ │  - Persistent container session │
+└──────────────────────────────────┘ └──────────────────────────────────┘
+```
+
+---
+
+## 3. How SCION Works Under the Hood
+
+### 1. Ephemeral Container Sandbox
+Every `scion start` command provisions an isolated container using a specialized AI harness image (`gemini-cli`, `claude`, etc.). All commands run strictly inside this container sandbox.
+
+### 2. Git Worktree Concurrency
+SCION uses **Git Worktrees** rather than full clones. Each agent receives a lightweight checkout linked to a dedicated Git branch, enabling multiple agents to modify different parts of a codebase simultaneously.
+
+### 3. Model & Harness Agnostic
+SCION supports pluggable harnesses for:
+- **Google Gemini** (`gemini-cli`)
+- **Anthropic Claude** (`claude`)
+- **OpenAI Codex** (`codex`)
+- **GitHub Copilot** (`copilot`)
+- **OpenCode & Hermes** (`opencode`, `hermes`)
+- **Antigravity** (`antigravity`)
+
+### 4. Stateful Worker Persistence
+SCION agents are long-running stateful workers. You can dispatch sequential tasks, ask follow-up questions, interrupt in-flight loops, or suspend and resume sessions across days.
+
+---
+
+## 4. Organizational Impact
+
+### 👩‍💻 For Developers: *Safe Exploration*
+- **Fearless Sandboxing**: Test aggressive refactors, dependency updates, or unfamiliar scripts without risking host configuration.
+- **Interactive Pairing**: Attach directly to the live terminal session (`scion attach`) to observe reasoning and tools in real time.
+
+### 👨‍💼 For Tech Leads: *True Parallelism*
+- **Parallel Workstreams**: Delegate independent tasks across multiple concurrent agents:
+  ```bash
+  scion start test-agent "Write unit tests for internal/auth" --harness claude
+  scion start doc-agent "Review README and sync with CLI flags" --harness gemini-cli
+  scion start linter "Audit Go error wrapping and lint issues" --harness opencode
+  ```
+- **Worktree Reviews**: Inspect changes in isolation with `scion cdw <agent-name>` before merging.
+
+### 🏛️ For Engineering Leaders: *Security & Governance*
+- **Host Protection**: Enforce strict container boundaries around autonomous code execution.
+- **Credential Scoping**: Isolate API keys and tokens so production secrets are never exposed to LLM loops.
+- **Centralized Dashboard**: Track active agents, compute usage, and audit logs at `http://127.0.0.1:8080`.
+
+---
+
+## 5. What Happens If You *Don't* Use Containerized Orchestration?
+
+| Without SCION (Host Execution) | With SCION (Container Orchestration) |
+| :--- | :--- |
+| **1 Task at a Time**: Developer is blocked while agent runs | **N Parallel Tasks**: Run 5+ specialized agents concurrently |
+| **Host System Risk**: Accidental `rm`, bad scripts, port clashes | **Strict Sandbox**: Container destroyed cleanly if anything breaks |
+| **Git Conflicts**: Agent modifies your active working tree | **Git Worktree Isolation**: Dedicated branch per agent |
+| **Vendor Lock-in**: Tied to one specific CLI or IDE extension | **Multi-Harness**: Mix Claude, Gemini, Codex, and Open-Source models |
+| **Opaque Background State**: Hard to monitor or steer | **Full Observability**: Live terminal snapshots (`look`), attach, Web UI |
+
+---
+
+## 6. Quick Start: Your First SCION Workflow in 60 Seconds
+
+### 1. Launch Podman & SCION Server
+```bash
+podman machine start
+scion server start
+export SCION_DEV_TOKEN="your-token"
+```
+
+### 2. Launch a Background Agent
+```bash
+cd /path/to/your/project
+scion start reviewer "Perform a read-only architecture audit of this repo and summarize entrypoints"
+```
+
+### 3. Check Progress Non-Intrusively
+```bash
+scion look reviewer
+```
+
+### 4. Send a Follow-Up Task (Preserving Context!)
+```bash
+scion message reviewer "Now draft a test plan for the critical modules you identified"
+```
+
+### 5. Open the Web Dashboard
+Navigate to [http://127.0.0.1:8080](http://127.0.0.1:8080) to inspect all active agents, browse container logs, and chat interactively.
+
+---
+
+## 7. Next in This Series
+
+- **Part 2**: [**Complete SCION Setup, Architecture & Troubleshooting Guide**](02-setup-architecture-troubleshooting.md) — Learn how to install SCION, configure Podman/Docker, connect model credentials, and resolve common configuration errors.
+- **Part 3**: [**SCION User Guide, Workflows & Practical Cheatsheet**](03-user-guide-workflows.md) — Master agent lifecycle commands, attach/detach workflows, and real-world repository audits.
+
+---
+*Container-isolated agent orchestration bridges the gap between toy AI demos and production-grade software engineering. Try SCION today to supercharge your multi-agent development workflow.*
+
+---
+
+## SCION Part 2 — Setup, Architecture & Troubleshooting
+Source: https://msampathkumar.github.io/scion-cookbook/02-setup-architecture-troubleshooting/
+
+# Part 2: Complete SCION Setup, Architecture & Troubleshooting Guide
+
+> **Series Navigation:**
+> **[Overview](README.md)** | **[Part 1: The Case for Containerized Agents](01-case-for-containerized-agents.md)** | **[Part 2: Setup, Architecture & Troubleshooting](02-setup-architecture-troubleshooting.md)** (Current) | **[Part 3: Practical User Guide & Workflows](03-user-guide-workflows.md)**
+
+---
+
+> A comprehensive, production-ready manual for setting up, configuring, and maintaining [SCION (Source-Code Inference & Orchestration Node)](https://github.com/GoogleCloudPlatform/scion) on macOS and Linux.
+
+---
+
+## 1. System Architecture
+
+**SCION** runs autonomous AI coding agents concurrently inside isolated containers.
+
+Instead of sharing your global filesystem and Git branch, SCION provisions an isolated container (Podman or Docker) and a dedicated Git worktree for each agent.
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           SCION Server (Hub)                            │
+│  - Web UI: http://127.0.0.1:8080                                        │
+│  - Runtime Broker API: http://127.0.0.1:9800                            │
+│  - Central State DB: SQLite (~/.scion/hub.db)                           │
+│  - Auth & Policy Engine (RBAC, Token Management)                        │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │
+                    Container Engine (Podman / Docker)
+                                     │
+   ┌─────────────────────────────────┴─────────────────────────────────┐
+   │                                                                   │
+┌──▼───────────────────────────────┐ ┌──▼───────────────────────────────┐
+│     Agent Container A (Claude)   │ │  Agent Container B (Gemini-CLI)  │
+│  - Git Worktree (Branch: ag-01)  │ │  - Git Worktree (Branch: ag-02)  │
+│  - Isolated dependencies/tools   │ │  - Isolated dependencies/tools   │
+│  - Mounted Workspace: /workspace │ │  - Mounted Workspace: /workspace │
+│  - Tmux session + Scion Harness  │ │  - Tmux session + Scion Harness  │
+└──────────────────────────────────┘ └──────────────────────────────────┘
+```
+
+### Core Architecture Components
+1. **SCION Server (`scion server`)**:
+   - Hosts the **Web Frontend** (port `8080`) for browser monitoring.
+   - Hosts the **Runtime Broker** (port `9800`) for container operations.
+   - Persists session state and metadata in SQLite (`~/.scion/hub.db`).
+2. **Runtime Broker**: Manages the Podman/Docker container lifecycle (create, stop, inspect, remove).
+3. **Agent Harnesses**: Pre-packaged images for LLM interfaces (`gemini-cli`, `claude`, `codex`, `copilot`, `hermes`, `opencode`, `antigravity`).
+4. **Git Worktree Isolation**: Gives each agent a dedicated Git branch and working directory, enabling concurrent edits without conflicts.
+
+---
+
+## 2. System Requirements & Prerequisites
+
+| Requirement | Details |
+| :--- | :--- |
+| **Operating System** | macOS (Apple Silicon / Intel) or Linux (Ubuntu, Debian, Fedora, Arch) |
+| **Container Engine** | **Podman** (v4.5+ / recommended) or **Docker** (v24+) |
+| **Git** | Git 2.30+ installed and initialized in target project directories |
+| **Go** | Go 1.22+ (if compiling from source) |
+| **Terminal Tools** | `curl`, `tmux` (included inside agent containers) |
+
+---
+
+## 3. Step-by-Step Installation & Setup
+
+### Step 1: Install SCION
+Install via Homebrew or build from source:
+
+```bash
+# Via Homebrew
+brew tap GoogleCloudPlatform/scion https://github.com/GoogleCloudPlatform/scion
+brew install scion
+
+# Verify installation
+scion version
+```
+
+### Step 2: Initialize and Start Container Runtime (Podman on macOS)
+On macOS, Podman runs inside an optimized lightweight Linux VM.
+
+```bash
+# 1. Check if Podman machine exists
+podman machine list
+
+# 2. If no machine exists, initialize one
+podman machine init --cpus 4 --memory 4096 --disk-size 50
+
+# 3. Start the Podman machine
+podman machine start
+
+# 4. Verify socket connectivity
+podman ps
+```
+
+> 💡 *Linux Users*: Ensure rootless Podman or the Docker daemon service is enabled: `systemctl --user enable --now podman.socket` or `sudo systemctl enable --now docker`.
+
+### Step 3: Configure Default Harness
+SCION ships with multiple harness configurations in `~/.scion/harness-configs/`. Ensure your default harness matches an installed configuration (such as `gemini-cli` or `claude`):
+
+```bash
+# Check available harness configurations
+scion harness-config list
+
+# Set default harness
+scion config set default_harness_config gemini-cli
+```
+
+### Step 4: Configure LLM Authentication
+SCION supports multiple authentication strategies depending on your model provider:
+
+#### A. Google Gemini (Google AI Studio API Key)
+```bash
+export GEMINI_API_KEY="your-gemini-api-key"
+```
+
+#### B. Google Cloud Vertex AI
+```bash
+export GOOGLE_CLOUD_PROJECT="your-gcp-project-id"
+export GOOGLE_CLOUD_LOCATION="us-central1"
+export GOOGLE_GENAI_USE_VERTEXAI="true"
+# Ensure Application Default Credentials (ADC) are configured
+gcloud auth application-default login
+```
+
+#### C. Anthropic Claude / OpenAI Codex
+```bash
+export ANTHROPIC_API_KEY="your-anthropic-api-key"
+export OPENAI_API_KEY="your-openai-api-key"
+```
+
+### Step 5: Launch the SCION Server
+Start the background server daemon:
+
+```bash
+# Start the server
+scion server start
+
+# Check status and developer token
+cat ~/.scion/server.log | grep -E "Developer token|Starting Web Frontend"
+```
+
+Set your developer token in your shell environment:
+```bash
+export SCION_DEV_TOKEN="your-developer-token-from-log"
+```
+
+Access the Web UI in your browser:
+👉 **[http://127.0.0.1:8080](http://127.0.0.1:8080)**
+
+---
+
+## 4. Troubleshooting & Known Error Resolutions
+
+### ❌ Issue 1: `runtime broker returned error 500: ... exit status 125`
+- **Error Log**: `unable to connect to Podman socket: failed to connect: dial tcp 127.0.0.1:60279: connect: connection refused`
+- **Root Cause**: The Podman virtual machine on macOS is stopped or paused.
+- **Solution**:
+  ```bash
+  podman machine start
+  podman ps
+  ```
+
+---
+
+### ❌ Issue 2: `failed to find harness-config "gemini": harness-config "gemini" not found`
+- **Error Log**: `API Error: code: not_found, failed to find harness-config "gemini"`
+- **Root Cause**: `settings.yaml` specified `gemini` instead of the built-in package name `gemini-cli`.
+- **Solution**:
+  ```bash
+  scion config set default_harness_config gemini-cli
+  ```
+
+---
+
+### ❌ Issue 3: `401 UNAUTHENTICATED: ACCESS_TOKEN_TYPE_UNSUPPORTED`
+- **Error Log**: `google.ai.generativelanguage.v1beta.GenerativeService.StreamGenerateContent returned 401 UNAUTHENTICATED`
+- **Root Cause**: The container attempted to contact the AI Studio developer endpoint with incompatible credentials.
+- **Solution**: Explicitly set the auth method when launching the agent:
+  ```bash
+  # Option 1: API Key
+  export GEMINI_API_KEY="your-key"
+  scion start my-agent "task" --harness-auth api-key
+
+  # Option 2: OAuth Credentials File
+  scion start my-agent "task" --harness-auth auth-file
+
+  # Option 3: Vertex AI on Google Cloud
+  scion start my-agent "task" --harness-auth vertex-ai
+  ```
+
+---
+
+### ❌ Issue 4: Agents Not Appearing in the Web UI
+- **Symptom**: Agent created via CLI appears in `scion list --all` but not on the Web dashboard.
+- **Root Cause**: SCION scopes agents by project directory. The Web UI might currently be viewing the `Global` project.
+- **Solution**: In the Web UI top/sidebar navigation, switch the project selector to match your directory name (e.g. `a2a-cli`).
+
+---
+
+## 5. Health Check & Verification Checklist
+
+Run this quick checklist anytime to confirm your SCION environment is healthy:
+
+```bash
+# 1. Check system prerequisites
+scion doctor
+
+# 2. Verify Podman is answering commands
+podman info
+
+# 3. Check active agents across all projects
+scion list --all
+
+# 4. Verify server logs for errors
+tail -n 30 ~/.scion/server.log
+```
+
+---
+
+## 6. Next in This Series
+
+- **Part 1**: [**The Case for Containerized Agents (Overview & Deep Dive)**](01-case-for-containerized-agents.md)
+- **Part 3**: [**SCION User Guide, Workflows & Practical Cheatsheet**](03-user-guide-workflows.md) — Master day-to-day commands, multi-tasking workflows, and repository reviews.
+
+---
+
+## SCION Part 3 — Practical User Guide & Workflows
+Source: https://msampathkumar.github.io/scion-cookbook/03-user-guide-workflows/
+
+# Part 3: SCION User Guide & Workflow Manual
+
+> **Series Navigation:**
+> **[Overview](README.md)** | **[Part 1: The Case for Containerized Agents](01-case-for-containerized-agents.md)** | **[Part 2: Setup, Architecture & Troubleshooting](02-setup-architecture-troubleshooting.md)** | **[Part 3: Practical User Guide & Workflows](03-user-guide-workflows.md)** (Current)
+
+---
+
+> A practical step-by-step guide for developers, team leads, and architects on operating [SCION](https://github.com/GoogleCloudPlatform/scion) agents for daily engineering workflows.
+
+---
+
+## 1. Quick Reference: Basic Command Cheatsheet
+
+| Purpose | Command | Description |
+| :--- | :--- | :--- |
+| **Launch Agent (Background)** | `scion start <name> "<task>"` | Creates and starts agent asynchronously |
+| **Launch Agent (Interactive)** | `scion start <name> "<task>" --attach` | Starts agent and connects terminal directly |
+| **Select Model/Harness** | `scion start <name> "<task>" --harness claude` | Uses specific harness (`claude`, `gemini-cli`, `codex`, `copilot`, etc.) |
+| **Send Task / Follow-up** | `scion message <name> "<task>"` | Dispatches a new task or query to a running agent |
+| **Interrupt & Steer** | `scion message <name> "<task>" --interrupt` | Interrupts current agent loop and redirects it |
+| **Attach to Terminal** | `scion attach <name>` | Connects to live tmux session *(Detach: `Ctrl+B`, `D`)* |
+| **Inspect Screen (Read-Only)** | `scion look <name>` | Takes a non-intrusive snapshot of agent screen |
+| **View Full History** | `scion look <name> --full` | Dumps complete terminal scrollback history |
+| **View Container Logs** | `scion logs <name>` | Fetches stdout/stderr container logs |
+| **List Current Project Agents** | `scion list` | Lists active agents for current repo |
+| **List All Agents** | `scion list --all` | Lists agents across all projects |
+| **Filter Active Agents** | `scion list --running` | Shows only actively executing agents |
+| **Suspend Agent** | `scion suspend <name>` | Pauses container to free CPU/RAM (preserves state) |
+| **Resume Agent** | `scion resume <name>` | Restores a suspended or stopped agent |
+| **Stop Agent** | `scion stop <name>` | Gracefully halts agent execution |
+| **Delete Agent** | `scion delete <name> -y` | Destroys container, worktree, and temp branch |
+| **Switch to Agent Workspace** | `scion cdw <name>` | Navigates host shell into the agent's git worktree |
+| **Web Dashboard** | [http://127.0.0.1:8080](http://127.0.0.1:8080) | Full browser GUI for agent monitoring & chat |
+
+---
+
+## 2. Core Concepts: Multi-Tasking vs Agent Deletion
+
+### Treat Agents as Stateful Workers, Not Single-Turn Scripts
+Do not destroy an agent after a single prompt.
+
+**SCION agents are persistent, stateful workers:**
+1. **Memory & Context**: The agent retains prior tool outputs, file inspections, and reasoning steps across prompts.
+2. **Git Worktree Isolation**: Edits stay in the agent's dedicated Git branch until you merge or delete them.
+3. **Sequential Execution**: Send iterative prompts, review requests, and bug fixes to the same running agent with `scion message`.
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                   Agent Lifecycle Workflow                       │
+│                                                                  │
+│  1. scion start agent-01 "Task 1"                                │
+│       │                                                          │
+│       ▼                                                          │
+│  2. Agent executes Task 1 in background                          │
+│       │                                                          │
+│       ▼                                                          │
+│  3. scion message agent-01 "Follow-up Task 2" (Reuses context!)  │
+│       │                                                          │
+│       ▼                                                          │
+│  4. scion message agent-01 "Refine tests Task 3"                 │
+│       │                                                          │
+│       ▼                                                          │
+│  5. Work completed? ───► scion delete agent-01 -y (Cleanup)      │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+- **Keep Running**: Keep the agent active while iterating on a feature, bug investigation, or review pass.
+- **Suspend**: Run `scion suspend` to pause work and free resources without losing context.
+- **Delete**: Run `scion delete` only after merging or discarding the work.
+
+---
+
+## 3. Step-by-Step Operations Guide
+
+### 3.1 Creating & Starting Agents
+
+```bash
+# Standard background start (recommended)
+scion start reviewer "Audit internal/runner for error handling"
+
+# Start with an explicit LLM harness
+scion start doc-writer "Update README.md" --harness claude
+
+# Pre-create configuration without launching immediately
+scion create benchmarker "Run benchmarks on parser"
+# Launch later:
+scion resume benchmarker
+```
+
+---
+
+### 3.2 Interacting, Messaging & Steering Tasks
+
+#### Sending Follow-up Instructions
+```bash
+# Dispatch next prompt to the same active agent
+scion message reviewer "Great, now write unit tests covering the edge cases you found"
+
+# Attach a document or spec file with the message
+scion message reviewer "Verify implementation against this spec" --attach specification/a2a.json
+```
+
+#### Interrupting a Running Agent
+Redirect an agent that is off-track:
+```bash
+scion message reviewer "Stop running benchmarks; focus only on code readability" --interrupt
+```
+
+---
+
+### 3.3 Terminal Monitoring & The Attach/Detach Rule
+
+#### Non-intrusive Snapshot (`scion look`)
+```bash
+# View instant snapshot of the agent terminal
+scion look reviewer
+
+# View complete scrollback history
+scion look reviewer --full
+```
+
+#### Interactive Terminal (`scion attach`)
+Directly interact with the agent harness:
+```bash
+scion attach reviewer
+```
+
+> ⚠️ **CRITICAL: How to exit an attached session:**
+> - ❌ **NEVER** type `exit` or close the terminal (this kills the agent container).
+> - ✅ **PRESS `Ctrl + B`**, release both keys, then press **`D`** (*Detach*).
+> - You return to your host shell while the agent continues running in the background.
+
+---
+
+### 3.4 Stopping, Suspending & Deleting
+
+```bash
+# Suspend container to save host memory/CPU (preserves state)
+scion suspend reviewer
+
+# Resume container execution
+scion resume reviewer
+
+# Stop agent gracefully
+scion stop reviewer
+
+# Delete agent, container, and temporary worktree
+scion delete reviewer -y
+```
+
+---
+
+## 4. Practical Workflows on `a2a-cli` (Example Repository)
+
+The following workflows show how to use SCION safely on a real Go CLI codebase ([`a2a-cli`](https://github.com/GoogleCloudPlatform/scion)).
+
+### Workflow 1: Read-Only Architectural Exploration & Onboarding
+**Scenario**: Survey a repository structure without manual file exploration.
+
+```bash
+cd /path/to/a2a-cli
+
+# 1. Start exploration agent
+scion start explorer "Perform a read-only survey of this codebase. Explain the role of main.go, the internal/ directory structure, and command routing."
+
+# 2. Check output non-intrusively
+scion look explorer
+
+# 3. Ask follow-up question to the SAME agent
+scion message explorer "Which third-party libraries in go.mod handle CLI argument parsing and HTTP communication?"
+
+# 4. Read the answer
+scion look explorer --full
+
+# 5. Clean up when finished
+scion delete explorer -y
+```
+
+---
+
+### Workflow 2: Documentation & README Quality Audit
+**Scenario**: Audit documentation against actual CLI flags.
+
+```bash
+cd /path/to/a2a-cli
+
+# 1. Launch doc reviewer
+scion start doc-auditor "Compare README.md against flags in internal/commands/. Highlight outdated flags or missing prerequisites. Do not modify files yet."
+
+# 2. Inspect findings
+scion look doc-auditor
+
+# 3. Instruct the same agent to draft improvements
+scion message doc-auditor "Draft an updated 'Usage Examples' section in Markdown format based on your review."
+
+# 4. View suggested draft
+scion look doc-auditor --full
+
+# 5. Review isolated branch workspace if needed
+scion cdw doc-auditor
+
+# 6. Clean up
+scion delete doc-auditor -y
+```
+
+---
+
+### Workflow 3: Code Readability & Idiomatic Go Review
+**Scenario**: Audit code for Go best practices and error wrapping.
+
+```bash
+cd /path/to/a2a-cli
+
+# 1. Launch auditor with Claude harness
+scion start go-reviewer "Review internal/ for idiomatic Go patterns, fmt.Errorf wrapping with %w, and mutex safety. Generate a bulleted report prioritized by severity." --harness claude
+
+# 2. Check the review report
+scion look go-reviewer
+
+# 3. Clean up
+scion delete go-reviewer -y
+```
+
+---
+
+## 5. Summary & Best Practices for Teams
+
+1. **Parallel Execution**: Launch multiple specialized agents concurrently (e.g., `test-writer`, `doc-reviewer`, `security-scanner`) without them interfering with each other.
+2. **Preserve Context**: Send sequential messages to the same agent rather than constantly recreating new ones.
+3. **Always Detach Cleanly**: Use `Ctrl + B`, then `D` when using `scion attach`.
+4. **Use Web UI for Team Visibility**: Open `http://127.0.0.1:8080` for team demos, live logs, and project-level overview.
+
+---
+
+## 6. Series Navigation
+
+- **Part 1**: [**The Case for Containerized Agents (Overview & Deep Dive)**](01-case-for-containerized-agents.md) — The rationale and architectural benefits of container-isolated agent orchestration.
+- **Part 2**: [**Complete SCION Setup, Architecture & Troubleshooting Guide**](02-setup-architecture-troubleshooting.md) — Prerequisites, runtime installation, and resolving real-world errors.
 
 ---
 ## Writing — Agent-to-Agent (A2A)

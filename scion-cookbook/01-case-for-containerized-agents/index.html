@@ -13,24 +13,28 @@
       
       
       
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02-setup-architecture-troubleshooting/">
       
       
         
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.svg">
+      <link rel="icon" href="../../assets/images/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Rag intro - Sampath Kumar | AI & Cloud Blog</title>
+        <title>Part 1: The Case for Containerized Agents - Sampath Kumar | AI & Cloud Blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,11 +53,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../../css/timeago.css">
+      <link rel="stylesheet" href="../../css/timeago.css">
     
-      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -87,6 +91,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#why-container-isolated-ai-agent-orchestration-is-the-future-of-software-engineering" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -97,7 +106,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-header__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
+    <a href="../.." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-header__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
@@ -117,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Rag intro
+              Part 1: The Case for Containerized Agents
             
           </span>
         </div>
@@ -218,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -235,11 +244,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../cookbook/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../cookbook/" class="md-tabs__link">
           
   
   
@@ -259,7 +270,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../writing/" class="md-tabs__link">
+        <a href="../../writing/" class="md-tabs__link">
           
   
   
@@ -279,7 +290,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../events/" class="md-tabs__link">
+        <a href="../../events/" class="md-tabs__link">
           
   
   
@@ -297,7 +308,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
@@ -332,7 +343,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-nav__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
+    <a href="../.." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-nav__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
@@ -350,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -374,24 +385,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -409,7 +425,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -427,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cookbook/" class="md-nav__link">
+      <a href="../../cookbook/" class="md-nav__link">
         
   
   
@@ -505,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../../google-cloud-gemini-cookbook/" class="md-nav__link">
         
   
   
@@ -533,7 +549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lesson-01/" class="md-nav__link">
+      <a href="../../google-cloud-gemini-cookbook/lesson-01/" class="md-nav__link">
         
   
   
@@ -561,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lesson-02/" class="md-nav__link">
+      <a href="../../google-cloud-gemini-cookbook/lesson-02/" class="md-nav__link">
         
   
   
@@ -589,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lesson-03/" class="md-nav__link">
+      <a href="../../google-cloud-gemini-cookbook/lesson-03/" class="md-nav__link">
         
   
   
@@ -617,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../google-cloud-gemini-cookbook/lesson-04/" class="md-nav__link">
         
   
   
@@ -645,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lesson-05/" class="md-nav__link">
+      <a href="../../google-cloud-gemini-cookbook/lesson-05/" class="md-nav__link">
         
   
   
@@ -678,6 +694,8 @@
                 
   
   
+    
+  
   
   
     
@@ -688,11 +706,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -713,7 +731,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -731,7 +749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scion-cookbook/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -756,10 +774,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../scion-cookbook/01-case-for-containerized-agents/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1: The Case for Containerized Agents
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -775,6 +820,270 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-problem-with-host-bound-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Problem with Host-Bound Agents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. The Problem with Host-Bound Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risks-of-uncontained-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks of Uncontained Agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-enter-scion-containerized-agent-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Enter SCION: Containerized Agent Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-how-scion-works-under-the-hood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. How SCION Works Under the Hood
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. How SCION Works Under the Hood">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ephemeral-container-sandbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Ephemeral Container Sandbox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-git-worktree-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Git Worktree Concurrency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-model-harness-agnostic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Model &amp; Harness Agnostic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-stateful-worker-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Stateful Worker Persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-organizational-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Organizational Impact
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Organizational Impact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-developers-safe-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👩‍💻 For Developers: Safe Exploration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-tech-leads-true-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👨‍💼 For Tech Leads: True Parallelism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-engineering-leaders-security-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏛️ For Engineering Leaders: Security &amp; Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-what-happens-if-you-dont-use-containerized-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. What Happens If You Don't Use Containerized Orchestration?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-quick-start-your-first-scion-workflow-in-60-seconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Quick Start: Your First SCION Workflow in 60 Seconds
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Quick Start: Your First SCION Workflow in 60 Seconds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-launch-podman-scion-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Launch Podman &amp; SCION Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-launch-a-background-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Launch a Background Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-check-progress-non-intrusively" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Check Progress Non-Intrusively
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-send-a-follow-up-task-preserving-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Send a Follow-Up Task (Preserving Context!)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-open-the-web-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Open the Web Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-next-in-this-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Next in This Series
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -787,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scion-cookbook/02-setup-architecture-troubleshooting/" class="md-nav__link">
+      <a href="../02-setup-architecture-troubleshooting/" class="md-nav__link">
         
   
   
@@ -815,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scion-cookbook/03-user-guide-workflows/" class="md-nav__link">
+      <a href="../03-user-guide-workflows/" class="md-nav__link">
         
   
   
@@ -908,7 +1217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/" class="md-nav__link">
+      <a href="../../writing/" class="md-nav__link">
         
   
   
@@ -986,7 +1295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/a2a/a2a-joins-aaif/" class="md-nav__link">
+      <a href="../../writing/a2a/a2a-joins-aaif/" class="md-nav__link">
         
   
   
@@ -1014,7 +1323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/a2a/multi-tenancy/" class="md-nav__link">
+      <a href="../../writing/a2a/multi-tenancy/" class="md-nav__link">
         
   
   
@@ -1042,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/a2a/v1-release/" class="md-nav__link">
+      <a href="../../writing/a2a/v1-release/" class="md-nav__link">
         
   
   
@@ -1070,7 +1379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/a2a/intro/" class="md-nav__link">
+      <a href="../../writing/a2a/intro/" class="md-nav__link">
         
   
   
@@ -1098,7 +1407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/a2a/test-kit/" class="md-nav__link">
+      <a href="../../writing/a2a/test-kit/" class="md-nav__link">
         
   
   
@@ -1126,7 +1435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/a2a/security-whitepaper/" class="md-nav__link">
+      <a href="../../writing/a2a/security-whitepaper/" class="md-nav__link">
         
   
   
@@ -1212,7 +1521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/cloud-next-2026/infrastructure/" class="md-nav__link">
+      <a href="../../writing/cloud-next-2026/infrastructure/" class="md-nav__link">
         
   
   
@@ -1240,7 +1549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/cloud-next-2026/foundational-models/" class="md-nav__link">
+      <a href="../../writing/cloud-next-2026/foundational-models/" class="md-nav__link">
         
   
   
@@ -1268,7 +1577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/cloud-next-2026/dev-tools-mcp-servers/" class="md-nav__link">
+      <a href="../../writing/cloud-next-2026/dev-tools-mcp-servers/" class="md-nav__link">
         
   
   
@@ -1296,7 +1605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/cloud-next-2026/data-protocols-security/" class="md-nav__link">
+      <a href="../../writing/cloud-next-2026/data-protocols-security/" class="md-nav__link">
         
   
   
@@ -1324,7 +1633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/cloud-next-2026/workspace-ai-agents/" class="md-nav__link">
+      <a href="../../writing/cloud-next-2026/workspace-ai-agents/" class="md-nav__link">
         
   
   
@@ -1410,7 +1719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/gemini/cli-cheatsheets/" class="md-nav__link">
+      <a href="../../writing/gemini/cli-cheatsheets/" class="md-nav__link">
         
   
   
@@ -1438,7 +1747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/gemini/cli-top-commands/" class="md-nav__link">
+      <a href="../../writing/gemini/cli-top-commands/" class="md-nav__link">
         
   
   
@@ -1466,7 +1775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/gemini/flash-image-preview/" class="md-nav__link">
+      <a href="../../writing/gemini/flash-image-preview/" class="md-nav__link">
         
   
   
@@ -1494,7 +1803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/gemini/culinary-guide/" class="md-nav__link">
+      <a href="../../writing/gemini/culinary-guide/" class="md-nav__link">
         
   
   
@@ -1580,7 +1889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/building-agentic-sandbox-vm/" class="md-nav__link">
+      <a href="../../writing/technical/building-agentic-sandbox-vm/" class="md-nav__link">
         
   
   
@@ -1608,7 +1917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/" class="md-nav__link">
+      <a href="../../writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/" class="md-nav__link">
         
   
   
@@ -1636,7 +1945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/mastering-tmux/" class="md-nav__link">
+      <a href="../../writing/technical/mastering-tmux/" class="md-nav__link">
         
   
   
@@ -1664,7 +1973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/science-backed-multi-agent-takeaways/" class="md-nav__link">
+      <a href="../../writing/technical/science-backed-multi-agent-takeaways/" class="md-nav__link">
         
   
   
@@ -1692,7 +2001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/beads-memory-system/" class="md-nav__link">
+      <a href="../../writing/technical/beads-memory-system/" class="md-nav__link">
         
   
   
@@ -1720,7 +2029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/python-in-google-cloud/" class="md-nav__link">
+      <a href="../../writing/technical/python-in-google-cloud/" class="md-nav__link">
         
   
   
@@ -1748,7 +2057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/memory-management-agentic-ai/" class="md-nav__link">
+      <a href="../../writing/technical/memory-management-agentic-ai/" class="md-nav__link">
         
   
   
@@ -1776,7 +2085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/quantum-ai-era/" class="md-nav__link">
+      <a href="../../writing/technical/quantum-ai-era/" class="md-nav__link">
         
   
   
@@ -1804,7 +2113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/conductor-gemini-cli/" class="md-nav__link">
+      <a href="../../writing/technical/conductor-gemini-cli/" class="md-nav__link">
         
   
   
@@ -1832,7 +2141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/documentation-driven-development/" class="md-nav__link">
+      <a href="../../writing/technical/documentation-driven-development/" class="md-nav__link">
         
   
   
@@ -1860,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/vibe-coding-intro/" class="md-nav__link">
+      <a href="../../writing/technical/vibe-coding-intro/" class="md-nav__link">
         
   
   
@@ -1888,7 +2197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/coala-agent-brain-architecture/" class="md-nav__link">
+      <a href="../../writing/technical/coala-agent-brain-architecture/" class="md-nav__link">
         
   
   
@@ -1916,7 +2225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/gke-magic-quadrant/" class="md-nav__link">
+      <a href="../../writing/technical/gke-magic-quadrant/" class="md-nav__link">
         
   
   
@@ -1944,7 +2253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/deepseek-vertex-ai-model-garden/" class="md-nav__link">
+      <a href="../../writing/technical/deepseek-vertex-ai-model-garden/" class="md-nav__link">
         
   
   
@@ -1972,7 +2281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/secret-language-of-sound/" class="md-nav__link">
+      <a href="../../writing/technical/secret-language-of-sound/" class="md-nav__link">
         
   
   
@@ -2000,7 +2309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/gemini-global-endpoint/" class="md-nav__link">
+      <a href="../../writing/technical/gemini-global-endpoint/" class="md-nav__link">
         
   
   
@@ -2028,7 +2337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/global-gitignore-setup/" class="md-nav__link">
+      <a href="../../writing/technical/global-gitignore-setup/" class="md-nav__link">
         
   
   
@@ -2056,7 +2365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/podman-developer-notes/" class="md-nav__link">
+      <a href="../../writing/technical/podman-developer-notes/" class="md-nav__link">
         
   
   
@@ -2084,7 +2393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/six-essential-protocols/" class="md-nav__link">
+      <a href="../../writing/technical/six-essential-protocols/" class="md-nav__link">
         
   
   
@@ -2112,7 +2421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/token-counting-explained/" class="md-nav__link">
+      <a href="../../writing/technical/token-counting-explained/" class="md-nav__link">
         
   
   
@@ -2140,7 +2449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/load-balancing-blitz-intro/" class="md-nav__link">
+      <a href="../../writing/technical/load-balancing-blitz-intro/" class="md-nav__link">
         
   
   
@@ -2168,7 +2477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/vibe-coding-dos-donts/" class="md-nav__link">
+      <a href="../../writing/technical/vibe-coding-dos-donts/" class="md-nav__link">
         
   
   
@@ -2196,7 +2505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/sharding-partitioning-sharding-managers/" class="md-nav__link">
+      <a href="../../writing/technical/sharding-partitioning-sharding-managers/" class="md-nav__link">
         
   
   
@@ -2282,7 +2591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/personal/two-lenses-of-leadership/" class="md-nav__link">
+      <a href="../../writing/personal/two-lenses-of-leadership/" class="md-nav__link">
         
   
   
@@ -2310,7 +2619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/personal/spot-fake-leaders/" class="md-nav__link">
+      <a href="../../writing/personal/spot-fake-leaders/" class="md-nav__link">
         
   
   
@@ -2338,7 +2647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/personal/sky-sea-truth/" class="md-nav__link">
+      <a href="../../writing/personal/sky-sea-truth/" class="md-nav__link">
         
   
   
@@ -2366,7 +2675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/personal/miyamoto-musashi/" class="md-nav__link">
+      <a href="../../writing/personal/miyamoto-musashi/" class="md-nav__link">
         
   
   
@@ -2394,7 +2703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/personal/devrel-product-launches-market-velocity/" class="md-nav__link">
+      <a href="../../writing/personal/devrel-product-launches-market-velocity/" class="md-nav__link">
         
   
   
@@ -2422,7 +2731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/personal/productivity-avoiding-burnout/" class="md-nav__link">
+      <a href="../../writing/personal/productivity-avoiding-burnout/" class="md-nav__link">
         
   
   
@@ -2515,7 +2824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../events/" class="md-nav__link">
+      <a href="../../events/" class="md-nav__link">
         
   
   
@@ -2543,7 +2852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../events/2025-11-10-kaggle-ai-days/" class="md-nav__link">
+      <a href="../../events/2025-11-10-kaggle-ai-days/" class="md-nav__link">
         
   
   
@@ -2571,7 +2880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../events/2025-11-05-ai-day-sweden/" class="md-nav__link">
+      <a href="../../events/2025-11-05-ai-day-sweden/" class="md-nav__link">
         
   
   
@@ -2599,7 +2908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../events/2025-10-28-ai-day-denmark/" class="md-nav__link">
+      <a href="../../events/2025-10-28-ai-day-denmark/" class="md-nav__link">
         
   
   
@@ -2627,7 +2936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../events/2025-04-09-cloud-next/" class="md-nav__link">
+      <a href="../../events/2025-04-09-cloud-next/" class="md-nav__link">
         
   
   
@@ -2662,7 +2971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
@@ -2699,6 +3008,260 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-problem-with-host-bound-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Problem with Host-Bound Agents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. The Problem with Host-Bound Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risks-of-uncontained-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks of Uncontained Agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-enter-scion-containerized-agent-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Enter SCION: Containerized Agent Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-how-scion-works-under-the-hood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. How SCION Works Under the Hood
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. How SCION Works Under the Hood">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ephemeral-container-sandbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Ephemeral Container Sandbox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-git-worktree-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Git Worktree Concurrency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-model-harness-agnostic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Model &amp; Harness Agnostic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-stateful-worker-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Stateful Worker Persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-organizational-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Organizational Impact
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Organizational Impact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-developers-safe-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👩‍💻 For Developers: Safe Exploration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-tech-leads-true-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👨‍💼 For Tech Leads: True Parallelism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-engineering-leaders-security-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏛️ For Engineering Leaders: Security &amp; Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-what-happens-if-you-dont-use-containerized-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. What Happens If You Don't Use Containerized Orchestration?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-quick-start-your-first-scion-workflow-in-60-seconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Quick Start: Your First SCION Workflow in 60 Seconds
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Quick Start: Your First SCION Workflow in 60 Seconds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-launch-podman-scion-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Launch Podman &amp; SCION Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-launch-a-background-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Launch a Background Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-check-progress-non-intrusively" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Check Progress Non-Intrusively
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-send-a-follow-up-task-preserving-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Send a Follow-Up Task (Preserving Context!)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-open-the-web-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Open the Web Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-next-in-this-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Next in This Series
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2716,6 +3279,64 @@
   
 
 
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../cookbook/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Cookbook
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    SCION Cookbook
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -2723,51 +3344,142 @@
 
 
 
-  <h1>Rag intro</h1>
-
-<p>Retrieval-Augmented Generation (RAG) is a technique that enhances the
-capabilities of large language models (LLMs) by allowing them to access and
-incorporate external data sources when generating responses. Here's a
-breakdown:</p>
-<p><strong>What it is:</strong></p>
+<h1 id="why-container-isolated-ai-agent-orchestration-is-the-future-of-software-engineering">Why Container-Isolated AI Agent Orchestration is the Future of Software Engineering</h1>
+<blockquote>
+<p><strong>Series Navigation:</strong>
+<strong><a href="../">Overview</a></strong> | <strong><a href="./">Part 1: The Case for Containerized Agents</a></strong> (Current) | <strong><a href="../02-setup-architecture-troubleshooting/">Part 2: Setup, Architecture &amp; Troubleshooting</a></strong> | <strong><a href="../03-user-guide-workflows/">Part 3: Practical User Guide &amp; Workflows</a></strong></p>
+</blockquote>
+<hr />
+<p><em>A deep dive into SCION (Source-Code Inference &amp; Orchestration Node) — and why running AI coding agents in isolated containers changes everything for developers, tech leads, and engineering leaders.</em></p>
+<hr />
+<h2 id="1-the-problem-with-host-bound-agents">1. The Problem with Host-Bound Agents</h2>
+<p>Developer tools have evolved from autocomplete to autonomous agents that analyze codebases, execute terminal commands, and modify files.</p>
+<p>Yet most agentic tools share a critical limitation: <strong>they run directly on the host machine.</strong></p>
+<h3 id="risks-of-uncontained-agents">Risks of Uncontained Agents</h3>
+<ol>
+<li><strong>Host Pollution &amp; Damage</strong>: Autonomous agents can unintentionally run destructive scripts, overwrite dependencies, or alter system state.</li>
+<li><strong>Sequential Blocking</strong>: When an agent occupies your local Git branch, you cannot work on another feature or run a second agent without file conflicts and lock errors.</li>
+<li><strong>Lost Concurrency</strong>: Developers must wait for one agent to finish before starting the next.</li>
+<li><strong>Credential Exposure</strong>: Unrestricted host access exposes global environment variables, cloud tokens, and SSH keys.</li>
+</ol>
+<hr />
+<h2 id="2-enter-scion-containerized-agent-orchestration">2. Enter SCION: Containerized Agent Orchestration</h2>
+<p><a href="https://github.com/GoogleCloudPlatform/scion"><strong>SCION</strong></a> is an open-source, container-native orchestration platform designed for <strong>concurrent, multi-agent AI engineering</strong>.</p>
+<p>Instead of running agents directly on your host machine, SCION wraps each agent in a lightweight container (Podman or Docker) with a <strong>dedicated Git worktree, isolated filesystem, and scoped credentials</strong>.</p>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                           SCION Server (Hub)                            │
+│    Web UI (127.0.0.1:8080)  │  Runtime Broker API (127.0.0.1:9800)       │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │
+                 Container Engine (Podman / Docker)
+                                     │
+   ┌─────────────────────────────────┴─────────────────────────────────┐
+   │                                                                   │
+┌──▼───────────────────────────────┐ ┌──▼───────────────────────────────┐
+│     Agent A: "test-auditor"      │ │      Agent B: "doc-writer"      │
+│  - Harness: Claude 3.7 Sonnet    │ │  - Harness: Gemini 2.5 Pro      │
+│  - Git Worktree: branch-ag-01    │ │  - Git Worktree: branch-ag-02   │
+│  - Isolated dependencies/tools   │ │  - Isolated dependencies/tools  │
+│  - Persistent container session  │ │  - Persistent container session │
+└──────────────────────────────────┘ └──────────────────────────────────┘
+</code></pre></div>
+<hr />
+<h2 id="3-how-scion-works-under-the-hood">3. How SCION Works Under the Hood</h2>
+<h3 id="1-ephemeral-container-sandbox">1. Ephemeral Container Sandbox</h3>
+<p>Every <code>scion start</code> command provisions an isolated container using a specialized AI harness image (<code>gemini-cli</code>, <code>claude</code>, etc.). All commands run strictly inside this container sandbox.</p>
+<h3 id="2-git-worktree-concurrency">2. Git Worktree Concurrency</h3>
+<p>SCION uses <strong>Git Worktrees</strong> rather than full clones. Each agent receives a lightweight checkout linked to a dedicated Git branch, enabling multiple agents to modify different parts of a codebase simultaneously.</p>
+<h3 id="3-model-harness-agnostic">3. Model &amp; Harness Agnostic</h3>
+<p>SCION supports pluggable harnesses for:
+- <strong>Google Gemini</strong> (<code>gemini-cli</code>)
+- <strong>Anthropic Claude</strong> (<code>claude</code>)
+- <strong>OpenAI Codex</strong> (<code>codex</code>)
+- <strong>GitHub Copilot</strong> (<code>copilot</code>)
+- <strong>OpenCode &amp; Hermes</strong> (<code>opencode</code>, <code>hermes</code>)
+- <strong>Antigravity</strong> (<code>antigravity</code>)</p>
+<h3 id="4-stateful-worker-persistence">4. Stateful Worker Persistence</h3>
+<p>SCION agents are long-running stateful workers. You can dispatch sequential tasks, ask follow-up questions, interrupt in-flight loops, or suspend and resume sessions across days.</p>
+<hr />
+<h2 id="4-organizational-impact">4. Organizational Impact</h2>
+<h3 id="for-developers-safe-exploration">👩‍💻 For Developers: <em>Safe Exploration</em></h3>
 <ul>
-<li><strong>Combining Retrieval and Generation:</strong></li>
-<li>RAG combines the strengths of information retrieval systems (like search
-    engines) with the generative power of LLMs.</li>
-<li>It enables LLMs to go beyond their pre-trained data and access up-to-date
-    and specific information.</li>
-<li><strong>How it works:</strong></li>
-<li>When a user asks a question, the RAG system first retrieves relevant
-    information from external data sources (e.g., databases, documents, web
-    pages).</li>
-<li>This retrieved information is then provided to the LLM as additional
-    context.</li>
-<li>The LLM uses this augmented context to generate a more accurate and
-    informative response.</li>
+<li><strong>Fearless Sandboxing</strong>: Test aggressive refactors, dependency updates, or unfamiliar scripts without risking host configuration.</li>
+<li><strong>Interactive Pairing</strong>: Attach directly to the live terminal session (<code>scion attach</code>) to observe reasoning and tools in real time.</li>
 </ul>
-<p><strong>Why it's helpful:</strong></p>
+<h3 id="for-tech-leads-true-parallelism">👨‍💼 For Tech Leads: <em>True Parallelism</em></h3>
 <ul>
-<li><strong>Access to Up-to-Date Information:</strong></li>
-<li>LLMs are trained on static datasets, so their knowledge can become
-    outdated. RAG allows them to access real-time or frequently updated
-    information.</li>
-<li><strong>Improved Accuracy and Factual Grounding:</strong></li>
-<li>RAG reduces the risk of LLM "hallucinations" (generating false or
-    misleading information) by grounding responses in verified external data.</li>
-<li><strong>Enhanced Contextual Relevance:</strong></li>
-<li>By providing relevant context, RAG enables LLMs to generate more precise
-    and tailored responses to specific queries.</li>
-<li><strong>Increased Trust and Transparency:</strong></li>
-<li>RAG can provide source citations, allowing users to verify the information
-    and increasing trust in the LLM's responses.</li>
-<li><strong>Cost Efficiency:</strong></li>
-<li>Rather than constantly retraining large language models, RAG allows for the
-    introduction of new data in a more cost effective way.</li>
+<li><strong>Parallel Workstreams</strong>: Delegate independent tasks across multiple concurrent agents:
+  <div class="highlight"><pre><span></span><code>scion<span class="w"> </span>start<span class="w"> </span>test-agent<span class="w"> </span><span class="s2">"Write unit tests for internal/auth"</span><span class="w"> </span>--harness<span class="w"> </span>claude
+scion<span class="w"> </span>start<span class="w"> </span>doc-agent<span class="w"> </span><span class="s2">"Review README and sync with CLI flags"</span><span class="w"> </span>--harness<span class="w"> </span>gemini-cli
+scion<span class="w"> </span>start<span class="w"> </span>linter<span class="w"> </span><span class="s2">"Audit Go error wrapping and lint issues"</span><span class="w"> </span>--harness<span class="w"> </span>opencode
+</code></pre></div></li>
+<li><strong>Worktree Reviews</strong>: Inspect changes in isolation with <code>scion cdw &lt;agent-name&gt;</code> before merging.</li>
 </ul>
-<p>In essence, RAG bridges the gap between the vast knowledge of LLMs and the need
-for accurate, current, and contextually relevant information.</p>
-<p>Source:
-https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/rag-engine/intro_rag_engine.ipynb</p>
+<h3 id="for-engineering-leaders-security-governance">🏛️ For Engineering Leaders: <em>Security &amp; Governance</em></h3>
+<ul>
+<li><strong>Host Protection</strong>: Enforce strict container boundaries around autonomous code execution.</li>
+<li><strong>Credential Scoping</strong>: Isolate API keys and tokens so production secrets are never exposed to LLM loops.</li>
+<li><strong>Centralized Dashboard</strong>: Track active agents, compute usage, and audit logs at <code>http://127.0.0.1:8080</code>.</li>
+</ul>
+<hr />
+<h2 id="5-what-happens-if-you-dont-use-containerized-orchestration">5. What Happens If You <em>Don't</em> Use Containerized Orchestration?</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Without SCION (Host Execution)</th>
+<th style="text-align: left;">With SCION (Container Orchestration)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1 Task at a Time</strong>: Developer is blocked while agent runs</td>
+<td style="text-align: left;"><strong>N Parallel Tasks</strong>: Run 5+ specialized agents concurrently</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Host System Risk</strong>: Accidental <code>rm</code>, bad scripts, port clashes</td>
+<td style="text-align: left;"><strong>Strict Sandbox</strong>: Container destroyed cleanly if anything breaks</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Git Conflicts</strong>: Agent modifies your active working tree</td>
+<td style="text-align: left;"><strong>Git Worktree Isolation</strong>: Dedicated branch per agent</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Vendor Lock-in</strong>: Tied to one specific CLI or IDE extension</td>
+<td style="text-align: left;"><strong>Multi-Harness</strong>: Mix Claude, Gemini, Codex, and Open-Source models</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Opaque Background State</strong>: Hard to monitor or steer</td>
+<td style="text-align: left;"><strong>Full Observability</strong>: Live terminal snapshots (<code>look</code>), attach, Web UI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-quick-start-your-first-scion-workflow-in-60-seconds">6. Quick Start: Your First SCION Workflow in 60 Seconds</h2>
+<h3 id="1-launch-podman-scion-server">1. Launch Podman &amp; SCION Server</h3>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>machine<span class="w"> </span>start
+scion<span class="w"> </span>server<span class="w"> </span>start
+<span class="nb">export</span><span class="w"> </span><span class="nv">SCION_DEV_TOKEN</span><span class="o">=</span><span class="s2">"your-token"</span>
+</code></pre></div>
+<h3 id="2-launch-a-background-agent">2. Launch a Background Agent</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/path/to/your/project
+scion<span class="w"> </span>start<span class="w"> </span>reviewer<span class="w"> </span><span class="s2">"Perform a read-only architecture audit of this repo and summarize entrypoints"</span>
+</code></pre></div>
+<h3 id="3-check-progress-non-intrusively">3. Check Progress Non-Intrusively</h3>
+<div class="highlight"><pre><span></span><code>scion<span class="w"> </span>look<span class="w"> </span>reviewer
+</code></pre></div>
+<h3 id="4-send-a-follow-up-task-preserving-context">4. Send a Follow-Up Task (Preserving Context!)</h3>
+<div class="highlight"><pre><span></span><code>scion<span class="w"> </span>message<span class="w"> </span>reviewer<span class="w"> </span><span class="s2">"Now draft a test plan for the critical modules you identified"</span>
+</code></pre></div>
+<h3 id="5-open-the-web-dashboard">5. Open the Web Dashboard</h3>
+<p>Navigate to <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a> to inspect all active agents, browse container logs, and chat interactively.</p>
+<hr />
+<h2 id="7-next-in-this-series">7. Next in This Series</h2>
+<ul>
+<li><strong>Part 2</strong>: <a href="../02-setup-architecture-troubleshooting/"><strong>Complete SCION Setup, Architecture &amp; Troubleshooting Guide</strong></a> — Learn how to install SCION, configure Podman/Docker, connect model credentials, and resolve common configuration errors.</li>
+<li><strong>Part 3</strong>: <a href="../03-user-guide-workflows/"><strong>SCION User Guide, Workflows &amp; Practical Cheatsheet</strong></a> — Master agent lifecycle commands, attach/detach workflows, and real-world repository audits.</li>
+</ul>
+<hr />
+<p><em>Container-isolated agent orchestration bridges the gap between toy AI demos and production-grade software engineering. Try SCION today to supercharge your multi-agent development workflow.</em></p>
 
 
 
@@ -2788,7 +3500,7 @@ https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/rag-engine
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="August 1, 2025 15:47:21 UTC"><span class="timeago" datetime="2025-08-01T15:47:21+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="August 1, 2025 15:47:21 UTC">2025-08-01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="September 9, 2026 20:43:31 UTC"><span class="timeago" datetime="2026-09-09T20:43:31+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="September 9, 2026 20:43:31 UTC">2026-09-09</span>
   </span>
 
     
@@ -2912,16 +3624,16 @@ https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/rag-engine
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow", "content.code.copy", "content.tabs.link", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow", "content.code.copy", "content.tabs.link", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../../js/timeago.min.js"></script>
+        <script src="../../js/timeago.min.js"></script>
       
-        <script src="../../../../js/timeago_mkdocs_material.js"></script>
+        <script src="../../js/timeago_mkdocs_material.js"></script>
       
-        <script src="../../../../javascripts/reading-progress.js"></script>
+        <script src="../../javascripts/reading-progress.js"></script>
       
     
   </body>

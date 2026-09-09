@@ -13,24 +13,28 @@
       
       
       
+        <link rel="prev" href="../google-cloud-gemini-cookbook/lesson-05/">
+      
+      
+        <link rel="next" href="01-case-for-containerized-agents/">
       
       
         
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.svg">
+      <link rel="icon" href="../assets/images/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Rag intro - Sampath Kumar | AI & Cloud Blog</title>
+        <title>Overview - Sampath Kumar | AI & Cloud Blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,11 +53,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../../css/timeago.css">
+      <link rel="stylesheet" href="../css/timeago.css">
     
-      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -87,6 +91,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#scion-cookbook-containerized-multi-agent-ai-engineering" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -97,7 +106,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-header__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
+    <a href=".." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-header__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
@@ -117,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Rag intro
+              Overview
             
           </span>
         </div>
@@ -218,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -235,11 +244,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../cookbook/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../cookbook/" class="md-tabs__link">
           
   
   
@@ -259,7 +270,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../writing/" class="md-tabs__link">
+        <a href="../writing/" class="md-tabs__link">
           
   
   
@@ -279,7 +290,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../events/" class="md-tabs__link">
+        <a href="../events/" class="md-tabs__link">
           
   
   
@@ -297,7 +308,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../about/" class="md-tabs__link">
+      <a href="../about/" class="md-tabs__link">
         
   
   
@@ -332,7 +343,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-nav__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
+    <a href=".." title="Sampath Kumar | AI &amp; Cloud Blog" class="md-nav__button md-logo" aria-label="Sampath Kumar | AI & Cloud Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
@@ -350,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -374,24 +385,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -409,7 +425,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -427,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cookbook/" class="md-nav__link">
+      <a href="../cookbook/" class="md-nav__link">
         
   
   
@@ -505,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../google-cloud-gemini-cookbook/" class="md-nav__link">
         
   
   
@@ -533,7 +549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lesson-01/" class="md-nav__link">
+      <a href="../google-cloud-gemini-cookbook/lesson-01/" class="md-nav__link">
         
   
   
@@ -561,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lesson-02/" class="md-nav__link">
+      <a href="../google-cloud-gemini-cookbook/lesson-02/" class="md-nav__link">
         
   
   
@@ -589,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lesson-03/" class="md-nav__link">
+      <a href="../google-cloud-gemini-cookbook/lesson-03/" class="md-nav__link">
         
   
   
@@ -617,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../google-cloud-gemini-cookbook/lesson-04/" class="md-nav__link">
         
   
   
@@ -645,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lesson-05/" class="md-nav__link">
+      <a href="../google-cloud-gemini-cookbook/lesson-05/" class="md-nav__link">
         
   
   
@@ -678,6 +694,8 @@
                 
   
   
+    
+  
   
   
     
@@ -688,11 +706,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -713,7 +731,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -728,10 +746,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../scion-cookbook/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -747,6 +792,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-scion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Why SCION?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cookbook-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Cookbook Sections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -759,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scion-cookbook/01-case-for-containerized-agents/" class="md-nav__link">
+      <a href="01-case-for-containerized-agents/" class="md-nav__link">
         
   
   
@@ -787,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scion-cookbook/02-setup-architecture-troubleshooting/" class="md-nav__link">
+      <a href="02-setup-architecture-troubleshooting/" class="md-nav__link">
         
   
   
@@ -815,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scion-cookbook/03-user-guide-workflows/" class="md-nav__link">
+      <a href="03-user-guide-workflows/" class="md-nav__link">
         
   
   
@@ -908,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/" class="md-nav__link">
+      <a href="../writing/" class="md-nav__link">
         
   
   
@@ -986,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/a2a/a2a-joins-aaif/" class="md-nav__link">
+      <a href="../writing/a2a/a2a-joins-aaif/" class="md-nav__link">
         
   
   
@@ -1014,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/a2a/multi-tenancy/" class="md-nav__link">
+      <a href="../writing/a2a/multi-tenancy/" class="md-nav__link">
         
   
   
@@ -1042,7 +1140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/a2a/v1-release/" class="md-nav__link">
+      <a href="../writing/a2a/v1-release/" class="md-nav__link">
         
   
   
@@ -1070,7 +1168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/a2a/intro/" class="md-nav__link">
+      <a href="../writing/a2a/intro/" class="md-nav__link">
         
   
   
@@ -1098,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/a2a/test-kit/" class="md-nav__link">
+      <a href="../writing/a2a/test-kit/" class="md-nav__link">
         
   
   
@@ -1126,7 +1224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/a2a/security-whitepaper/" class="md-nav__link">
+      <a href="../writing/a2a/security-whitepaper/" class="md-nav__link">
         
   
   
@@ -1212,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/cloud-next-2026/infrastructure/" class="md-nav__link">
+      <a href="../writing/cloud-next-2026/infrastructure/" class="md-nav__link">
         
   
   
@@ -1240,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/cloud-next-2026/foundational-models/" class="md-nav__link">
+      <a href="../writing/cloud-next-2026/foundational-models/" class="md-nav__link">
         
   
   
@@ -1268,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/cloud-next-2026/dev-tools-mcp-servers/" class="md-nav__link">
+      <a href="../writing/cloud-next-2026/dev-tools-mcp-servers/" class="md-nav__link">
         
   
   
@@ -1296,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/cloud-next-2026/data-protocols-security/" class="md-nav__link">
+      <a href="../writing/cloud-next-2026/data-protocols-security/" class="md-nav__link">
         
   
   
@@ -1324,7 +1422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/cloud-next-2026/workspace-ai-agents/" class="md-nav__link">
+      <a href="../writing/cloud-next-2026/workspace-ai-agents/" class="md-nav__link">
         
   
   
@@ -1410,7 +1508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/gemini/cli-cheatsheets/" class="md-nav__link">
+      <a href="../writing/gemini/cli-cheatsheets/" class="md-nav__link">
         
   
   
@@ -1438,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/gemini/cli-top-commands/" class="md-nav__link">
+      <a href="../writing/gemini/cli-top-commands/" class="md-nav__link">
         
   
   
@@ -1466,7 +1564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/gemini/flash-image-preview/" class="md-nav__link">
+      <a href="../writing/gemini/flash-image-preview/" class="md-nav__link">
         
   
   
@@ -1494,7 +1592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/gemini/culinary-guide/" class="md-nav__link">
+      <a href="../writing/gemini/culinary-guide/" class="md-nav__link">
         
   
   
@@ -1580,7 +1678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/building-agentic-sandbox-vm/" class="md-nav__link">
+      <a href="../writing/technical/building-agentic-sandbox-vm/" class="md-nav__link">
         
   
   
@@ -1608,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/" class="md-nav__link">
+      <a href="../writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/" class="md-nav__link">
         
   
   
@@ -1636,7 +1734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/mastering-tmux/" class="md-nav__link">
+      <a href="../writing/technical/mastering-tmux/" class="md-nav__link">
         
   
   
@@ -1664,7 +1762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/science-backed-multi-agent-takeaways/" class="md-nav__link">
+      <a href="../writing/technical/science-backed-multi-agent-takeaways/" class="md-nav__link">
         
   
   
@@ -1692,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/beads-memory-system/" class="md-nav__link">
+      <a href="../writing/technical/beads-memory-system/" class="md-nav__link">
         
   
   
@@ -1720,7 +1818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/python-in-google-cloud/" class="md-nav__link">
+      <a href="../writing/technical/python-in-google-cloud/" class="md-nav__link">
         
   
   
@@ -1748,7 +1846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/memory-management-agentic-ai/" class="md-nav__link">
+      <a href="../writing/technical/memory-management-agentic-ai/" class="md-nav__link">
         
   
   
@@ -1776,7 +1874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/quantum-ai-era/" class="md-nav__link">
+      <a href="../writing/technical/quantum-ai-era/" class="md-nav__link">
         
   
   
@@ -1804,7 +1902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/conductor-gemini-cli/" class="md-nav__link">
+      <a href="../writing/technical/conductor-gemini-cli/" class="md-nav__link">
         
   
   
@@ -1832,7 +1930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/documentation-driven-development/" class="md-nav__link">
+      <a href="../writing/technical/documentation-driven-development/" class="md-nav__link">
         
   
   
@@ -1860,7 +1958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/vibe-coding-intro/" class="md-nav__link">
+      <a href="../writing/technical/vibe-coding-intro/" class="md-nav__link">
         
   
   
@@ -1888,7 +1986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/coala-agent-brain-architecture/" class="md-nav__link">
+      <a href="../writing/technical/coala-agent-brain-architecture/" class="md-nav__link">
         
   
   
@@ -1916,7 +2014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/gke-magic-quadrant/" class="md-nav__link">
+      <a href="../writing/technical/gke-magic-quadrant/" class="md-nav__link">
         
   
   
@@ -1944,7 +2042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/deepseek-vertex-ai-model-garden/" class="md-nav__link">
+      <a href="../writing/technical/deepseek-vertex-ai-model-garden/" class="md-nav__link">
         
   
   
@@ -1972,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/secret-language-of-sound/" class="md-nav__link">
+      <a href="../writing/technical/secret-language-of-sound/" class="md-nav__link">
         
   
   
@@ -2000,7 +2098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/gemini-global-endpoint/" class="md-nav__link">
+      <a href="../writing/technical/gemini-global-endpoint/" class="md-nav__link">
         
   
   
@@ -2028,7 +2126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/global-gitignore-setup/" class="md-nav__link">
+      <a href="../writing/technical/global-gitignore-setup/" class="md-nav__link">
         
   
   
@@ -2056,7 +2154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/podman-developer-notes/" class="md-nav__link">
+      <a href="../writing/technical/podman-developer-notes/" class="md-nav__link">
         
   
   
@@ -2084,7 +2182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/six-essential-protocols/" class="md-nav__link">
+      <a href="../writing/technical/six-essential-protocols/" class="md-nav__link">
         
   
   
@@ -2112,7 +2210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/token-counting-explained/" class="md-nav__link">
+      <a href="../writing/technical/token-counting-explained/" class="md-nav__link">
         
   
   
@@ -2140,7 +2238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/load-balancing-blitz-intro/" class="md-nav__link">
+      <a href="../writing/technical/load-balancing-blitz-intro/" class="md-nav__link">
         
   
   
@@ -2168,7 +2266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/vibe-coding-dos-donts/" class="md-nav__link">
+      <a href="../writing/technical/vibe-coding-dos-donts/" class="md-nav__link">
         
   
   
@@ -2196,7 +2294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/technical/sharding-partitioning-sharding-managers/" class="md-nav__link">
+      <a href="../writing/technical/sharding-partitioning-sharding-managers/" class="md-nav__link">
         
   
   
@@ -2282,7 +2380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/personal/two-lenses-of-leadership/" class="md-nav__link">
+      <a href="../writing/personal/two-lenses-of-leadership/" class="md-nav__link">
         
   
   
@@ -2310,7 +2408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/personal/spot-fake-leaders/" class="md-nav__link">
+      <a href="../writing/personal/spot-fake-leaders/" class="md-nav__link">
         
   
   
@@ -2338,7 +2436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/personal/sky-sea-truth/" class="md-nav__link">
+      <a href="../writing/personal/sky-sea-truth/" class="md-nav__link">
         
   
   
@@ -2366,7 +2464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/personal/miyamoto-musashi/" class="md-nav__link">
+      <a href="../writing/personal/miyamoto-musashi/" class="md-nav__link">
         
   
   
@@ -2394,7 +2492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/personal/devrel-product-launches-market-velocity/" class="md-nav__link">
+      <a href="../writing/personal/devrel-product-launches-market-velocity/" class="md-nav__link">
         
   
   
@@ -2422,7 +2520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../writing/personal/productivity-avoiding-burnout/" class="md-nav__link">
+      <a href="../writing/personal/productivity-avoiding-burnout/" class="md-nav__link">
         
   
   
@@ -2515,7 +2613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../events/" class="md-nav__link">
+      <a href="../events/" class="md-nav__link">
         
   
   
@@ -2543,7 +2641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../events/2025-11-10-kaggle-ai-days/" class="md-nav__link">
+      <a href="../events/2025-11-10-kaggle-ai-days/" class="md-nav__link">
         
   
   
@@ -2571,7 +2669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../events/2025-11-05-ai-day-sweden/" class="md-nav__link">
+      <a href="../events/2025-11-05-ai-day-sweden/" class="md-nav__link">
         
   
   
@@ -2599,7 +2697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../events/2025-10-28-ai-day-denmark/" class="md-nav__link">
+      <a href="../events/2025-10-28-ai-day-denmark/" class="md-nav__link">
         
   
   
@@ -2627,7 +2725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../events/2025-04-09-cloud-next/" class="md-nav__link">
+      <a href="../events/2025-04-09-cloud-next/" class="md-nav__link">
         
   
   
@@ -2662,7 +2760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   
@@ -2699,6 +2797,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-scion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Why SCION?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cookbook-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Cookbook Sections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2716,6 +2857,64 @@
   
 
 
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../cookbook/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Cookbook
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    SCION Cookbook
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -2723,51 +2922,62 @@
 
 
 
-  <h1>Rag intro</h1>
-
-<p>Retrieval-Augmented Generation (RAG) is a technique that enhances the
-capabilities of large language models (LLMs) by allowing them to access and
-incorporate external data sources when generating responses. Here's a
-breakdown:</p>
-<p><strong>What it is:</strong></p>
+<h1 id="scion-cookbook-containerized-multi-agent-ai-engineering">🚀 SCION Cookbook: Containerized Multi-Agent AI Engineering</h1>
+<p>Welcome to the <strong>SCION (Source-Code Inference &amp; Orchestration Node) Cookbook</strong>! This hands-on series explores how to run, orchestrate, and supervise concurrent autonomous AI coding agents inside isolated containers.</p>
+<hr />
+<h2 id="why-scion">💡 Why SCION?</h2>
+<p>Autonomous AI coding agents can inspect codebases, execute shell commands, create branches, and run tests. Running them directly on your host machine introduces serious risks:</p>
 <ul>
-<li><strong>Combining Retrieval and Generation:</strong></li>
-<li>RAG combines the strengths of information retrieval systems (like search
-    engines) with the generative power of LLMs.</li>
-<li>It enables LLMs to go beyond their pre-trained data and access up-to-date
-    and specific information.</li>
-<li><strong>How it works:</strong></li>
-<li>When a user asks a question, the RAG system first retrieves relevant
-    information from external data sources (e.g., databases, documents, web
-    pages).</li>
-<li>This retrieved information is then provided to the LLM as additional
-    context.</li>
-<li>The LLM uses this augmented context to generate a more accurate and
-    informative response.</li>
+<li><strong>Host Pollution &amp; Safety</strong>: Autonomous commands can alter global state, overwrite dependencies, or run destructive scripts.</li>
+<li><strong>Sequential Bottlenecks</strong>: Developers must wait for one agent to finish before starting another.</li>
+<li><strong>Git Branch Collisions</strong>: Multiple agents on the same branch clash over uncommitted edits and index locks.</li>
+<li><strong>Credential Exposure</strong>: Unrestricted host execution risks exposing environment variables, tokens, and SSH keys.</li>
 </ul>
-<p><strong>Why it's helpful:</strong></p>
-<ul>
-<li><strong>Access to Up-to-Date Information:</strong></li>
-<li>LLMs are trained on static datasets, so their knowledge can become
-    outdated. RAG allows them to access real-time or frequently updated
-    information.</li>
-<li><strong>Improved Accuracy and Factual Grounding:</strong></li>
-<li>RAG reduces the risk of LLM "hallucinations" (generating false or
-    misleading information) by grounding responses in verified external data.</li>
-<li><strong>Enhanced Contextual Relevance:</strong></li>
-<li>By providing relevant context, RAG enables LLMs to generate more precise
-    and tailored responses to specific queries.</li>
-<li><strong>Increased Trust and Transparency:</strong></li>
-<li>RAG can provide source citations, allowing users to verify the information
-    and increasing trust in the LLM's responses.</li>
-<li><strong>Cost Efficiency:</strong></li>
-<li>Rather than constantly retraining large language models, RAG allows for the
-    introduction of new data in a more cost effective way.</li>
-</ul>
-<p>In essence, RAG bridges the gap between the vast knowledge of LLMs and the need
-for accurate, current, and contextually relevant information.</p>
-<p>Source:
-https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/rag-engine/intro_rag_engine.ipynb</p>
+<p><strong>SCION</strong> packages each agent into an ephemeral container (Podman or Docker) with a <strong>dedicated Git worktree, isolated filesystem, and scoped runtime credentials</strong>.</p>
+<hr />
+<h2 id="cookbook-sections">📚 Cookbook Sections</h2>
+<p>This cookbook is structured into three practical parts:</p>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│                             SCION Cookbook Series                                │
+│                                                                                  │
+│   Part 1: The Case for Containerized Agents                                      │
+│   ├── Architecture breakdown: Hub, Runtime Broker, and Harnesses                 │
+│   └── Why container isolation unlocks true multi-agent parallelism               │
+│                                                                                  │
+│   Part 2: Setup, Architecture &amp; Troubleshooting                                  │
+│   ├── Podman &amp; Docker runtime initialization (macOS &amp; Linux)                     │
+│   ├── Multi-provider auth setup (Gemini, Vertex AI, Claude, OpenAI)              │
+│   └── Battle-tested solutions for common error codes &amp; socket issues             │
+│                                                                                  │
+│   Part 3: Practical User Guide &amp; Workflows                                       │
+│   ├── Master the CLI cheatsheet (start, message, look, attach, suspend, resume) │
+│   ├── Non-intrusive monitoring vs interactive tmux steering (Ctrl+B, D)          │
+│   └── Real-world multi-agent workflows on a Go repository                        │
+└──────────────────────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<ol>
+<li>
+<p><strong><a href="01-case-for-containerized-agents/">Part 1: The Case for Containerized Agents</a></strong><br />
+<em>Deep dive into the architecture of container-isolated agent orchestration and why it changes software engineering for developers, leads, and CTOs.</em></p>
+</li>
+<li>
+<p><strong><a href="02-setup-architecture-troubleshooting/">Part 2: Setup, Architecture &amp; Troubleshooting</a></strong><br />
+<em>Step-by-step setup guide for macOS and Linux, configuring Podman/Docker, setting up harness credentials (Gemini, Claude, Vertex AI), and resolving runtime errors.</em></p>
+</li>
+<li>
+<p><strong><a href="03-user-guide-workflows/">Part 3: Practical User Guide &amp; Workflows</a></strong><br />
+<em>Comprehensive operational manual, command cheatsheets, session lifecycle management, and real-world multi-agent repository audits.</em></p>
+</li>
+</ol>
+<hr />
+<h2 id="prerequisites">🛠️ Prerequisites</h2>
+<p>To follow the recipes in this cookbook, ensure you have:
+- <strong>Operating System</strong>: macOS (Apple Silicon or Intel) or Linux (Ubuntu, Debian, Fedora, Arch).
+- <strong>Container Engine</strong>: <a href="https://podman.io/">Podman</a> (recommended on macOS) or <a href="https://www.docker.com/">Docker</a>.
+- <strong>Git</strong>: Git 2.30+ installed.
+- <strong>API Access</strong>: Access to Google Gemini (<code>GEMINI_API_KEY</code> or Vertex AI credentials), Anthropic Claude, or OpenAI Codex.</p>
+<hr />
+<p><a class="md-button md-button--primary" href="01-case-for-containerized-agents/">Start Part 1: The Case for Containerized Agents →</a></p>
 
 
 
@@ -2788,7 +2998,7 @@ https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/rag-engine
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="August 1, 2025 15:47:21 UTC"><span class="timeago" datetime="2025-08-01T15:47:21+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="August 1, 2025 15:47:21 UTC">2025-08-01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="September 9, 2026 20:43:31 UTC"><span class="timeago" datetime="2026-09-09T20:43:31+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="September 9, 2026 20:43:31 UTC">2026-09-09</span>
   </span>
 
     
@@ -2912,16 +3122,16 @@ https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/rag-engine
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow", "content.code.copy", "content.tabs.link", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow", "content.code.copy", "content.tabs.link", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../../js/timeago.min.js"></script>
+        <script src="../js/timeago.min.js"></script>
       
-        <script src="../../../../js/timeago_mkdocs_material.js"></script>
+        <script src="../js/timeago_mkdocs_material.js"></script>
       
-        <script src="../../../../javascripts/reading-progress.js"></script>
+        <script src="../javascripts/reading-progress.js"></script>
       
     
   </body>
