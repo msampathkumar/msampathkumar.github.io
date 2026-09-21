@@ -25,6 +25,7 @@ Step-by-step technical tutorials with runnable code.
 - [SCION Part 1 — The Case for Containerized Agents](https://msampathkumar.github.io/scion-cookbook/01-case-for-containerized-agents/): Architecture breakdown and the case for container isolation in multi-agent workflows.
 - [SCION Part 2 — Setup, Architecture & Troubleshooting](https://msampathkumar.github.io/scion-cookbook/02-setup-architecture-troubleshooting/): Step-by-step setup guide on macOS/Linux, multi-provider credentials, and troubleshooting.
 - [SCION Part 3 — Practical User Guide & Workflows](https://msampathkumar.github.io/scion-cookbook/03-user-guide-workflows/): Operations manual, CLI cheatsheet, interactive tmux attach/detach, and repo audits.
+- [SCION Part 4 — Developer Workflow: Skills, Rules & Templates](https://msampathkumar.github.io/scion-cookbook/04-developer-workflow-skills-templates/): Designing skill-oriented agent systems, enforcing project-level rules with AGENTS.md, authoring templates, and mastering multi-day intermittent workflows.
 
 ## Writing — Agent-to-Agent (A2A)
 
