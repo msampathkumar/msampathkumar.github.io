@@ -62,3 +62,4 @@ docs/blog/ProjectMgmt/
 # (*personal* above would otherwise swallow the whole /writing/personal/ tree.)
 !docs/writing/personal/
 
+.scion/

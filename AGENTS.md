@@ -37,6 +37,7 @@ ______________________________________________________________________
 3. **Sequential & Minimal Execution**: Plan sequentially, execute task-by-task, and apply minimal necessary code modifications.
 4. **Preserve Legacy & History**: Comment out deprecated code/logic with clear rationale rather than deleting unprompted. Always configure client-side redirect maps (`redirect_maps` in `mkdocs.yml`) when moving published URLs.
 5. **Always Land Cleanly**: When completing a task, verify the build (`mkdocs build --strict`), format touched Markdown (`mdformat`), and ensure no loose ends or broken links remain.
+6. **Learn from Pre-Built Skills & Feedback**: Consult and learn from pre-built skills and workflows in `.agents/` before starting work. Treat user reviews, nits, and pushback as direct opportunities to adapt. Save new or updated skills and workflows in `.agents/` tracked in Git, using long, descriptive specialist names.
 
 ______________________________________________________________________
 

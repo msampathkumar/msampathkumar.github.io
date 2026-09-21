@@ -236,3 +236,4 @@ scion delete go-reviewer -y
 
 - **Part 1**: [**The Case for Containerized Agents (Overview & Deep Dive)**](01-case-for-containerized-agents.md) — The rationale and architectural benefits of container-isolated agent orchestration.
 - **Part 2**: [**Complete SCION Setup, Architecture & Troubleshooting Guide**](02-setup-architecture-troubleshooting.md) — Prerequisites, runtime installation, and resolving real-world errors.
+- **Part 4**: [**Developer Workflow: Skills, Rules & Templates**](04-developer-workflow-skills-templates.md) — Structuring skill-oriented workflows, repository AGENTS.md guardrails, templates, and multi-day development lifecycles.

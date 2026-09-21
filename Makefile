@@ -6,7 +6,7 @@ clean:
 
 run:
 	@echo "Running the mkdocs"
-	mkdocs serve -a localhost:8099 -c
+	mkdocs serve -a localhost:42010 -c
 
 # Scaffold a new blog post: make new-post TITLE="My Title" SECTION="a2a"
 new-post:
@@ -35,4 +35,3 @@ check-ga:
 	rm -rf site/
 	mkdocs build
 	grep __md_analytics site/*
-

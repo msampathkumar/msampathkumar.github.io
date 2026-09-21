@@ -19,7 +19,7 @@ Autonomous AI coding agents can inspect codebases, execute shell commands, creat
 
 ## 📚 Cookbook Sections
 
-This cookbook is structured into three practical parts:
+This cookbook is structured into four practical parts:
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────┐
@@ -38,6 +38,12 @@ This cookbook is structured into three practical parts:
 │   ├── Master the CLI cheatsheet (start, message, look, attach, suspend, resume) │
 │   ├── Non-intrusive monitoring vs interactive tmux steering (Ctrl+B, D)          │
 │   └── Real-world multi-agent workflows on a Go repository                        │
+│                                                                                  │
+│   Part 4: Developer Workflow: Skills, Rules & Templates                          │
+│   ├── Skill-oriented architecture and Hub Skill Bank resolution                 │
+│   ├── Guardrail enforcement with repository-level AGENTS.md                      │
+│   ├── Curating reusable agent templates and role specialization                  │
+│   └── Multi-day intermittent lifecycles (suspend/resume/cdw) & Kanban model      │
 └──────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -49,6 +55,9 @@ This cookbook is structured into three practical parts:
 
 3. **[Part 3: Practical User Guide & Workflows](03-user-guide-workflows.md)**  
    *Comprehensive operational manual, command cheatsheets, session lifecycle management, and real-world multi-agent repository audits.*
+
+4. **[Part 4: Developer Workflow: Skills, Rules & Templates](04-developer-workflow-skills-templates.md)**  
+   *Designing skill-oriented agent systems, enforcing project-level rules with AGENTS.md, authoring templates, and mastering multi-day intermittent workflows.*
 
 ---
 
