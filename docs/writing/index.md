@@ -35,6 +35,7 @@ Essays, guides, and notes — organized by topic and reverse-chronological order
 
 ## 🛠️ Technical Articles
 
+- **`Oct 22, 2026`** — [Resilient SSH Config for Google Cloud VMs: Connecting IDE Agents via IAP Tunnel](technical/resilient-gcp-ssh-config-iap-tunnel/index.md)
 - **`Aug 29, 2026`** — [Building an Agentic Sandbox: Provisioning a Google Cloud VM Workstation](technical/building-agentic-sandbox-vm/index.md)
 - **`Aug 20, 2026`** — [Setting Up GUI & Chrome Remote Desktop on a Google Cloud VM](technical/setup-gui-chrome-remote-desktop-gcp-vm/index.md)
 - **`Jul 27, 2026`** — [Mastering tmux: Headless Sessions, Persistent Workflows & Automation](technical/mastering-tmux/index.md)

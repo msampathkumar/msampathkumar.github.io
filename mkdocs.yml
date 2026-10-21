@@ -207,6 +207,7 @@ nav:
           - "Gemini 2.5 Flash Image Preview": writing/gemini/flash-image-preview/index.md
           - "Gemini as your Culinary Guide": writing/gemini/culinary-guide/index.md
       - "Technical Articles":
+          - "Resilient SSH Config for Google Cloud VMs": writing/technical/resilient-gcp-ssh-config-iap-tunnel/index.md
           - "Building an Agentic Sandbox VM": writing/technical/building-agentic-sandbox-vm/index.md
           - "Setting Up GUI & Chrome Remote Desktop on GCP VM": writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/index.md
           - "Mastering tmux: Headless Sessions & Automation": writing/technical/mastering-tmux/index.md

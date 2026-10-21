@@ -6,7 +6,7 @@
 
 ## 📚 Published Articles & Technical Guides
 
-Below is a directory of all 44 articles published on the site, organized by topic:
+Below is a directory of all 45 articles published on the site, organized by topic:
 
 ### 🤖 Agent-to-Agent (A2A)
 
@@ -34,6 +34,7 @@ Below is a directory of all 44 articles published on the site, organized by topi
 
 ### 🛠️ Technical Articles
 
+- **`Oct 22, 2026`** — [Resilient SSH Config for Google Cloud VMs: Connecting IDE Agents via IAP Tunnel](https://msampathkumar.github.io/writing/technical/resilient-gcp-ssh-config-iap-tunnel/)
 - **`Aug 29, 2026`** — [Building an Agentic Sandbox: Provisioning a Google Cloud VM Workstation](https://msampathkumar.github.io/writing/technical/building-agentic-sandbox-vm/)
 - **`Aug 20, 2026`** — [Setting Up GUI & Chrome Remote Desktop on a Google Cloud VM](https://msampathkumar.github.io/writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/)
 - **`Jul 27, 2026`** — [Mastering tmux: Headless Sessions, Persistent Workflows & Automation](https://msampathkumar.github.io/writing/technical/mastering-tmux/)
