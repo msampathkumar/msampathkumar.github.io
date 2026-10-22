@@ -61,6 +61,7 @@ Hands-on guides for using Gemini and the Gemini CLI.
 
 Long-form analysis of agent architectures, protocols, and developer practice.
 
+- [Resilient SSH Config for Google Cloud VMs: Connecting IDE Agents via IAP Tunnel](https://msampathkumar.github.io/writing/technical/resilient-gcp-ssh-config-iap-tunnel/): How to replace fragile gcloud compute ssh wrapper scripts with a resilient ~/.ssh/config entry using IAP ProxyCommand that works natively in VS Code, Cursor, and Antigravity.
 - [Building an Agentic Sandbox: Provisioning a Google Cloud VM Workstation](https://msampathkumar.github.io/writing/technical/building-agentic-sandbox-vm/): How to configure an isolated Compute Engine VM as a personal sandbox and secondary workstation for running Agentic AI harnesses, Gemini, and Vertex AI experiments.
 - [Setting Up GUI & Chrome Remote Desktop on a Google Cloud VM](https://msampathkumar.github.io/writing/technical/setup-gui-chrome-remote-desktop-gcp-vm/): How to configure a lightweight XFCE desktop environment and Chrome Remote Desktop on a Google Cloud Compute Engine VM for browser-based remote access.
 - [Mastering tmux: Headless Sessions & Automation](https://msampathkumar.github.io/writing/technical/mastering-tmux/): How tmux headless sessions, session resurrection, and automation empower persistent developer workflows.
