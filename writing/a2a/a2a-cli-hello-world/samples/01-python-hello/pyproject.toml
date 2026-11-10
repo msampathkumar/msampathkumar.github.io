@@ -1,0 +1,10 @@
+[project]
+name = "a2a-python-hello"
+version = "0.1.0"
+description = "Minimal A2A v1.0 Hello World agent in Python"
+requires-python = ">=3.11"
+dependencies = [
+    "a2a-sdk>=1.0.3",
+    "starlette>=0.40.0",
+    "uvicorn>=0.30.0",
+]

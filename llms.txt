@@ -31,6 +31,7 @@ Step-by-step technical tutorials with runnable code.
 
 Deep dives on the A2A protocol: what it is, what's new, and how to run it in production.
 
+- [A2A CLI Hello World: Building & Securing Python and Go Agents with API Key Verification](https://msampathkumar.github.io/writing/a2a/a2a-cli-hello-world/): Build minimal A2A v1.0 Hello World servers in Python and Go, reach them with A2A CLI v0.4.0, and add Bearer API key verification.
 - [Docker for Agents: A Backend Engineer's Introduction to A2A](https://msampathkumar.github.io/writing/a2a/intro/): A2A as a lightweight wrapper (like Docker) that makes any agent interoperable.
 - [What's New in A2A: v1.0, a Python DX Glow-Up, and a Fresh New Look](https://msampathkumar.github.io/writing/a2a/v1-release/): The A2A v1.0 release, Python developer experience, and docs refresh.
 - [A2A Joins AAIF](https://msampathkumar.github.io/writing/a2a/a2a-joins-aaif/): Acceptance into the Linux Foundation-directed AAIF as a Growth Stage project.
