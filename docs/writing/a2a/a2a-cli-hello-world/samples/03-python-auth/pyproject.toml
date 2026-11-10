@@ -1,0 +1,10 @@
+[project]
+name = "a2a-python-auth"
+version = "0.1.0"
+description = "A2A v1.0 Hello World agent in Python with API key token verification"
+requires-python = ">=3.11"
+dependencies = [
+    "a2a-sdk>=1.0.3",
+    "starlette>=0.40.0",
+    "uvicorn>=0.30.0",
+]

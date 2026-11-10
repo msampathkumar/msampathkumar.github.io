@@ -11,6 +11,7 @@ Essays, guides, and notes — organized by topic and reverse-chronological order
 
 ## 🤖 Agent-to-Agent (A2A)
 
+- **`Nov 10, 2026`** — [Meet A2A CLI: A Hello World & API Key Auth Guide in Python and Go](a2a/a2a-cli-hello-world/index.md)
 - **`Aug 29, 2026`** — [A2A Joins AAIF](a2a/a2a-joins-aaif/index.md)
 - **`Jul 17, 2026`** — [Three Agents Behind One Door: Multi-Tenancy in A2A](a2a/multi-tenancy/index.md)
 - **`Jul 02, 2026`** — [What’s New in A2A: v1.0, a Python DX Glow-Up, and a Fresh New Look](a2a/v1-release/index.md)

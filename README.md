@@ -6,10 +6,11 @@
 
 ## 📚 Published Articles & Technical Guides
 
-Below is a directory of all 45 articles published on the site, organized by topic:
+Below is a directory of all 46 articles published on the site, organized by topic:
 
 ### 🤖 Agent-to-Agent (A2A)
 
+- **`Nov 10, 2026`** — [Meet A2A CLI: A Hello World & API Key Auth Guide in Python and Go](https://msampathkumar.github.io/writing/a2a/a2a-cli-hello-world/)
 - **`Aug 29, 2026`** — [A2A Joins AAIF](https://msampathkumar.github.io/writing/a2a/a2a-joins-aaif/)
 - **`Jul 17, 2026`** — [Three Agents Behind One Door: Multi-Tenancy in A2A](https://msampathkumar.github.io/writing/a2a/multi-tenancy/)
 - **`Jul 02, 2026`** — [What’s New in A2A: v1.0, a Python DX Glow-Up, and a Fresh New Look](https://msampathkumar.github.io/writing/a2a/v1-release/)

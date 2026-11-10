@@ -189,6 +189,7 @@ nav:
   - "Writing":
       - writing/index.md
       - "Agent-to-Agent (A2A)":
+          - "A2A CLI Hello World (Python & Go + Auth)": writing/a2a/a2a-cli-hello-world/index.md
           - "A2A Joins AAIF": writing/a2a/a2a-joins-aaif/index.md
           - "Multi-Tenancy in A2A": writing/a2a/multi-tenancy/index.md
           - "What's New in A2A: v1.0": writing/a2a/v1-release/index.md
